@@ -18,10 +18,11 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+}
+
+.header-title {
+  background: rgb(217, 124, 2);
+  background: linear-gradient(180deg, rgba(217, 124, 2, 1) 0%, rgba(114, 84, 0, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

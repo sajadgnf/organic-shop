@@ -1,7 +1,11 @@
-export default function Home() {
+import Button from "@atom/button/page"
+
+function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        hi
+    <main>
+     
     </main>
   )
 }
+
+export default Home
