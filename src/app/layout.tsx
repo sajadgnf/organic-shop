@@ -1,3 +1,4 @@
+import Typography from "@atom/typography/page"
 import "./globals.css"
 import { Inika, Roboto } from "next/font/google"
 
@@ -22,12 +23,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`min-h-screen container mx-auto ${inika.variable} ${roboto.variable}`}>
-        <nav>
+        <header>
           <div className="flex content-center items-center">
             <img src="./images/orange.svg" />
-            <h1 className="header-title text-xl">rganic shop</h1>
+            <Typography variant="h1" className="header-title text-xl">
+              rganic shop
+            </Typography>
           </div>
-        </nav>
+        </header>
         {children}
       </body>
     </html>
