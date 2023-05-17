@@ -3,21 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  --foreground: #020202;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+    --foreground          : #020202;
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-end-rgb  : 0, 0, 0;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: var(--foreground);
 }
 
 .header-title {
@@ -25,4 +25,8 @@ body {
   background: linear-gradient(180deg, rgba(217, 124, 2, 1) 0%, rgba(114, 84, 0, 1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.display-flex {
+  @apply flex content-center items-center;
 }

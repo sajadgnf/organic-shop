@@ -19,8 +19,21 @@ const tagMap = {
 const Typography = ({ children, variant = "p", className, ...props }: PropsType) => {
   const Tag: any = tagMap[variant] || "p"
 
+  const font = () => {
+    const obj = {
+      h1: "text-8xl font-inika",
+      h2: "text-6xl font-inika",
+      h3: "text-5xl font-inika",
+      h4: "text-4xl font-inika",
+      h5: "text-3xl font-inika",
+      h6: "text-2xl font-inika",
+      p: "text-base font-roboto",
+    }
+    if (variant in obj) return obj[variant]
+  }
+
   return (
-    <Tag data-testid="typography" className={className} {...props}>
+    <Tag data-testid="typography" className={`${className} ${font()}`} {...props}>
       {children}
     </Tag>
   )
