@@ -1,9 +1,10 @@
 import React, { ReactElement, ReactNode } from "react"
 
 type PropsType = {
-  children: ReactElement | ReactNode | string | number
+  spacing?: number
   className?: string
-  variant?: "div" | "header" | "footer" | "article" | "form"
+  children: ReactElement | ReactNode | string | number
+  variant?: "div" | "header" | "footer" | "article" | "form" | "section"
 }
 
 const tagMap = {
@@ -12,13 +13,14 @@ const tagMap = {
   footer: "footer",
   article: "article",
   form: "form",
+  section: "section",
 }
 
-const Stack = ({ children, variant = "div", className, ...props }: PropsType) => {
+const Stack = ({ children, variant = "div", className, spacing = 0, ...props }: PropsType) => {
   const Tag: any = tagMap[variant] || "div"
 
   return (
-    <Tag className={`${className} display-flex`} role="div" {...props}>
+    <Tag className={`display-flex content-between [&>*]:mx-${spacing} ${className}`} role="div" {...props}>
       {children}
     </Tag>
   )

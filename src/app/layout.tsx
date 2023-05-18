@@ -25,25 +25,27 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`min-h-screen container mx-auto ${inika.variable} ${roboto.variable}`}>
-        <Stack variant="header">
-          <Stack>
-            <img src="./images/orange.svg" />
-            <Typography variant="h5" className="header-title">
-              rganic shop
-            </Typography>
+      <body className={`min-h-screen ${inika.variable} ${roboto.variable}`}>
+        <Stack variant="header" className="justify-between pt-3.5 px-28 bg-[url('/images/header-img.svg')] bg-cover bg-no-repeat">
+          <Stack spacing={5}>
+            <Stack variant="section">
+              <img src="./images/orange.svg" />
+              <Typography variant="h5" className="header-title">
+                rganic shop
+              </Typography>
+            </Stack>
+
+            <Stack variant="section" spacing={4}>
+              <Typography variant="h6">Home</Typography>
+              <Typography variant="h6">Shop</Typography>
+              <Typography variant="h6">Contact</Typography>
+              <Typography variant="h6">Blog</Typography>
+            </Stack>
           </Stack>
 
-          <Stack>
-            <Typography variant="h6">Home</Typography>
-            <Typography variant="h6">Shop</Typography>
-            <Typography variant="h6">Contact</Typography>
-            <Typography variant="h6">Blog</Typography>
-          </Stack>
-
-          <Stack>
+          <Stack spacing={1}>
             <Button variant="contained" className="font-inika">
-              Sing Up
+              Sign Up
             </Button>
             <Button variant="contained" size="small">
               <ShoppingBagIcon className="h-6 w-6" />
