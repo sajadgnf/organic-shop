@@ -4,6 +4,7 @@ import { Inika, Roboto } from "next/font/google"
 import Button from "@atom/button/page"
 import { ShoppingBagIcon } from "@heroicons/react/24/solid"
 import Stack from "@atom/stack/page"
+import Link from "next/link"
 
 const inika = Inika({
   subsets: ["latin"],
@@ -26,30 +27,43 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`min-h-screen ${inika.variable} ${roboto.variable}`}>
-        <Stack variant="header" className="justify-between pt-3.5 px-28 bg-[url('/images/header-img.svg')] bg-cover bg-no-repeat">
-          <Stack spacing={5}>
-            <Stack variant="section">
-              <img src="./images/orange.svg" />
-              <Typography variant="h5" className="header-title">
-                rganic shop
-              </Typography>
+        <Stack
+          variant="header"
+          className="pt-3.5 px-28 bg-[url('/images/header-img.svg')] bg-cover bg-no-repeat bg-center h-screen items-start"
+        >
+          <Stack className="justify-between w-[100%]">
+            <Stack className="space-x-10">
+              <Stack variant="section">
+                <img src="./images/orange.svg" />
+                <Typography variant="h1" className="header-title !text-4xl">
+                  rganic shop
+                </Typography>
+              </Stack>
+
+              <Stack variant="section" className="space-x-10">
+                <Link href="" className="font-inika font-normal	text-2xl">
+                  Home
+                </Link>
+                <Link href="" className="font-inika font-normal	text-2xl">
+                  Shop
+                </Link>
+                <Link href="" className="font-inika font-normal	text-2xl">
+                  Contact
+                </Link>
+                <Link href="" className="font-inika font-normal	text-2xl">
+                  Blog
+                </Link>
+              </Stack>
             </Stack>
 
-            <Stack variant="section" spacing={4}>
-              <Typography variant="h6">Home</Typography>
-              <Typography variant="h6">Shop</Typography>
-              <Typography variant="h6">Contact</Typography>
-              <Typography variant="h6">Blog</Typography>
+            <Stack className="space-x-3">
+              <Button variant="contained" className="font-inika ">
+                Sign Up
+              </Button>
+              <Button variant="contained" size="small">
+                <ShoppingBagIcon className="h-6 w-6" />
+              </Button>
             </Stack>
-          </Stack>
-
-          <Stack spacing={1}>
-            <Button variant="contained" className="font-inika">
-              Sign Up
-            </Button>
-            <Button variant="contained" size="small">
-              <ShoppingBagIcon className="h-6 w-6" />
-            </Button>
           </Stack>
         </Stack>
         {children}

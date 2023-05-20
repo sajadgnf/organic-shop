@@ -16,11 +16,16 @@ const tagMap = {
   section: "section",
 }
 
-const Stack = ({ children, variant = "div", className, spacing = 0, ...props }: PropsType) => {
+const Stack = ({ children, variant = "div", className, ...props }: PropsType) => {
   const Tag: any = tagMap[variant] || "div"
 
+  const priorityClassName = className
+    ?.split(" ")
+    .map((item) => (item.includes("items-") ? `!${item}` : item))
+    .join(" ")
+
   return (
-    <Tag className={`display-flex content-between [&>*]:mx-${spacing} ${className}`} role="div" {...props}>
+    <Tag className={`flex justify-center items-center ${priorityClassName}`} role="div" {...props}>
       {children}
     </Tag>
   )

@@ -17,7 +17,10 @@ const Button = ({ children, className = "font-roboto", size = "medium", variant 
   const contained = variant === "contained" && "bg-primary-100 hover:bg-primary-200 active:bg-primary-300"
 
   return (
-    <button className={`rounded-lg transition duration-100 ease-in-out  ${text} ${outlined} ${contained} ${small} ${medium} ${large} ${className}`} {...props}>
+    <button
+      className={`rounded-lg transition duration-100 ease-in-out cursor-pointer ${text} ${outlined} ${contained} ${small} ${medium} ${large} ${className}`}
+      {...props}
+    >
       {children}
     </button>
   )

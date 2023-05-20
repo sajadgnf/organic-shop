@@ -10,9 +10,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground          : #020202;
+    --foreground: #020202;
     --background-start-rgb: 0, 0, 0;
-    --background-end-rgb  : 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
   }
 }
 
@@ -28,5 +28,5 @@ body {
 }
 
 .display-flex {
-  @apply flex content-center items-center;
+  @apply flex justify-center items-center;
 }
