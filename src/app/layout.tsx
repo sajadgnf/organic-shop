@@ -1,10 +1,9 @@
-import Typography from "@atom/typography/page"
 import "./globals.css"
-import { Inika, Roboto } from "next/font/google"
-import Button from "@atom/button/page"
-import { ShoppingBagIcon } from "@heroicons/react/24/solid"
-import Stack from "@atom/stack/page"
 import Link from "next/link"
+import Stack from "@atom/stack/page"
+import Button from "@atom/button/page"
+import { Inika, Roboto } from "next/font/google"
+import { ShoppingBagIcon } from "@heroicons/react/24/solid"
 
 const inika = Inika({
   subsets: ["latin"],
@@ -27,43 +26,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`min-h-screen ${inika.variable} ${roboto.variable}`}>
-        <Stack
-          variant="header"
-          className="pt-3.5 px-28 bg-[url('/images/header-img.svg')] bg-cover bg-no-repeat bg-center h-screen items-start"
-        >
-          <Stack className="justify-between w-[100%]">
-            <Stack className="space-x-10">
-              <Stack variant="section">
-                <img src="./images/orange.svg" />
-                <Typography variant="h1" className="header-title !text-4xl">
-                  rganic shop
-                </Typography>
-              </Stack>
+        <Stack className="justify-between w-full fixed top-0 px-28">
+          <Stack className="space-x-10">
+            <Link href="/">
+              <img src="./images/logo.svg" alt="organic shop لوگوی شاپ میباشد" />
+            </Link>
 
-              <Stack variant="section" className="space-x-10">
-                <Link href="" className="font-inika font-normal	text-2xl">
-                  Home
-                </Link>
-                <Link href="" className="font-inika font-normal	text-2xl">
-                  Shop
-                </Link>
-                <Link href="" className="font-inika font-normal	text-2xl">
-                  Contact
-                </Link>
-                <Link href="" className="font-inika font-normal	text-2xl">
-                  Blog
-                </Link>
-              </Stack>
+            <Stack variant="section" className="space-x-10 text-2xl">
+              <Link className={`header-link`} href="/">
+                Home
+              </Link>
+              <Link className="header-link" href="store">
+                Shop
+              </Link>
+              <Link className="header-link" href="contact">
+                Contact
+              </Link>
+              <Link className="header-link" href="blog">
+                Blog
+              </Link>
             </Stack>
+          </Stack>
 
-            <Stack className="space-x-3">
-              <Button variant="contained" className="font-inika ">
-                Sign Up
-              </Button>
-              <Button variant="contained" size="small">
-                <ShoppingBagIcon className="h-6 w-6" />
-              </Button>
-            </Stack>
+          <Stack className="space-x-3">
+            <Button variant="contained">Sign Up</Button>
+            <Button variant="contained" size="small">
+              <ShoppingBagIcon className="h-8 w-8" />
+            </Button>
           </Stack>
         </Stack>
         {children}

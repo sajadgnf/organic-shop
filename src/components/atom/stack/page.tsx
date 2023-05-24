@@ -9,23 +9,21 @@ type PropsType = {
 
 const tagMap = {
   div: "div",
-  header: "header",
-  footer: "footer",
-  article: "article",
   form: "form",
+  footer: "footer",
+  header: "header",
   section: "section",
+  article: "article",
 }
 
 const Stack = ({ children, variant = "div", className, ...props }: PropsType) => {
   const Tag: any = tagMap[variant] || "div"
 
-  const priorityClassName = className
-    ?.split(" ")
-    .map((item) => (item.includes("items-") ? `!${item}` : item))
-    .join(" ")
+  const priorityClassName = className?.split(" ")
+  if (!priorityClassName?.find((item) => item.startsWith("items-"))) priorityClassName?.push("items-center")
 
   return (
-    <Tag className={`flex justify-center items-center ${priorityClassName}`} role="div" {...props}>
+    <Tag className={`flex justify-center ${priorityClassName?.join(" ")}`} role="div" {...props}>
       {children}
     </Tag>
   )

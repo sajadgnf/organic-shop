@@ -1,15 +1,15 @@
 import React, { ReactElement } from "react"
 
 type PropsType = {
-  children: string | ReactElement
   className?: string
+  children: string | ReactElement
   size?: "small" | "medium" | "large"
   variant?: "text" | "outlined" | "contained"
 }
 
 const Button = ({ children, className = "font-roboto", size = "medium", variant = "text", ...props }: PropsType) => {
-  const small = size === "small" && "min-w-8 h-8 px-3 "
-  const medium = size === "medium" && "min-w-32 h-8 text-lg px-5 "
+  const small = size === "small" && "min-w-8 h-12 px-3"
+  const medium = size === "medium" && "min-w-32 h-12 text-lg px-10 "
   const large = size === "large" && "min-w-72 h-20 text-4xl px-16 "
 
   const text = variant === "text" && "hover:bg-primary-50 active:bg-primary-100"
