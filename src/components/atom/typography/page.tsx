@@ -4,6 +4,7 @@ type PropsType = {
   children: string | ReactElement
   className?: string
   variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p"
+  component?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p"
 }
 
 const tagMap = {
@@ -16,7 +17,7 @@ const tagMap = {
   p: "p",
 }
 
-const Typography = ({ children, variant = "p", className, ...props }: PropsType) => {
+const Typography = ({ children, variant = "p", component = "p", className, ...props }: PropsType) => {
   const Tag: any = tagMap[variant] || "p"
 
   const font = () => {
@@ -29,6 +30,7 @@ const Typography = ({ children, variant = "p", className, ...props }: PropsType)
       h6: "text-2xl font-inika",
       p: "text-base font-roboto",
     }
+    if (component in obj) return obj[component]
     if (variant in obj) return obj[variant]
   }
 

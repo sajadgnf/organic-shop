@@ -29,41 +29,41 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`min-h-screen ${inika.variable} ${roboto.variable}`}>
         <Stack
           variant="header"
-          className="pt-3.5 px-28 bg-[url('/images/header-img.svg')] bg-cover bg-no-repeat bg-center h-screen items-start"
+          className="bg-[url('/images/header-img.svg')] bg-cover bg-no-repeat bg-center h-screen flex-col items-start font-inika pt-3.5 px-28"
         >
-          <Stack className="justify-between w-[100%]">
+          <Stack className="justify-between w-full">
             <Stack className="space-x-10">
               <Stack variant="section">
                 <img src="./images/orange.svg" />
-                <Typography variant="h1" className="header-title !text-4xl">
+                <Typography variant="h1" component="h4" className="header-title">
                   rganic shop
                 </Typography>
               </Stack>
 
-              <Stack variant="section" className="space-x-10">
-                <Link href="" className="font-inika font-normal	text-2xl">
-                  Home
-                </Link>
-                <Link href="" className="font-inika font-normal	text-2xl">
-                  Shop
-                </Link>
-                <Link href="" className="font-inika font-normal	text-2xl">
-                  Contact
-                </Link>
-                <Link href="" className="font-inika font-normal	text-2xl">
-                  Blog
-                </Link>
+              <Stack variant="section" className="space-x-10 text-2xl">
+                <Link href="">Home</Link>
+                <Link href="">Shop</Link>
+                <Link href="">Contact</Link>
+                <Link href="">Blog</Link>
               </Stack>
             </Stack>
 
             <Stack className="space-x-3">
-              <Button variant="contained" className="font-inika ">
-                Sign Up
-              </Button>
+              <Button variant="contained">Sign Up</Button>
               <Button variant="contained" size="small">
-                <ShoppingBagIcon className="h-6 w-6" />
+                <ShoppingBagIcon className="h-8 w-8" />
               </Button>
             </Stack>
+          </Stack>
+
+          <Stack className="flex-1 flex-col items-start space-y-5 w-[40%]">
+            <Typography component="h3" className="font-bold">
+              Here are
+            </Typography>
+            <Typography component="h5">Organic products from the heart of nature</Typography>
+            <Button variant="contained" size="large">
+              Shop Now
+            </Button>
           </Stack>
         </Stack>
         {children}
