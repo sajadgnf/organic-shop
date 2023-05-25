@@ -4,6 +4,7 @@ import Stack from "@atom/stack/page"
 import Button from "@atom/button/page"
 import { Inika, Roboto } from "next/font/google"
 import { ShoppingBagIcon } from "@heroicons/react/24/solid"
+import Typography from "@atom/typography/page"
 
 const inika = Inika({
   subsets: ["latin"],
@@ -52,6 +53,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Button variant="contained">Sign Up</Button>
             <Button variant="contained" size="small">
               <ShoppingBagIcon className="h-8 w-8" />
+            </Button>
+          </Stack>
+
+          <Stack className="flex-1 flex-col items-start space-y-5 w-[40%]">
+            <Typography component="h3" className="font-bold">
+              Here are
+            </Typography>
+            <Typography component="h5">Organic products from the heart of nature</Typography>
+            <Button variant="contained" size="large">
+              Shop Now
             </Button>
           </Stack>
         </Stack>
