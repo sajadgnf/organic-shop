@@ -10,6 +10,7 @@ module.exports = {
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       spacing: {
+        28: "80px",
         72: "19rem",
         84: "21rem",
         96: "24rem",
@@ -26,6 +27,7 @@ module.exports = {
             100: "#FDBD43",
             200: "#F0B040",
             300: "#dd9b27",
+            400: "#FDA228",
           },
         },
       },
