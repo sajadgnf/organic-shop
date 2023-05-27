@@ -23,6 +23,7 @@ body {
 .header-link {
   position: relative;
 }
+
 .header-link::after {
   content: "";
   left: 0;
