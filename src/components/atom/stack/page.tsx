@@ -10,8 +10,8 @@ type PropsType = {
 const tagMap = {
   div: "div",
   form: "form",
-  footer: "footer",
   header: "header",
+  footer: "footer",
   section: "section",
   article: "article",
 }
@@ -23,7 +23,7 @@ const Stack = ({ children, variant = "div", className, ...props }: PropsType) =>
   if (!priorityClassName?.find((item) => item.startsWith("items-"))) priorityClassName?.push("items-center")
 
   return (
-    <Tag className={`flex justify-center ${priorityClassName?.join(" ")}`} role="div" {...props}>
+    <Tag className={`flex justify-center transform ${priorityClassName?.join(" ")}`} role="div" {...props}>
       {children}
     </Tag>
   )
