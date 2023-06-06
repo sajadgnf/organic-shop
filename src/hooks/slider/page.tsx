@@ -20,12 +20,14 @@ const Slider = ({ slides }: { slides: Slides }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   return (
-    <Stack className=" transition ease-out relative">
+    <Stack className="relative overflow-hidden">
       {slides.map((img, i) => (
         <Stack
           key={img.path + i}
           style={{ background: `url(${img.path}) no-repeat center`, backgroundSize: "cover" }}
-          className={`h-screen w-screen flex-col items-start font-inika px-28 ${i === currentSlide ? "flex" : "hidden"}`}
+          className={`h-screen flex-col items-start font-inika px-28 transition-all ease-out ${
+            i === currentSlide ? "visible w-screen " : "invisible w-0 px-0"
+          }`}
         >
           {img.content}
 
