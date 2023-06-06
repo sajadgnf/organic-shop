@@ -11,7 +11,7 @@ const HeaderLink = () => {
   const segment = useSelectedLayoutSegment()
 
   return (
-    <Stack className="justify-between w-full fixed top-0 px-28">
+    <Stack className="justify-between w-full fixed top-0 px-28 z-10">
       <Stack className="space-x-10">
         <Link href="/">
           <img src="./images/logo.svg" alt="organic shop لوگوی شاپ میباشد" />

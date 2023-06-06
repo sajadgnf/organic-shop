@@ -1,32 +1,38 @@
 "use client"
 
 import Stack from "@atom/stack/page"
-import React, { ReactElement, ReactNode, useState } from "react"
+import Dots from "@hooks/slider/dots"
+import Arrows from "@hooks/slider/arrows"
+import React, { Dispatch, ReactElement, ReactNode, SetStateAction, useState } from "react"
 
-type PropsType = {
-  images: {
-    path: string
-    content?: ReactElement | ReactNode | string
-  }[]
+export type Slides = {
+  path: string
+  content?: ReactElement | ReactNode | string
+}[]
+
+export type SliderTypes = {
+  slides: Slides
+  currentSlide: number
+  setCurrentSlide: Dispatch<SetStateAction<number>>
 }
 
-const Slider = ({ images }: PropsType) => {
-  const [slide, setSlide] = useState(0)
+const Slider = ({ slides }: { slides: Slides }) => {
+  const [currentSlide, setCurrentSlide] = useState(0)
 
   return (
-    <Stack className="overflow-hidden relative transition ease-out">
-      {images.map((img, i) => (
+    <Stack className=" transition ease-out relative">
+      {slides.map((img, i) => (
         <Stack
           key={img.path + i}
-          className={`bg-[url('${
-            img.path
-          }')] bg-cover bg-no-repeat bg-center h-screen w-screen flex-col items-start font-inika px-28 ${
-            i === slide ? "flex" : "hidden"
-          }`}
+          style={{ background: `url(${img.path}) no-repeat center`, backgroundSize: "cover" }}
+          className={`h-screen w-screen flex-col items-start font-inika px-28 ${i === currentSlide ? "flex" : "hidden"}`}
         >
           {img.content}
+
+          <Dots slides={slides} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
         </Stack>
       ))}
+      <Arrows slides={slides} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
     </Stack>
   )
 }
