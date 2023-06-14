@@ -24,6 +24,7 @@
       "@modules/*": ["./src/components/modules/*"],
       "@organisms/*": ["./src/components/organisms/*"],
       "@components/*": ["./src/components/*"],
+      "@hooks/*": ["./src/hooks/*"],
       "@/*": ["./src/*"]
     }
   },
