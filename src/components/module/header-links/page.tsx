@@ -6,18 +6,19 @@ import Stack from "@atom/stack/page"
 import Button from "@atom/button/page"
 import { useSelectedLayoutSegment } from "next/navigation"
 import { ShoppingBagIcon } from "@heroicons/react/24/solid"
+import Image from "next/image"
 
 const HeaderLink = () => {
   const segment = useSelectedLayoutSegment()
 
   return (
-    <Stack className="justify-between w-full fixed top-0 px-28 z-10">
+    <Stack className="justify-between fixed top-0 z-10 bg-white w-full px-28 shadow-lg">
       <Stack className="space-x-10">
         <Link href="/">
-          <img src="./images/logo.svg" alt="organic shop لوگوی شاپ میباشد" />
+          <Image src="./images/logo.svg" alt="organic shop logo" width={220} height={150} />
         </Link>
 
-        <Stack variant="section" className="space-x-10 text-2xl">
+        <Stack variant="section" className="space-x-10 text-xl">
           <Link className={!segment ? "header-link" : ""} href="/">
             Home
           </Link>

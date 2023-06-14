@@ -5,12 +5,13 @@ type PropsType = {
   style?: string | {}
   onClick?: MouseEventHandler<HTMLButtonElement>
   children: ReactElement | ReactNode | string | number
-  variant?: "div" | "header" | "footer" | "article" | "form" | "section"
+  variant?: "div" | "header" | "footer" | "article" | "form" | "section" | "main"
 }
 
 const tagMap = {
   div: "div",
   form: "form",
+  main: "main",
   header: "header",
   footer: "footer",
   section: "section",

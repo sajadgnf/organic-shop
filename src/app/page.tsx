@@ -7,7 +7,7 @@ const slides = [
   {
     path: "/images/slide1.svg",
     content: (
-      <Stack className="flex-1 flex-col space-y-5 w-[40%] items-start">
+      <Stack className="flex-1 flex-col space-y-5 w-[40%] p-28 mr-auto items-start">
         <Typography component="h3" className="font-bold">
           Here are
         </Typography>
@@ -21,7 +21,7 @@ const slides = [
   {
     path: "/images/slide2.svg",
     content: (
-      <Stack className="flex-1 flex-col space-y-5 w-[40%] items-start">
+      <Stack className="flex-1 flex-col space-y-5 w-[40%] p-28 mr-auto items-start">
         <Typography component="h3" className="font-bold">
           Here are
         </Typography>
@@ -35,7 +35,7 @@ const slides = [
   {
     path: "/images/logo.svg",
     content: (
-      <Stack className="flex-1 flex-col space-y-5 w-[40%] items-start">
+      <Stack className="flex-1 flex-col space-y-5 w-[40%] p-28 mr-auto items-start">
         <Typography component="h3" className="font-bold">
           Here are
         </Typography>
@@ -50,9 +50,9 @@ const slides = [
 
 function Home() {
   return (
-    <main>
+    <Stack variant="main" className="mt-28">
       <Slider slides={slides} />
-    </main>
+    </Stack>
   )
 }
 

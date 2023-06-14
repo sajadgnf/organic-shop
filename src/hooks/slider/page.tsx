@@ -25,7 +25,7 @@ const Slider = ({ slides }: { slides: Slides }) => {
         <Stack
           key={img.path + i}
           style={{ background: `url(${img.path}) no-repeat center`, backgroundSize: "cover" }}
-          className={`h-screen flex-col items-start font-inika px-28 transition-all ease-out ${
+          className={` flex-col font-inika transition-all ease-out h-[560px] ${
             i === currentSlide ? "visible w-screen " : "invisible w-0 px-0"
           }`}
         >
