@@ -5,7 +5,7 @@ import { SliderTypes } from "@hooks/slider/page"
 
 const Dots = ({ slides, currentSlide, setCurrentSlide }: SliderTypes) => {
   return (
-    <Stack className="space-x-2 mx-auto mb-6">
+    <Stack className="space-x-2 absolute bottom-3 mx-auto">
       {slides.map((_, i) => (
         <Button
           key={i}

@@ -4,7 +4,7 @@ type PropsType = {
   className?: string
   style?: string | {}
   onClick?: MouseEventHandler<HTMLButtonElement>
-  children: ReactElement | ReactNode | string | number
+  children?: ReactElement | ReactNode | string | number
   variant?: "div" | "header" | "footer" | "article" | "form" | "section" | "main"
 }
 

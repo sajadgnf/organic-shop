@@ -2,11 +2,11 @@
 
 import React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import Stack from "@atom/stack/page"
 import Button from "@atom/button/page"
 import { useSelectedLayoutSegment } from "next/navigation"
 import { ShoppingBagIcon } from "@heroicons/react/24/solid"
-import Image from "next/image"
 
 const HeaderLink = () => {
   const segment = useSelectedLayoutSegment()
