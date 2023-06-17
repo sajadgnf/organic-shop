@@ -34,17 +34,6 @@ const slides = [
   },
   {
     path: "/images/logo.svg",
-    content: (
-      <Stack className="flex-1 flex-col space-y-5 w-[40%] p-28 mr-auto items-start">
-        <Typography component="h3" className="font-bold">
-          Here are
-        </Typography>
-        <Typography component="h5">Organic products from the heart of nature</Typography>
-        <Button variant="contained" size="large">
-          Shop Now
-        </Button>
-      </Stack>
-    ),
   },
 ]
 
