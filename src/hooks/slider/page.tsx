@@ -43,6 +43,30 @@ const Slider = ({ slides }: { slides: string[] }) => {
     }
   }, [])
 
+  useEffect(() => {
+    let interval: NodeJS.Timeout
+    const startInterval = () => {
+      interval = setInterval(() => {
+        setCurrentSlide((currentSlide) => (currentSlide !== slides.length - 1 ? ++currentSlide : (currentSlide = 0)))
+      }, 5000)
+    }
+
+    const stopInterval = () => {
+      clearInterval(interval)
+    }
+
+    startInterval()
+
+    sliderContainer.current?.addEventListener("mouseover", stopInterval)
+    sliderContainer.current?.addEventListener("mouseout", startInterval)
+
+    return () => {
+      clearInterval(interval)
+      sliderContainer.current?.removeEventListener("mouseover", stopInterval)
+      sliderContainer.current?.removeEventListener("mouseout", startInterval)
+    }
+  }, [])
+
   return (
     <div ref={sliderContainer} className="display-flex relative overflow-hidden">
       {slides.map((img, i) => (
