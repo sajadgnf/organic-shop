@@ -6,7 +6,6 @@ import Arrows from "@hooks/slider/arrows"
 import React, { Dispatch, SetStateAction, useEffect, useState, useRef } from "react"
 
 export type SliderTypes = {
-  isHovered?: boolean
   slides: string[]
   currentSlide: number
   setCurrentSlide: Dispatch<SetStateAction<number>>
@@ -15,12 +14,10 @@ export type SliderTypes = {
 const Slider = ({ slides }: { slides: string[] }) => {
   const sliderContainer = useRef<HTMLDivElement>(null)
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {
     let interval: NodeJS.Timeout
     const startInterval = () => {
-      setIsHovered(false)
       interval = setInterval(() => {
         setCurrentSlide((currentSlide) => (currentSlide !== slides.length - 1 ? ++currentSlide : (currentSlide = 0)))
       }, 5000)
@@ -28,7 +25,6 @@ const Slider = ({ slides }: { slides: string[] }) => {
 
     const stopInterval = () => {
       clearInterval(interval)
-      setIsHovered(true)
     }
 
     startInterval()
@@ -44,7 +40,7 @@ const Slider = ({ slides }: { slides: string[] }) => {
   }, [])
 
   return (
-    <div ref={sliderContainer} className="display-flex relative overflow-hidden">
+    <div ref={sliderContainer} className="slider display-flex relative overflow-hidden">
       {slides.map((img, i) => (
         <Stack
           key={img + i}
@@ -53,7 +49,7 @@ const Slider = ({ slides }: { slides: string[] }) => {
         ></Stack>
       ))}
       <Dots slides={slides} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
-      <Arrows slides={slides} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} isHovered={isHovered} />
+      <Arrows slides={slides} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
     </div>
   )
 }
