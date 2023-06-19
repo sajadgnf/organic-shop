@@ -40,12 +40,12 @@ const Slider = ({ slides }: { slides: string[] }) => {
   }, [])
 
   return (
-    <div ref={sliderContainer} className="slider display-flex relative overflow-hidden">
+    <div ref={sliderContainer} className="slider w-full display-flex relative overflow-hidden">
       {slides.map((img, i) => (
         <Stack
           key={img + i}
           style={{ background: `url(${img}) no-repeat center`, backgroundSize: "cover" }}
-          className={`transition-all ease-out h-[620px] ${i === currentSlide ? "visible w-screen " : "invisible w-0 px-0"}`}
+          className={`transition-all ease-out h-[620px] ${i === currentSlide ? "visible w-full " : "invisible w-0 px-0"}`}
         ></Stack>
       ))}
       <Dots slides={slides} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
