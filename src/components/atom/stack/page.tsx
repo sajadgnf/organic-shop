@@ -1,29 +1,37 @@
-import React, { ReactElement, ReactNode } from "react"
+import React, { MouseEventHandler, ReactElement, ReactNode } from "react"
 
 type PropsType = {
-  spacing?: number
   className?: string
-  children: ReactElement | ReactNode | string | number
-  variant?: "div" | "header" | "footer" | "article" | "form" | "section"
+  style?: string | {}
+  onClick?: MouseEventHandler<HTMLButtonElement>
+  children?: ReactElement | ReactNode | string | number
+  variant?: "div" | "header" | "footer" | "article" | "form" | "section" | "main"
 }
 
 const tagMap = {
   div: "div",
   form: "form",
-  footer: "footer",
+  main: "main",
   header: "header",
+  footer: "footer",
   section: "section",
   article: "article",
 }
 
-const Stack = ({ children, variant = "div", className, ...props }: PropsType) => {
+const Stack = ({ children, variant = "div", style, className, onClick, ...props }: PropsType) => {
   const Tag: any = tagMap[variant] || "div"
 
   const priorityClassName = className?.split(" ")
   if (!priorityClassName?.find((item) => item.startsWith("items-"))) priorityClassName?.push("items-center")
 
   return (
-    <Tag className={`flex justify-center ${priorityClassName?.join(" ")}`} role="div" {...props}>
+    <Tag
+      className={`flex justify-center transform ${priorityClassName?.join(" ")}`}
+      role="div"
+      style={style}
+      onClick={onClick}
+      {...props}
+    >
       {children}
     </Tag>
   )

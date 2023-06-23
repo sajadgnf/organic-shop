@@ -21,9 +21,10 @@
     ],
     "paths": {
       "@atom/*": ["./src/components/atom/*"],
-      "@modules/*": ["./src/components/modules/*"],
-      "@organisms/*": ["./src/components/organisms/*"],
+      "@module/*": ["./src/components/module/*"],
+      "@organism/*": ["./src/components/organism/*"],
       "@components/*": ["./src/components/*"],
+      "@hooks/*": ["./src/hooks/*"],
       "@/*": ["./src/*"]
     }
   },
