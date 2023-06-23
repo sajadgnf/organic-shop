@@ -9,9 +9,9 @@ function Home() {
     <Stack variant="main" className="mt-28 flex-col space-y-28">
       <Slider slides={slides} />
 
-      <Stack className="container mx-auto flex-col items-start space-y-28">
+      <Stack className="container mx-auto flex-col items-start space-y-28 transition-all ease-out ">
         <Categories />
-      </Stack>
+       </Stack>
     </Stack>
   )
 }

@@ -8,11 +8,11 @@ import Button from "@atom/button/page"
 import { useSelectedLayoutSegment } from "next/navigation"
 import { ShoppingBagIcon } from "@heroicons/react/24/solid"
 
-const HeaderLink = () => {
+const Head = () => {
   const segment = useSelectedLayoutSegment()
 
   return (
-    <Stack className="justify-between fixed top-0 left-0 right-0 px-28 z-10 bg-white w-full shadow-lg">
+    <Stack className="justify-between fixed top-0 left-0 right-0 px-2 lg:px-28 z-10 bg-white w-full shadow-lg">
       <Stack className="space-x-10">
         <Link href="/">
           <Image src="./images/logo.svg" alt="organic shop logo" width={220} height={150} />
@@ -44,4 +44,4 @@ const HeaderLink = () => {
   )
 }
 
-export default HeaderLink
+export default Head

@@ -45,7 +45,9 @@ const Slider = ({ slides }: { slides: string[] }) => {
         <Stack
           key={img + i}
           style={{ background: `url(${img}) no-repeat center`, backgroundSize: "cover" }}
-          className={`transition-all ease-out h-[620px] ${i === currentSlide ? "visible w-full " : "invisible w-0 px-0"}`}
+          className={`transition-all ease-out h-[620px] max-w-[1800px] ${
+            i === currentSlide ? "visible w-full " : "invisible w-0 px-0"
+          }`}
         ></Stack>
       ))}
       <Dots slides={slides} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
