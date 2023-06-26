@@ -40,7 +40,7 @@ const Slider = ({ slides }: { slides: string[] }) => {
   }, [])
 
   return (
-    <div ref={sliderContainer} className="slider w-full display-flex relative overflow-hidden">
+    <div test-id="slider" ref={sliderContainer} className="slider w-full display-flex relative overflow-hidden">
       {slides.map((img, i) => (
         <Stack
           key={img + i}
