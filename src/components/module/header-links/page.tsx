@@ -35,7 +35,7 @@ const HeaderLink = () => {
 
       <Stack className="space-x-3">
         <Button variant="contained">Sign Up</Button>
-        <Button variant="contained" size="small">
+        <Button data-testid="shopping-button" variant="contained" size="small">
           <ShoppingBagIcon className="h-8 w-8" />
         </Button>
       </Stack>
