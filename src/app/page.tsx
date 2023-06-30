@@ -11,7 +11,7 @@ function Home() {
 
       <Stack className="container mx-auto flex-col items-start space-y-28 transition-all ease-out ">
         <Categories />
-       </Stack>
+      </Stack>
     </Stack>
   )
 }
