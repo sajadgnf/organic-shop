@@ -1,21 +1,21 @@
+import React from "react"
 import Typography from "@atom/typography/page"
-import { render, screen } from "@testing-library/react"
+import { render } from "@testing-library/react"
 
-it("renders typography", () => {
-  const text = "some text"
-  render(<Typography>{text}</Typography>)
+test("renders the Typography component correctly", () => {
+  const text = "Hello, World!"
 
-  const typography = screen.getByTestId("typography")
-  expect(typography).toBeInTheDocument()
-  expect(typography).toHaveTextContent(text)
-})
+  // Render the component with variant and component props
+  const { getByText } = render(
+    <Typography variant="h1" component="h2" className="my-typography">
+      {text}
+    </Typography>
+  )
 
-it("render variant h3", () => {
-  const text = "some text"
-  render(<Typography variant="h3">{text}</Typography>)
-
-  const typography = screen.getByRole("heading")
-  expect(typography).toBeInTheDocument()
-  expect(typography).toHaveTextContent(text)
-  expect(typography).toHaveStyle("font-size: 1.17em")
+  // Assert that the Typography component is rendered correctly
+  const typographyElement = getByText(text)
+  expect(typographyElement).toBeInTheDocument()
+  expect(typographyElement.tagName).toBe("H2")
+  expect(typographyElement).toHaveClass("my-typography")
+  expect(typographyElement).toHaveClass("text-6xl font-inika")
 })

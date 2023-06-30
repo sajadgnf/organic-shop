@@ -1,18 +1,29 @@
 import Button from "@atom/button/page"
-import { render, screen } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 
 describe("button component", () => {
+  const mockOnClick = jest.fn()
+
   test("renders button correctly by text variant", () => {
     const text = "submit"
-    render(<Button variant="text">{text}</Button>)
+    render(
+      <Button onClick={mockOnClick} variant="text" className="classes">
+        {text}
+      </Button>
+    )
 
     const button = screen.getByRole("button")
     expect(button).toBeInTheDocument()
     expect(button).toHaveTextContent(text)
+    expect(button).toHaveClass("classes")
     expect(button).toHaveClass("hover:bg-primary-50 active:bg-primary-100")
+
+    // Simulate a click event on the Stack component
+    fireEvent.click(button)
+    expect(mockOnClick).toHaveBeenCalled()
   })
 
-  test("renders button correctly by text variant", () => {
+  test("renders button correctly by circle variant", () => {
     const text = "submit"
     render(<Button variant="circle">{text}</Button>)
 

@@ -35,7 +35,7 @@ const Typography = ({ children, variant = "p", component, className, ...props }:
   }
 
   return (
-    <Tag data-testid="typography" className={`${className} ${font()}`} {...props}>
+    <Tag className={`${className} ${font()}`} {...props}>
       {children}
     </Tag>
   )
