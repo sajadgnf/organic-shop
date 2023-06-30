@@ -1,6 +1,6 @@
 import "./globals.css"
 import { Inika, Roboto } from "next/font/google"
-import HeaderLink from "@components/module/header-links/page"
+import Head from "@components/module/header-links/page"
 
 const inika = Inika({
   subsets: ["latin"],
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`min-h-screen ${inika.variable} ${roboto.variable}`}>
-        <HeaderLink />
+        <Head />
         {children}
       </body>
     </html>

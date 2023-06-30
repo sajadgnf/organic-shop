@@ -2,22 +2,23 @@
 
 import React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import Stack from "@atom/stack/page"
 import Button from "@atom/button/page"
 import { useSelectedLayoutSegment } from "next/navigation"
 import { ShoppingBagIcon } from "@heroicons/react/24/solid"
 
-const HeaderLink = () => {
+const Head = () => {
   const segment = useSelectedLayoutSegment()
 
   return (
-    <Stack className="justify-between w-full fixed top-0 px-28">
+    <Stack className="justify-between fixed top-0 left-0 right-0 px-2 lg:px-28 z-10 bg-white w-full shadow-lg">
       <Stack className="space-x-10">
         <Link href="/">
-          <img src="./images/logo.svg" alt="organic shop لوگوی شاپ میباشد" />
+          <Image src="./images/logo.svg" alt="organic shop logo" width={220} height={150} />
         </Link>
 
-        <Stack variant="section" className="space-x-10 text-2xl">
+        <Stack variant="section" className="space-x-10 text-xl">
           <Link className={!segment ? "header-link" : ""} href="/">
             Home
           </Link>
@@ -43,4 +44,4 @@ const HeaderLink = () => {
   )
 }
 
-export default HeaderLink
+export default Head

@@ -20,6 +20,10 @@ body {
   color: var(--foreground);
 }
 
+.display-flex {
+  @apply flex justify-center items-center;
+}
+
 .header-link {
   position: relative;
 }
@@ -27,13 +31,17 @@ body {
 .header-link::after {
   content: "";
   left: 0;
-  width: 40px;
+  width: 50%;
   bottom: -3px;
   position: absolute;
   border-radius: 100px;
   border-bottom: 3px solid theme("colors.primary.400");
 }
 
-.display-flex {
-  @apply flex justify-center items-center;
+.slider-arrow {
+  opacity: 0;
+}
+
+.slider:hover .slider-arrow {
+  opacity: 1;
 }
