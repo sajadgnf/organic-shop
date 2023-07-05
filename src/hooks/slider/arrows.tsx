@@ -1,6 +1,6 @@
 import React from "react"
-import Stack from "@atom/stack/page"
-import { SliderTypes } from "@hooks/slider/page"
+import Stack from "@atom/stack"
+import { SliderTypes } from "@hooks/slider"
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"
 
 const Arrows = ({ currentSlide, setCurrentSlide, slides }: SliderTypes) => {

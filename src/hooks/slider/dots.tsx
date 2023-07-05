@@ -1,7 +1,7 @@
 import React from "react"
-import Stack from "@atom/stack/page"
-import Button from "@atom/button/page"
-import { SliderTypes } from "@hooks/slider/page"
+import Stack from "@atom/stack"
+import Button from "@atom/button"
+import { SliderTypes } from "@hooks/slider"
 
 const Dots = ({ slides, currentSlide, setCurrentSlide }: SliderTypes) => {
   return (
@@ -11,7 +11,7 @@ const Dots = ({ slides, currentSlide, setCurrentSlide }: SliderTypes) => {
           data-testid={`dot-${i}`}
           key={i}
           variant="circle"
-          className={`${i === currentSlide && "!bg-primary-200"}`}
+          className={`${i === currentSlide && "!bg-primary-dark"}`}
           onClick={() => setCurrentSlide(i)}
         ></Button>
       ))}

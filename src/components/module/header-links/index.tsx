@@ -3,8 +3,8 @@
 import React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import Stack from "@atom/stack/page"
-import Button from "@atom/button/page"
+import Stack from "@atom/stack"
+import Button from "@atom/button"
 import { useSelectedLayoutSegment } from "next/navigation"
 import { ShoppingBagIcon } from "@heroicons/react/24/solid"
 
@@ -19,16 +19,16 @@ const Head = () => {
         </Link>
 
         <Stack variant="section" className="space-x-10 text-xl">
-          <Link className={!segment ? "header-link" : ""} href="/">
+          <Link className={`header-link ${!segment ? "after:w-[50%]" : ""}`} href="/">
             Home
           </Link>
-          <Link className={segment === "store" ? "header-link" : ""} href="store">
+          <Link className={`header-link ${segment === "store" ? "after:w-[50%]" : ""}`} href="store">
             Shop
           </Link>
-          <Link className={segment === "contact" ? "header-link" : ""} href="contact">
+          <Link className={`header-link ${segment === "contact" ? "after:w-[50%]" : ""}`} href="contact">
             Contact
           </Link>
-          <Link className={segment === "blog" ? "header-link" : ""} href="blog">
+          <Link className={`header-link ${segment === "blog" ? "after:w-[50%]" : ""}`} href="blog">
             Blog
           </Link>
         </Stack>

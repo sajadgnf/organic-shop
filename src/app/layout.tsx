@@ -1,6 +1,6 @@
 import "./globals.css"
+import Head from "@module/header-links"
 import { Inika, Roboto } from "next/font/google"
-import Head from "@components/module/header-links/page"
 
 const inika = Inika({
   subsets: ["latin"],

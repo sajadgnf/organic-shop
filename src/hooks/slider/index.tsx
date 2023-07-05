@@ -1,6 +1,6 @@
 "use client"
 
-import Stack from "@atom/stack/page"
+import Stack from "@atom/stack"
 import Dots from "@hooks/slider/dots"
 import Arrows from "@hooks/slider/arrows"
 import React, { Dispatch, SetStateAction, useEffect, useState, useRef } from "react"
@@ -46,9 +46,8 @@ const Slider = ({ slides }: { slides: string[] }) => {
           key={img + i}
           data-testid={`slide-${img}`}
           style={{ background: `url(${img}) no-repeat center`, backgroundSize: "cover" }}
-          className={`transition-all ease-out h-[620px] max-w-[1800px] ${
-            i === currentSlide ? "visible w-full " : "invisible w-0"
-          }`}
+          className={`transition-all ease-out h-[620px] max-w-[1800px] ${i === currentSlide ? "visible w-full " : "invisible w-0"
+            }`}
         ></Stack>
       ))}
       <Dots slides={slides} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />

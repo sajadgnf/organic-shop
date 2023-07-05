@@ -28,7 +28,7 @@ module.exports = {
       },
       spacing: {
         28: "80px",
-        72: "19rem",
+        72: "133px",
         84: "21rem",
         96: "24rem",
       },
@@ -40,11 +40,9 @@ module.exports = {
         ...defaultColors,
         ...{
           primary: {
-            50: "#FAF1E6",
-            100: "#FDBD43",
-            200: "#F0B040",
-            300: "#dd9b27",
-            400: "#FDA228",
+            light: "#FAF1E6",
+            main: "#FDBD43",
+            dark: "#E6A32F",
           },
         },
       },

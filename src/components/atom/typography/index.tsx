@@ -2,12 +2,13 @@ import React, { ReactElement } from "react"
 
 type PropsType = {
   className?: string
-  children: string | ReactElement
-  variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p"
+  children: any
   component?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p"
+  variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "caption"
 }
 
 const tagMap = {
+  caption: "p",
   h1: "h1",
   h2: "h2",
   h3: "h3",
@@ -29,8 +30,10 @@ const Typography = ({ children, variant = "p", component, className, ...props }:
       h5: "text-3xl font-inika",
       h6: "text-2xl font-inika",
       p: "text-base font-roboto",
+      caption: "text-sm font-roboto",
     }
     if (component && component in obj) return obj[component]
+    if (variant === "caption") return obj[variant]
     if (variant in obj) return obj[variant]
   }
 

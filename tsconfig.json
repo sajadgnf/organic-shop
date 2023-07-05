@@ -19,13 +19,15 @@
         "name": "next"
       }
     ],
+    "baseUrl": "./",
     "paths": {
       "@atom/*": ["./src/components/atom/*"],
       "@module/*": ["./src/components/module/*"],
       "@organism/*": ["./src/components/organism/*"],
       "@components/*": ["./src/components/*"],
       "@hooks/*": ["./src/hooks/*"],
-      "@/*": ["./src/*"]
+      "@src/*": ["./src/*"],
+      "@routes/*": ["./routes/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/atom/button/buton.test.js"],
