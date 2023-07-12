@@ -29,11 +29,11 @@ const CategoriesList = () => {
     <Stack className="justify-between w-full">
       {FAKE_DATA.map((category) => (
         <Link key={category.title} href={`${PRODUCTS}?category=${category.title}`}>
-          <Stack className="bg-primary-light pl-5 rounded-2xl overflow-hidden">
-            <Typography data-testid="category-title" variant="p" className="mt-12">
+          <Stack className="bg-primary-light justify-between pl-5 rounded-2xl overflow-hidden w-[265px] h-[190px]">
+            <Typography data-testid="category-title" variant="p" className="mt-12 text-[18px]">
               {category.title.toUpperCase()}
             </Typography>
-            <Image src={category.img} width={120} height={120} alt={category.title} />
+            <Image src={category.img} width={120} height={120} alt={category.title} className="flex-1" />
           </Stack>
         </Link>
       ))}

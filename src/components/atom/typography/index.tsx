@@ -19,7 +19,7 @@ const tagMap = {
 }
 
 const Typography = ({ children, variant = "p", component, className, ...props }: PropsType) => {
-  const Tag: any = tagMap[variant] || "p"
+  const Tag: any = component || tagMap[variant] || "p"
 
   const font = () => {
     const obj = {

@@ -70,7 +70,7 @@ describe("button component", () => {
     const button = screen.getByRole("button")
     expect(button).toBeInTheDocument()
     expect(button).toHaveTextContent(text)
-    expect(button).toHaveClass("min-w-32 h-12 text-lg px-10")
+    expect(button).toHaveClass("min-w-32 h-10 text-lg px-5")
   })
 
   test("renders button correctly by large size", () => {

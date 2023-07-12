@@ -4,27 +4,27 @@ import Stack from "@atom/stack"
 import { PRODUCTS } from "routes"
 import Typography from "@atom/typography"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
-import BestSellerProductList from "@organism/best-seller/list"
+import SpecialOfferList from "@organism/special-offer/list"
 
-const BestSellerProduct = () => {
+const SpecialOffer = () => {
   return (
     <Stack className="w-full flex-col space-y-10">
-      <Link href={`${PRODUCTS}?filter=best-seller`} className="w-full">
+      <Link href={`${PRODUCTS}?filter=special-offer`} className="w-full">
         <Stack className="items-center justify-between">
-          <Typography variant="h5">Our Best Seller Product</Typography>
+          <Typography variant="h5">Special Offers</Typography>
 
           <Stack className="items-end space-x-2">
             <Typography variant="h6" className="text-primary-dark">
-              See all product
+              See all
             </Typography>
             <ArrowRightIcon data-testid="arrow-icon" className="text-primary-dark w-6" />
           </Stack>
         </Stack>
       </Link>
 
-      <BestSellerProductList />
+      <SpecialOfferList />
     </Stack>
   )
 }
 
-export default BestSellerProduct
+export default SpecialOffer

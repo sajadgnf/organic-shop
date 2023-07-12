@@ -54,7 +54,7 @@ const FAKE_DATA = [
   },
 ]
 
-const BestSellerProductList = () => {
+const SpecialOfferList = () => {
   return (
     <Stack className="w-full overflow-auto space-x-5 justify-start px-1">
       {FAKE_DATA.map((data, i) => (
@@ -71,4 +71,4 @@ const BestSellerProductList = () => {
   )
 }
 
-export default BestSellerProductList
+export default SpecialOfferList
