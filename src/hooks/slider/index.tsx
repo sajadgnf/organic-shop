@@ -1,6 +1,6 @@
 "use client"
 
-import Stack from "@atom/stack/page"
+import Stack from "@atom/stack"
 import Dots from "@hooks/slider/dots"
 import Arrows from "@hooks/slider/arrows"
 import React, { Dispatch, SetStateAction, useEffect, useState, useRef } from "react"
@@ -12,7 +12,6 @@ export type SliderTypes = {
 }
 
 const Slider = ({ slides }: { slides: string[] }) => {
-  const sliderContainer = useRef<HTMLDivElement>(null)
   const [currentSlide, setCurrentSlide] = useState(0)
 
   useEffect(() => {
@@ -23,24 +22,15 @@ const Slider = ({ slides }: { slides: string[] }) => {
       }, 5000)
     }
 
-    const stopInterval = () => {
-      clearInterval(interval)
-    }
-
     startInterval()
-
-    sliderContainer.current?.addEventListener("mouseover", stopInterval)
-    sliderContainer.current?.addEventListener("mouseout", startInterval)
 
     return () => {
       clearInterval(interval)
-      sliderContainer.current?.removeEventListener("mouseover", stopInterval)
-      sliderContainer.current?.removeEventListener("mouseout", startInterval)
     }
   }, [])
 
   return (
-    <div data-testid="slider" ref={sliderContainer} className="slider w-full display-flex relative overflow-hidden">
+    <div data-testid="slider" className="slider w-full display-flex relative overflow-hidden">
       {slides.map((img, i) => (
         <Stack
           key={img + i}

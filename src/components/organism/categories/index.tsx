@@ -1,7 +1,7 @@
 import React from "react"
-import Stack from "@atom/stack/page"
-import CategoriesList from "./list/page"
-import Typography from "@atom/typography/page"
+import Stack from "@atom/stack"
+import Typography from "@atom/typography"
+import CategoriesList from "@organism/categories/list"
 
 const Categories = () => {
   return (

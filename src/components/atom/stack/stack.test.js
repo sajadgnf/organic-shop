@@ -1,5 +1,5 @@
-import Stack from "@atom/Stack/page"
-import { fireEvent, getByRole, render, screen } from "@testing-library/react"
+import Stack from "@atom/Stack"
+import { fireEvent, render } from "@testing-library/react"
 
 it("renders stack", () => {
   const mockOnClick = jest.fn()

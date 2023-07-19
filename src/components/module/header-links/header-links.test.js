@@ -1,6 +1,6 @@
 import React from "react"
+import Head from "@module/header-links"
 import { render } from "@testing-library/react"
-import Head from "@components/module/header-links/page"
 import { useSelectedLayoutSegment } from "next/navigation"
 
 jest.mock("next/navigation", () => ({
@@ -72,15 +72,15 @@ describe("Head component", () => {
     const { getByText } = render(<Head />)
 
     const shopLink = getByText("Shop")
-    expect(shopLink).toHaveClass("header-link")
+    expect(shopLink).toHaveClass("after:w-[50%]")
 
     const homeLink = getByText("Home")
-    expect(homeLink).not.toHaveClass("header-link")
+    expect(homeLink).not.toHaveClass("after:w-[50%]")
 
     const contactLink = getByText("Contact")
-    expect(contactLink).not.toHaveClass("header-link")
+    expect(contactLink).not.toHaveClass("after:w-[50%]")
 
     const blogLink = getByText("Blog")
-    expect(blogLink).not.toHaveClass("header-link")
+    expect(blogLink).not.toHaveClass("after:w-[50%]")
   })
 })

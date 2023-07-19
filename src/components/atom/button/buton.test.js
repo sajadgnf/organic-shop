@@ -1,4 +1,4 @@
-import Button from "@atom/button/page"
+import Button from "@atom/button"
 import { fireEvent, render, screen } from "@testing-library/react"
 
 describe("button component", () => {
@@ -16,7 +16,7 @@ describe("button component", () => {
     expect(button).toBeInTheDocument()
     expect(button).toHaveTextContent(text)
     expect(button).toHaveClass("classes")
-    expect(button).toHaveClass("hover:bg-primary-50 active:bg-primary-100")
+    expect(button).toHaveClass("hover:bg-primary-light ")
 
     // Simulate a click event on the Stack component
     fireEvent.click(button)
@@ -40,7 +40,7 @@ describe("button component", () => {
     const button = screen.getByRole("button")
     expect(button).toBeInTheDocument()
     expect(button).toHaveTextContent(text)
-    expect(button).toHaveClass("border hover:bg-primary-50 active:bg-primary-100")
+    expect(button).toHaveClass("border hover:bg-primary-light ")
   })
 
   test("renders button correctly by contained variant", () => {
@@ -50,7 +50,7 @@ describe("button component", () => {
     const button = screen.getByRole("button")
     expect(button).toBeInTheDocument()
     expect(button).toHaveTextContent(text)
-    expect(button).toHaveClass("bg-primary-100 hover:bg-primary-200 active:bg-primary-300")
+    expect(button).toHaveClass("bg-primary-main hover:bg-primary-dark")
   })
 
   test("renders button correctly by small size", () => {
@@ -70,7 +70,7 @@ describe("button component", () => {
     const button = screen.getByRole("button")
     expect(button).toBeInTheDocument()
     expect(button).toHaveTextContent(text)
-    expect(button).toHaveClass("min-w-32 h-12 text-lg px-10")
+    expect(button).toHaveClass("min-w-32 h-10 text-lg px-5")
   })
 
   test("renders button correctly by large size", () => {
@@ -94,6 +94,6 @@ describe("button component", () => {
     const button = screen.getByRole("button")
     expect(button).toBeInTheDocument()
     expect(button).toHaveTextContent(text)
-    expect(button).toHaveClass("min-w-72 h-20 text-4xl px-16 bg-primary-100 hover:bg-primary-200 active:bg-primary-300")
+    expect(button).toHaveClass("min-w-72 h-20 text-4xl px-16 bg-primary-main hover:bg-primary-dark ")
   })
 })

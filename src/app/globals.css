@@ -31,11 +31,13 @@ body {
 .header-link::after {
   content: "";
   left: 0;
-  width: 50%;
+  width: 0;
   bottom: -3px;
   position: absolute;
   border-radius: 100px;
-  border-bottom: 3px solid theme("colors.primary.400");
+  border-bottom: 3px solid theme("colors.primary.dark");
+  transform-origin: left;
+  transition: width 0.25s;
 }
 
 .slider-arrow {

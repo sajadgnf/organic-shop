@@ -1,4 +1,4 @@
-import Slider from "@hooks/slider/page"
+import Slider from "@hooks/slider"
 import { render, fireEvent, screen, act } from "@testing-library/react"
 
 describe("Slider component", () => {

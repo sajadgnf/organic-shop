@@ -1,5 +1,5 @@
 import React from "react"
-import Typography from "@atom/typography/page"
+import Typography from "@atom/typography"
 import { render } from "@testing-library/react"
 
 test("renders the Typography component correctly", () => {
