@@ -44,6 +44,9 @@ module.exports = {
             main: "#FDBD43",
             dark: "#E6A32F",
           },
+          secondary: {
+            main: "#E9EEF1",
+          },
         },
       },
       boxShadow: {

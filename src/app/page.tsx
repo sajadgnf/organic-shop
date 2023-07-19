@@ -3,6 +3,7 @@ import Slider from "@hooks/slider"
 import Categories from "@organism/categories"
 import SpecialOffer from "@organism/special-offer"
 import BestSellerProduct from "@organism/best-seller"
+import TopHomeBlog from "@organism/top-home-blog"
 
 const slides = ["/images/slide1.svg", "/images/slide2.svg", "/images/slide3.svg"]
 
@@ -15,6 +16,7 @@ function Home() {
         <Categories />
         <BestSellerProduct />
         <SpecialOffer />
+        <TopHomeBlog />
       </Stack>
     </Stack>
   )
