@@ -9,7 +9,7 @@ type PropsType = {
 }
 
 const Button = ({ children, className = "font-roboto", size = "medium", variant = "text", onClick, ...props }: PropsType) => {
-  const small = size === "small" && "min-w-8 h-12 px-3"
+  const small = size === "small" && "min-w-8 h-10 px-3"
   const medium = size === "medium" && "min-w-32 h-10 text-lg px-5"
   const large = size === "large" && "min-w-72 h-20 text-4xl px-16"
 

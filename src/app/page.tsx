@@ -16,8 +16,9 @@ function Home() {
         <Categories />
         <BestSellerProduct />
         <SpecialOffer />
-        <TopHomeBlog />
       </Stack>
+      
+        <TopHomeBlog />
     </Stack>
   )
 }
