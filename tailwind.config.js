@@ -45,11 +45,14 @@ module.exports = {
             dark: "#E6A32F",
           },
           secondary: {
+            light: "#F6F6F6",
             main: "#E9EEF1",
+            dark: "#d6d8da",
           },
         },
       },
       boxShadow: {
+        sm: "0px 1px 3px rgba(42, 42, 42, 0.15)",
         md: "0px 0.953125px 2.859375px rgba(42, 42, 42, 0.15)",
       },
     },

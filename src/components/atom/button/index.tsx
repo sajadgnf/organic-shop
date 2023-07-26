@@ -1,8 +1,8 @@
-import React, { MouseEventHandler, ReactElement } from "react"
+import React, { MouseEventHandler, ReactElement, ReactNode } from "react"
 
 type PropsType = {
   className?: string
-  children?: string | ReactElement
+  children?: string | ReactElement | ReactNode
   size?: "small" | "medium" | "large"
   onClick?: MouseEventHandler<HTMLButtonElement>
   variant?: "text" | "outlined" | "contained" | "circle"
