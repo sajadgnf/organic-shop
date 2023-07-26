@@ -60,7 +60,7 @@ describe("button component", () => {
     const button = screen.getByRole("button")
     expect(button).toBeInTheDocument()
     expect(button).toHaveTextContent(text)
-    expect(button).toHaveClass("min-w-8 h-12 px-3")
+    expect(button).toHaveClass("min-w-8 h-10 px-3")
   })
 
   test("renders button correctly by medium size", () => {

@@ -1,8 +1,12 @@
 import Stack from "@atom/stack"
 import Slider from "@hooks/slider"
 import Categories from "@organism/categories"
+import TopHomeBlog from "@organism/top-home-blog"
+import MidHomeBlog from "@organism/mid-home-blog"
 import SpecialOffer from "@organism/special-offer"
+import HomeComments from "@organism/home-comments"
 import BestSellerProduct from "@organism/best-seller"
+import BottomHomeBlog from "@organism/bottom-home-blog"
 
 const slides = ["/images/slide1.svg", "/images/slide2.svg", "/images/slide3.svg"]
 
@@ -16,6 +20,12 @@ function Home() {
         <BestSellerProduct />
         <SpecialOffer />
       </Stack>
+
+      <TopHomeBlog />
+      <MidHomeBlog />
+      <BottomHomeBlog />
+
+      <HomeComments/>
     </Stack>
   )
 }

@@ -23,14 +23,14 @@ const Typography = ({ children, variant = "p", component, className, ...props }:
 
   const font = () => {
     const obj = {
-      h1: "text-8xl font-inika",
-      h2: "text-6xl font-inika",
-      h3: "text-5xl font-inika",
-      h4: "text-4xl font-inika",
-      h5: "text-3xl font-inika",
-      h6: "text-2xl font-inika",
-      p: "text-base font-roboto",
-      caption: "text-sm font-roboto",
+      h1: "text-8xl font-inika", //96px
+      h2: "text-6xl font-inika", //60px
+      h3: "text-5xl font-inika", //48px
+      h4: "text-4xl font-inika", //36px
+      h5: "text-3xl font-inika", //30px
+      h6: "text-2xl font-inika", //24px
+      p: "text-base font-roboto", //16px
+      caption: "text-sm font-roboto", //14px
     }
     if (component && component in obj) return obj[component]
     if (variant === "caption") return obj[variant]
@@ -38,7 +38,7 @@ const Typography = ({ children, variant = "p", component, className, ...props }:
   }
 
   return (
-    <Tag className={`${className} ${font()}`} {...props}>
+    <Tag className={` ${className} ${font()}`} {...props}>
       {children}
     </Tag>
   )
