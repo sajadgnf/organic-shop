@@ -6,7 +6,6 @@ type PropsType = {
   size?: "small" | "medium" | "large"
   onClick?: MouseEventHandler<HTMLButtonElement>
   variant?: "text" | "outlined" | "contained" | "circle"
-  props: HTMLButtonElement
 }
 
 const Button = ({ children, className = "font-roboto", size = "medium", variant = "text", onClick, ...props }: PropsType) => {
