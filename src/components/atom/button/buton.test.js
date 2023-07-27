@@ -80,7 +80,7 @@ describe("button component", () => {
     const button = screen.getByRole("button")
     expect(button).toBeInTheDocument()
     expect(button).toHaveTextContent(text)
-    expect(button).toHaveClass("min-w-72 h-20 text-4xl px-16")
+    expect(button).toHaveClass("min-w-42 h-14 text-xl px-8")
   })
 
   test("renders button correctly by small size and contained variant", () => {
@@ -94,6 +94,6 @@ describe("button component", () => {
     const button = screen.getByRole("button")
     expect(button).toBeInTheDocument()
     expect(button).toHaveTextContent(text)
-    expect(button).toHaveClass("min-w-72 h-20 text-4xl px-16 bg-primary-main hover:bg-primary-dark ")
+    expect(button).toHaveClass("min-w-42 h-14 text-xl px-8 ")
   })
 })

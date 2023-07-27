@@ -19,7 +19,7 @@ const MidHomeBlog = () => {
             minimizing the harmful human-made chemicals such as pesticides and fertilizers, which are ensured from the ingredient
             sourcing
           </Typography>
-          <Button variant="contained">Order Now</Button>
+          <Button variant="contained" size="large">Order Now</Button>
         </Stack>
       </Stack>
     </Stack>
