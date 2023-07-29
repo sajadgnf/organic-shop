@@ -19,7 +19,9 @@ const TopHomeBlog = () => {
             lives. We are dedicated to continuing to provide a level of excellence that our customers have come to expect, and we
             look forward to continuing to work with you as our trusted supplier.
           </Typography>
-          <Button variant="contained">Order Now</Button>
+          <Button variant="contained" size="large">
+            Order Now
+          </Button>
         </Stack>
         <Image src="/images/fruit.jpg" width={555} height={810} className="max-h-[760px] rounded-3xl" alt="fruit-salad" />
       </Stack>

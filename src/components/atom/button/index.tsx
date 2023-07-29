@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, ReactElement, ReactNode } from "react"
+import React, { ButtonHTMLAttributes, MouseEventHandler, ReactElement, ReactNode } from "react"
 
 type PropsType = {
   className?: string
@@ -11,7 +11,7 @@ type PropsType = {
 const Button = ({ children, className = "font-roboto", size = "medium", variant = "text", onClick, ...props }: PropsType) => {
   const small = size === "small" && "min-w-8 h-10 px-3"
   const medium = size === "medium" && "min-w-32 h-10 text-lg px-5"
-  const large = size === "large" && "min-w-72 h-20 text-4xl px-16"
+  const large = size === "large" && "min-w-42 h-14 text-xl px-8"
 
   const circle = variant === "circle" && "!p-0 w-4 h-4 rounded-full bg-gray-300"
   const text = variant === "text" && "hover:bg-primary-light"
@@ -20,7 +20,7 @@ const Button = ({ children, className = "font-roboto", size = "medium", variant 
 
   return (
     <button
-      className={`rounded-lg transition duration-100 ease-in-out cursor-pointer ${text} ${outlined} ${contained} ${small} ${medium} ${large} ${circle} ${className}`}
+      className={` rounded-lg transition duration-100 ease-in-out cursor-pointer ${text} ${outlined} ${contained} ${small} ${medium} ${large} ${circle} ${className}`}
       onClick={onClick}
       {...props}
     >

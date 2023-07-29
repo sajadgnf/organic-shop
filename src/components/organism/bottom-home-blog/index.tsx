@@ -21,7 +21,7 @@ const BottomHomeBlog = () => {
             promoting environmentally responsible practices throughout our supply chain.
           </Typography>
           <Button className="text-primary-dark flex-row flex items-center space-x-1">
-            <Typography>Read More</Typography>
+            <Typography className="text-lg">Read More</Typography>
             <ArrowRightIcon data-testid="arrow-icon" className="text-primary-dark w-6" />
           </Button>
         </Stack>

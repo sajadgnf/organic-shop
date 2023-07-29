@@ -1,4 +1,5 @@
 import "./globals.css"
+import Footer from "@module/footer"
 import Head from "@module/header-links"
 import { Inika, Roboto } from "next/font/google"
 
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`min-h-screen bg-secondary-light ${inika.variable} ${roboto.variable}`}>
         <Head />
         {children}
+        <Footer />
       </body>
     </html>
   )
