@@ -1,10 +1,11 @@
-import React, { ReactElement } from "react"
+import React from "react"
 
 type PropsType = {
-  className?: string
+  for?: string
   children: any
-  component?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p"
-  variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "caption"
+  className?: string
+  component?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "label"
+  variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "caption" | "label"
 }
 
 const tagMap = {
@@ -16,6 +17,7 @@ const tagMap = {
   h5: "h5",
   h6: "h6",
   p: "p",
+  label: "label",
 }
 
 const Typography = ({ children, variant = "p", component, className, ...props }: PropsType) => {
@@ -30,6 +32,7 @@ const Typography = ({ children, variant = "p", component, className, ...props }:
       h5: "text-3xl font-inika", //30px
       h6: "text-2xl font-inika", //24px
       p: "text-base font-roboto", //16px
+      label: "text-base font-roboto", //16px
       caption: "text-sm font-roboto", //14px
     }
     if (component && component in obj) return obj[component]

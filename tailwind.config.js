@@ -19,7 +19,7 @@ module.exports = {
           lg: "100px",
         },
         screens: {
-          lg: "1436px",
+          lg: "1496px",
         },
       },
       backgroundImage: {

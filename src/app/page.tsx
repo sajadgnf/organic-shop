@@ -15,7 +15,7 @@ function Home() {
     <Stack variant="main" className="mt-28 flex-col space-y-28">
       <Slider slides={slides} />
 
-      <Stack className="container mx-auto flex-col items-start space-y-28">
+      <Stack className="container  flex-col items-start space-y-28">
         <Categories />
         <BestSellerProduct />
         <SpecialOffer />
@@ -25,7 +25,7 @@ function Home() {
       <MidHomeBlog />
       <BottomHomeBlog />
 
-      <Stack className="container mx-auto flex-col items-start space-y-28">
+      <Stack className="container  flex-col items-start space-y-28">
         <HomeComments />
       </Stack>
     </Stack>

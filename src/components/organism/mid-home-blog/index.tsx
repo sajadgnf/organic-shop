@@ -7,7 +7,7 @@ import React from "react"
 const MidHomeBlog = () => {
   return (
     <Stack className=" w-full">
-      <Stack className="container mx-auto justify-between p-24">
+      <Stack className="container justify-between p-24">
         <Image src="/images/juices.svg" width={555} height={810} className="max-h-[560px] rounded-3xl" alt="fruit-salad" />
 
         <Stack className="bg-white rounded-[24px] p-10 flex-col items-end space-y-12 w-[555px]">
@@ -19,7 +19,9 @@ const MidHomeBlog = () => {
             minimizing the harmful human-made chemicals such as pesticides and fertilizers, which are ensured from the ingredient
             sourcing
           </Typography>
-          <Button variant="contained" size="large">Order Now</Button>
+          <Button variant="contained" size="large">
+            Order Now
+          </Button>
         </Stack>
       </Stack>
     </Stack>
