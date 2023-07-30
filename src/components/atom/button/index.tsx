@@ -14,7 +14,7 @@ const Button = ({ children, className = "font-roboto", size = "medium", variant 
   const large = size === "large" && "min-w-42 h-14 text-xl px-8"
 
   const circle = variant === "circle" && "!p-0 w-4 h-4 rounded-full bg-gray-300"
-  const text = variant === "text" && "hover:bg-primary-light"
+  const text = variant === "text" && "hover:bg-primary-light px-0"
   const outlined = variant === "outlined" && "border hover:bg-primary-light"
   const contained = variant === "contained" && "bg-primary-main hover:bg-primary-dark"
 

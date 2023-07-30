@@ -35,9 +35,8 @@ const Typography = ({ children, variant = "p", component, className, ...props }:
       label: "text-base font-roboto", //16px
       caption: "text-sm font-roboto", //14px
     }
-    if (component && component in obj) return obj[component]
-    if (variant === "caption") return obj[variant]
     if (variant in obj) return obj[variant]
+    if (component && component in obj) return obj[component]
   }
 
   return (
