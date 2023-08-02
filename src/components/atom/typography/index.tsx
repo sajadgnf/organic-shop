@@ -31,7 +31,7 @@ const Typography = ({ children, variant = "p", component, className, ...props }:
       h4: "text-4xl font-inika", //36px
       h5: "text-3xl font-inika", //30px
       h6: "text-2xl font-inika", //24px
-      p: "text-base font-roboto", //16px
+      p: "text-[12px] md:text-base font-roboto", //16px
       label: "text-base font-roboto", //16px
       caption: "text-sm font-roboto", //14px
     }
