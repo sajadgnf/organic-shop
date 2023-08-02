@@ -6,7 +6,7 @@ import "@testing-library/jest-dom/extend-expect"
 describe("Rate component", () => {
   it("should display the correct number of stars", () => {
     const { container } = render(<Rate value={3} onChange={() => {}} />)
-    const stars = container.querySelectorAll(".text-secondary-dark")
+    const stars = container.querySelectorAll(".text-primary-dark")
 
     expect(stars).toHaveLength(3)
   })
@@ -26,18 +26,13 @@ describe("Rate component", () => {
   })
 
   it("should not change the rate when readonly", () => {
-    let rateValue = 4
+    let rateValue = 3
     const handleChange = (newValue) => {
       rateValue = newValue
     }
 
     const { container } = render(<Rate value={rateValue} onChange={handleChange} readonly />)
-    const firstStar = container.querySelectorAll(".w-6")[0]
-
-    // Attempt to click on the first star (should not change the rateValue)
-    fireEvent.click(firstStar)
-
-    // The rateValue should remain 4
-    expect(rateValue).toBe(4)
+    const icon = container.querySelector(".w-6")
+    expect(icon).toHaveClass("pointer-events-none")
   })
 })

@@ -1,7 +1,7 @@
 import Stack from "@atom/stack"
 import Typography from "@atom/typography"
 import React, { ChangeEventHandler, ReactElement, ReactNode } from "react"
-// TODO: test for input
+
 type PropsType = {
   label?: string
   placeholder?: string
@@ -16,7 +16,7 @@ const Input = ({ label, name = "name", placeholder, startIcon, endIcon, value, o
   const paddingLeft = startIcon ? "pl-1" : "pl-4"
   return (
     <Stack className="flex-col space-y-4 items-start ">
-      <Typography component="label" for={name} className="text-[19px]">
+      <Typography component="label" htmlFor={name} className="text-[19px]">
         {label}
       </Typography>
 
