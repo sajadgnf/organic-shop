@@ -19,7 +19,16 @@ module.exports = {
           lg: "100px",
         },
         screens: {
-          lg: "1436px",
+          lg: "1496px",
+        },
+      },
+      secContainer: {
+        padding: {
+          DEFAULT: "8px",
+          lg: "100px",
+        },
+        screens: {
+          lg: "1550px",
         },
       },
       backgroundImage: {

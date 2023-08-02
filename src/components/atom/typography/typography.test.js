@@ -17,5 +17,5 @@ test("renders the Typography component correctly", () => {
   expect(typographyElement).toBeInTheDocument()
   expect(typographyElement.tagName).toBe("H2")
   expect(typographyElement).toHaveClass("my-typography")
-  expect(typographyElement).toHaveClass("text-6xl font-inika")
+  expect(typographyElement).toHaveClass("my-typography text-8xl font-inika")
 })

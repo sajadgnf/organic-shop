@@ -17,6 +17,7 @@ const Rate = ({ value, onChange, readonly = false }: PropsType) => {
       {[...Array(5)].map((_, index) => (
         <StarIcon
           key={index + 1}
+          data-testid="starIcon"
           onClick={() => onChange(index + 1)}
           onMouseEnter={() => setHover(index + 1)}
           onMouseLeave={() => setHover(value)}

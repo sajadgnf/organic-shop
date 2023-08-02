@@ -7,7 +7,7 @@ import React from "react"
 const TopHomeBlog = () => {
   return (
     <Stack className=" bg-secondary-main w-full">
-      <Stack className="container mx-auto justify-between p-24">
+      <Stack className="container justify-between p-24">
         <Stack className="flex-col items-start space-y-12 w-[50%]">
           <Typography variant="h5">Why choose us?</Typography>
           <Typography>

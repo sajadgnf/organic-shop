@@ -8,7 +8,7 @@ import React from "react"
 const BottomHomeBlog = () => {
   return (
     <Stack className=" bg-primary-light w-full">
-      <Stack className="container mx-auto justify-between p-24">
+      <Stack className="container justify-between p-24">
         <Stack className="flex-col items-start space-y-12 w-[50%]">
           <Typography variant="h5">Happy Farmer</Typography>
           <Typography>
