@@ -26,10 +26,10 @@ const FAKE_DATA = [
 
 const CategoriesList = () => {
   return (
-    <Stack className="justify-between w-full ">
+    <Stack className="justify-between sm:flex-wrap lg:flex-nowrap w-full sm:space-y-4 md:space-y-0">
       {FAKE_DATA.map((category) => (
         <Link key={category.title} href={`${PRODUCTS}?category=${category.title}`}>
-          <Stack className="bg-primary-light rounded-2xl sm:overflow-hidden px-6 py-2 sm:p-0 sm:pl-5 sm:justify-between sm:w-[265px] sm:h-[190px]">
+          <Stack className="bg-primary-light rounded-2xl sm:overflow-hidden px-6 py-2 sm:p-0 sm:pl-5 sm:justify-between sm:w-[165px] lg:w-[265px] lg:h-[190px]">
             <Typography data-testid="category-title" variant="p" className="sm:mt-12 sm:text-[18px]">
               {category.title.toUpperCase()}
             </Typography>
