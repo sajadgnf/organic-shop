@@ -8,23 +8,23 @@ import React from "react"
 const Footer = () => {
   return (
     <Stack className="bg-secondary-main mt-24 flex-col">
-      <Stack className=" max-w-[1830px] w-full items-start mt-24 mb-16 justify-between lg:px-32 pr-3">
-        <Stack className="space-x-14">
-          <Image src="/images/logo.svg" alt="main logo image" width={258} height={80} />
+      <Stack className="flex-col md:flex-row space-y-10 max-w-[1830px] w-full lg:items-start my-2 md:mt-24 md:mb-16 justify-between lg:px-32 pr-3">
+        <Stack className="flex-col space-y-10 md:space-y-0 lg:flex-row lg:space-x-14 md:items-start">
+          <Image src="/images/logo.svg" alt="main logo image" width={258} height={80} className="w-[180px] sm:w-[258px]" />
 
-          <table>
-            <tbody>
-              <tr className="[&>td]:pr-14 [&>td]:py-2 [&>td]:cursor-pointer font-bold">
+          <table className="w-full md:ml-3 lg:ml-0">
+            <tbody className="w-full">
+              <tr className="flex justify-between md:inline-block w-full md:[&>td]:pr-14 [&>td]:py-2 [&>td]:cursor-pointer text-[12px] sm:text-[16px] font-bold">
                 <td>Home</td>
                 <td>Terms</td>
                 <td>Contact us</td>
               </tr>
-              <tr className="[&>td]:pr-14 [&>td]:py-2 [&>td]:cursor-pointer font-bold">
+              <tr className="flex justify-between md:inline-block w-full md:[&>td]:pr-14 [&>td]:py-2 [&>td]:cursor-pointer text-[12px] sm:text-[16px] font-bold">
                 <td>Shop</td>
                 <td>privacy</td>
                 <td>About us</td>
               </tr>
-              <tr className="[&>td]:pr-14 [&>td]:py-2 [&>td]:cursor-pointer font-bold">
+              <tr className="flex justify-between md:inline-block w-full md:[&>td]:pr-14 [&>td]:py-2 [&>td]:cursor-pointer text-[12px] sm:text-[16px] font-bold">
                 <td>Blog</td>
                 <td>Cookies</td>
                 <td>FAQs</td>
@@ -35,9 +35,14 @@ const Footer = () => {
 
         <Input
           name="email"
+          className="w-[100%] sm:w-[280px] sm:h-[47px]"
           label=" Do not miss the news"
           placeholder="Your e-mail address"
-          endIcon={<Button variant="contained">Submit</Button>}
+          endIcon={
+            <Button variant="contained" size="small">
+              Submit
+            </Button>
+          }
         />
       </Stack>
 

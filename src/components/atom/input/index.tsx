@@ -4,6 +4,7 @@ import React, { ChangeEventHandler, ReactElement, ReactNode } from "react"
 
 type PropsType = {
   label?: string
+  className?: string
   placeholder?: string
   value?: string | number
   endIcon?: string | ReactElement | ReactNode
@@ -12,11 +13,11 @@ type PropsType = {
   name?: "name" | "email" | "phone" | "number" | "age" | "range"
 }
 
-const Input = ({ label, name = "name", placeholder, startIcon, endIcon, value, onChange, ...props }: PropsType) => {
+const Input = ({ label, name = "name", placeholder, startIcon, endIcon, value, onChange, className, ...props }: PropsType) => {
   const paddingLeft = startIcon ? "pl-1" : "pl-4"
   return (
-    <Stack className="flex-col space-y-4 items-start ">
-      <Typography component="label" htmlFor={name} className="text-[19px]">
+    <Stack className="flex-col space-y sm:space-y-4 items-start ">
+      <Typography component="label" htmlFor={name} className="sm:text-[19px]">
         {label}
       </Typography>
 
@@ -25,7 +26,7 @@ const Input = ({ label, name = "name", placeholder, startIcon, endIcon, value, o
         <input
           value={value}
           onChange={onChange}
-          className="outline-none min-w-[280px] min-h-[47px] "
+          className={`outline-none ${className}`}
           placeholder={placeholder}
           name={name}
           id={name}
