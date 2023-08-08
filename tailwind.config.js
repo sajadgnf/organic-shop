@@ -11,12 +11,13 @@ module.exports = {
   theme: {
     extend: {
       screens: {
+        xs: "380px",
         sm: "480px",
-        lg: "1436px",
+        lg: "1496px",
       },
       container: {
         padding: {
-          DEFAULT: "8px",
+          DEFAULT: "20px",
           lg: "100px",
         },
         screens: {

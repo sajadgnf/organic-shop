@@ -29,7 +29,7 @@ const Typography = ({ children, variant = "p", component, className, ...props }:
       h2: "text-6xl font-inika", //60px
       h3: "text-5xl font-inika", //48px
       h4: "text-4xl font-inika", //36px
-      h5: "text-3xl font-inika", //30px
+      h5: "text-2x1 sm:text-3xl font-inika", //30px
       h6: "text-2xl font-inika", //24px
       p: "text-[12px] md:text-base font-roboto", //16px
       label: "text-base font-roboto", //16px
