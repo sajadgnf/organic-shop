@@ -8,7 +8,7 @@ import Typography from "@atom/typography"
 const HomeCommentCard = ({ data }: { data: { name: string; description: string; rate: number } }) => {
   const [value, setValue] = useState(data.rate)
   return (
-    <Stack className="bg-white items-start flex-col min-w-[350px] p-[21px] space-y-3 rounded-xl shadow-sm">
+    <Stack className="bg-white items-start flex-col min-w-[250px] md:min-w-[350px] p-[21px] space-y-3 rounded-xl shadow-sm">
       <Stack className="space-x-3">
         <Avatar />
 

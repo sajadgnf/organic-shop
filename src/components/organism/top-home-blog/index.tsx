@@ -8,7 +8,7 @@ const TopHomeBlog = () => {
   return (
     <Stack className=" bg-secondary-main w-full">
       <Stack className="container justify-between p-24">
-        <Stack className="flex-col items-start space-y-12 w-[50%]">
+        <Stack className="flex-col items-start space-y-12 md:w-[50%]">
           <Typography variant="h5">Why choose us?</Typography>
           <Typography>
             We take great pride in selecting only the freshest and highest quality fruits and vegetables for our customers. We
@@ -19,11 +19,24 @@ const TopHomeBlog = () => {
             lives. We are dedicated to continuing to provide a level of excellence that our customers have come to expect, and we
             look forward to continuing to work with you as our trusted supplier.
           </Typography>
+          <Image
+            src="/images/fruit.jpg"
+            width={763}
+            height={810}
+            className="md:hidden inline max-h-[760px] rounded-3xl"
+            alt="fruit-salad"
+          />
           <Button variant="contained" size="large">
             Order Now
           </Button>
         </Stack>
-        <Image src="/images/fruit.jpg" width={555} height={810} className="max-h-[760px] rounded-3xl" alt="fruit-salad" />
+        <Image
+          src="/images/fruit.jpg"
+          width={555}
+          height={810}
+          className="hidden md:inline w-[400px] lg:w-[555px] max-h-[760px] rounded-3xl"
+          alt="fruit-salad"
+        />
       </Stack>
     </Stack>
   )

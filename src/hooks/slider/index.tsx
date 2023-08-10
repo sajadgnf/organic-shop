@@ -36,7 +36,7 @@ const Slider = ({ slides }: { slides: string[] }) => {
           key={img + i}
           data-testid={`slide-${img}`}
           style={{ background: `url(${img}) no-repeat center`, backgroundSize: "cover" }}
-          className={`transition-all ease-out h-[620px] max-w-[1800px] ${
+          className={`transition-all ease-out h-[200px] sm:h-[400px] lg:h-[620px] max-w-[1800px] ${
             i === currentSlide ? "visible w-full " : "invisible w-0"
           }`}
         ></Stack>

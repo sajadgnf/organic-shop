@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, MouseEventHandler, ReactElement, ReactNode } from "react"
+import React, { MouseEventHandler, ReactElement, ReactNode } from "react"
 
 type PropsType = {
   className?: string
@@ -10,10 +10,10 @@ type PropsType = {
 
 const Button = ({ children, className = "font-roboto", size = "medium", variant = "text", onClick, ...props }: PropsType) => {
   const small = size === "small" && "min-w-8 h-10 px-3"
-  const medium = size === "medium" && "min-w-32 h-10 text-lg px-5"
-  const large = size === "large" && "min-w-42 h-14 text-xl px-8"
+  const medium = size === "medium" && "min-w-3 md:min-w-32 h-8 md:h-10 text-sm md:text-lg px-3 md:px-5"
+  const large = size === "large" && "min:w-10 md:min-w-42 h-10 md:h-14 text-lg md:text-xl px-5 md:px-8"
 
-  const circle = variant === "circle" && "!p-0 w-4 h-4 rounded-full bg-gray-300"
+  const circle = variant === "circle" && "!p-0 !w-4 !h-4 rounded-full bg-gray-300"
   const text = variant === "text" && "hover:bg-primary-light px-0"
   const outlined = variant === "outlined" && "border hover:bg-primary-light"
   const contained = variant === "contained" && "bg-primary-main hover:bg-primary-dark"

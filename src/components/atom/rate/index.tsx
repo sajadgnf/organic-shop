@@ -22,7 +22,7 @@ const Rate = ({ value, onChange, readonly = false }: PropsType) => {
           onMouseEnter={() => setHover(index + 1)}
           onMouseLeave={() => setHover(value)}
           className={`
-          w-6 cursor-pointer
+          w-4 md:w-6 cursor-pointer
           ${readonly ? "pointer-events-none" : "pointer-events-auto"}
           ${index + 1 <= (hover || value) ? "text-primary-dark" : "text-secondary-dark"}
             `}

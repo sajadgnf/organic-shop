@@ -59,7 +59,7 @@ const HomeComments = () => {
         </Stack>
       </Link>
 
-      <Stack className="flex-row w-full space-x-4 justify-start overflow-auto">
+      <Stack className="flex-row w-full space-x-4 py-4 justify-start overflow-auto">
         {FAKE_DATA.map((item) => (
           <HomeCommentCard data={item} />
         ))}

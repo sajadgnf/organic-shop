@@ -5,7 +5,7 @@ import CategoriesList from "@organism/categories/list"
 
 const Categories = () => {
   return (
-    <Stack className="flex-col items-start space-y-2 sm:space-y-10 w-full">
+    <Stack className="flex-col items-start space-y-2 sm:space-y-4 md:space-y-10 w-full">
       <Typography variant="h5">Categories</Typography>
       <CategoriesList />
     </Stack>

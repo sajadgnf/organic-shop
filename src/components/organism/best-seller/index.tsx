@@ -13,11 +13,11 @@ const BestSellerProduct = () => {
         <Stack className="items-center justify-between">
           <Typography variant="h5">Our Best Seller Product</Typography>
 
-          <Stack className="items-end space-x-2">
+          <Stack className="xs:space-x-1 sm:space-x-2">
             <Typography variant="h6" className="text-primary-dark">
               See all product
             </Typography>
-            <ArrowRightIcon data-testid="arrow-icon" className="text-primary-dark w-6" />
+            <ArrowRightIcon data-testid="arrow-icon" className="text-primary-dark w-3 sm:w-6" />
           </Stack>
         </Stack>
       </Link>

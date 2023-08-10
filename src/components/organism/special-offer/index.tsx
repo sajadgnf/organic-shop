@@ -17,7 +17,7 @@ const SpecialOffer = () => {
             <Typography variant="h6" className="text-primary-dark">
               See all
             </Typography>
-            <ArrowRightIcon data-testid="arrow-icon" className="text-primary-dark w-6" />
+            <ArrowRightIcon data-testid="arrow-icon" className="text-primary-dark w-3 sm:w-6" />
           </Stack>
         </Stack>
       </Link>

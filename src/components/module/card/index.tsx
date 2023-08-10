@@ -14,8 +14,8 @@ type PropsType = {
 
 const Card = ({ img = "", title = "", description = "", discount, price }: PropsType) => {
   return (
-    <Stack className="flex-col min-w-[295px] space-y-4 shadow-md rounded-2xl p-6">
-      <Image src={img} width={159} height={201} alt={description || title} />
+    <Stack className="flex-col min-w-[250px] md:min-w-[295px] space-y-4 shadow-md rounded-2xl p-6">
+      <Image src={img} width={159} height={201} alt={description || title} className="w-[100px] sm:w-[120px] md:w-[159px]" />
       <Stack className="items-start flex-col space-y-4">
         <Stack className="space-y-1 flex-col items-start">
           <Typography variant="h6">{title}</Typography>
