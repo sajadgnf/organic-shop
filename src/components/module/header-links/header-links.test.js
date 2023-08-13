@@ -22,7 +22,7 @@ describe("Head component", () => {
     const logo = getByAltText("organic shop logo")
     expect(logo).toBeInTheDocument()
     expect(logo.getAttribute("src")).toBe("./images/logo.svg")
-    expect(logo.getAttribute("width")).toBe("220")
+    expect(logo.getAttribute("width")).toBe("120")
     expect(logo.getAttribute("height")).toBe("150")
   })
 

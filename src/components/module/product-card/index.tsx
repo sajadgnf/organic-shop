@@ -12,14 +12,14 @@ type PropsType = {
   price?: string | number
 }
 
-const Card = ({ img = "", title = "", description = "", discount, price }: PropsType) => {
+const ProductCard = ({ img = "", title = "", description = "", discount, price }: PropsType) => {
   return (
-    <Stack className="flex-col bg-[#f8f8f8] min-w-[250px] md:min-w-[295px] space-y-4 shadow-md rounded-2xl p-6">
+    <Stack className="flex-row md:flex-col md:bg-[#f8f8f8] md:w-[295px] md:space-y-4 md:shadow-md md:rounded-2xl md:p-6">
       <Image src={img} width={159} height={201} alt={description || title} className="w-[100px] sm:w-[120px] md:w-[159px]" />
       <Stack className="items-start flex-col space-y-4">
         <Stack className="space-y-1 flex-col items-start">
           <Typography variant="h6">{title}</Typography>
-          <Typography variant="caption">{description}</Typography>
+          <Typography className="text-gray-500" variant="caption">{description}</Typography>
         </Stack>
 
         <Stack className="flex-col items-start w-full">
@@ -41,4 +41,4 @@ const Card = ({ img = "", title = "", description = "", discount, price }: Props
   )
 }
 
-export default Card
+export default ProductCard

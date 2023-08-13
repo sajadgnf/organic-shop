@@ -18,6 +18,7 @@
 
 body {
   color: var(--foreground);
+  background-color: #f6f6f6
 }
 
 .display-flex {
@@ -46,4 +47,31 @@ body {
 
 .slider:hover .slider-arrow {
   opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

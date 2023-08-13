@@ -21,7 +21,7 @@ describe("BestSellerProduct component", () => {
 
     expect(headingElement).toBeInTheDocument()
     expect(seeAllProductLink).toBeInTheDocument()
-    expect(arrowIcon).toHaveClass("text-primary-dark w-6")
+    expect(arrowIcon).toHaveClass(" text-primary-dark w-3 sm:w-6")
   })
 
   test("navigates to the correct route when clicking on the 'See all product' link", () => {
