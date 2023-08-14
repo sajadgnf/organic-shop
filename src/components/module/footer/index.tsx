@@ -35,7 +35,7 @@ const Footer = () => {
 
         <Input
           name="email"
-          className="w-[100%] sm:w-[280px] sm:h-[47px]"
+          className="w-[250px] xs:w-[360px] md:w-[450px]"
           label=" Do not miss the news"
           placeholder="Your e-mail address"
           endIcon={
