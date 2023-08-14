@@ -56,7 +56,7 @@ const FAKE_DATA = [
 
 const BestSellerProductList = () => {
   return (
-    <Stack className="w-full overflow-auto space-x-5 justify-start px-1">
+    <Stack className="w-full overflow-auto space-x-5 justify-start px-1 pb-2 hide-scrollbar">
       {FAKE_DATA.map((data, i) => (
         <Card
           img={data.img}
