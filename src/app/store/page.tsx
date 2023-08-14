@@ -56,7 +56,7 @@ const FAKE_DATA = [
 
 const Store = () => {
   return (
-    <Stack className=" container flex-wrap mt-72 gap-4">
+    <Stack className="container flex-wrap mt-72 gap-4 ">
       {FAKE_DATA.map((data, i) => (
         <>
           <ProductCard
