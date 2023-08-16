@@ -1,7 +1,8 @@
 import React from "react"
+import ComingSoon from "@module/coming-soon"
 
 const Blog = () => {
-  return <div></div>
+  return <ComingSoon />
 }
 
 export default Blog

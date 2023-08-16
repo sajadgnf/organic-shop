@@ -1,6 +1,7 @@
 import React, { MouseEventHandler, ReactElement, ReactNode } from "react"
 
 type PropsType = {
+  ref?: any
   className?: string
   style?: string | {}
   onClick?: MouseEventHandler<HTMLButtonElement>
@@ -18,7 +19,7 @@ const tagMap = {
   article: "article",
 }
 
-const Stack = ({ children, variant = "div", style, className, onClick, ...props }: PropsType) => {
+const Stack = ({ children, variant = "div", style, className, onClick, ref, ...props }: PropsType) => {
   const Tag: any = tagMap[variant] || "div"
 
   const priorityClassName = className?.split(" ")
@@ -26,7 +27,14 @@ const Stack = ({ children, variant = "div", style, className, onClick, ...props 
   if (!priorityClassName?.find((item) => item.startsWith("justify-"))) priorityClassName?.push("justify-center")
 
   return (
-    <Tag className={`flex transform ${priorityClassName?.join(" ")}`} role="div" style={style} onClick={onClick} {...props}>
+    <Tag
+      className={`flex transform ${priorityClassName?.join(" ")}`}
+      ref={ref}
+      role="div"
+      style={style}
+      onClick={onClick}
+      {...props}
+    >
       {children}
     </Tag>
   )

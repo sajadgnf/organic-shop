@@ -1,12 +1,36 @@
 "use client"
-
-import React, { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import Stack from "@atom/stack"
 import Button from "@atom/button"
+import Typography from "@atom/typography"
+import React, { useEffect, useState } from "react"
 import { useSelectedLayoutSegment } from "next/navigation"
-import { ShoppingBagIcon } from "@heroicons/react/24/solid"
+import { Bars3Icon, PhoneIcon, ShoppingBagIcon, UserIcon } from "@heroicons/react/24/solid"
+
+const HamburgerMenu = () => {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <Stack className="relative">
+      <Stack className={open ? "flex bg-white rounded-lg p-2 absolute top-5 left-[-30px] flex-col space-y-4" : "hidden"}>
+        <Link className={`header-link flex-row flex justify-between `} href="contact">
+          <PhoneIcon width={18} />
+          <Typography variant="h6">Contact</Typography>
+        </Link>
+        <Link className={`header-link flex-row flex justify-between `} href="cart">
+          <ShoppingBagIcon width={18} />
+          <Typography variant="h6">Cart</Typography>
+        </Link>
+        <Link className={`header-link flex-row flex justify-between `} href="sign-in">
+          <UserIcon width={18} />
+          <Typography variant="h6">Sign In</Typography>
+        </Link>
+      </Stack>
+      <Bars3Icon width={22} className="md:hidden mt-1" onClick={() => setOpen(!open)} />
+    </Stack>
+  )
+}
 
 const Head = () => {
   const segment = useSelectedLayoutSegment()
@@ -20,7 +44,6 @@ const Head = () => {
     window.addEventListener("resize", handleResize)
 
     handleResize()
-    console.log(image)
 
     return () => window.removeEventListener("resize", handleResize)
   }, [window, image])
@@ -35,7 +58,7 @@ const Head = () => {
               alt="organic shop logo"
               width={120}
               height={150}
-              className="w-[50px] sm:w-[180px] lg:w-[220px] mt-2 lg:mt-0"
+              className="w-[50px] sm:w-[120px] md:w-[180px] lg:w-[220px] mt-2 lg:mt-0"
             />
           </Link>
 
@@ -46,17 +69,18 @@ const Head = () => {
             <Link className={`header-link ${segment === "store" ? "after:w-[50%]" : ""}`} href="store">
               Shop
             </Link>
-            <Link className={`header-link ${segment === "contact" ? "after:w-[50%]" : ""}`} href="contact">
+            <Link className={`header-link hidden md:block ${segment === "contact" ? "after:w-[50%]" : ""}`} href="contact">
               Contact
             </Link>
             <Link className={`header-link ${segment === "blog" ? "after:w-[50%]" : ""}`} href="blog">
               Blog
             </Link>
+            <HamburgerMenu />
           </Stack>
         </Stack>
 
         <Stack className="space-x-3 hidden md:flex">
-          <Button variant="contained">Sign Up</Button>
+          <Button variant="contained">Sign In</Button>
           <Button data-testid="shopping-button" variant="contained" size="small">
             <ShoppingBagIcon className="h-8 w-8" />
           </Button>

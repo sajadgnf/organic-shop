@@ -46,7 +46,7 @@ const Input = ({
             rows={rows}
             onChange={onChange}
             placeholder={placeholder}
-            className="outline-none w-full resize-none"
+            className="outline-none py-2 w-full resize-none"
             {...props}
           />
         ) : (
