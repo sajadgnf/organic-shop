@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "next/link"
 import Stack from "@atom/stack"
-import { PRODUCTS } from "routes"
+import { STORE } from "routes"
 import Typography from "@atom/typography"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import BestSellerProductList from "@organism/best-seller/list"
@@ -9,7 +9,7 @@ import BestSellerProductList from "@organism/best-seller/list"
 const BestSellerProduct = () => {
   return (
     <Stack className="w-full flex-col space-y-10">
-      <Link href={`${PRODUCTS}?filter=best-seller`} className="w-full">
+      <Link href={`${STORE}?filter=best-seller`} className="w-full">
         <Stack className="items-center justify-between">
           <Typography variant="h5">Our Best Seller Product</Typography>
 

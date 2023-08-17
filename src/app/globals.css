@@ -49,6 +49,18 @@ body {
   opacity: 1;
 }
 
+.number-input {
+  -webkit-appearance: none;
+  -moz-appearance: textfield; 
+}
+
+.number-input::-webkit-inner-spin-button,
+.number-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
 @media (max-width: 480px) {
   .hide-scrollbar::-webkit-scrollbar {
     display: none;

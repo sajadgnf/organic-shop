@@ -5,8 +5,9 @@ import Stack from "@atom/stack"
 import Button from "@atom/button"
 import Typography from "@atom/typography"
 import React, { useEffect, useState } from "react"
-import { useSelectedLayoutSegment } from "next/navigation"
+import { useRouter, useSelectedLayoutSegment } from "next/navigation"
 import { Bars3Icon, PhoneIcon, ShoppingBagIcon, UserIcon } from "@heroicons/react/24/solid"
+import { BLOG, CART, CONTACT, HOME, SIGNIN, STORE } from "routes"
 
 const HamburgerMenu = () => {
   const [open, setOpen] = useState(false)
@@ -14,17 +15,17 @@ const HamburgerMenu = () => {
   return (
     <Stack className="relative">
       <Stack className={open ? "flex bg-white rounded-lg p-2 absolute top-5 left-[-30px] flex-col space-y-4" : "hidden"}>
-        <Link className={`header-link flex-row flex justify-between `} href="contact">
+        <Link className={`header-link flex-row flex justify-between `} href={CONTACT}>
           <PhoneIcon width={18} />
           <Typography variant="h6">Contact</Typography>
         </Link>
-        <Link className={`header-link flex-row flex justify-between `} href="cart">
+        <Link className={`header-link flex-row flex justify-between `} href={CART}>
           <ShoppingBagIcon width={18} />
           <Typography variant="h6">Cart</Typography>
         </Link>
-        <Link className={`header-link flex-row flex justify-between `} href="sign-in">
+        <Link className={`header-link flex-row flex justify-between `} href={SIGNIN}>
           <UserIcon width={18} />
-          <Typography variant="h6">Sign In</Typography>
+          <Typography variant="h6">Sign in</Typography>
         </Link>
       </Stack>
       <Bars3Icon width={22} className="md:hidden mt-1" onClick={() => setOpen(!open)} />
@@ -35,6 +36,7 @@ const HamburgerMenu = () => {
 const Head = () => {
   const segment = useSelectedLayoutSegment()
   const [image, setImage] = useState("")
+  const router = useRouter()
 
   useEffect(() => {
     function handleResize() {
@@ -52,7 +54,7 @@ const Head = () => {
     <Stack className="sm:fixed top-0 left-0 right-0 justify-center border-b z-10 bg-white w-full sm:shadow-lg">
       <Stack className=" sm:pr-3 max-w-[1830px] w-full justify-between">
         <Stack className="sm:space-x-10 w-full md:w-auto flex-col sm:flex-row">
-          <Link href="/">
+          <Link href={HOME}>
             <Image
               src={image}
               alt="organic shop logo"
@@ -62,17 +64,17 @@ const Head = () => {
             />
           </Link>
 
-          <Stack variant="section" className="space-x-10 sm:text-base md:text-lg lg:text-xl">
-            <Link className={`header-link ${!segment ? "after:w-[50%]" : ""}`} href="/">
+          <Stack variant="section" className="space-x-10 sm:text-base md:text-lg lg:t;ext-xl">
+            <Link className={`header-link ${!segment ? "after:w-[50%]" : ""}`} href={HOME}>
               Home
             </Link>
-            <Link className={`header-link ${segment === "store" ? "after:w-[50%]" : ""}`} href="store">
+            <Link className={`header-link ${segment === "store" ? "after:w-[50%]" : ""}`} href={STORE}>
               Shop
             </Link>
-            <Link className={`header-link hidden md:block ${segment === "contact" ? "after:w-[50%]" : ""}`} href="contact">
+            <Link className={`header-link hidden md:block ${segment === "contact" ? "after:w-[50%]" : ""}`} href={CONTACT}>
               Contact
             </Link>
-            <Link className={`header-link ${segment === "blog" ? "after:w-[50%]" : ""}`} href="blog">
+            <Link className={`header-link ${segment === "blog" ? "after:w-[50%]" : ""}`} href={BLOG}>
               Blog
             </Link>
             <HamburgerMenu />
@@ -80,8 +82,10 @@ const Head = () => {
         </Stack>
 
         <Stack className="space-x-3 hidden md:flex">
-          <Button variant="contained">Sign In</Button>
-          <Button data-testid="shopping-button" variant="contained" size="small">
+          <Button variant="contained" onClick={() => router.push(SIGNIN)}>
+            Sign in
+          </Button>
+          <Button onClick={() => router.push(CART)} data-testid="shopping-button" variant="contained" size="small">
             <ShoppingBagIcon className="h-8 w-8" />
           </Button>
         </Stack>

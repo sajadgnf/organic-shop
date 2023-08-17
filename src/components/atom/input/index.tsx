@@ -6,6 +6,7 @@ type PropsType = {
   rows?: number
   name?: string
   label?: string
+  pattern?: string
   className?: string
   multiLine?: boolean
   placeholder?: string
@@ -13,7 +14,29 @@ type PropsType = {
   endIcon?: string | ReactElement | ReactNode
   startIcon?: string | ReactElement | ReactNode
   onChange?: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>
-  type?: "text" | "email" | "phone" | "number" | "age" | "range"
+  type?:
+    | "button"
+    | "checkbox"
+    | "color"
+    | "date"
+    | "email"
+    | "file"
+    | "hidden"
+    | "image"
+    | "month"
+    | "number"
+    | "password"
+    | "radio"
+    | "range"
+    | "reset"
+    | "search"
+    | "submit"
+    | "tel"
+    | "text"
+    | "time"
+    | "url"
+    | "week"
+    | "datetime-local"
 }
 
 const Input = ({
@@ -31,8 +54,9 @@ const Input = ({
   ...props
 }: PropsType) => {
   const paddingLeft = startIcon ? "pl-1" : "pl-4"
+
   return (
-    <Stack className={`flex-col space-y sm:space-y-4 items-start ${className}`}>
+    <Stack className={`flex-col space-y items-start w-full ${className}`}>
       <Typography component="label" htmlFor={name} className="sm:text-[19px]">
         {label}
       </Typography>
@@ -55,7 +79,7 @@ const Input = ({
             <input
               value={value}
               onChange={onChange}
-              className="outline-none w-full"
+              className="outline-none w-full number-input"
               placeholder={placeholder}
               name={name}
               type={type}

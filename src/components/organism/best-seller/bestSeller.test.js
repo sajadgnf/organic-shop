@@ -1,5 +1,5 @@
 import React from "react"
-import { PRODUCTS } from "routes"
+import { STORE } from "routes"
 import userEvent from "@testing-library/user-event"
 import BestSellerProduct from "@organism/best-seller"
 import { render, screen } from "@testing-library/react"
@@ -31,6 +31,6 @@ describe("BestSellerProduct component", () => {
 
     userEvent.click(seeAllProductLink)
 
-    expect(seeAllProductLink).toHaveAttribute("href", `${PRODUCTS}?filter=best-seller`)
+    expect(seeAllProductLink).toHaveAttribute("href", `${STORE}?filter=best-seller`)
   })
 })

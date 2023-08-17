@@ -1,1 +1,8 @@
+export const HOME = '/'
+export const CART = '/cart'
+export const BLOG = '/blog'
+export const STORE = '/store'
+export const SIGNIN = '/sign-in'
+export const SIGNUP = '/sign-up'
+export const CONTACT = '/contact'
 export const PRODUCTS = '/products'
