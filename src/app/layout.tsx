@@ -1,6 +1,7 @@
 import "./globals.css"
 import Footer from "@module/footer"
 import Head from "@module/header-links"
+import { Toaster } from "react-hot-toast"
 import { Inika, Roboto } from "next/font/google"
 
 const inika = Inika({
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`min-h-screen ${inika.variable} ${roboto.variable}`}>
+        <Toaster />
         <Head />
         {children}
         <Footer />

@@ -3,38 +3,14 @@ import Link from "next/link"
 import Image from "next/image"
 import Stack from "@atom/stack"
 import Button from "@atom/button"
-import Typography from "@atom/typography"
 import React, { useEffect, useState } from "react"
-import { useRouter, useSelectedLayoutSegment } from "next/navigation"
-import { Bars3Icon, PhoneIcon, ShoppingBagIcon, UserIcon } from "@heroicons/react/24/solid"
+import { usePathname, useRouter } from "next/navigation"
+import { ShoppingBagIcon } from "@heroicons/react/24/solid"
 import { BLOG, CART, CONTACT, HOME, SIGNIN, STORE } from "routes"
-
-const HamburgerMenu = () => {
-  const [open, setOpen] = useState(false)
-
-  return (
-    <Stack className="relative">
-      <Stack className={open ? "flex bg-white rounded-lg p-2 absolute top-5 left-[-30px] flex-col space-y-4" : "hidden"}>
-        <Link className={`header-link flex-row flex justify-between `} href={CONTACT}>
-          <PhoneIcon width={18} />
-          <Typography variant="h6">Contact</Typography>
-        </Link>
-        <Link className={`header-link flex-row flex justify-between `} href={CART}>
-          <ShoppingBagIcon width={18} />
-          <Typography variant="h6">Cart</Typography>
-        </Link>
-        <Link className={`header-link flex-row flex justify-between `} href={SIGNIN}>
-          <UserIcon width={18} />
-          <Typography variant="h6">Sign in</Typography>
-        </Link>
-      </Stack>
-      <Bars3Icon width={22} className="md:hidden mt-1" onClick={() => setOpen(!open)} />
-    </Stack>
-  )
-}
+import HamburgerMenu from "@module/header-links/hamburgerMenu"
 
 const Head = () => {
-  const segment = useSelectedLayoutSegment()
+  const pathName = usePathname()
   const [image, setImage] = useState("")
   const router = useRouter()
 
@@ -65,16 +41,16 @@ const Head = () => {
           </Link>
 
           <Stack variant="section" className="space-x-10 sm:text-base md:text-lg lg:t;ext-xl">
-            <Link className={`header-link ${!segment ? "after:w-[50%]" : ""}`} href={HOME}>
+            <Link className={`header-link ${pathName === HOME ? "after:w-[50%]" : ""}`} href={HOME}>
               Home
             </Link>
-            <Link className={`header-link ${segment === "store" ? "after:w-[50%]" : ""}`} href={STORE}>
+            <Link className={`header-link ${pathName === STORE ? "after:w-[50%]" : ""}`} href={STORE}>
               Shop
             </Link>
-            <Link className={`header-link hidden md:block ${segment === "contact" ? "after:w-[50%]" : ""}`} href={CONTACT}>
+            <Link className={`header-link hidden md:block ${pathName === CONTACT ? "after:w-[50%]" : ""}`} href={CONTACT}>
               Contact
             </Link>
-            <Link className={`header-link ${segment === "blog" ? "after:w-[50%]" : ""}`} href={BLOG}>
+            <Link className={`header-link ${pathName === BLOG ? "after:w-[50%]" : ""}`} href={BLOG}>
               Blog
             </Link>
             <HamburgerMenu />
