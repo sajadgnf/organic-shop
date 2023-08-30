@@ -1,9 +1,8 @@
-import Button from "@atom/button"
-import Stack from "@atom/stack"
-import Typography from "@atom/typography"
-import { ArrowRightIcon } from "@heroicons/react/24/solid"
-import Image from "next/image"
 import React from "react"
+import Image from "next/image"
+import Stack from "@atom/stack"
+import OrderButton from "./order-button"
+import Typography from "@atom/typography"
 
 const BottomHomeBlog = () => {
   return (
@@ -27,10 +26,7 @@ const BottomHomeBlog = () => {
             className="md:hidden inline max-h-[760px] rounded-3xl"
             alt="fruit-salad"
           />
-          <Button className="text-primary-dark flex-row flex items-center space-x-1">
-            <Typography className="text-lg">Read More</Typography>
-            <ArrowRightIcon data-testid="arrow-icon" className="text-primary-dark w-6" />
-          </Button>
+          <OrderButton />
         </Stack>
         <Image
           src="/images/farmer.svg"

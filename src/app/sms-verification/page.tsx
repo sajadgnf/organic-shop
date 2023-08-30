@@ -1,23 +1,32 @@
 "use client"
-import Button from "@atom/button"
 import Stack from "@atom/stack"
-import Typography from "@atom/typography"
-import { PencilSquareIcon } from "@heroicons/react/24/solid"
-import { useSearchParams } from "next/navigation"
-import React, { useEffect, useState } from "react"
+import Button from "@atom/button"
 import toast from "react-hot-toast"
 import OTPInput from "react-otp-input"
+import Typography from "@atom/typography"
+import React, { useEffect, useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
+import { PencilSquareIcon } from "@heroicons/react/24/solid"
+import { HOME } from "routes"
 
 const SMSVerification = () => {
+  const router = useRouter()
+  const [otp, setOtp] = useState("")
   const searchParams = useSearchParams()
   const phone = searchParams.get("phone")
-  const [otp, setOtp] = useState("")
+  const pathName = searchParams.get("pathName")
+
+  const editNumberHandler = () => {
+    router.push(`${pathName}?phone=${phone}`)
+  }
 
   useEffect(() => {
     if (otp === "1111") {
       toast.success("welcome")
+      router.push(HOME)
+    } else if (otp.length === 4) {
+      toast.error("wrong code, try again")
     }
-    toast.error("wrong code, try again")
   }, [otp])
 
   return (
@@ -26,11 +35,10 @@ const SMSVerification = () => {
         <Stack className="flex-col space-y-4">
           <Typography variant="h5">02:00</Typography>
 
-          <Typography className="text-gray-400">
-            Verification code has been sent, If you do not receive the code, hit send again
+          <Typography className="text-gray-400 text-center">
+            Verification code has been sent, If you do not receive the code,
+            <br /> <Button disabled>hit send again</Button>
           </Typography>
-
-          <Button disabled>Resubmit the code</Button>
         </Stack>
 
         <OTPInput
@@ -43,10 +51,10 @@ const SMSVerification = () => {
           renderInput={(props) => <input {...props} />}
         />
 
-        <Stack className="space-x-1 items-start">
+        <Button onClick={editNumberHandler} className="flex space-x-1 items-center">
           <Typography>on number: {phone}</Typography>
           <PencilSquareIcon className="text-primary-main" width={20} />
-        </Stack>
+        </Button>
       </Stack>
     </Stack>
   )

@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, ReactElement, ReactNode } from "react"
+import React, { ButtonHTMLAttributes, MouseEventHandler, ReactElement, ReactNode } from "react"
 
 type PropsType = {
   className?: string
@@ -7,6 +7,7 @@ type PropsType = {
   children?: string | ReactElement | ReactNode
   onClick?: MouseEventHandler<HTMLButtonElement>
   variant?: "text" | "outlined" | "contained" | "circle"
+  type?: "submit" | "button" | "reset"
 }
 
 const Button = ({
@@ -16,6 +17,7 @@ const Button = ({
   variant = "text",
   onClick,
   disabled,
+  type,
   ...props
 }: PropsType) => {
   const small = size === "small" && "min-w-1 md:min-w-8 h-8 md:h-10 px-2 md:px-3"
@@ -32,6 +34,7 @@ const Button = ({
       className={` rounded-lg transition duration-100 ease-in-out cursor-pointer ${disabled && "pointer-events-none"} 
       ${text} ${outlined} ${contained} ${small} ${medium} ${large} ${circle} ${className}`}
       onClick={onClick}
+      type={type}
       {...props}
     >
       {children}

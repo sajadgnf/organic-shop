@@ -1,8 +1,8 @@
-import Button from "@atom/button"
-import Stack from "@atom/stack"
-import Typography from "@atom/typography"
-import Image from "next/image"
 import React from "react"
+import Image from "next/image"
+import Stack from "@atom/stack"
+import OrderButton from "./order-button"
+import Typography from "@atom/typography"
 
 const TopHomeBlog = () => {
   return (
@@ -26,9 +26,7 @@ const TopHomeBlog = () => {
             className="md:hidden inline max-h-[760px] rounded-3xl"
             alt="fruit-salad"
           />
-          <Button variant="contained" size="large">
-            Order Now
-          </Button>
+          <OrderButton />
         </Stack>
         <Image
           src="/images/fruit.jpg"

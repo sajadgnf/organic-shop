@@ -1,17 +1,19 @@
 "use client"
-import React, { useState } from "react"
 import Image from "next/image"
 import Input from "@atom/input"
 import Stack from "@atom/stack"
 import Button from "@atom/button"
 import Typography from "@atom/typography"
 import { SIGNIN, SIGNUP, SMSVERIFICATION } from "routes"
-import { usePathname, useRouter } from "next/navigation"
+import React, { ChangeEvent, FormEvent, useState } from "react"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
 const SignUpComponent = () => {
   const router = useRouter()
   const pathName = usePathname()
-  const [phone, setPhone] = useState()
+  const searchParams = useSearchParams()
+  const phoneParam = searchParams.get("phone")
+  const [phone, setPhone] = useState(phoneParam || "")
 
   const title = pathName === SIGNIN ? "Sing in" : "Sign up"
   const subTitle = pathName === SIGNIN ? "New to Organic Shop?" : "Already have an account"
@@ -21,18 +23,30 @@ const SignUpComponent = () => {
     router.push(pathName === SIGNIN ? SIGNUP : SIGNIN)
   }
 
-  const singinHandler = () => {
-    router.push(`${SMSVERIFICATION}?phone=${phone}`)
+  const singinHandler = (e: FormEvent) => {
+    e.preventDefault()
+    router.push(`${SMSVERIFICATION}?pathName=${pathName}&phone=${phone}`)
   }
 
   return (
     <Stack className="mt-4 sm:mt-32 flex-col space-y-4">
       <Image src="images/logo.svg" alt="organic shop logo" width={200} height={100} />
 
-      <Stack className="flex-col bg-white rounded-lg border px-10 py-8 items-start space-y-5">
+      <Stack
+        variant="form"
+        onSubmit={singinHandler}
+        className="flex-col bg-white rounded-lg border px-10 py-8 items-start space-y-5"
+      >
         <Typography variant="h5">{title}</Typography>
-        <Input type="number" name="login" label="Mobile phone number" value={phone} onChange={(e) => setPhone(e.target.value)} />
-        <Button variant="contained" className="w-full" onClick={singinHandler}>
+        <Input
+          type="number"
+          name="login"
+          label="Mobile phone number"
+          required
+          value={phone}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)}
+        />
+        <Button variant="contained" type="submit" className="w-full">
           Continue
         </Button>
 
