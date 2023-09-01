@@ -20,7 +20,7 @@ const tagMap = {
   article: "article",
 }
 
-const Stack = ({ children, variant = "div", style, className, onClick, ref, onSubmit, ...props }: PropsType) => {
+const Stack = ({ children, variant = "div", style, className = "", onClick, ref, onSubmit, ...props }: PropsType) => {
   const Tag: any = tagMap[variant] || "div"
 
   const priorityClassName = className?.split(" ")
