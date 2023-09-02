@@ -5,7 +5,7 @@ import EmptyCart from "@module/cart/empty-cart"
 
 const Cart = () => {
   return (
-    <Stack className="container mt-32 mx-auto w-full">
+    <Stack className="container mt-2 sm:mt-20 lg:mt-32 mx-auto w-full">
       <FullCart />
       {/* <EmptyCart /> */}
     </Stack>

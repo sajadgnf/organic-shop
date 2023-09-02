@@ -60,6 +60,9 @@ module.exports = {
             main: "#E9EEF1",
             dark: "#d6d8da",
           },
+          danger: {
+            main: "#F2120C",
+          },
         },
       },
       boxShadow: {

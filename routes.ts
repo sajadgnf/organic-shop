@@ -1,9 +1,10 @@
-export const HOME = '/'
-export const CART = '/cart'
-export const BLOG = '/blog'
-export const STORE = '/store'
-export const COMMENTS = '/comments'
-export const SIGNIN = '/sign-in'
-export const SIGNUP = '/sign-up'
-export const CONTACT = '/contact'
-export const SMSVERIFICATION = '/sms-verification'
+export const HOME = "/"
+export const CART = "/cart"
+export const BLOG = "/blog"
+export const STORE = "/store"
+export const SIGNIN = "/sign-in"
+export const SIGNUP = "/sign-up"
+export const CONTACT = "/contact"
+export const COMMENTS = "/comments"
+export const SMSVERIFICATION = "/sms-verification"
+export const PRODUCTDETAILS = (id: string | number) => `/product-details/${id}`
