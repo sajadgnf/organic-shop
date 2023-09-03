@@ -5,6 +5,7 @@ import Stack from "@atom/stack"
 import Button from "@atom/button"
 import { PRODUCTDETAILS } from "routes"
 import Typography from "@atom/typography"
+import BuyButtons from "@module/buy-buttons"
 import { XMarkIcon } from "@heroicons/react/24/solid"
 
 const OrderedItem = () => {
@@ -23,13 +24,7 @@ const OrderedItem = () => {
 
         <Stack className="space-x-6">
           <Stack className="space-x-2">
-            <Button variant="outlined" className="!rounded-full w-8 !h-8 !p-0 flex justify-center">
-              -
-            </Button>
-            <Typography>4</Typography>
-            <Button variant="outlined" className="!rounded-full w-8 !h-8 !p-0 flex justify-center">
-              +
-            </Button>
+            <BuyButtons quantity={3} />
             <Typography>Kilogram</Typography>
           </Stack>
           <Typography className="text-danger-main">$43.5</Typography>
@@ -61,13 +56,7 @@ const OrderedItem = () => {
           <Typography variant="h6">$43.5</Typography>
 
           <Stack className="space-x-2">
-            <Button variant="outlined" className="!rounded-full w-6 !h-6 !p-0 flex items-center justify-center">
-              -
-            </Button>
-            <Typography>4</Typography>
-            <Button variant="outlined" className="!rounded-full w-6 !h-6 !p-0 flex items-center justify-center">
-              +
-            </Button>
+            <BuyButtons quantity={3} />
             <Typography>Kilogram</Typography>
           </Stack>
         </Stack>

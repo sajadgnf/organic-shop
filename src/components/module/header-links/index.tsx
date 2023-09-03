@@ -16,13 +16,12 @@ const Head = () => {
 
   useEffect(() => {
     function handleResize() {
-      setImage(window.innerWidth >= 480 ? "./images/logo.svg" : "./images/orange-logo.svg")
+      setImage(window.innerWidth >= 480 ? "/images/logo.svg" : "/images/orange-logo.svg")
     }
 
     window.addEventListener("resize", handleResize)
 
     handleResize()
-
     return () => window.removeEventListener("resize", handleResize)
   }, [window, image])
 

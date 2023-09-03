@@ -3,6 +3,7 @@ import Image from "next/image"
 import Stack from "@atom/stack"
 import Button from "@atom/button"
 import Typography from "@atom/typography"
+import BuyButtons from "@module/buy-buttons"
 
 type PropsType = {
   img?: string
@@ -25,7 +26,7 @@ const Card = ({ img = "", title = "", description = "", discount, price }: Props
         <Stack className="flex-col items-start w-full">
           {discount && (
             <Stack className="items-center space-x-1">
-              <Typography variant="caption" className="bg-primary-dark rounded-full text-white p-1">
+              <Typography variant="caption" className="bg-primary-dark rounded-full text-white px-1 py-[2.5px]">
                 {discount && price && Math.floor((+discount * +price) / 100)}%
               </Typography>
               <Typography className="line-through text-gray-400">${price}</Typography>
@@ -33,7 +34,7 @@ const Card = ({ img = "", title = "", description = "", discount, price }: Props
           )}
           <Stack className="justify-between w-full">
             <Typography variant="h6">${discount ? discount : price}</Typography>
-            <Button variant="contained">Add To Cart</Button>
+            <BuyButtons quantity={0} size="medium" variant="contained" />
           </Stack>
         </Stack>
       </Stack>
