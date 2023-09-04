@@ -67,16 +67,15 @@ const SpecialOfferList = () => {
   return (
     <Stack className="w-full overflow-auto space-x-5 justify-start px-1 pb-1 hide-scrollbar">
       {FAKE_DATA.map((data, i) => (
-        <Link href={PRODUCTDETAILS(data.id)} key={data.title + data.img + i}>
-          <Card
-            img={data.img}
-            title={data.title}
-            price={data.price}
-            discount={data.discount}
-            key={data.title + data.img + i}
-            description={data.description}
-          />
-        </Link>
+        <Card
+          img={data.img}
+          title={data.title}
+          price={data.price}
+          discount={data.discount}
+          key={data.title + data.img + i}
+          description={data.description}
+          href={PRODUCTDETAILS(data.id)}
+        />
       ))}
     </Stack>
   )

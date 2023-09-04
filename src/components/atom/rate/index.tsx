@@ -4,12 +4,12 @@ import React, { useState } from "react"
 import { StarIcon } from "@heroicons/react/24/solid"
 
 type PropsType = {
-  value: number
+  value?: number
   readonly?: boolean
-  onChange: (t: number) => void
+  onChange?: (t: number) => void
 }
 
-const Rate = ({ value, onChange, readonly = false }: PropsType) => {
+const Rate = ({ value = NaN, onChange = () => {}, readonly = false }: PropsType) => {
   const [hover, setHover] = useState(value)
 
   return (

@@ -67,9 +67,14 @@ const RelatedProductList = () => {
   return (
     <Stack className="w-full overflow-auto space-x-5 justify-start px-1 pb-2 hide-scrollbar">
       {FAKE_DATA.map((data, i) => (
-        <Link href={PRODUCTDETAILS(data.id)} key={data.title + data.img + i}>
-          <Card img={data.img} title={data.title} price={data.price} discount={data.discount} description={data.description} />
-        </Link>
+        <Card
+          img={data.img}
+          title={data.title}
+          price={data.price}
+          discount={data.discount}
+          description={data.description}
+          href={PRODUCTDETAILS(data.id)}
+        />
       ))}
     </Stack>
   )
