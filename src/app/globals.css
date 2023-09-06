@@ -18,7 +18,7 @@
 
 body {
   color: var(--foreground);
-  background-color: #f6f6f6
+  background-color: #f6f6f6;
 }
 
 .display-flex {
@@ -51,7 +51,7 @@ body {
 
 .number-input {
   -webkit-appearance: none;
-  -moz-appearance: textfield; 
+  -moz-appearance: textfield;
 }
 
 .number-input::-webkit-inner-spin-button,
@@ -59,7 +59,6 @@ body {
   -webkit-appearance: none;
   margin: 0;
 }
-
 
 @media (max-width: 480px) {
   .hide-scrollbar::-webkit-scrollbar {

@@ -1,7 +1,7 @@
 import React from "react"
 import Stack from "@atom/stack"
+import Typography from "@atom/typography"
 import CommentCard from "@module/comment-card"
-import CommentsModal from "@module/comments-modal"
 
 const FAKE_DATA = [
   {
@@ -44,7 +44,7 @@ const FAKE_DATA = [
 const Comments = () => {
   return (
     <Stack className="flex-col items-start space-y-10 w-full">
-      <CommentsModal data={FAKE_DATA} />
+      <Typography variant="h5">testimonials</Typography>
 
       <Stack className="flex-col w-full space-y-4">
         {FAKE_DATA.splice(0, 4).map((item) => (

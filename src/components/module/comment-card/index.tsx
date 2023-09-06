@@ -7,6 +7,7 @@ import Typography from "@atom/typography"
 type PropsType = {
   data: {
     name: string
+    rate: number
     description: string
   }
 }
@@ -19,7 +20,7 @@ const CommentCard = ({ data }: PropsType) => {
 
         <Stack className="flex-col items-start">
           <Typography variant="h6">{data.name}</Typography>
-          <Rate value={2} readonly />
+          <Rate value={data.rate} readonly />
         </Stack>
       </Stack>
       <Typography>{data.description}</Typography>
