@@ -7,10 +7,11 @@ type PropsType = {
   onClick?: MouseEventHandler<HTMLButtonElement>
   onSubmit?: FormEventHandler<HTMLButtonElement>
   children?: ReactElement | ReactNode | string | number
-  variant?: "div" | "header" | "footer" | "article" | "form" | "section" | "main"
+  variant?: "div" | "header" | "footer" | "article" | "form" | "section" | "main" | "ul"
 }
 
 const tagMap = {
+  ul: "ul",
   div: "div",
   form: "form",
   main: "main",

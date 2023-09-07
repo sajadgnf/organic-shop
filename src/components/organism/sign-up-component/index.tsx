@@ -1,11 +1,12 @@
 "use client"
+import Link from "next/link"
 import Image from "next/image"
 import Input from "@atom/input"
 import Stack from "@atom/stack"
 import Button from "@atom/button"
 import Typography from "@atom/typography"
-import { SIGNIN, SIGNUP, SMSVERIFICATION } from "routes"
 import React, { ChangeEvent, FormEvent, useState } from "react"
+import { PRIVACY, SIGNIN, SIGNUP, SMSVERIFICATION } from "routes"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
 const SignUpComponent = () => {
@@ -51,7 +52,8 @@ const SignUpComponent = () => {
         </Button>
 
         <Typography variant="caption" className="text-gray-900">
-          By continuing, you agree to Organic Shop's Conditions of <br className="hidden xs:block" /> Use and Privacy Notice.
+          By continuing, you agree to Organic Shop's Conditions of <br className="hidden xs:block" /> Use and&nbsp;
+          <Link href={PRIVACY} className="underline text-blue-500">Privacy Notice</Link>.
         </Typography>
       </Stack>
 

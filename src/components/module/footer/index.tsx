@@ -1,9 +1,11 @@
-import Button from "@atom/button"
+import React from "react"
+import Image from "next/image"
 import Input from "@atom/input"
 import Stack from "@atom/stack"
+import Button from "@atom/button"
 import Typography from "@atom/typography"
-import Image from "next/image"
-import React from "react"
+import Link from "next/link"
+import { ABOUT, BLOG, CONTACT, COOKIES, FAQS, HOME, PRIVACY, STORE, TERMS } from "routes"
 
 const Footer = () => {
   return (
@@ -15,19 +17,37 @@ const Footer = () => {
           <table className="w-full md:ml-3 lg:ml-0">
             <tbody className="w-full">
               <tr className="flex justify-between md:inline-block w-full md:[&>td]:pr-14 [&>td]:py-2 [&>td]:cursor-pointer text-[12px] sm:text-[16px] font-bold">
-                <td>Home</td>
-                <td>Terms</td>
-                <td>Contact us</td>
+                <td>
+                  <Link href={HOME}>Home</Link>
+                </td>
+                <td>
+                  <Link href={TERMS}>Terms</Link>
+                </td>
+                <td>
+                  <Link href={CONTACT}>Contact us</Link>
+                </td>
               </tr>
               <tr className="flex justify-between md:inline-block w-full md:[&>td]:pr-14 [&>td]:py-2 [&>td]:cursor-pointer text-[12px] sm:text-[16px] font-bold">
-                <td>Shop</td>
-                <td>privacy</td>
-                <td>About us</td>
+                <td>
+                  <Link href={STORE}>Shop</Link>
+                </td>
+                <td>
+                  <Link href={PRIVACY}> privacy</Link>
+                </td>
+                <td>
+                  <Link href={ABOUT}>About us</Link>
+                </td>
               </tr>
               <tr className="flex justify-between md:inline-block w-full md:[&>td]:pr-14 [&>td]:py-2 [&>td]:cursor-pointer text-[12px] sm:text-[16px] font-bold">
-                <td>Blog</td>
-                <td>Cookies</td>
-                <td>FAQs</td>
+                <td>
+                  <Link href={BLOG}>Blog</Link>
+                </td>
+                <td>
+                  <Link href={COOKIES}>Cookies</Link>
+                </td>
+                <td>
+                  <Link href={FAQS}>FAQs</Link>
+                </td>
               </tr>
             </tbody>
           </table>

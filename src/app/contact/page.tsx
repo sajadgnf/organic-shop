@@ -1,10 +1,10 @@
 "use client"
+import Image from "next/image"
 import Input from "@atom/input"
 import Stack from "@atom/stack"
 import Button from "@atom/button"
 import Typography from "@atom/typography"
 import React, { ChangeEvent, useState } from "react"
-import Image from "next/image"
 
 const Contact = () => {
   const [info, setInfo] = useState({
