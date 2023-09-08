@@ -17,8 +17,8 @@ const SignUpComponent = () => {
   const [phone, setPhone] = useState(phoneParam || "")
 
   const title = pathName === SIGNIN ? "Sing in" : "Sign up"
-  const subTitle = pathName === SIGNIN ? "New to Organic Shop?" : "Already have an account"
   const buttonText = pathName === SIGNIN ? "Create you Organic Shop account" : "Sign in"
+  const subTitle = pathName === SIGNIN ? "New to Organic Shop?" : "Already have an account"
 
   const navigationHandler = () => {
     router.push(pathName === SIGNIN ? SIGNUP : SIGNIN)

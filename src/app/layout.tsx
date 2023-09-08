@@ -3,6 +3,7 @@ import Footer from "@module/footer"
 import Head from "@module/header-links"
 import { Inika, Roboto } from "next/font/google"
 import ToastContainer from "../components/atom/toast"
+import ReduxProvider from "./reduxProvider"
 
 const inika = Inika({
   subsets: ["latin"],
@@ -25,10 +26,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`min-h-screen ${inika.variable} ${roboto.variable}`}>
-        <ToastContainer />
-        <Head />
-        {children}
-        <Footer />
+        <ReduxProvider>
+          <ToastContainer />
+          <Head />
+          {children}
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   )

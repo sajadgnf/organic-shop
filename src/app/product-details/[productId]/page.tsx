@@ -7,9 +7,12 @@ import Typography from "@atom/typography"
 import Comments from "@organism/comments"
 import BuyButtons from "@module/buy-buttons"
 import RelatedProduct from "@organism/related-product"
+import FAKE_DATA, { ProductType } from "@src/common/fake-data"
 import { ShoppingCartIcon, StarIcon } from "@heroicons/react/24/solid"
 
-const ProductDetails = () => {
+const ProductDetails = ({ params }: { params: { productId: string } }) => {
+  const data = FAKE_DATA.find((item) => item.id == params.productId) as ProductType
+
   return (
     <Stack className="container mt-32 flex-col space-y-32">
       <Stack className="justify-between w-full">
@@ -18,69 +21,49 @@ const ProductDetails = () => {
 
           <Stack className="flex-col mt-10 items-start space-y-5">
             <Stack className="flex-col items-start space-y-2">
-              <Typography variant="h3">title</Typography>
+              <Typography variant="h3">{data.title}</Typography>
               <Link href={`${STORE}?category=category`}>
-                <Typography className="grey">category</Typography>
+                <Typography className="grey">{data.category}</Typography>
               </Link>
             </Stack>
 
             <Stack className="space-x-1">
               <StarIcon width={20} className="text-primary-dark" />
-              <Typography>4/4</Typography>
+              <Typography>{data.rate}</Typography>
             </Stack>
           </Stack>
         </Stack>
 
         <Stack>
-          <Stack className="flex-col space-y-8">
-            <Typography variant="h6">per kilogram</Typography>
-            <Typography variant="h6">$13.4</Typography>
-            <BuyButtons
-              quantity={0}
-              buyButtonTitle={
-                <Stack className="space-x-1">
-                  <Typography>Luxury</Typography>
-                  <ShoppingCartIcon width={20} />
-                </Stack>
-              }
-            />
-          </Stack>
-
-          <Stack className="border border-gray-400 mx-3 h-44" />
-
-          <Stack className="flex-col space-y-8">
-            <Typography variant="h6">per kilogram</Typography>
-            <Typography variant="h6">$13.4</Typography>
-            <BuyButtons
-              quantity={0}
-              buyButtonTitle={
-                <Stack className="space-x-1">
-                  <Typography>High grade</Typography>
-                  <ShoppingCartIcon width={20} />
-                </Stack>
-              }
-            />
-          </Stack>
+          {data.type.map((item, i) => (
+            <>
+              <Stack className="flex-col space-y-8">
+                <Typography variant="h6">per kilogram</Typography>
+                <Typography variant="h6">{item.price}</Typography>
+                <BuyButtons
+                  data={data}
+                  buyButtonTitle={
+                    <Stack className="space-x-1">
+                      <Typography>{item.name}</Typography>
+                      <ShoppingCartIcon width={20} />
+                    </Stack>
+                  }
+                />
+              </Stack>
+              <Stack className={`border mx-10 border-gray-300 h-44 ${i === data.type.length - 1 && "hidden"}`} />
+            </>
+          ))}
         </Stack>
       </Stack>
 
       <RelatedProduct />
 
-      <Stack className="flex-col items-start space-y-3">
+      <Stack className="flex-col items-start space-y-3 w-full">
         <Typography variant="h5">title</Typography>
-        <Typography>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet error voluptates ipsa fuga corrupti fugit neque odio
-          quasi assumenda fugiat. Ducimus veniam dolorum recusandae maiores hic. Ratione ipsa atque deserunt. Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. At asperiores nemo repellendus quo laborum ipsam maiores optio eos odio, corporis
-          cupiditate ratione quam dignissimos porro et! Veritatis eum quaerat ea. Lorem ipsum, dolor sit amet consectetur
-          adipisicing elit. Amet error voluptates ipsa fuga corrupti fugit neque odio quasi assumenda fugiat. Ducimus veniam
-          dolorum recusandae maiores hic. Ratione ipsa atque deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-          asperiores nemo repellendus quo laborum ipsam maiores optio eos odio, corporis cupiditate ratione quam dignissimos porro
-          et! Veritatis eum quaerat ea.
-        </Typography>
+        <Typography>{data.description}</Typography>
       </Stack>
 
-      <Comments />
+      <Comments data={data.comments} />
     </Stack>
   )
 }

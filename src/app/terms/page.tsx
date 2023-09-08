@@ -6,7 +6,7 @@ import Typography from "@atom/typography"
 const Terms = () => {
   return (
     <Stack className="w-full mt-32 container mx-auto">
-      <Stack className="flex-col items-start space-y-3">
+      <Stack className="flex-col items-start space-y-6">
         <Typography variant="h3">Welcome to Organic Shop</Typography>
         <Stack variant="ul" className="space-y-3 flex-col items-start">
           <li>

@@ -8,7 +8,7 @@ const Privacy = () => {
   return (
     <Stack className="container mx-auto mt-32 flex-col space-y-14">
       <Stack className="w-full flex-col space-y-6 items-start">
-        <Typography variant="h4">Privacy Policy</Typography>
+        <Typography variant="h3">Privacy Policy</Typography>
         <Typography>
           At Organic Shop, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your data.
         </Typography>

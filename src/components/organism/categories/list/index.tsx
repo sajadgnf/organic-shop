@@ -1,9 +1,9 @@
 import React from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { STORE } from "routes"
 import Stack from "@atom/stack"
 import Typography from "@atom/typography"
-import { STORE } from "routes"
 
 const FAKE_DATA = [
   {
