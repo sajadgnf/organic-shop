@@ -8,7 +8,7 @@ export interface RootState {
     total: number
     checkout: boolean
     itemsCounter: number
-    selectedItems: [{ id: string | number; quantity: number; price: number }]
+    selectedItems: [{ id: string; quantity: number; price: number; type: { id: string }[] }]
   }
 }
 

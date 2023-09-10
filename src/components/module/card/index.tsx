@@ -28,7 +28,7 @@ const Card = ({ data, href = "" }: PropsType) => {
       </Link>
 
       <Stack className="justify-between items-end w-full px-6 pb-4">
-        {type.map(({ price, name, discount }) => (
+        {type.map(({ price, name, discount, id }) => (
           <Stack className="flex-col space-y-3">
             <Stack className="flex-col items-end">
               {!!discount && (
@@ -41,11 +41,9 @@ const Card = ({ data, href = "" }: PropsType) => {
                   </Typography>
                 </Stack>
               )}
-              <Typography variant="h6" >
-                ${discount ? discount : price}
-              </Typography>
+              <Typography variant="h6">${discount ? discount : price}</Typography>
             </Stack>
-            <BuyButtons buyButtonTitle={name} data={data} size="small" variant="contained" />
+            <BuyButtons typeId={id} buyButtonTitle={name} data={data} size="small" variant="contained" />
           </Stack>
         ))}
       </Stack>

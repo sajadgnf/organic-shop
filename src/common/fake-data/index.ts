@@ -1,11 +1,12 @@
 export type ProductType = {
+  id: string
   img: string
   title: string
-  id: string | number
   description: string
   rate: number | string
   category: "juice" | "fruit" | "vegetable" | "salad"
   type: {
+    id: string
     name: string
     price: number
     discount: number
@@ -19,7 +20,7 @@ export type ProductType = {
 
 const FAKE_DATA: ProductType[] = [
   {
-    id: 1,
+    id: "1",
     title: "Green Love",
     description: "Organic drink, a combination of apple, celery, cucumber, lemon, ginger and mint leaves",
     img: "/images/test-juice.svg",
@@ -27,11 +28,13 @@ const FAKE_DATA: ProductType[] = [
     category: "juice",
     type: [
       {
+        id: "1",
         name: "Luxury",
         price: 14.01,
         discount: 0,
       },
       {
+        id: "2",
         name: "High grade",
         price: 12.01,
         discount: 12.41,
@@ -76,7 +79,7 @@ const FAKE_DATA: ProductType[] = [
     ],
   },
   {
-    id: 2,
+    id: "2",
     title: "Green Love",
     description: "Organic drink, a combination of apple, celery, cucumber, lemon, ginger and mint leaves",
     img: "/images/test-juice.svg",
@@ -84,11 +87,13 @@ const FAKE_DATA: ProductType[] = [
     category: "juice",
     type: [
       {
+        id: "1",
         name: "Luxury",
         price: 14.01,
         discount: 0,
       },
       {
+        id: "2",
         name: "High grade",
         price: 12.01,
         discount: 12.41,
@@ -133,7 +138,7 @@ const FAKE_DATA: ProductType[] = [
     ],
   },
   {
-    id: 3,
+    id: "3",
     title: "Green Love",
     description: "Organic drink, a combination of apple, celery, cucumber, lemon, ginger and mint leaves",
     img: "/images/test-juice.svg",
@@ -141,11 +146,13 @@ const FAKE_DATA: ProductType[] = [
     category: "juice",
     type: [
       {
+        id: "1",
         name: "Luxury",
         price: 14.01,
         discount: 12.06,
       },
       {
+        id: "2",
         name: "High grade",
         price: 12.01,
         discount: 12.41,
@@ -190,7 +197,7 @@ const FAKE_DATA: ProductType[] = [
     ],
   },
   {
-    id: 4,
+    id: "4",
     title: "Green Love",
     description: "Organic drink, a combination of apple, celery, cucumber, lemon, ginger and mint leaves",
     img: "/images/test-juice.svg",
@@ -198,11 +205,13 @@ const FAKE_DATA: ProductType[] = [
     category: "juice",
     type: [
       {
+        id: "1",
         name: "Luxury",
         price: 14.01,
         discount: 12.06,
       },
       {
+        id: "2",
         name: "High grade",
         price: 12.01,
         discount: 12.41,
@@ -247,7 +256,7 @@ const FAKE_DATA: ProductType[] = [
     ],
   },
   {
-    id: 5,
+    id: "5",
     title: "Green Love",
     description: "Organic drink, a combination of apple, celery, cucumber, lemon, ginger and mint leaves",
     img: "/images/test-juice.svg",
@@ -255,11 +264,13 @@ const FAKE_DATA: ProductType[] = [
     category: "juice",
     type: [
       {
+        id: "1",
         name: "Luxury",
         price: 14.01,
         discount: 12.06,
       },
       {
+        id: "2",
         name: "High grade",
         price: 12.01,
         discount: 12.41,
@@ -304,7 +315,7 @@ const FAKE_DATA: ProductType[] = [
     ],
   },
   {
-    id: 6,
+    id: "6",
     title: "Green Love",
     description: "Organic drink, a combination of apple, celery, cucumber, lemon, ginger and mint leaves",
     img: "/images/test-juice.svg",
@@ -312,11 +323,13 @@ const FAKE_DATA: ProductType[] = [
     category: "juice",
     type: [
       {
+        id: "1",
         name: "Luxury",
         price: 14.01,
         discount: 12.06,
       },
       {
+        id: "2",
         name: "High grade",
         price: 12.01,
         discount: 12.41,
@@ -361,7 +374,7 @@ const FAKE_DATA: ProductType[] = [
     ],
   },
   {
-    id: 7,
+    id: "7",
     title: "Green Love",
     description: "Organic drink, a combination of apple, celery, cucumber, lemon, ginger and mint leaves",
     img: "/images/test-juice.svg",
@@ -369,11 +382,13 @@ const FAKE_DATA: ProductType[] = [
     category: "juice",
     type: [
       {
+        id: "1",
         name: "Luxury",
         price: 14.01,
         discount: 12.06,
       },
       {
+        id: "2",
         name: "High grade",
         price: 12.01,
         discount: 12.41,
