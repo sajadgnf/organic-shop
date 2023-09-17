@@ -42,6 +42,7 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
                 <Typography variant="h6">{item.price}</Typography>
                 <BuyButtons
                   data={data}
+                  typeId={item.id}
                   buyButtonTitle={
                     <Stack className="space-x-1">
                       <Typography>{item.name}</Typography>

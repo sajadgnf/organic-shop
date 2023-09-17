@@ -8,11 +8,16 @@ import { usePathname, useRouter } from "next/navigation"
 import { ShoppingBagIcon } from "@heroicons/react/24/solid"
 import { BLOG, CART, CONTACT, HOME, SIGNIN, STORE } from "routes"
 import HamburgerMenu from "@module/header-links/hamburgerMenu"
+import Typography from "@atom/typography"
+import { useSelector } from "react-redux"
+import { RootState } from "@src/store"
 
 const Head = () => {
+  const router = useRouter()
   const pathName = usePathname()
   const [image, setImage] = useState("")
-  const router = useRouter()
+
+  const { itemsCounter } = useSelector((state: RootState) => state.cartSlice)
 
   useEffect(() => {
     function handleResize() {
@@ -52,7 +57,7 @@ const Head = () => {
             <Link className={`header-link ${pathName === BLOG ? "after:w-[50%]" : ""}`} href={BLOG}>
               Blog
             </Link>
-            <HamburgerMenu />
+            <HamburgerMenu itemsCounter={itemsCounter} />
           </Stack>
         </Stack>
 
@@ -60,7 +65,18 @@ const Head = () => {
           <Button variant="contained" onClick={() => router.push(SIGNIN)}>
             Sign in
           </Button>
-          <Button onClick={() => router.push(CART)} data-testid="shopping-button" variant="contained" size="small">
+          <Button
+            size="small"
+            variant="contained"
+            className="relative"
+            data-testid="shopping-button"
+            onClick={() => router.push(CART)}
+          >
+            {!!itemsCounter && (
+              <Typography className="absolute top-[-10px] left-[-10px] bg-primary-dark rounded-full w-6 h-6 text-white">
+                {itemsCounter}
+              </Typography>
+            )}
             <ShoppingBagIcon className="h-8 w-8" />
           </Button>
         </Stack>

@@ -10,10 +10,10 @@ import { addItem, decreaseItem, increaseItems, removeItem } from "@src/store/sli
 
 type PropsType = {
   typeId: string
-  data: ProductType
   size?: "large" | "small" | "medium"
   variant?: "outlined" | "text" | "contained" | "circle"
   buyButtonTitle?: string | number | ReactNode | ReactElement
+  data: RootState["cartSlice"]["selectedItems"][number] | ProductType
 }
 
 const BuyButtons = ({ data, typeId, variant = "outlined", size = "large", buyButtonTitle = "Add to Cart" }: PropsType) => {
@@ -25,21 +25,15 @@ const BuyButtons = ({ data, typeId, variant = "outlined", size = "large", buyBut
   const quantity = currentTypeItem?.quantity
 
   return !currentTypeItem ? (
-    <Button
-      onClick={() => {
-        console.log("currentTypeItem", currentTypeItem)
-        dispatch(addItem({ data, typeId }))
-      }}
-      variant={variant}
-      size={size}
-      className="md:w-[130px]"
-    >
+    <Button onClick={() => dispatch(addItem({ data, typeId }))} variant={variant} size={size} className="md:w-[130px]">
       {buyButtonTitle}
     </Button>
   ) : (
     <Stack className="space-x-2">
       <Button
-        onClick={() => dispatch(quantity === 1 ? removeItem(data) : decreaseItem(data))}
+        onClick={() =>
+          dispatch(quantity === 1 ? removeItem({ data: currentItem[0], typeId }) : decreaseItem({ data: currentItem, typeId }))
+        }
         variant="outlined"
         className="!rounded-full !p-0 flex justify-center w-6 lg:w-8 !h-6 lg:!h-8 items-center lg:items-start"
       >
@@ -47,7 +41,7 @@ const BuyButtons = ({ data, typeId, variant = "outlined", size = "large", buyBut
       </Button>
       <Typography>{quantity}</Typography>
       <Button
-        onClick={() => dispatch(increaseItems(data))}
+        onClick={() => dispatch(increaseItems({ data: currentItem, typeId }))}
         variant="outlined"
         className="!rounded-full !p-0 flex justify-center w-6 lg:w-8 !h-6 lg:!h-8 items-center lg:items-start"
       >

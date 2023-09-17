@@ -5,10 +5,11 @@ import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit"
 
 export interface RootState {
   cartSlice: {
-    total: number
+    id: string
     checkout: boolean
+    totalPrice: number
     itemsCounter: number
-    selectedItems: [{ id: string; quantity: number; price: number; type: { id: string }[] }]
+    selectedItems: [{ id: string; title: string; quantity: number; type: { id: string; price: number } }]
   }
 }
 
