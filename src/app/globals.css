@@ -60,6 +60,17 @@ body {
   margin: 0;
 }
 
+.checkbox-input-tick {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  transition: 0.5s all;
+
+}
+
+.checkbox-input:checked + label svg g path {
+  stroke-dashoffset: 0;
+}
+
 @media (max-width: 480px) {
   .hide-scrollbar::-webkit-scrollbar {
     display: none;

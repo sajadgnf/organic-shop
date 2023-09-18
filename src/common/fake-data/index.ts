@@ -18,6 +18,11 @@ export type ProductType = {
   }[]
 }
 
+export type CategoryType = {
+  title: string
+  img: string
+}
+
 const FAKE_DATA: ProductType[] = [
   {
     id: "1",
@@ -431,6 +436,25 @@ const FAKE_DATA: ProductType[] = [
         rate: 3,
       },
     ],
+  },
+]
+
+export const FAKE_CATEGORY: CategoryType[] = [
+  {
+    title: "vegetable",
+    img: "/images/vegetable.svg",
+  },
+  {
+    title: "fruit",
+    img: "/images/vegetable.svg",
+  },
+  {
+    title: "juice",
+    img: "/images/vegetable.svg",
+  },
+  {
+    title: "salad",
+    img: "/images/vegetable.svg",
   },
 ]
 export default FAKE_DATA

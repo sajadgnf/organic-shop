@@ -1,8 +1,8 @@
 import React from "react"
 
 type PropsType = {
-  htmlFor?: string
   children: any
+  htmlFor?: string
   className?: string
   component?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "label"
   variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "caption" | "label"
