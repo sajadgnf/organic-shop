@@ -4,6 +4,7 @@ import Card from "@module/card"
 import FAKE_DATA from "@src/common/fake-data"
 import FilterProduct from "@module/filter-product"
 import HamburMenu from "@module/filter-product/hambur-menu"
+import ProductCard from "@module/product-card"
 
 const Store = () => {
   return (
@@ -15,9 +16,9 @@ const Store = () => {
           <FilterProduct />
         </Stack>
 
-        <Stack className="flex-wrap gap-4">
+        <Stack className="flex-wrap flex-col md:flex-row gap-4">
           {FAKE_DATA.map((data, i) => (
-            <Card data={data} key={data.title + data.img + i} />
+            <ProductCard data={data} key={data.title + data.img + i} />
           ))}
         </Stack>
       </Stack>
