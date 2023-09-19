@@ -1,21 +1,36 @@
 "use client"
-import Button from "@atom/button"
 import Stack from "@atom/stack"
+import FilterProduct from ".."
+import Button from "@atom/button"
+import React, { useEffect, useRef, useState } from "react"
 import Typography from "@atom/typography"
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/solid"
-import React, { useState } from "react"
-import FilterProduct from ".."
 
 const HamburMenu = () => {
   const [open, setOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    menuRef.current = document.getElementById("filter-container") as HTMLDivElement
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setOpen(false)
+      }
+    }
+
+    document.addEventListener("click", handleClickOutside)
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside)
+    }
+  }, [])
 
   return (
-    <Stack className="md:hidden relative">
-      {open && (
-        <Stack className="absolute top-0">
-          <FilterProduct />
-        </Stack>
-      )}
+    <Stack id="filter-container" className="md:hidden relative z-10">
+      <Stack className={open ? "flex absolute top-0 z-20" : "hidden"}>
+        <FilterProduct />
+      </Stack>
 
       <Button>
         <Stack className="space-x-2">

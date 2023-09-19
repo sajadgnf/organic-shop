@@ -8,10 +8,10 @@ import ProductCard from "@module/product-card"
 
 const Store = () => {
   return (
-    <Stack className="px-8 mt-10 sm:mt-28 md:mt-72 flex-col space-y-10 md:space-y-0">
+    <Stack className="px-4 md:px-14 mt-10 sm:mt-28 md:mt-72 flex-col space-y-10 md:space-y-0">
       <HamburMenu />
 
-      <Stack className="items-start">
+      <Stack className="items-start space-x-2">
         <Stack className="hidden md:flex">
           <FilterProduct />
         </Stack>

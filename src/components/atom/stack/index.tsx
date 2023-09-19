@@ -4,6 +4,7 @@ type PropsType = {
   ref?: any
   className?: string
   style?: string | {}
+  id?: string | number
   onClick?: MouseEventHandler<HTMLButtonElement>
   onSubmit?: FormEventHandler<HTMLButtonElement>
   children?: ReactElement | ReactNode | string | number
@@ -21,7 +22,7 @@ const tagMap = {
   article: "article",
 }
 
-const Stack = ({ children, variant = "div", style, className = "", onClick, ref, onSubmit, ...props }: PropsType) => {
+const Stack = ({ children, id, variant = "div", style, className = "", onClick, ref, onSubmit, ...props }: PropsType) => {
   const Tag: any = tagMap[variant] || "div"
 
   const priorityClassName = className?.split(" ")
@@ -31,6 +32,7 @@ const Stack = ({ children, variant = "div", style, className = "", onClick, ref,
   return (
     <Tag
       className={`flex transform ${priorityClassName?.join(" ")}`}
+      id={id}
       ref={ref}
       role="div"
       style={style}

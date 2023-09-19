@@ -3,14 +3,14 @@ import Link from "next/link"
 import Image from "next/image"
 import Stack from "@atom/stack"
 import Button from "@atom/button"
+import { RootState } from "@src/store"
+import Typography from "@atom/typography"
+import { useSelector } from "react-redux"
 import React, { useEffect, useState } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import { ShoppingBagIcon } from "@heroicons/react/24/solid"
-import { BLOG, CART, CONTACT, HOME, SIGNIN, STORE } from "routes"
 import HamburgerMenu from "@module/header-links/hamburgerMenu"
-import Typography from "@atom/typography"
-import { useSelector } from "react-redux"
-import { RootState } from "@src/store"
+import { BLOG, CART, CONTACT, HOME, SIGNIN, STORE } from "routes"
 
 const Head = () => {
   const router = useRouter()
@@ -31,7 +31,7 @@ const Head = () => {
   }, [window, image])
 
   return (
-    <Stack className="sm:fixed top-0 left-0 right-0 justify-center border-b z-10 bg-white w-full sm:shadow-lg">
+    <Stack className="sticky sm:fixed top-0 left-0 right-0 justify-center border-b z-10 bg-white w-full sm:shadow-lg">
       <Stack className=" sm:pr-3 max-w-[1830px] w-full justify-between">
         <Stack className="sm:space-x-10 w-full md:w-auto flex-col sm:flex-row">
           <Link href={HOME}>
