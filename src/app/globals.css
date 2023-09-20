@@ -64,7 +64,6 @@ body {
   stroke-dasharray: 400;
   stroke-dashoffset: 400;
   transition: 0.5s all;
-
 }
 
 .checkbox-input:checked + label svg g path {

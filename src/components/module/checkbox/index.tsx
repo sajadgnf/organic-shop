@@ -1,24 +1,32 @@
 "use client"
 import Stack from "@atom/stack"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Typography from "@atom/typography"
+import { useDispatch } from "react-redux"
+import { filterProduct } from "@src/store/slice/productSlice"
 
 const Checkbox = ({ label }: { label: string }) => {
+  const dispatch = useDispatch()
   const [checked, setChecked] = useState(false)
 
+  const checkHandler = () => {
+    setChecked(!checked)
+  }
+
+  useEffect(() => {
+    dispatch(filterProduct({ label, checked }))
+  }, [checked])
+
   return (
-    <Stack className="relative block w-full h-full overflow-hidden justify-start">
+    <Stack className="relative block w-full h-full overflow-hidden justify-start ">
       <input
         type="checkbox"
         checked={checked}
-        onChange={() => {
-          setChecked(!checked)
-          console.log(222)
-        }}
-        className="checkbox-input w-[50px] h-[50px] absolute opacity-0"
+        onChange={checkHandler}
+        className="checkbox-input cursor-pointer w-[50px] h-[50px] absolute opacity-0"
         id={label}
       />
-      <Typography variant="label" className="flex items-center" htmlFor={label}>
+      <Typography variant="label" className="flex items-center w-full cursor-pointer" htmlFor={label}>
         <svg viewBox="0 0 100 100" height="50" width="50">
           <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
           <g transform="translate(0,-952.36216)" id="layer1">

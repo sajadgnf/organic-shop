@@ -27,7 +27,7 @@ const sumItems = (items: (typeof initialState)["selectedItems"]) => {
 }
 
 const cartSlice = createSlice({
-  name: "counter",
+  name: "cart",
   initialState,
   reducers: {
     addItem: (state, action) => {

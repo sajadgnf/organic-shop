@@ -20,7 +20,7 @@ const tagMap = {
   label: "label",
 }
 
-const Typography = ({ children, variant = "p", component, className, ...props }: PropsType) => {
+const Typography = ({ children, variant = "p", component, className = "", ...props }: PropsType) => {
   const Tag: any = component || tagMap[variant] || "p"
 
   const font = () => {
@@ -40,7 +40,7 @@ const Typography = ({ children, variant = "p", component, className, ...props }:
   }
 
   return (
-    <Tag className={`${className} ${font()}`} {...props}>
+    <Tag className={`${font()} ${className}`} {...props}>
       {children}
     </Tag>
   )

@@ -2,6 +2,7 @@ import rootReducer from "./rootReducer"
 import storage from "redux-persist/lib/storage"
 import { persistStore, persistReducer } from "redux-persist"
 import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit"
+import { ProductType } from "@src/common/fake-data"
 
 export interface RootState {
   cartSlice: {
@@ -11,6 +12,7 @@ export interface RootState {
     itemsCounter: number
     selectedItems: [{ id: string; title: string; quantity: number; type: { id: string; price: number } }]
   }
+  productSlice: ProductType[]
 }
 
 const persistConfig = {

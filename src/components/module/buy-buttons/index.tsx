@@ -10,13 +10,21 @@ import { addItem, decreaseItem, increaseItems, removeItem } from "@src/store/sli
 
 type PropsType = {
   typeId: string
+  className?: string
   size?: "large" | "small" | "medium"
   variant?: "outlined" | "text" | "contained" | "circle"
   buyButtonTitle?: string | number | ReactNode | ReactElement
   data: RootState["cartSlice"]["selectedItems"][number] | ProductType
 }
 
-const BuyButtons = ({ data, typeId, variant = "outlined", size = "large", buyButtonTitle = "Add to Cart" }: PropsType) => {
+const BuyButtons = ({
+  data,
+  typeId,
+  variant = "outlined",
+  size = "large",
+  buyButtonTitle = "Add to Cart",
+  className,
+}: PropsType) => {
   const dispatch = useDispatch()
   const { selectedItems } = useSelector((state: RootState) => state.cartSlice)
 
@@ -25,7 +33,12 @@ const BuyButtons = ({ data, typeId, variant = "outlined", size = "large", buyBut
   const quantity = currentTypeItem?.quantity
 
   return !currentTypeItem ? (
-    <Button onClick={() => dispatch(addItem({ data, typeId }))} variant={variant} size={size} className="md:w-[130px]">
+    <Button
+      onClick={() => dispatch(addItem({ data, typeId }))}
+      variant={variant}
+      size={size}
+      className={`md:w-[130px] ${className}`}
+    >
       {buyButtonTitle}
     </Button>
   ) : (

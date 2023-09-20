@@ -27,15 +27,17 @@ const HamburMenu = () => {
   }, [])
 
   return (
-    <Stack id="filter-container" className="md:hidden relative z-10">
-      <Stack className={open ? "flex absolute top-0 z-20" : "hidden"}>
-        <FilterProduct />
-      </Stack>
+    <Stack id="filter-container" className="xmd:hidden relative z-10">
+      {open && (
+        <Stack className="flex absolute top-0 z-20">
+          <FilterProduct />
+        </Stack>
+      )}
 
-      <Button>
+      <Button onClick={() => setOpen(!open)}>
         <Stack className="space-x-2">
           <Typography variant="h5">Filter</Typography>
-          <AdjustmentsHorizontalIcon width={22} className="md:hidden mt-1" onClick={() => setOpen(!open)} />
+          <AdjustmentsHorizontalIcon width={22} className="xmd:hidden mt-1" />
         </Stack>
       </Button>
     </Stack>
