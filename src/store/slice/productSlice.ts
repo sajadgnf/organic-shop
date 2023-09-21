@@ -1,35 +1,58 @@
 import FAKE_DATA, { ProductType } from "@src/common/fake-data"
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
-type PropsType = {
+interface PropsType {
   products: ProductType[]
   selectedCategories: string[]
+  clearFilters: boolean
 }
 
 const initialState: PropsType = {
   products: FAKE_DATA,
+  clearFilters: false,
   selectedCategories: [],
 }
 
-const cartSlice = createSlice({
+const productSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    filterProduct: (state, action) => {
+    filterCategory: (state, action: PayloadAction<{ checked: boolean; label: string }>) => {
       const { checked, label } = action.payload
-      const { products, selectedCategories } = state
+      let { selectedCategories } = state
+      state.clearFilters = false
 
       if (checked) {
         selectedCategories.push(label)
       } else {
-        selectedCategories?.filter((category) => category !== label)
+        const index = selectedCategories.indexOf(label)
+        if (index !== -1) {
+          selectedCategories.splice(index, 1)
+        }
       }
 
-      state.products = products?.filter((product) => selectedCategories.includes(product.category))
+      const filteredProducts =
+        selectedCategories.length === 0 ? FAKE_DATA : FAKE_DATA.filter((product) => selectedCategories.includes(product.category))
+
+      state.products = [...filteredProducts]
+      selectedCategories = Array.from(new Set(selectedCategories))
+    },
+    filterAvailable: (state, action) => {
+      state.clearFilters = false
+      const filteredProducts = action.payload
+        ? FAKE_DATA.filter((product) => product.type.some((item) => item.stockOut === false))
+        : FAKE_DATA
+
+      state.products = filteredProducts
+    },
+    clearFilter: (state) => {
+      state.clearFilters = true
+      state.products = FAKE_DATA
+      state.selectedCategories = []
     },
   },
 })
 
-export const { filterProduct } = cartSlice.actions
+export const { filterCategory, filterAvailable, clearFilter } = productSlice.actions
 
-export default cartSlice.reducer
+export default productSlice.reducer

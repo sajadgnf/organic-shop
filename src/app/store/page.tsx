@@ -1,17 +1,15 @@
 "use client"
 import React from "react"
 import Stack from "@atom/stack"
+import { RootState } from "@src/store"
 import { PRODUCTDETAILS } from "routes"
-import FAKE_DATA from "@src/common/fake-data"
+import { useSelector } from "react-redux"
 import ProductCard from "@module/product-card"
 import FilterProduct from "@module/filter-product"
 import HamburMenu from "@module/filter-product/hambur-menu"
-import { useSelector } from "react-redux"
-import { RootState } from "@src/store"
 
 const Store = () => {
-  const products = useSelector((state: RootState) => state.productSlice)
-  // console.log(products)
+  const { products } = useSelector((state: RootState) => state.productSlice)
 
   return (
     <Stack className="xmd:px-4 w-full mt-10 sm:mt-28 md:mt-72 flex-col space-y-10 xmd:space-y-0">

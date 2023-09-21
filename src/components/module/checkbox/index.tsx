@@ -1,28 +1,16 @@
-"use client"
+import React from "react"
 import Stack from "@atom/stack"
-import React, { useEffect, useState } from "react"
 import Typography from "@atom/typography"
-import { useDispatch } from "react-redux"
-import { filterProduct } from "@src/store/slice/productSlice"
 
-const Checkbox = ({ label }: { label: string }) => {
-  const dispatch = useDispatch()
-  const [checked, setChecked] = useState(false)
+type PropsType = { label: string; checked: boolean; onChange: () => void }
 
-  const checkHandler = () => {
-    setChecked(!checked)
-  }
-
-  useEffect(() => {
-    dispatch(filterProduct({ label, checked }))
-  }, [checked])
-
+const Checkbox = ({ label, checked, onChange }: PropsType) => {
   return (
     <Stack className="relative block w-full h-full overflow-hidden justify-start ">
       <input
         type="checkbox"
         checked={checked}
-        onChange={checkHandler}
+        onChange={onChange}
         className="checkbox-input cursor-pointer w-[50px] h-[50px] absolute opacity-0"
         id={label}
       />

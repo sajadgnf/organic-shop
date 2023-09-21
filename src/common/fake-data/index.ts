@@ -10,6 +10,7 @@ export type ProductType = {
     name: string
     price: number
     discount: number
+    stockOut: boolean
   }[]
   comments: {
     name: string
@@ -33,12 +34,14 @@ const FAKE_DATA: ProductType[] = [
     category: "juice",
     type: [
       {
+        stockOut: false,
         id: "1",
         name: "Luxury",
         price: 14.01,
         discount: 0,
       },
       {
+        stockOut: true,
         id: "2",
         name: "High grade",
         price: 12.01,
@@ -92,12 +95,14 @@ const FAKE_DATA: ProductType[] = [
     category: "juice",
     type: [
       {
+        stockOut: false,
         id: "1",
         name: "Luxury",
         price: 14.01,
         discount: 0,
       },
       {
+        stockOut: false,
         id: "2",
         name: "High grade",
         price: 12.01,
@@ -151,12 +156,14 @@ const FAKE_DATA: ProductType[] = [
     category: "juice",
     type: [
       {
+        stockOut: false,
         id: "1",
         name: "Luxury",
         price: 14.01,
         discount: 12.06,
       },
       {
+        stockOut: false,
         id: "2",
         name: "High grade",
         price: 12.01,
@@ -210,12 +217,14 @@ const FAKE_DATA: ProductType[] = [
     category: "juice",
     type: [
       {
+        stockOut: false,
         id: "1",
         name: "Luxury",
         price: 14.01,
         discount: 12.06,
       },
       {
+        stockOut: false,
         id: "2",
         name: "High grade",
         price: 12.01,
@@ -269,12 +278,14 @@ const FAKE_DATA: ProductType[] = [
     category: "juice",
     type: [
       {
+        stockOut: false,
         id: "1",
         name: "Luxury",
         price: 14.01,
         discount: 12.06,
       },
       {
+        stockOut: false,
         id: "2",
         name: "High grade",
         price: 12.01,
@@ -328,17 +339,13 @@ const FAKE_DATA: ProductType[] = [
     category: "juice",
     type: [
       {
+        stockOut: false,
         id: "1",
         name: "Luxury",
         price: 14.01,
         discount: 12.06,
       },
-      {
-        id: "2",
-        name: "High grade",
-        price: 12.01,
-        discount: 12.41,
-      },
+      { stockOut: false, id: "2", name: "High grade", price: 12.01, discount: 12.41 },
     ],
     comments: [
       {
@@ -387,12 +394,15 @@ const FAKE_DATA: ProductType[] = [
     category: "juice",
     type: [
       {
+        stockOut: false,
         id: "1",
         name: "Luxury",
         price: 14.01,
         discount: 12.06,
       },
+
       {
+        stockOut: false,
         id: "2",
         name: "High grade",
         price: 12.01,

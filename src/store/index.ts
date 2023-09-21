@@ -12,7 +12,7 @@ export interface RootState {
     itemsCounter: number
     selectedItems: [{ id: string; title: string; quantity: number; type: { id: string; price: number } }]
   }
-  productSlice: ProductType[]
+  productSlice: { products: ProductType[]; selectedCategories: string[]; clearFilters: boolean }
 }
 
 const persistConfig = {

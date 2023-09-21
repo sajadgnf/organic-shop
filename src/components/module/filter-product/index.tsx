@@ -1,27 +1,50 @@
-import React from "react"
+"use client"
 import Stack from "@atom/stack"
-import Checkbox from "@module/checkbox"
-import Typography from "@atom/typography"
-import { FAKE_CATEGORY } from "@src/common/fake-data"
 import Button from "@atom/button"
+import Checkbox from "@module/checkbox"
+import { useDispatch, useSelector } from "react-redux"
+import Typography from "@atom/typography"
+import FilterCategory from "./filter-category"
+import React, { useEffect, useState } from "react"
+import { FAKE_CATEGORY } from "@src/common/fake-data"
+import { clearFilter, filterAvailable } from "@src/store/slice/productSlice"
+import { RootState } from "@src/store"
 
 const FilterProduct = () => {
+  const dispatch = useDispatch()
+  const [checked, setChecked] = useState(false)
+  const { clearFilters } = useSelector((state: RootState) => state.productSlice)
+
+  const checkHandler = () => {
+    setChecked(!checked)
+  }
+
+  useEffect(() => {
+    dispatch(filterAvailable(checked))
+  }, [checked])
+
+  useEffect(() => {
+    setChecked(false)
+  }, [clearFilters])
+
   return (
     <Stack className=" border p-4 bg-[#f8f8f8] flex-col space-y-10 min-w-[300px] items-start">
       <Stack className="flex-col w-full items-start space-y-4">
         <Stack className="w-full justify-between">
           <Typography variant="h6">Filter</Typography>
-          <Button className="text-danger-main">clear</Button>
+          <Button className="text-danger-main" onClick={() => dispatch(clearFilter())}>
+            clear
+          </Button>
         </Stack>
 
-        <Checkbox label="Include Out of stock" />
+        <Checkbox checked={checked} onChange={checkHandler} label="Remove Out of stock" />
       </Stack>
       <hr className="w-full" />
       <Stack className="flex-col items-start space-y-4 w-full">
         <Typography variant="h6">Category</Typography>
         <Stack className="flex-col space-y-4 items-start w-full">
           {FAKE_CATEGORY.map((item) => (
-            <Checkbox label={item.title} />
+            <FilterCategory item={item} />
           ))}
         </Stack>
       </Stack>

@@ -2,8 +2,8 @@
 import Stack from "@atom/stack"
 import FilterProduct from ".."
 import Button from "@atom/button"
-import React, { useEffect, useRef, useState } from "react"
 import Typography from "@atom/typography"
+import React, { useEffect, useRef, useState } from "react"
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/solid"
 
 const HamburMenu = () => {
