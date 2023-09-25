@@ -16,7 +16,7 @@ const Store = () => {
       <HamburMenu />
 
       <Stack className="items-start w-full">
-        <Stack className="hidden xmd:flex ">
+        <Stack className="hidden xmd:flex sticky top-7">
           <FilterProduct />
         </Stack>
 

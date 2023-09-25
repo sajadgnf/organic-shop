@@ -20,8 +20,8 @@ type PropsType = {
 const BuyButtons = ({
   data,
   typeId,
-  variant = "outlined",
   size = "large",
+  variant = "outlined",
   buyButtonTitle = "Add to Cart",
   className,
 }: PropsType) => {
