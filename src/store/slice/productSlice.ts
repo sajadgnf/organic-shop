@@ -2,15 +2,19 @@ import FAKE_DATA, { ProductType } from "@src/common/fake-data"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 interface PropsType {
-  products: ProductType[]
-  selectedCategories: string[]
   clearFilters: boolean
+  searchProducts: string
+  products: ProductType[]
+  availableProducts: boolean
+  selectedCategories: string[]
 }
 
 const initialState: PropsType = {
+  searchProducts: "",
   products: FAKE_DATA,
   clearFilters: false,
   selectedCategories: [],
+  availableProducts: false,
 }
 
 const productSlice = createSlice({
@@ -31,20 +35,40 @@ const productSlice = createSlice({
         }
       }
 
+      let products = []
+      products =
+        !state.availableProducts && state.searchProducts === "" && selectedCategories.length === 0 ? FAKE_DATA : state.products
+
       const filteredProducts =
-        selectedCategories.length === 0 ? FAKE_DATA : FAKE_DATA.filter((product) => selectedCategories.includes(product.category))
+        selectedCategories.length === 0 ? products : products.filter((product) => selectedCategories.includes(product.category))
 
       state.products = [...filteredProducts]
       selectedCategories = Array.from(new Set(selectedCategories))
     },
+
     filterAvailable: (state, action) => {
       state.clearFilters = false
+      state.availableProducts = action.payload
+      let products = []
+      products = state.selectedCategories.length === 0 && state.searchProducts === "" ? FAKE_DATA : state.products
       const filteredProducts = action.payload
-        ? FAKE_DATA.filter((product) => product.type.some((item) => item.stockOut === false))
-        : FAKE_DATA
+        ? products.filter((product) => product.type.some((item) => item.stockOut === false))
+        : products
 
       state.products = filteredProducts
     },
+
+    searchProduct: (state, action) => {
+      state.clearFilters = false
+      state.searchProducts = action.payload
+      let products = []
+      products = state.selectedCategories.length === 0 && !state.availableProducts ? FAKE_DATA : state.products
+      const searchedProduct = products.filter((product) =>
+        product.title.toLocaleLowerCase().includes(action.payload?.toLocaleLowerCase())
+      )
+      state.products = searchedProduct
+    },
+
     clearFilter: (state) => {
       state.clearFilters = true
       state.products = FAKE_DATA
@@ -53,6 +77,6 @@ const productSlice = createSlice({
   },
 })
 
-export const { filterCategory, filterAvailable, clearFilter } = productSlice.actions
+export const { filterCategory, filterAvailable, clearFilter, searchProduct } = productSlice.actions
 
 export default productSlice.reducer

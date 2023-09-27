@@ -5,17 +5,19 @@ import Stack from "@atom/stack"
 import Button from "@atom/button"
 import { RootState } from "@src/store"
 import Typography from "@atom/typography"
-import { useSelector } from "react-redux"
 import React, { useEffect, useState } from "react"
+import UserHamburgerMenu from "./userHamburgerMenu"
+import { useSelector } from "react-redux"
 import { usePathname, useRouter } from "next/navigation"
-import { ShoppingBagIcon } from "@heroicons/react/24/solid"
 import HamburgerMenu from "@module/header-links/hamburgerMenu"
 import { BLOG, CART, CONTACT, HOME, SIGNIN, STORE } from "routes"
+import { ArrowLeftOnRectangleIcon, ShoppingBagIcon } from "@heroicons/react/24/solid"
 
 const Head = () => {
   const router = useRouter()
   const pathName = usePathname()
   const [image, setImage] = useState("")
+  const { phoneNumber } = useSelector((state: RootState) => state.loginSlice)
 
   const { itemsCounter } = useSelector((state: RootState) => state.cartSlice)
 
@@ -62,22 +64,29 @@ const Head = () => {
         </Stack>
 
         <Stack className="space-x-3 hidden md:flex">
-          <Button variant="contained" onClick={() => router.push(SIGNIN)}>
-            Sign in
-          </Button>
-          <Button
-            size="small"
-            variant="contained"
-            className="relative"
-            data-testid="shopping-button"
-            onClick={() => router.push(CART)}
-          >
+          {phoneNumber ? (
+            <UserHamburgerMenu />
+          ) : (
+            <Button
+              variant="outlined"
+              onClick={() => router.push(SIGNIN)}
+              className="flex justify-between items-center w-[120px]"
+            >
+              <Typography>Sign in</Typography>
+              <ArrowLeftOnRectangleIcon width={20} />
+            </Button>
+          )}
+          <Stack className="border border-gray-300 h-6" />
+          <Button size="small" className="relative" data-testid="shopping-button" onClick={() => router.push(CART)}>
             {!!itemsCounter && (
-              <Typography className="absolute top-[-10px] left-[-10px] bg-primary-dark rounded-full w-6 h-6 text-white">
+              <Typography
+                variant="caption"
+                className="absolute bottom-0 right-0 bg-primary-dark rounded-md w-[18px] h-[18px] text-white"
+              >
                 {itemsCounter}
               </Typography>
             )}
-            <ShoppingBagIcon className="h-8 w-8" />
+            <ShoppingBagIcon width={25} className=" text-gray-700" />
           </Button>
         </Stack>
       </Stack>

@@ -13,6 +13,7 @@ export interface RootState {
     selectedItems: [{ id: string; title: string; quantity: number; type: { id: string; price: number } }]
   }
   productSlice: { products: ProductType[]; selectedCategories: string[]; clearFilters: boolean }
+  loginSlice: { phoneNumber: string }
 }
 
 const persistConfig = {

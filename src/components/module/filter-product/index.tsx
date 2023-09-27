@@ -1,16 +1,16 @@
 "use client"
 import Stack from "@atom/stack"
 import Button from "@atom/button"
+import { RootState } from "@src/store"
 import Checkbox from "@module/checkbox"
-import { useDispatch, useSelector } from "react-redux"
 import Typography from "@atom/typography"
 import FilterCategory from "./filter-category"
 import React, { useEffect, useState } from "react"
 import { FAKE_CATEGORY } from "@src/common/fake-data"
+import { useDispatch, useSelector } from "react-redux"
 import { clearFilter, filterAvailable } from "@src/store/slice/productSlice"
-import { RootState } from "@src/store"
 
-const FilterProduct = () => {
+const FilterProduct = ({ setOpen = () => {} }: { setOpen?: (t: boolean) => void }) => {
   const dispatch = useDispatch()
   const [checked, setChecked] = useState(false)
   const { clearFilters } = useSelector((state: RootState) => state.productSlice)
@@ -28,8 +28,11 @@ const FilterProduct = () => {
   }, [clearFilters])
 
   return (
-    <Stack className=" border p-4 bg-[#f8f8f8] flex-col space-y-10 min-w-[300px] items-start">
+    <Stack className="w-full border p-4 bg-[#f8f8f8] flex-col space-y-10 min-w-[300px] items-start">
       <Stack className="flex-col w-full items-start space-y-4">
+        <Button className="xmd:hidden ml-auto" onClick={() => setOpen(false)}>
+          X
+        </Button>
         <Stack className="w-full justify-between">
           <Typography variant="h6">Filter</Typography>
           <Button className="text-danger-main" onClick={() => dispatch(clearFilter())}>
