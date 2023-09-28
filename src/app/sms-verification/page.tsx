@@ -67,7 +67,7 @@ const SMSVerification = () => {
 
   return (
     <Stack className="w-full">
-      <Stack className="mt-4 sm:mt-32 flex-col bg-white rounded-lg border px-10 py-8 space-y-10">
+      <Stack className="mt-24 sm:mt-32 flex-col bg-white rounded-lg border px-10 py-8 space-y-10">
         <Stack className="flex-col space-y-4">
           <p className="text-2xl" ref={countdownElementRef}>
             02:00

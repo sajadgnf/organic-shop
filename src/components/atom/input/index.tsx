@@ -1,20 +1,15 @@
 import Stack from "@atom/stack"
 import Typography from "@atom/typography"
-import React, { ChangeEventHandler, ReactElement, ReactNode } from "react"
+import React, { InputHTMLAttributes, ReactElement, ReactNode } from "react"
 
 type PropsType = {
-  rows?: number
   name?: string
+  rows?: number
   label?: string
-  pattern?: string
   className?: string
-  required?: boolean
   multiLine?: boolean
-  placeholder?: string
-  value?: string | number
   endIcon?: string | ReactElement | ReactNode
   startIcon?: string | ReactElement | ReactNode
-  onChange?: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>
   type?:
     | "button"
     | "checkbox"
@@ -44,17 +39,13 @@ const Input = ({
   type = "text",
   rows,
   label,
-  value,
   endIcon,
-  onChange,
   multiLine,
   startIcon,
-  required,
   className,
-  placeholder,
   name = "name",
   ...props
-}: PropsType) => {
+}: PropsType & InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>) => {
   const paddingLeft = startIcon ? "pl-1" : "pl-2"
 
   return (
@@ -67,12 +58,8 @@ const Input = ({
         {multiLine ? (
           <textarea
             id={name}
-            name={name}
-            value={value}
             rows={rows}
-            onChange={onChange}
-            required={required}
-            placeholder={placeholder}
+            name={name}
             className={`outline-none py-2 w-full resize-none ${paddingLeft}`}
             {...props}
           />
@@ -80,11 +67,7 @@ const Input = ({
           <>
             {startIcon && <Stack>{startIcon}</Stack>}
             <input
-              value={value}
-              onChange={onChange}
               className={`outline-none w-full number-input min-h-[47px] ${paddingLeft}`}
-              placeholder={placeholder}
-              required={required}
               name={name}
               type={type}
               id={name}

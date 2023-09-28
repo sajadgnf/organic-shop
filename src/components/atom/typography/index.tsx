@@ -1,8 +1,7 @@
-import React from "react"
+import React, { AllHTMLAttributes, HTMLAttributes } from "react"
 
 type PropsType = {
   children: any
-  htmlFor?: string
   className?: string
   component?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "label"
   variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "caption" | "label"
@@ -20,7 +19,7 @@ const tagMap = {
   label: "label",
 }
 
-const Typography = ({ children, variant = "p", component, className = "", ...props }: PropsType) => {
+const Typography = ({ children, variant = "p", component, className = "", ...props }: PropsType & AllHTMLAttributes<HTMLParagraphElement>) => {
   const Tag: any = component || tagMap[variant] || "p"
 
   const font = () => {

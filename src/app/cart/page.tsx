@@ -8,7 +8,7 @@ import EmptyCart from "@module/cart/empty-cart"
 
 const Cart = () => {
   const { itemsCounter } = useSelector((state: RootState) => state.cartSlice)
-  return <Stack className="container mt-2 sm:mt-20 lg:mt-32 mx-auto w-full">{itemsCounter ? <FullCart /> : <EmptyCart />}</Stack>
+  return <Stack className="container mt-20 lg:mt-32 mx-auto w-full">{itemsCounter ? <FullCart /> : <EmptyCart />}</Stack>
 }
 
 export default Cart

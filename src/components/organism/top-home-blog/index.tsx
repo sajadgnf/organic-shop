@@ -7,8 +7,8 @@ import Typography from "@atom/typography"
 const TopHomeBlog = () => {
   return (
     <Stack className=" bg-secondary-main w-full">
-      <Stack className="container justify-between p-24">
-        <Stack className="flex-col items-start space-y-12 md:w-[50%]">
+      <Stack className="container justify-between p-10 md:p-24">
+        <Stack className="flex-col items-start space-y-8 md:space-y-12 md:w-[50%]">
           <Typography variant="h5">Why choose us?</Typography>
           <Typography>
             We take great pride in selecting only the freshest and highest quality fruits and vegetables for our customers. We

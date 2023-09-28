@@ -30,7 +30,7 @@ const SignUpComponent = () => {
   }
 
   return (
-    <Stack className="mt-4 sm:mt-32 flex-col space-y-4">
+    <Stack className="mt-20 sm:mt-32 flex-col space-y-4">
       <Image src="images/logo.svg" alt="organic shop logo" width={200} height={100} />
 
       <Stack

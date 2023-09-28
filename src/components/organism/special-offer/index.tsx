@@ -8,7 +8,7 @@ import SpecialOfferList from "@organism/special-offer/list"
 
 const SpecialOffer = () => {
   return (
-    <Stack className="w-full flex-col space-y-10">
+    <Stack className="w-full flex-col space-y-4 md:space-y-10">
       <Link href={`${STORE}?filter=special-offer`} className="w-full">
         <Stack className="items-center justify-between">
           <Typography variant="h5">Special Offers</Typography>

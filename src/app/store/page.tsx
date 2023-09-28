@@ -21,7 +21,7 @@ const Store = () => {
   }
 
   return (
-    <Stack className="xmd:px-4 max-w-[1600px] w-full mx-auto mt-10 sm:mt-28 md:mt-72 flex-col space-y-10 xmd:space-y-0">
+    <Stack className="xmd:px-4 max-w-[1600px] w-full mx-auto mt-20 sm:mt-28 md:mt-72 flex-col space-y-10 xmd:space-y-0">
       <HamburMenu />
 
       <Stack className="flex-col w-full space-y-4">

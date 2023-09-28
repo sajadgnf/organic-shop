@@ -4,9 +4,9 @@ import Typography from "@atom/typography"
 
 const FAQs = () => {
   return (
-    <Stack className="container mx-auto mt-32 flex-col  space-y-10">
-      <Typography variant="h3">Frequently Asked Questions</Typography>
-      <Stack className="flex-col rounded-xl p-12 space-y-12 bg-white">
+    <Stack className="container mx-auto mt-32 flex-col space-y-10 py-6 md:py-0 bg-white md:bg-inherit">
+      <Typography variant="h3" className="text-center">Frequently Asked Questions</Typography>
+      <Stack className="flex-col rounded-xl md:p-12 space-y-12 bg-white">
         <Stack className="w-full flex-col space-y-3 border-b pb-12 items-start">
           <Typography variant="h5">1. What is Organic Shop?</Typography>
           <Typography>

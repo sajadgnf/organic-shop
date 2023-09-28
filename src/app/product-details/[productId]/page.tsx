@@ -12,16 +12,18 @@ import { ShoppingCartIcon, StarIcon } from "@heroicons/react/24/solid"
 
 const BottomSheet = ({ data }: { data: ProductType }) => {
   return (
-    <Stack className="xmd:hidden rounded-xl p-2 bg-white z-20 fixed bottom-0 left-0 right-0 w-full ">
+    <Stack className="xmd:hidden rounded-xl p-2 bg-white z-50 fixed bottom-0 left-0 right-0 w-full ">
       {data.type.map((item, i) => (
         <Fragment key={item.id}>
           <Stack className="flex-col w-full space-y-2">
-            <Typography variant="h6">per kg:&nbsp;${item.price}</Typography>
+            <Typography variant="h6" className="sm:!text-base">
+              per kg:&nbsp;${item.price}
+            </Typography>
             <BuyButtons
               data={data}
               size="small"
               typeId={item.id}
-              className="w-full"
+              className="w-full sm:!w-[200px]"
               variant="contained"
               buyButtonTitle={
                 <Stack className="space-x-1">
@@ -80,6 +82,7 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
                     data={data}
                     variant="contained"
                     typeId={item.id}
+                    className="!w-[170px]"
                     buyButtonTitle={
                       <Stack className="space-x-1">
                         <Typography>{item.name}</Typography>

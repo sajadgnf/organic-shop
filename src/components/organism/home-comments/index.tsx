@@ -46,7 +46,7 @@ const FAKE_DATA = [
 
 const HomeComments = () => {
   return (
-    <Stack className="flex-col items-start space-y-10 w-full">
+    <Stack className="flex-col items-start md:space-y-10 w-full">
       <Link href={COMMENTS} className="w-full">
         <Stack className="items-center justify-between">
           <Typography variant="h5">testimonials</Typography>

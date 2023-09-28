@@ -8,7 +8,7 @@ import { FAKE_CATEGORY } from "@src/common/fake-data"
 
 const CategoriesList = () => {
   return (
-    <Stack className="justify-between sm:flex-wrap lg:flex-nowrap w-full sm:gap-y-4 md:space-y-0">
+    <Stack className="sm:justify-between sm:flex-wrap lg:flex-nowrap w-full sm:gap-y-4 md:space-y-0">
       {FAKE_CATEGORY.map((category) => (
         <Link key={category.title} href={`${STORE}?category=${category.title}`}>
           <Stack className="bg-primary-light rounded-2xl sm:overflow-hidden px-3 xs:px-6 py-2 sm:p-0 sm:pl-5 sm:justify-between sm:w-[215px] md:w-[205px] lg:w-[265px] sm:h-[190px]">
