@@ -1,41 +1,79 @@
 import React from "react"
+import Link from "next/link"
 import Image from "next/image"
 import Stack from "@atom/stack"
-import Button from "@atom/button"
 import Typography from "@atom/typography"
+import BuyButtons from "@module/buy-buttons"
+import { ProductType } from "@src/common/fake-data"
 
 type PropsType = {
-  img?: string
-  title?: string
-  description?: string
-  discount?: string | number
-  price?: string | number
+  href?: string
+  item: ProductType
 }
 
-const ProductCard = ({ img = "", title = "", description = "", discount, price }: PropsType) => {
-  return (
-    <Stack className="flex-row md:flex-col md:bg-[#f8f8f8] md:w-[295px] md:space-y-4 md:shadow-md md:rounded-2xl md:p-6">
-      <Image src={img} width={159} height={201} alt={description || title} className="w-[100px] sm:w-[120px] md:w-[159px]" />
-      <Stack className="items-start flex-col space-y-4">
-        <Stack className="space-y-1 flex-col items-start">
-          <Typography variant="h6">{title}</Typography>
-          <Typography className="text-gray-500" variant="caption">{description}</Typography>
-        </Stack>
+const ProductCard = ({ item, href = "" }: PropsType) => {
+  const { img, title, description, type } = item
 
-        <Stack className="flex-col items-start w-full">
-          {discount && (
-            <Stack className="items-center space-x-1">
-              <Typography variant="caption" className="bg-primary-dark rounded-full text-white p-1">
-                {discount && price && Math.floor((+discount * +price) / 100)}%
-              </Typography>
-              <Typography className="line-through text-gray-400">${price}</Typography>
+  return (
+    <Stack className="xmd:flex-col md:justify-between xmd:space-y-4 xmd:bg-[#f8f8f8] w-full h-full border">
+      <Link href={href}>
+        <Stack className="xmd:flex-col space-x-3 xmd:space-x-0 xmd:space-y-4 px-2 sm:px-6 py-2 sm:py-0 sm:pt-6">
+          <Image src={img} width={159} height={201} alt={description || title} className="w-[100px] xmd:w-[110px] lg:w-[130px]" />
+
+          <Stack className="space-y-2 sm:space-y-1 flex-col items-start w-full">
+            <Typography variant="h6">{title}</Typography>
+            <Typography variant="caption" className="line-clamp-2 md:line-clamp-3">
+              {description}
+            </Typography>
+
+            <Stack className="flex-col md:hidden items-start space-y-1">
+              {type.map(({ price, name, discount, id }) => (
+                <Stack key={id} className="space-x-2 ">
+                  <Typography className="font-bold">{name}:</Typography>
+                  <Typography>${discount ? discount : price}</Typography>
+                  {!!discount && (
+                    <Stack className="items-center space-x-1">
+                      <Typography variant="caption" className="bg-primary-dark rounded-full text-white px-[3.5px] py-[2.5px]">
+                        {discount && price && Math.floor((+discount * +price) / 100)}%
+                      </Typography>
+                      <Typography variant="caption" className="line-through text-gray-400">
+                        ${price}
+                      </Typography>
+                    </Stack>
+                  )}
+                </Stack>
+              ))}
             </Stack>
-          )}
-          <Stack className="justify-between w-full">
-            <Typography variant="h6">${discount ? discount : price}</Typography>
-            <Button variant="contained">Add To Cart</Button>
           </Stack>
         </Stack>
+      </Link>
+
+      <Stack className="hidden md:flex xmd:justify-between space-x-0 sm:space-x-6 space-y-4 xmd:space-y-0 items-end xmd:w-full px-6 md:pb-4 flex-col sm:flex-row">
+        {type.map(({ price, name, discount, id }) => (
+          <Stack className="flex-col space-y-3">
+            <Stack className="flex-col items-end">
+              <Typography>${discount ? discount : price}</Typography>
+              {!!discount && (
+                <Stack className="items-center space-x-1">
+                  <Typography variant="caption" className="bg-primary-dark rounded-full text-white px-[3.5px] py-[2.5px]">
+                    {discount && price && Math.floor((+discount * +price) / 100)}%
+                  </Typography>
+                  <Typography variant="caption" className="line-through text-gray-400">
+                    ${price}
+                  </Typography>
+                </Stack>
+              )}
+            </Stack>
+            <BuyButtons
+              className="!w-24 lg:!w-[110px] !p-0"
+              typeId={id}
+              buyButtonTitle={name}
+              data={item}
+              size="small"
+              variant="contained"
+            />
+          </Stack>
+        ))}
       </Stack>
     </Stack>
   )

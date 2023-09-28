@@ -1,9 +1,10 @@
-import Stack from "@atom/stack"
-import Typography from "@atom/typography"
-import { ArrowRightIcon } from "@heroicons/react/24/solid"
-import HomeCommentCard from "@module/home-comment-card"
-import Link from "next/link"
 import React from "react"
+import Link from "next/link"
+import Stack from "@atom/stack"
+import { COMMENTS } from "routes"
+import Typography from "@atom/typography"
+import HomeCommentCard from "@module/home-comment-card"
+import { ArrowRightIcon } from "@heroicons/react/24/solid"
 
 const FAKE_DATA = [
   {
@@ -45,8 +46,8 @@ const FAKE_DATA = [
 
 const HomeComments = () => {
   return (
-    <Stack className="flex-col items-start space-y-10 w-full">
-      <Link href="/" className="w-full">
+    <Stack className="flex-col items-start md:space-y-10 w-full">
+      <Link href={COMMENTS} className="w-full">
         <Stack className="items-center justify-between">
           <Typography variant="h5">testimonials</Typography>
 

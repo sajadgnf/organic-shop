@@ -1,10 +1,10 @@
 "use client"
+import Image from "next/image"
 import Input from "@atom/input"
 import Stack from "@atom/stack"
 import Button from "@atom/button"
 import Typography from "@atom/typography"
 import React, { ChangeEvent, useState } from "react"
-import Image from "next/image"
 
 const Contact = () => {
   const [info, setInfo] = useState({
@@ -18,7 +18,7 @@ const Contact = () => {
   }
 
   return (
-    <Stack className="container flex-col space-y-10 lg:flex-row mt-10 sm:mt-32 md:mt-36 w-full justify-between">
+    <Stack className="container flex-col space-y-10 lg:flex-row mt-20 sm:mt-32 md:mt-36 w-full justify-between">
       <Stack className="flex-col items-start space-y-8 md:!w-[50%]">
         <Typography variant="h4">
           Love to hear from you, <br /> Get in touch

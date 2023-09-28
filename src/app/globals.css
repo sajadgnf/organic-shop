@@ -18,7 +18,7 @@
 
 body {
   color: var(--foreground);
-  background-color: #f6f6f6
+  background-color: #f6f6f6;
 }
 
 .display-flex {
@@ -47,6 +47,33 @@ body {
 
 .slider:hover .slider-arrow {
   opacity: 1;
+}
+
+.number-input {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.number-input::-webkit-inner-spin-button,
+.number-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.checkbox-input-tick {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  transition: 0.5s all;
+}
+
+.checkbox-input:checked + label svg g path {
+  stroke-dashoffset: 0;
+}
+
+.no-tap-highlight {
+  -webkit-tap-highlight-color: transparent; /* Disable tap highlight on iOS */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Disable tap highlight on Android (and newer versions of iOS) */
+  tap-highlight-color: rgba(0, 0, 0, 0); /* Disable tap highlight on modern browsers */
 }
 
 @media (max-width: 480px) {

@@ -1,11 +1,8 @@
-import React from 'react';
+import React from "react"
+import SignUpComponent from "@organism/sign-up-component"
 
 const SignIn = () => {
-  return (
-    <div>
-      hellllooooo
-    </div>
-  );
-};
+  return <SignUpComponent />
+}
 
-export default SignIn;
+export default SignIn

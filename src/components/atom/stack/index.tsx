@@ -1,15 +1,14 @@
-import React, { MouseEventHandler, ReactElement, ReactNode } from "react"
+import React, { FormEventHandler, HTMLAttributes, MouseEventHandler, ReactElement, ReactNode } from "react"
 
 type PropsType = {
-  ref?: any
   className?: string
-  style?: string | {}
-  onClick?: MouseEventHandler<HTMLButtonElement>
+  id?: string | number
   children?: ReactElement | ReactNode | string | number
-  variant?: "div" | "header" | "footer" | "article" | "form" | "section" | "main"
+  variant?: "div" | "header" | "footer" | "article" | "form" | "section" | "main" | "ul"
 }
 
 const tagMap = {
+  ul: "ul",
   div: "div",
   form: "form",
   main: "main",
@@ -19,7 +18,14 @@ const tagMap = {
   article: "article",
 }
 
-const Stack = ({ children, variant = "div", style, className, onClick, ref, ...props }: PropsType) => {
+const Stack = ({
+  id,
+  style,
+  children,
+  className = "",
+  variant = "div",
+  ...props
+}: PropsType & HTMLAttributes<HTMLDivElement>) => {
   const Tag: any = tagMap[variant] || "div"
 
   const priorityClassName = className?.split(" ")
@@ -27,14 +33,7 @@ const Stack = ({ children, variant = "div", style, className, onClick, ref, ...p
   if (!priorityClassName?.find((item) => item.startsWith("justify-"))) priorityClassName?.push("justify-center")
 
   return (
-    <Tag
-      className={`flex transform ${priorityClassName?.join(" ")}`}
-      ref={ref}
-      role="div"
-      style={style}
-      onClick={onClick}
-      {...props}
-    >
+    <Tag className={`flex transform ${priorityClassName?.join(" ")}`} id={id} role="div" style={style} {...props}>
       {children}
     </Tag>
   )

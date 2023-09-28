@@ -4,7 +4,7 @@ import React from "react"
 
 const ComingSoon = () => {
   return (
-    <Stack className="w-full flex-col mt-32">
+    <Stack className="w-full flex-col">
       <Image src="/images/coming-soon.svg" alt="coming soon banner" width={700} height={500} />
     </Stack>
   )

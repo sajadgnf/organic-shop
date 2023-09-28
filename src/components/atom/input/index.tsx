@@ -1,62 +1,73 @@
 import Stack from "@atom/stack"
 import Typography from "@atom/typography"
-import React, { ChangeEventHandler, ReactElement, ReactNode } from "react"
+import React, { InputHTMLAttributes, ReactElement, ReactNode } from "react"
 
 type PropsType = {
-  rows?: number
   name?: string
+  rows?: number
   label?: string
   className?: string
   multiLine?: boolean
-  placeholder?: string
-  value?: string | number
   endIcon?: string | ReactElement | ReactNode
   startIcon?: string | ReactElement | ReactNode
-  onChange?: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>
-  type?: "text" | "email" | "phone" | "number" | "age" | "range"
+  type?:
+    | "button"
+    | "checkbox"
+    | "color"
+    | "date"
+    | "email"
+    | "file"
+    | "hidden"
+    | "image"
+    | "month"
+    | "number"
+    | "password"
+    | "radio"
+    | "range"
+    | "reset"
+    | "search"
+    | "submit"
+    | "tel"
+    | "text"
+    | "time"
+    | "url"
+    | "week"
+    | "datetime-local"
 }
 
 const Input = ({
   type = "text",
   rows,
   label,
-  value,
   endIcon,
-  onChange,
   multiLine,
   startIcon,
   className,
-  placeholder,
   name = "name",
   ...props
-}: PropsType) => {
-  const paddingLeft = startIcon ? "pl-1" : "pl-4"
+}: PropsType & InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>) => {
+  const paddingLeft = startIcon ? "pl-1" : "pl-2"
+
   return (
-    <Stack className={`flex-col space-y sm:space-y-4 items-start ${className}`}>
+    <Stack className={`flex-col space-y items-start w-full ${className}`}>
       <Typography component="label" htmlFor={name} className="sm:text-[19px]">
         {label}
       </Typography>
 
-      <Stack className={`bg-white rounded-lg px-1 min-h-[47px] w-full space-x-2 border ${paddingLeft} border-secondary-dark`}>
+      <Stack className={`bg-white rounded-lg px-1 min-h-[47px] w-full space-x-2 border border-secondary-dark`}>
         {multiLine ? (
           <textarea
             id={name}
-            name={name}
-            value={value}
             rows={rows}
-            onChange={onChange}
-            placeholder={placeholder}
-            className="outline-none py-2 w-full resize-none"
+            name={name}
+            className={`outline-none py-2 w-full resize-none ${paddingLeft}`}
             {...props}
           />
         ) : (
           <>
             {startIcon && <Stack>{startIcon}</Stack>}
             <input
-              value={value}
-              onChange={onChange}
-              className="outline-none w-full"
-              placeholder={placeholder}
+              className={`outline-none w-full number-input min-h-[47px] ${paddingLeft}`}
               name={name}
               type={type}
               id={name}

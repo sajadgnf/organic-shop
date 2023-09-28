@@ -1,11 +1,12 @@
 "use client"
-import React, { useState } from "react"
 import Rate from "@atom/rate"
 import Stack from "@atom/stack"
 import Avatar from "@atom/avatar"
+import React, { useState } from "react"
 import Typography from "@atom/typography"
+import { ProductType } from "@src/common/fake-data"
 
-const HomeCommentCard = ({ data }: { data: { name: string; description: string; rate: number } }) => {
+const HomeCommentCard = ({ data }: { data: ProductType["comments"][number] }) => {
   const [value, setValue] = useState(data.rate)
   return (
     <Stack className="bg-white items-start flex-col min-w-[250px] md:min-w-[350px] p-[21px] space-y-3 rounded-xl shadow-sm">

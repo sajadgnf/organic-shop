@@ -13,6 +13,7 @@ module.exports = {
       screens: {
         xs: "380px",
         sm: "480px",
+        xmd: "1090px",
         lg: "1496px",
       },
       container: {
@@ -59,6 +60,9 @@ module.exports = {
             light: "#F6F6F6",
             main: "#E9EEF1",
             dark: "#d6d8da",
+          },
+          danger: {
+            main: "#F2120C",
           },
         },
       },

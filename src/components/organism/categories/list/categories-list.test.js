@@ -1,7 +1,8 @@
 import React from "react"
-import { render, screen } from "@testing-library/react"
+import { STORE } from "route"
 import userEvent from "@testing-library/user-event"
 import CategoriesList from "@organism/categories/list"
+import { render, screen } from "@testing-library/react"
 
 // Mock the next/link component
 jest.mock("next/link", () => {
@@ -44,6 +45,6 @@ describe("CategoriesList", () => {
     userEvent.click(categoryLink)
 
     // Check if the correct href is used
-    expect(categoryLink).toHaveAttribute("href", "/products?category=vegetable")
+    expect(categoryLink).toHaveAttribute("href", `/${STORE}?category=vegetable`)
   })
 })

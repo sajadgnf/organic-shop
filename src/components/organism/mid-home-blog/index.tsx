@@ -1,13 +1,13 @@
-import Button from "@atom/button"
-import Stack from "@atom/stack"
-import Typography from "@atom/typography"
-import Image from "next/image"
 import React from "react"
+import Image from "next/image"
+import Stack from "@atom/stack"
+import OrderButton from "./order-button"
+import Typography from "@atom/typography"
 
 const MidHomeBlog = () => {
   return (
     <Stack className=" w-full">
-      <Stack className="container justify-between p-24">
+      <Stack className="container bg-white md:bg-inherit justify-between p-10 md:p-24">
         <Image
           src="/images/juices.svg"
           width={555}
@@ -16,7 +16,7 @@ const MidHomeBlog = () => {
           alt="fruit-salad"
         />
 
-        <Stack className="bg-white rounded-[24px] p-10 flex-col md:items-end space-y-12 w-[555px]">
+        <Stack className="bg-white rounded-[24px] py:10 md:p-10 flex-col md:items-end space-y-12 md:w-[555px]">
           <Typography>
             The organic beverage also has another name of a fresh or processed drink made by organic methods in farming. This kind
             of beverage maximizes the benefits for your health by minimizing the harmful human-made chemicals such as pesticides
@@ -32,9 +32,7 @@ const MidHomeBlog = () => {
             className="md:hidden inline max-h-[260px] rounded-3xl"
             alt="fruit-salad"
           />
-          <Button variant="contained" size="large">
-            Order Now
-          </Button>
+          <OrderButton />
         </Stack>
       </Stack>
     </Stack>

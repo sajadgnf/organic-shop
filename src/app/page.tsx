@@ -12,10 +12,10 @@ const slides = ["/images/slide1.svg", "/images/slide2.svg", "/images/slide3.svg"
 
 function Home() {
   return (
-    <Stack variant="main" className="sm:mt-8 lg:mt-26 mt-[3px] flex-col space-y-10 sm:space-y-28">
+    <Stack variant="main" className="sm:mt-8 lg:mt-26 mt-[3px] flex-col space-y-12 sm:space-y-28">
       <Slider slides={slides} />
 
-      <Stack className="container flex-col items-start space-y-10 sm:space-y-28">
+      <Stack className="container flex-col items-start space-y-14 sm:space-y-28">
         <Categories />
         <BestSellerProduct />
         <SpecialOffer />
