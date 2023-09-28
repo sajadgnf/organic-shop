@@ -14,7 +14,8 @@ type PropsType = {
 
 const CommentCard = ({ data }: PropsType) => {
   return (
-    <Stack className="bg-white w-full items-start flex-col p-[21px] space-y-3 rounded-xl shadow-sm">
+    
+    <Stack className="w-full items-start flex-col pb-2 space-y-3 ">
       <Stack className="space-x-3">
         <Avatar />
 

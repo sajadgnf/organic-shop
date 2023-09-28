@@ -10,7 +10,7 @@ const OrderButton = () => {
   const router = useRouter()
 
   return (
-    <Button onClick={() => router.push(STORE)} className="text-primary-dark flex-row flex items-center space-x-1 !p-0">
+    <Button className="text-primary-dark flex-row flex items-center space-x-1 !p-0">
       <Typography className="text-lg">Read More</Typography>
       <ArrowRightIcon data-testid="arrow-icon" className="text-primary-dark w-4" />
     </Button>

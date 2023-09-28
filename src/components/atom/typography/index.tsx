@@ -19,7 +19,13 @@ const tagMap = {
   label: "label",
 }
 
-const Typography = ({ children, variant = "p", component, className = "", ...props }: PropsType & AllHTMLAttributes<HTMLParagraphElement>) => {
+const Typography = ({
+  children,
+  variant = "p",
+  component,
+  className = "",
+  ...props
+}: PropsType & AllHTMLAttributes<HTMLParagraphElement>) => {
   const Tag: any = component || tagMap[variant] || "p"
 
   const font = () => {
@@ -30,16 +36,16 @@ const Typography = ({ children, variant = "p", component, className = "", ...pro
       h4: "text-lg xs:text-3xl md:text-4xl font-inika", //36px
       h5: "text-base xs:text-lg md:text-3xl font-inika", //30px
       h6: "text-[13px] xs:text-base md:text-2xl font-inika", //24px
-      p: "text-[10px] xs:text-[12px] md:text-base font-roboto", //16px
+      p: "text-[10px] xs:text-xs md:text-base font-roboto", //16px
       label: "text-base font-roboto", //16px
-      caption: "text-[11px] xs:text-xs md:text-sm font-roboto", //14px
+      caption: "text-[8px] xs:text-[10px] md:text-sm font-roboto", //14px
     }
     if (variant in obj) return obj[variant]
     if (component && component in obj) return obj[component]
   }
 
   return (
-    <Tag className={`${font()} ${className}`} {...props}>
+    <Tag className={` ${font()} ${className}`} {...props}>
       {children}
     </Tag>
   )

@@ -28,7 +28,7 @@ const Dialog = ({ setOpen, id, children }: propsType) => {
   }, [])
 
   return (
-    <Stack className=" relative z-10" id={id}>
+    <Stack className="w-full justify-start " id={id}>
       {children}
     </Stack>
   )

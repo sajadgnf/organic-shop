@@ -5,16 +5,18 @@ import Typography from "@atom/typography"
 type PropsType = { label: string; checked: boolean; onChange: () => void }
 
 const Checkbox = ({ label, checked, onChange }: PropsType) => {
+  const num = Math.random() * 1000
   return (
     <Stack className="relative block w-full h-full overflow-hidden justify-start ">
       <input
+        id={label + num}
+        name={label + num}
         type="checkbox"
         checked={checked}
         onChange={onChange}
         className="checkbox-input cursor-pointer w-[50px] h-[50px] absolute opacity-0"
-        id={label}
       />
-      <Typography variant="label" className="flex items-center w-full cursor-pointer" htmlFor={label}>
+      <Typography variant="label" className="flex items-center w-full cursor-pointer" htmlFor={label + num}>
         <svg viewBox="0 0 100 100" height="50" width="50">
           <rect x="30" y="20" width="50" height="50" stroke="black" fill="none" />
           <g transform="translate(0,-952.36216)" id="layer1">

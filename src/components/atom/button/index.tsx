@@ -22,7 +22,7 @@ const Button = ({
   const large = size === "large" && "min:w-10 md:min-w-42 h-10 md:h-14 text-lg md:text-xl px-5 md:px-8"
 
   const circle = variant === "circle" && "!p-0 !w-4 !h-4 rounded-full bg-gray-300"
-  const text = variant === "text" && `hover:bg-primary-light px-0`
+  const text = variant === "text" && `!p-0 hover:bg-primary-light px-0`
   const outlined = variant === "outlined" && `border hover:bg-primary-light`
   const contained = variant === "contained" && `bg-primary-main hover:bg-primary-dark ${props.disabled && " bg-gray-400"}`
 

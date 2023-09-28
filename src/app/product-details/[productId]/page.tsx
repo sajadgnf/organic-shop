@@ -6,6 +6,7 @@ import Stack from "@atom/stack"
 import Typography from "@atom/typography"
 import Comments from "@organism/comments"
 import BuyButtons from "@module/buy-buttons"
+import ProductInfo from "@module/product-info"
 import RelatedProduct from "@organism/related-product"
 import FAKE_DATA, { ProductType } from "@src/common/fake-data"
 import { ShoppingCartIcon, StarIcon } from "@heroicons/react/24/solid"
@@ -46,8 +47,8 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
   return (
     <>
       <BottomSheet data={data} />
-      <Stack className="container mt-10 xs:mt-16 md:mt-32 flex-col space-y-16 md:space-y-32">
-        <Stack className="flex-row justify-between w-full">
+      <Stack className="mt-16 md:mt-32 flex-col space-y-16 md:space-y-32">
+        <Stack className="container flex-row justify-between w-full">
           <Stack className="md:items-start space-x-3 xmd:space-x-10">
             <Image
               src="/images/test-juice.svg"
@@ -99,10 +100,7 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
 
         <RelatedProduct />
 
-        <Stack className="flex-col items-start space-y-3 w-full">
-          <Typography variant="h5">title</Typography>
-          <Typography>{data.description}</Typography>
-        </Stack>
+        <ProductInfo data={data} />
 
         <Comments data={data.comments} />
       </Stack>

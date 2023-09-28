@@ -25,7 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`min-h-screen ${inika.variable} ${roboto.variable}`}>
+      <body className={`body relative min-h-screen ${inika.variable} ${roboto.variable}`}>
         <ReduxProvider>
           <ToastContainer />
           <Head />

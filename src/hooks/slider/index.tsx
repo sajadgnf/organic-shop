@@ -1,9 +1,8 @@
 "use client"
-
 import Stack from "@atom/stack"
 import Dots from "@hooks/slider/dots"
 import Arrows from "@hooks/slider/arrows"
-import React, { Dispatch, SetStateAction, useEffect, useState, useRef } from "react"
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react"
 
 export type SliderTypes = {
   slides: string[]

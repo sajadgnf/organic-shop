@@ -47,7 +47,7 @@ const FilterProduct = ({ setOpen = () => {} }: { setOpen?: (t: boolean) => void 
         <Typography variant="h6">Category</Typography>
         <Stack className="flex-col space-y-4 items-start w-full">
           {FAKE_CATEGORY.map((item) => (
-            <FilterCategory item={item} />
+            <FilterCategory key={item.title} item={item} />
           ))}
         </Stack>
       </Stack>

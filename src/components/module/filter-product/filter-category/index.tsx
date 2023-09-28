@@ -1,13 +1,16 @@
 "use client"
+import { RootState } from "@src/store"
 import Checkbox from "@module/checkbox"
-import { useDispatch, useSelector } from "react-redux"
+import { useSearchParams } from "next/navigation"
 import React, { useEffect, useState } from "react"
 import { CategoryType } from "@src/common/fake-data"
+import { useDispatch, useSelector } from "react-redux"
 import { filterCategory } from "@src/store/slice/productSlice"
-import { RootState } from "@src/store"
 
 const FilterCategory = ({ item }: { item: CategoryType }) => {
   const dispatch = useDispatch()
+  const searchParams = useSearchParams()
+  const category = searchParams.get("category")
   const [checked, setChecked] = useState(false)
   const { clearFilters } = useSelector((state: RootState) => state.productSlice)
 
@@ -16,12 +19,16 @@ const FilterCategory = ({ item }: { item: CategoryType }) => {
   }
 
   useEffect(() => {
+    category === item.title && setChecked(true)
+  }, [category])
+
+  useEffect(() => {
     dispatch(filterCategory({ label: item.title, checked }))
   }, [checked])
 
   useEffect(() => {
-    setChecked(false)
-  }, [clearFilters])
+    clearFilters && setChecked(false)
+  }, [clearFilters, category])
 
   return <Checkbox checked={checked} onChange={checkHandler} label={item.title} />
 }

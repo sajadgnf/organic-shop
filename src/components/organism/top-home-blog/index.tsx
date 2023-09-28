@@ -7,8 +7,8 @@ import Typography from "@atom/typography"
 const TopHomeBlog = () => {
   return (
     <Stack className=" bg-secondary-main w-full">
-      <Stack className="container justify-between p-10 md:p-24">
-        <Stack className="flex-col items-start space-y-8 md:space-y-12 md:w-[50%]">
+      <Stack className="container justify-between p-10 xmd:p-24">
+        <Stack className="flex-col items-start space-y-8 xmd:space-y-12 xmd:w-[50%]">
           <Typography variant="h5">Why choose us?</Typography>
           <Typography>
             We take great pride in selecting only the freshest and highest quality fruits and vegetables for our customers. We
@@ -19,20 +19,20 @@ const TopHomeBlog = () => {
             lives. We are dedicated to continuing to provide a level of excellence that our customers have come to expect, and we
             look forward to continuing to work with you as our trusted supplier.
           </Typography>
+          <OrderButton />
           <Image
             src="/images/fruit.jpg"
-            width={763}
+            width={1093}
             height={810}
-            className="md:hidden inline max-h-[760px] rounded-3xl"
+            className="xmd:hidden inline max-h-[780px] rounded-3xl"
             alt="fruit-salad"
           />
-          <OrderButton />
         </Stack>
         <Image
           src="/images/fruit.jpg"
           width={555}
           height={810}
-          className="hidden md:inline w-[400px] lg:w-[555px] max-h-[760px] rounded-3xl"
+          className="hidden xmd:inline w-[400px] lg:w-[555px] max-h-[760px] rounded-3xl"
           alt="fruit-salad"
         />
       </Stack>

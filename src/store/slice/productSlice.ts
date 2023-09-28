@@ -1,20 +1,20 @@
-import FAKE_DATA, { ProductType } from "@src/common/fake-data"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import FAKE_DATA, { ProductType } from "@src/common/fake-data"
 
 interface PropsType {
   clearFilters: boolean
-  searchProducts: string
-  products: ProductType[]
   availableProducts: boolean
   selectedCategories: string[]
+  searchedProducts: ProductType[]
+  filteredProducts: ProductType[]
 }
 
 const initialState: PropsType = {
-  searchProducts: "",
-  products: FAKE_DATA,
   clearFilters: false,
   selectedCategories: [],
   availableProducts: false,
+  searchedProducts: [],
+  filteredProducts: FAKE_DATA,
 }
 
 const productSlice = createSlice({
@@ -23,60 +23,71 @@ const productSlice = createSlice({
   reducers: {
     filterCategory: (state, action: PayloadAction<{ checked: boolean; label: string }>) => {
       const { checked, label } = action.payload
-      let { selectedCategories } = state
       state.clearFilters = false
 
       if (checked) {
-        selectedCategories.push(label)
+        state.selectedCategories.push(label)
       } else {
-        const index = selectedCategories.indexOf(label)
+        const index = state.selectedCategories.indexOf(label)
         if (index !== -1) {
-          selectedCategories.splice(index, 1)
+          state.selectedCategories.splice(index, 1)
         }
       }
 
       let products = []
-      products =
-        !state.availableProducts && state.searchProducts === "" && selectedCategories.length === 0 ? FAKE_DATA : state.products
+      products = !state.availableProducts
+        ? FAKE_DATA
+        : FAKE_DATA.filter((product) => product.type.some((item) => item.stockOut === false))
 
       const filteredProducts =
-        selectedCategories.length === 0 ? products : products.filter((product) => selectedCategories.includes(product.category))
+        state.selectedCategories.length === 0
+          ? products
+          : products.filter((product) => state.selectedCategories.includes(product.category))
 
-      state.products = [...filteredProducts]
-      selectedCategories = Array.from(new Set(selectedCategories))
+      state.filteredProducts = [...filteredProducts]
+      state.selectedCategories = Array.from(new Set(state.selectedCategories))
     },
 
     filterAvailable: (state, action) => {
       state.clearFilters = false
       state.availableProducts = action.payload
-      let products = []
-      products = state.selectedCategories.length === 0 && state.searchProducts === "" ? FAKE_DATA : state.products
-      const filteredProducts = action.payload
-        ? products.filter((product) => product.type.some((item) => item.stockOut === false))
-        : products
+      const products = action.payload
+        ? state.searchedProducts.filter((product) => product.type.some((item) => item.stockOut === false))
+        : state.searchedProducts
 
-      state.products = filteredProducts
+      state.searchedProducts = products
     },
 
     searchProduct: (state, action) => {
       state.clearFilters = false
-      state.searchProducts = action.payload
-      let products = []
-      products = state.selectedCategories.length === 0 && !state.availableProducts ? FAKE_DATA : state.products
-      const searchedProduct = products.filter((product) =>
-        product.title.toLocaleLowerCase().includes(action.payload?.toLocaleLowerCase())
+
+      const searchWords = action.payload?.toLowerCase().split(" ")
+      const searchedProduct = FAKE_DATA.filter((product) =>
+        searchWords.some((word: string) => product.title.toLowerCase().includes(word))
       )
-      state.products = searchedProduct
+      state.searchedProducts = !!action.payload ? searchedProduct : []
+    },
+
+    filterBySearch: (state, action) => {
+      state.clearFilters = true
+
+      const searchWords = action.payload?.toLowerCase().split("")
+      const searchedProduct = FAKE_DATA.filter((product) =>
+        searchWords.some((word: string) => product.title.toLowerCase().includes(word))
+      )
+      console.log(searchWords)
+
+      state.filteredProducts = searchedProduct
     },
 
     clearFilter: (state) => {
       state.clearFilters = true
-      state.products = FAKE_DATA
       state.selectedCategories = []
+      state.filteredProducts = FAKE_DATA
     },
   },
 })
 
-export const { filterCategory, filterAvailable, clearFilter, searchProduct } = productSlice.actions
+export const { filterCategory, filterAvailable, clearFilter, searchProduct, filterBySearch } = productSlice.actions
 
 export default productSlice.reducer

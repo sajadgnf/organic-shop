@@ -9,7 +9,7 @@ import { ABOUT, BLOG, CONTACT, COOKIES, FAQS, HOME, PRIVACY, STORE, TERMS } from
 
 const Footer = () => {
   return (
-    <Stack className="bg-secondary-main mt-24 mb-16 flex-col">
+    <Stack className="bg-secondary-main mt-24 mb-16 md:mb-0 flex-col">
       <Stack className="flex-col md:flex-row space-y-8 md:space-y-10 max-w-[1830px] w-full lg:items-start my-2 md:mt-24 md:mb-16 justify-between lg:px-32 pr-3">
         <Stack className="flex-col space-y-10 md:space-y-0 lg:flex-row lg:space-x-14 md:items-start">
           <Image src="/images/logo.svg" alt="main logo image" width={258} height={80} className="w-[180px] sm:w-[258px]" />

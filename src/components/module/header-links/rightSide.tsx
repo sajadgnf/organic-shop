@@ -20,7 +20,11 @@ const RightSide = () => {
       {phoneNumber ? (
         <UserHamburgerMenu />
       ) : (
-          <Button variant="outlined" onClick={() => router.push(SIGNIN)} className="flex justify-between items-center w-[90px] sm:w-[120px]">
+        <Button
+          variant="outlined"
+          onClick={() => router.push(SIGNIN)}
+          className="flex justify-between items-center w-[90px] sm:w-[120px]"
+        >
           <Typography>Sign in</Typography>
           <ArrowLeftOnRectangleIcon width={20} />
         </Button>
@@ -30,7 +34,7 @@ const RightSide = () => {
         {!!itemsCounter && (
           <Typography
             variant="caption"
-            className="absolute bottom-0 right-0 bg-primary-dark rounded-md w-[18px] h-[18px] text-white"
+            className="absolute top-5 md:top-6 right-3 bg-primary-dark rounded-md w-[16px] h-[14px] md:w-[18px] md:h-[17px] text-white md:!text-[10px]"
           >
             {itemsCounter}
           </Typography>

@@ -50,7 +50,7 @@ const Input = ({
 
   return (
     <Stack className={`flex-col space-y items-start w-full ${className}`}>
-      <Typography component="label" htmlFor={name} className="sm:text-[19px]">
+      <Typography component="label" htmlFor={name}>
         {label}
       </Typography>
 
