@@ -55,7 +55,7 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
               alt="product image"
               width={100}
               height={400}
-              className=" xs:w-[150px] md:w-[200px] lg:w-[400px]"
+              className=" xs:w-[150px] md:w-[200px] lg:w-[400px] "
             />
 
             <Stack className="flex-col md:mt-10 items-start space-y-5">

@@ -15,7 +15,7 @@ const ProductCard = ({ item, href = "" }: PropsType) => {
   const { img, title, description, type } = item
 
   return (
-    <Stack className="xmd:flex-col md:justify-between xmd:space-y-4 xmd:bg-[#f8f8f8] w-full h-full border">
+    <Stack className="xmd:flex-col justify-start md:justify-between xmd:space-y-4 xmd:bg-[#f8f8f8] w-full h-full border">
       <Link href={href}>
         <Stack className="xmd:flex-col space-x-3 xmd:space-x-0 xmd:space-y-4 px-2 sm:px-6 py-2 sm:py-0 sm:pt-6">
           <Image src={img} width={159} height={201} alt={description || title} className="w-[100px] xmd:w-[110px] lg:w-[130px]" />
