@@ -62,7 +62,7 @@ const HomeComments = () => {
 
       <Stack className="flex-row w-full space-x-4 py-4 justify-start overflow-auto">
         {FAKE_DATA.map((item) => (
-          <HomeCommentCard data={item} />
+          <HomeCommentCard data={item} key={item.name + item.rate} />
         ))}
       </Stack>
     </Stack>

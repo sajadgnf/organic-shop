@@ -8,7 +8,7 @@ import HomeComments from "@organism/home-comments"
 import BestSellerProduct from "@organism/best-seller"
 import BottomHomeBlog from "@organism/bottom-home-blog"
 
-const slides = ["/images/slide1.svg", "/images/slide2.svg", "/images/slide3.svg"]
+const slides = ["/images/slider/slide1.svg", "/images/slider/slide2.svg", "/images/slider/slide3.svg"]
 
 function Home() {
   return (

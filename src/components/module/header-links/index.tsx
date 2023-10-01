@@ -16,7 +16,7 @@ const Head = () => {
 
       <Stack
         variant="section"
-        className="fixed container md:hidden z-40 bg-white rounded-lg py-3 justify-between bottom-0 left-0 right-0 w-full space-x-10"
+        className="fixed container md:hidden z-40 bg-white rounded-t-lg py-3 justify-between bottom-0 left-0 right-0 w-full space-x-10"
       >
         <Links />
       </Stack>

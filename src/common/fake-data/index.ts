@@ -716,24 +716,528 @@ const FAKE_DATA: ProductType[] = [
       },
     ],
   },
+  {
+    id: "31",
+    title: "Mango",
+    description: "Experience the tropical delight of Mango, the king of fruits...",
+    img: "/images/fruit/mango.svg",
+    category: "fruit",
+    rate: 4.9,
+    type: [
+      {
+        stockOut: false,
+        id: "1",
+        name: "Luxury",
+        price: 1.99,
+        discount: 0,
+      },
+      {
+        stockOut: false,
+        id: "2",
+        name: "High grade",
+        price: 2.49,
+        discount: 0,
+      },
+    ],
+    comments: [
+      {
+        name: "Ella Johnson",
+        description: "Mangoes are my favorite fruit, and these are the juiciest I've ever tasted!",
+        rate: 5,
+      },
+      {
+        name: "Aiden Smith",
+        description: "The freshness of these mangoes is unmatched. A perfect snack!",
+        rate: 4,
+      },
+    ],
+  },
+  {
+    id: "32",
+    title: "Carrot",
+    description: "Enjoy the crisp and sweet taste of carrots, a nutritious vegetable...",
+    img: "/images/vegetable/carrot.svg",
+    category: "vegetable",
+    rate: 4.7,
+    type: [
+      {
+        stockOut: false,
+        id: "1",
+        name: "Luxury",
+        price: 0.99,
+        discount: 0,
+      },
+      {
+        stockOut: false,
+        id: "2",
+        name: "High grade",
+        price: 1.49,
+        discount: 0,
+      },
+    ],
+    comments: [
+      {
+        name: "Sophia Martinez",
+        description: "Carrots are a staple in my kitchen, and these are always fresh!",
+        rate: 5,
+      },
+      {
+        name: "Liam Wilson",
+        description: "I love the crunchiness of these carrots. Great for snacking!",
+        rate: 4,
+      },
+    ],
+  },
+  {
+    id: "33",
+    title: "Broccoli",
+    description: "Experience the goodness of broccoli, packed with vitamins and nutrients...",
+    img: "/images/vegetable/broccoli.svg",
+    category: "vegetable",
+    rate: 4.8,
+    type: [
+      {
+        stockOut: false,
+        id: "1",
+        name: "Luxury",
+        price: 1.29,
+        discount: 0,
+      },
+      {
+        stockOut: false,
+        id: "2",
+        name: "High grade",
+        price: 1.79,
+        discount: 0,
+      },
+    ],
+    comments: [
+      {
+        name: "Olivia Davis",
+        description: "Broccoli is a must-have in my salads, and these are always fresh!",
+        rate: 5,
+      },
+      {
+        name: "Noah Johnson",
+        description: "I enjoy the taste of these broccoli. They make my meals healthier.",
+        rate: 4,
+      },
+    ],
+  },
+  {
+    id: "34",
+    title: "Spinach",
+    description: "Get your dose of iron and vitamins with fresh spinach leaves...",
+    img: "/images/vegetable/spinach.svg",
+    category: "vegetable",
+    rate: 4.6,
+    type: [
+      {
+        stockOut: false,
+        id: "1",
+        name: "Luxury",
+        price: 1.19,
+        discount: 0,
+      },
+      {
+        stockOut: false,
+        id: "2",
+        name: "High grade",
+        price: 1.69,
+        discount: 0,
+      },
+    ],
+    comments: [
+      {
+        name: "Mia Garcia",
+        description: "Spinach is a must for my green smoothies, and these are perfect!",
+        rate: 5,
+      },
+      {
+        name: "Ethan Clark",
+        description: "I love the freshness of these spinach leaves. They're great for salads.",
+        rate: 4,
+      },
+    ],
+  },
+  {
+    id: "35",
+    title: "Tomato",
+    description: "Experience the juicy and tangy flavor of tomatoes, a kitchen essential...",
+    img: "/images/vegetable/tomato.svg",
+    category: "vegetable",
+    rate: 4.5,
+    type: [
+      {
+        stockOut: false,
+        id: "1",
+        name: "Luxury",
+        price: 0.79,
+        discount: 0,
+      },
+      {
+        stockOut: false,
+        id: "2",
+        name: "High grade",
+        price: 1.29,
+        discount: 0,
+      },
+    ],
+    comments: [
+      {
+        name: "Ava Baker",
+        description: "These tomatoes are so flavorful, I use them in all my recipes!",
+        rate: 5,
+      },
+      {
+        name: "James White",
+        description: "Fresh tomatoes are a must for my sandwiches, and these fit the bill.",
+        rate: 4,
+      },
+    ],
+  },
+  {
+    id: "36",
+    title: "Bell Pepper",
+    description: "Add vibrant colors and flavor to your dishes with bell peppers...",
+    img: "/images/vegetable/bell-pepper.svg",
+    category: "vegetable",
+    rate: 4.9,
+    type: [
+      {
+        stockOut: false,
+        id: "1",
+        name: "Luxury",
+        price: 1.29,
+        discount: 0,
+      },
+      {
+        stockOut: false,
+        id: "2",
+        name: "High grade",
+        price: 1.79,
+        discount: 0,
+      },
+    ],
+    comments: [
+      {
+        name: "Harper Hall",
+        description: "I love the variety of colors in these bell peppers. They make my salads pop!",
+        rate: 5,
+      },
+      {
+        name: "Liam Turner",
+        description: "Bell peppers are a staple in my stir-fries, and these are top-notch.",
+        rate: 4,
+      },
+    ],
+  },
+  {
+    id: "37",
+    title: "Cucumber",
+    description: "Stay refreshed with crisp and hydrating cucumbers, a perfect summer snack...",
+    img: "/images/vegetable/cucumber.svg",
+    category: "vegetable",
+    rate: 4.6,
+    type: [
+      {
+        stockOut: false,
+        id: "1",
+        name: "Luxury",
+        price: 0.89,
+        discount: 0,
+      },
+      {
+        stockOut: false,
+        id: "2",
+        name: "High grade",
+        price: 1.39,
+        discount: 0,
+      },
+    ],
+    comments: [
+      {
+        name: "Ella Wright",
+        description: "Cucumbers are my go-to snack, and these are always crisp and delicious!",
+        rate: 5,
+      },
+      {
+        name: "Aiden Foster",
+        description: "These cucumbers are so refreshing, especially on a hot day.",
+        rate: 4,
+      },
+    ],
+  },
+  {
+    id: "38",
+    title: "Potato",
+    description: "Experience the versatility of potatoes, perfect for fries, mash, and more...",
+    img: "/images/vegetable/potato.svg",
+    category: "vegetable",
+    rate: 4.7,
+    type: [
+      {
+        stockOut: false,
+        id: "1",
+        name: "Luxury",
+        price: 0.69,
+        discount: 0,
+      },
+      {
+        stockOut: false,
+        id: "2",
+        name: "High grade",
+        price: 1.19,
+        discount: 0,
+      },
+    ],
+    comments: [
+      {
+        name: "Mason King",
+        description: "Potatoes are a staple in my kitchen, and these are perfect for making fries!",
+        rate: 5,
+      },
+      {
+        name: "Lily Brown",
+        description: "These potatoes make the creamiest mashed potatoes ever!",
+        rate: 4,
+      },
+    ],
+  },
+  {
+    id: "39",
+    title: "Zucchini",
+    description: "Add a healthy twist to your meals with fresh zucchini, a versatile vegetable...",
+    img: "/images/vegetable/zucchini.svg",
+    category: "vegetable",
+    rate: 4.6,
+    type: [
+      {
+        stockOut: false,
+        id: "1",
+        name: "Luxury",
+        price: 1.09,
+        discount: 0,
+      },
+      {
+        stockOut: false,
+        id: "2",
+        name: "High grade",
+        price: 1.59,
+        discount: 0,
+      },
+    ],
+    comments: [
+      {
+        name: "Emma Lee",
+        description: "I love making zucchini noodles with these. Healthy and delicious!",
+        rate: 5,
+      },
+      {
+        name: "Carter Adams",
+        description: "Fresh zucchini is a great addition to my stir-fries. These are perfect.",
+        rate: 4,
+      },
+    ],
+  },
+  {
+    id: "40",
+    title: "Onion",
+    description: "Enhance the flavor of your dishes with sweet and pungent onions...",
+    img: "/images/vegetable/onion.svg",
+    category: "vegetable",
+    rate: 4.5,
+    type: [
+      {
+        stockOut: false,
+        id: "1",
+        name: "Luxury",
+        price: 0.79,
+        discount: 0,
+      },
+      {
+        stockOut: false,
+        id: "2",
+        name: "High grade",
+        price: 1.29,
+        discount: 0,
+      },
+    ],
+    comments: [
+      {
+        name: "Ethan Green",
+        description: "Onions are a must for my cooking. These are always fresh and aromatic!",
+        rate: 5,
+      },
+      {
+        name: "Zoe Turner",
+        description: "I add onions to almost every savory dish, and these never disappoint.",
+        rate: 4,
+      },
+    ],
+  },
+  {
+    id: "41",
+    title: "Cabbage",
+    description: "Enjoy the crisp and fresh taste of cabbage, perfect for salads and coleslaw...",
+    img: "/images/vegetable/cabbage.svg",
+    category: "vegetable",
+    rate: 4.7,
+    type: [
+      {
+        stockOut: false,
+        id: "1",
+        name: "Luxury",
+        price: 1.09,
+        discount: 0,
+      },
+      {
+        stockOut: false,
+        id: "2",
+        name: "High grade",
+        price: 1.59,
+        discount: 0,
+      },
+    ],
+    comments: [
+      {
+        name: "Liam Mitchell",
+        description: "I make the best coleslaw with these cabbages. Crisp and delicious!",
+        rate: 5,
+      },
+      {
+        name: "Sophia Carter",
+        description: "These cabbages are so fresh, they elevate my salads to the next level.",
+        rate: 4,
+      },
+    ],
+  },
+  {
+    id: "42",
+    title: "Greek Salad",
+    description: "A refreshing Greek salad with tomatoes, cucumbers, olives, feta cheese, and Greek dressing.",
+    img: "/images/salad/greek.svg",
+    category: "salad",
+    rate: 4.7,
+    type: [
+      {
+        stockOut: false,
+        id: "1",
+        name: "Luxury",
+        price: 8.49,
+        discount: 0,
+      },
+      {
+        stockOut: false,
+        id: "2",
+        name: "High grade",
+        price: 10.49,
+        discount: 0,
+      },
+    ],
+    comments: [
+      {
+        name: "Olivia Davis",
+        description: "The Greek salad is so refreshing. Perfect for a light meal!",
+        rate: 5,
+      },
+      {
+        name: "Noah Johnson",
+        description: "I love the combination of flavors in this Greek salad. Always a hit!",
+        rate: 4,
+      },
+    ],
+  },
+  {
+    id: "43",
+    title: "Caprese Salad",
+    description: "A delightful Caprese salad with fresh mozzarella, tomatoes, basil, olive oil, and balsamic glaze.",
+    img: "/images/salad/caprese.svg",
+    category: "salad",
+    rate: 4.9,
+    type: [
+      {
+        stockOut: false,
+        id: "1",
+        name: "Luxury",
+        price: 9.99,
+        discount: 0,
+      },
+      {
+        stockOut: false,
+        id: "2",
+        name: "High grade",
+        price: 11.99,
+        discount: 0,
+      },
+    ],
+    comments: [
+      {
+        name: "Liam Wilson",
+        description: "The Caprese salad is a burst of flavor in every bite. Love the mozzarella!",
+        rate: 5,
+      },
+      {
+        name: "Ava Baker",
+        description: "I'm a fan of the simple yet delicious Caprese salad. Perfect for a starter!",
+        rate: 4,
+      },
+    ],
+  },
+  {
+    id: "44",
+    title: "Cobb Salad",
+    description: "A hearty Cobb salad with mixed greens, grilled chicken, bacon, eggs, avocado, and blue cheese dressing.",
+    img: "/images/salad/cobb.svg",
+    category: "salad",
+    rate: 4.6,
+    type: [
+      {
+        stockOut: false,
+        id: "1",
+        name: "Luxury",
+        price: 10.99,
+        discount: 0,
+      },
+      {
+        stockOut: false,
+        id: "2",
+        name: "High grade",
+        price: 12.99,
+        discount: 0,
+      },
+    ],
+    comments: [
+      {
+        name: "Mia Garcia",
+        description: "The Cobb salad is a full meal in itself. So many flavors and textures!",
+        rate: 5,
+      },
+      {
+        name: "Ethan Clark",
+        description: "I order the Cobb salad every time. The avocado makes it so creamy!",
+        rate: 4,
+      },
+    ],
+  },
 ]
 
 export const FAKE_CATEGORY: CategoryType[] = [
   {
     title: "vegetable",
-    img: "/images/vegetable.svg",
+    img: `/images/category/vegetable.svg`,
   },
   {
     title: "fruit",
-    img: "/images/vegetable.svg",
+    img: "/images/category/fruit.svg",
   },
   {
     title: "juice",
-    img: "/images/vegetable.svg",
+    img: "/images/category/juice.svg",
   },
   {
     title: "salad",
-    img: "/images/vegetable.svg",
+    img: "/images/category/salad.svg",
   },
 ]
 export default FAKE_DATA

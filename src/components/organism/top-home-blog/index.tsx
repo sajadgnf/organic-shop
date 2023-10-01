@@ -12,7 +12,7 @@ const TopHomeBlog = () => {
           <Typography variant="h5">Why choose us?</Typography>
           <Typography>
             We take great pride in selecting only the freshest and highest quality fruits and vegetables for our customers. We
-            know that our customers appreciate the valuable nutrition and taste that fresh produce offers, and that's why we only
+            know that our customers appreciate the valuable nutrition and taste that fresh produce offers, and that iss why we only
             work with the best suppliers to ensure that we deliver. tastes and flavors from around the world. We value our
             partnership with you because we know that working together will benefit both our businesses and our customers. By
             providing the freshest and highest quality selection of produce, we can help our customers lead healthier, happier

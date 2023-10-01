@@ -29,7 +29,7 @@ const AboutUs = () => {
           <Typography variant="h5">Our Fresh Selection</Typography>
           <Typography>
             Explore our extensive range of organic fruits, carefully selected to meet your health and taste preferences. Whether
-            you're looking for tropical delights, tangy citrus fruits, or sweet berries, we have you covered. We also offer rare
+            you are looking for tropical delights, tangy citrus fruits, or sweet berries, we have you covered. We also offer rare
             and exotic organic imports to tantalize your palate.
           </Typography>
         </Stack>
@@ -37,7 +37,7 @@ const AboutUs = () => {
         <Stack className="flex-col space-y-6 items-start">
           <Typography variant="h5">Supporting Sustainability</Typography>
           <Typography>
-            Organic Shop is more than just an online store; it's a platform for supporting sustainable agriculture. When you
+            Organic Shop is more than just an online store; it is a platform for supporting sustainable agriculture. When you
             choose our organic fruits, you contribute to the preservation of our environment and the well-being of farming
             communities.
           </Typography>

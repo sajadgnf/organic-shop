@@ -24,19 +24,24 @@ const Comments = ({ data }: { data: ProductType["comments"] }) => {
           {data.slice(0, num).map((item, i) => (
             <Fragment key={Math.random() * 1000}>
               <CommentCard data={item} />
-              <hr className={`${i !== num - 1 ? "w-full" : "w-0"}`} />
+              {data.length > 3 ? (
+                <hr className={`${i !== num - 1 ? "w-full" : "w-0"}`} />
+              ) : (
+                <hr className={`${i !== data.length - 1 ? "w-full" : "w-0"}`} />
+              )}
             </Fragment>
           ))}
         </Stack>
-        {num === 4 ? (
-          <Button onClick={() => setNum(data.length)} className="flex justify-between items-center text-blue-400 ">
-            show more <ChevronDownIcon width={22} />
-          </Button>
-        ) : (
-          <Button onClick={() => setNum(4)} className="flex justify-between items-center text-blue-400 ">
-            show less <ChevronUpIcon width={22} />
-          </Button>
-        )}
+        {data.length > 3 &&
+          (num === 4 ? (
+            <Button onClick={() => setNum(data.length)} className="flex justify-between items-center text-blue-400 ">
+              show more <ChevronDownIcon width={22} />
+            </Button>
+          ) : (
+            <Button onClick={() => setNum(4)} className="flex justify-between items-center text-blue-400 ">
+              show less <ChevronUpIcon width={22} />
+            </Button>
+          ))}
       </Stack>
     </Stack>
   )

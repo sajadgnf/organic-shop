@@ -39,10 +39,10 @@ const FAQs = () => {
         </Stack>
 
         <Stack className="w-full flex-col space-y-3 items-start">
-          <Typography variant="h5">5. Can I return my order if I'm not satisfied?</Typography>
+          <Typography variant="h5">5. Can I return my order if I am not satisfied?</Typography>
           <Typography>
-            Yes, we have a hassle-free return policy. If you're not satisfied with your order, please contact our customer
-            support, and we'll assist you with the return process.
+            Yes, we have a hassle-free return policy. If you are not satisfied with your order, please contact our customer
+            support, and we will assist you with the return process.
           </Typography>
         </Stack>
       </Stack>

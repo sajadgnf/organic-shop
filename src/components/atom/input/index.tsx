@@ -8,6 +8,7 @@ type PropsType = {
   label?: string
   className?: string
   multiLine?: boolean
+  containerClassName?: string
   endIcon?: string | ReactElement | ReactNode
   startIcon?: string | ReactElement | ReactNode
   type?:
@@ -44,6 +45,7 @@ const Input = ({
   startIcon,
   className,
   name = "name",
+  containerClassName,
   ...props
 }: PropsType & InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>) => {
   const paddingLeft = startIcon ? "pl-1" : "pl-2"
@@ -54,7 +56,9 @@ const Input = ({
         {label}
       </Typography>
 
-      <Stack className={`bg-white rounded-lg px-1 min-h-[47px] w-full space-x-2 border border-secondary-dark`}>
+      <Stack
+        className={`bg-white rounded-lg px-1 min-h-[47px] w-full space-x-2 border border-secondary-dark ${containerClassName}`}
+      >
         {multiLine ? (
           <textarea
             id={name}

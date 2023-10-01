@@ -33,7 +33,7 @@ const Card = ({ data, href = "" }: PropsType) => {
 
       <Stack className="justify-between items-end w-full px-6 pb-4">
         {type.map(({ price, name, discount, id }) => (
-          <Stack className="flex-col space-y-3">
+          <Stack className="flex-col space-y-3" key={id}>
             <Stack className="flex-col items-end">
               <Stack className={`items-center space-x-1 ${!!discount ? "opacity-100" : "opacity-0"}`}>
                 <Typography variant="caption" className="bg-primary-dark rounded-full text-white px-[3.5px] py-[2.5px]">

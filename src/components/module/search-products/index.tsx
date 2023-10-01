@@ -2,9 +2,10 @@ import Input from "@atom/input"
 import Stack from "@atom/stack"
 import Dialog from "@module/dialog"
 import { RootState } from "@src/store"
-import { PRODUCTDETAILS } from "routes"
 import Typography from "@atom/typography"
+import { useRouter } from "next/navigation"
 import SearchCard from "@module/search-card"
+import { PRODUCTDETAILS, SEARCH } from "routes"
 import React, { ChangeEvent, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid"
@@ -12,6 +13,7 @@ import { filterBySearch, searchProduct } from "@src/store/slice/productSlice"
 
 const SearchProduct = () => {
   const dispatch = useDispatch()
+  const router = useRouter()
   const [open, setOpen] = useState(false)
   const [search, setSearch] = useState("")
   const { searchedProducts } = useSelector((state: RootState) => state.productSlice)
@@ -31,7 +33,7 @@ const SearchProduct = () => {
           autoComplete="off"
           placeholder="search..."
           className="xmd:!w-[50%]"
-          onFocus={() => setOpen(true)}
+          onFocus={() => (window.innerWidth <= 600 ? router.push(SEARCH) : setOpen(true))}
           onChange={(e) => changeHandler(e)}
           startIcon={<MagnifyingGlassIcon width={20} className="ml-2 hidden md:block" />}
         />
@@ -43,10 +45,10 @@ const SearchProduct = () => {
         >
           <Typography
             onClick={() => {
-              search && dispatch(filterBySearch(search))
+              dispatch(filterBySearch(search))
               setOpen(false)
             }}
-            className="cursor-pointer"
+            className={`${!!search ? "cursor-pointer" : "pointer-events-none"} w-full`}
             variant="h6"
           >
             Search for: {search}

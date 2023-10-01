@@ -52,7 +52,7 @@ const SignUpComponent = () => {
         </Button>
 
         <Typography variant="caption" className="text-gray-900">
-          By continuing, you agree to Organic Shop's Conditions of <br className="hidden xs:block" /> Use and&nbsp;
+          By continuing, you agree to Organic Shop i`s Conditions of <br className="hidden xs:block" /> Use and&nbsp;
           <Link href={PRIVACY} className="underline text-blue-500">Privacy Notice</Link>.
         </Typography>
       </Stack>

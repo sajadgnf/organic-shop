@@ -10,7 +10,7 @@ export interface RootState {
     checkout: boolean
     totalPrice: number
     itemsCounter: number
-    selectedItems: [{ id: string; title: string; quantity: number; type: { id: string; price: number } }]
+    selectedItems: [{ id: string; title: string; quantity: number; img: string; type: { id: string; price: number } }]
   }
   productSlice: { filteredProducts: ProductType[]; searchedProducts: ProductType[]; clearFilters: boolean }
   loginSlice: { phoneNumber: string }

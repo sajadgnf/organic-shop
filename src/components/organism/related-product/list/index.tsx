@@ -8,7 +8,7 @@ const RelatedProductList = () => {
   return (
     <Stack className="w-full overflow-auto space-x-5 justify-start px-1 pb-2 hide-scrollbar">
       {FAKE_DATA.map((data, i) => (
-        <Card data={data} href={PRODUCTDETAILS(data.id)} />
+        <Card key={data.id} data={data} href={PRODUCTDETAILS(data.id)} />
       ))}
     </Stack>
   )

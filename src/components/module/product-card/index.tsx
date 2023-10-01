@@ -50,7 +50,7 @@ const ProductCard = ({ item, href = "" }: PropsType) => {
 
       <Stack className="hidden md:flex xmd:justify-between space-x-0 sm:space-x-6 space-y-4 xmd:space-y-0 items-end xmd:w-full px-6 md:pb-4 flex-col sm:flex-row">
         {type.map(({ price, name, discount, id }) => (
-          <Stack className="flex-col space-y-3">
+          <Stack key={id} className="flex-col space-y-3">
             <Stack className="flex-col items-end">
               <Typography>${discount ? discount : price}</Typography>
               {!!discount && (

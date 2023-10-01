@@ -7,8 +7,8 @@ import FAKE_DATA from "@src/common/fake-data"
 const SpecialOfferList = () => {
   return (
     <Stack className="w-full overflow-auto space-x-5 justify-start px-1 pb-1 hide-scrollbar">
-      {FAKE_DATA.map((data, i) => (
-        <Card data={data} href={PRODUCTDETAILS(data.id)} />
+      {FAKE_DATA.slice(6, 16).map((data, i) => (
+        <Card key={data.id} data={data} href={PRODUCTDETAILS(data.id)} />
       ))}
     </Stack>
   )

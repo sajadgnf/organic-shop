@@ -1,15 +1,15 @@
 "use client"
-import React from "react"
+import React, { Fragment } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import Stack from "@atom/stack"
 import Button from "@atom/button"
 import { RootState } from "@src/store"
 import { PRODUCTDETAILS } from "routes"
-import { useDispatch, useSelector } from "react-redux"
 import Typography from "@atom/typography"
 import BuyButtons from "@module/buy-buttons"
 import { XMarkIcon } from "@heroicons/react/24/solid"
+import { useDispatch, useSelector } from "react-redux"
 import { removeItem } from "@src/store/slice/cartSlice"
 
 const OrderedItem = () => {
@@ -19,11 +19,11 @@ const OrderedItem = () => {
   return (
     <Stack className="flex-col w-full lg:w-[65%] space-y-5">
       {selectedItems.map((item) => (
-        <>
+        <Fragment key={item.id}>
           <Stack className="hidden lg:flex border rounded-lg p-3 justify-between w-full">
-            <Link href={PRODUCTDETAILS(1)}>
+            <Link href={PRODUCTDETAILS(item.id)}>
               <Stack className="space-x-4">
-                <Image src="/images/test-juice.svg" alt="" width={80} height={80} />
+                <Image src={item.img} alt="product image" width={80} height={80} />
                 <Stack className="flex-col">
                   <Typography variant="h6">{item.title}</Typography>
                   <Typography>${item.type.price}</Typography>
@@ -70,7 +70,7 @@ const OrderedItem = () => {
               </Stack>
             </Stack>
           </Stack>
-        </>
+        </Fragment>
       ))}
     </Stack>
   )

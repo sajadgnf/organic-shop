@@ -51,7 +51,7 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
         <Stack className="container flex-row justify-between w-full">
           <Stack className="md:items-start space-x-3 xmd:space-x-10">
             <Image
-              src="/images/test-juice.svg"
+              src={data.img}
               alt="product image"
               width={100}
               height={400}
