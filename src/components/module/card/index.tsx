@@ -18,11 +18,15 @@ const Card = ({ data, href = "" }: PropsType) => {
     <Stack className="flex-col space-y-4 bg-[#f8f8f8] min-w-[250px] md:min-w-[355px] w-28 max-h-[450px] shadow-md rounded-2xl">
       <Link href={href}>
         <Stack className="flex-col space-y-4 px-6 pt-6">
-          <Image src={img} width={159} height={201} alt={description || title} className="w-[100px] sm:w-[120px] md:w-[159px]" />
+          <Stack className="h-[110px] sm:h-[130px] md:h-[200px] w-[50%]">
+            <Image src={img} width={159} height={201} alt={description || title} className="h-fit w-fit" />
+          </Stack>
 
           <Stack className="space-y-1 flex-col items-start">
             <Typography variant="h6">{title}</Typography>
-            <Typography variant="caption">{description}</Typography>
+            <Typography variant="caption" className="line-clamp-2">
+              {description}
+            </Typography>
           </Stack>
         </Stack>
       </Link>
