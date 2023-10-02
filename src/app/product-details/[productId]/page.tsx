@@ -1,8 +1,8 @@
-import React, { Fragment } from "react"
 import Link from "next/link"
 import { STORE } from "routes"
 import Image from "next/image"
 import Stack from "@atom/stack"
+import React, { Fragment } from "react"
 import Typography from "@atom/typography"
 import Comments from "@organism/comments"
 import BuyButtons from "@module/buy-buttons"
@@ -61,8 +61,8 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
             <Stack className="flex-col md:mt-10 items-start space-y-5">
               <Stack className="flex-col items-start space-y-2">
                 <Typography variant="h3">{data.title}</Typography>
-                <Link href={`${STORE}?category=category`}>
-                  <Typography className="grey">{data.category}</Typography>
+                <Link href={`${STORE}?category=${data.category}`}>
+                  <Typography className="font-semibold text-blue-700">products/{data.category}</Typography>
                 </Link>
               </Stack>
 
@@ -78,7 +78,19 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
               <Fragment key={item.id}>
                 <Stack className="flex-col space-y-8">
                   <Typography variant="h6">per kilogram</Typography>
-                  <Typography variant="h6">${item.price}</Typography>
+                  <Stack className="space-x-3">
+                    {!!+item.discount && (
+                      <Stack className="items-center space-x-1">
+                        <Typography variant="caption" className="line-through text-gray-400">
+                          ${item.price}
+                        </Typography>
+                        <Typography variant="caption" className="bg-primary-dark rounded-full text-white px-[3.5px] py-[2.5px]">
+                          {+item.discount && Math.floor((+item.discount * +item.price) / 100)}%
+                        </Typography>
+                      </Stack>
+                    )}
+                    <Typography variant="h6">${+item.discount ? item.discount : item.price}</Typography>
+                  </Stack>
                   <BuyButtons
                     data={data}
                     variant="contained"

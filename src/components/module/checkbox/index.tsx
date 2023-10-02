@@ -1,10 +1,10 @@
-import React from "react"
+import React, { InputHTMLAttributes } from "react"
 import Stack from "@atom/stack"
 import Typography from "@atom/typography"
 
-type PropsType = { label: string; checked: boolean; onChange: () => void }
+type PropsType = { label: string }
 
-const Checkbox = ({ label, checked, onChange }: PropsType) => {
+const Checkbox = ({ label }: PropsType & InputHTMLAttributes<HTMLInputElement>) => {
   const num = Math.random() * 1000
   return (
     <Stack className="relative block w-full h-full overflow-hidden justify-start ">
@@ -12,8 +12,6 @@ const Checkbox = ({ label, checked, onChange }: PropsType) => {
         id={label + num}
         name={label + num}
         type="checkbox"
-        checked={checked}
-        onChange={onChange}
         className="checkbox-input cursor-pointer w-[50px] h-[50px] absolute opacity-0"
       />
       <Typography variant="label" className="flex items-center w-full cursor-pointer" htmlFor={label + num}>

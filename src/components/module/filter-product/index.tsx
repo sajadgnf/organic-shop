@@ -35,7 +35,7 @@ const FilterProduct = ({ setOpen = () => {} }: { setOpen?: (t: boolean) => void 
         </Button>
         <Stack className="w-full justify-between">
           <Typography variant="h6">Filter</Typography>
-          <Button className="text-danger-main" onClick={() => dispatch(clearFilter())}>
+          <Button className="text-danger-main" hoverEffect={false} onClick={() => dispatch(clearFilter())}>
             clear
           </Button>
         </Stack>

@@ -18,7 +18,13 @@ const ProductCard = ({ item, href = "" }: PropsType) => {
     <Stack className="xmd:flex-col justify-start md:justify-between xmd:space-y-4 xmd:bg-[#f8f8f8] w-full h-full border">
       <Link href={href}>
         <Stack className="xmd:flex-col space-x-3 xmd:space-x-0 xmd:space-y-4 px-2 sm:px-6 py-2 sm:py-0 sm:pt-6">
-          <Image src={img} width={159} height={201} alt={description || title} className="w-[100px] xmd:w-[110px] lg:w-[130px]" />
+          <Image
+            src={img}
+            width={159}
+            height={201}
+            alt={description || title}
+            className="w-[100px] xmd:w-[110px]  md:min-h-[130px] lg:min-h-[160px] lg:w-[130px]"
+          />
 
           <Stack className="space-y-2 sm:space-y-1 flex-col items-start w-full">
             <Typography variant="h6">{title}</Typography>
@@ -30,11 +36,11 @@ const ProductCard = ({ item, href = "" }: PropsType) => {
               {type.map(({ price, name, discount, id }) => (
                 <Stack key={id} className="space-x-2 ">
                   <Typography className="font-bold">{name}:</Typography>
-                  <Typography>${discount ? discount : price}</Typography>
-                  {!!discount && (
+                  <Typography>${+discount ? +discount : price}</Typography>
+                  {!!+discount && (
                     <Stack className="items-center space-x-1">
                       <Typography variant="caption" className="bg-primary-dark rounded-full text-white px-[3.5px] py-[2.5px]">
-                        {discount && price && Math.floor((+discount * +price) / 100)}%
+                        {+discount && Math.floor((+discount * +price) / 100)}%
                       </Typography>
                       <Typography variant="caption" className="line-through text-gray-400">
                         ${price}
@@ -52,17 +58,17 @@ const ProductCard = ({ item, href = "" }: PropsType) => {
         {type.map(({ price, name, discount, id }) => (
           <Stack key={id} className="flex-col space-y-3">
             <Stack className="flex-col items-end">
-              <Typography>${discount ? discount : price}</Typography>
-              {!!discount && (
+              {!!+discount && (
                 <Stack className="items-center space-x-1">
                   <Typography variant="caption" className="bg-primary-dark rounded-full text-white px-[3.5px] py-[2.5px]">
-                    {discount && price && Math.floor((+discount * +price) / 100)}%
+                    {+discount && price && Math.floor((+discount * +price) / 100)}%
                   </Typography>
                   <Typography variant="caption" className="line-through text-gray-400">
                     ${price}
                   </Typography>
                 </Stack>
               )}
+              <Typography>${+discount ? discount : price}</Typography>
             </Stack>
             <BuyButtons
               className="!w-24 lg:!w-[110px] !p-0"

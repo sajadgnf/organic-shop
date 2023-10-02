@@ -30,7 +30,7 @@ const RightSide = () => {
         </Button>
       )}
       <Stack className="border border-gray-300 h-6" />
-      <Button size="small" className="relative" data-testid="shopping-button" onClick={() => router.push(CART)}>
+      <Button size="small" hoverEffect={false} className="relative" data-testid="shopping-button" onClick={() => router.push(CART)}>
         {!!itemsCounter && (
           <Typography
             variant="caption"

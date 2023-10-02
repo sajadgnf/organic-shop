@@ -46,7 +46,7 @@ const FAKE_DATA: ProductType[] = [
         id: "2",
         name: "High grade",
         price: "12.01",
-        discount: " 12.41",
+        discount: " 10.41",
       },
     ],
     comments: [
@@ -548,14 +548,14 @@ const FAKE_DATA: ProductType[] = [
         id: "1",
         name: "Luxury",
         price: "0.79",
-        discount: " 0",
+        discount: "0",
       },
       {
         stockOut: false,
         id: "2",
         name: "High grade",
         price: "0.99",
-        discount: " 0.8",
+        discount: " 0",
       },
     ],
     comments: [
@@ -684,7 +684,7 @@ const FAKE_DATA: ProductType[] = [
         id: "1",
         name: "Luxury",
         price: "1.29",
-        discount: " 0",
+        discount: " 1.10",
       },
       {
         stockOut: false,
@@ -748,7 +748,7 @@ const FAKE_DATA: ProductType[] = [
         id: "2",
         name: "High grade",
         price: "12.49",
-        discount: " 0",
+        discount: "10.00",
       },
     ],
     comments: [

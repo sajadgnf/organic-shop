@@ -12,10 +12,7 @@ const CategoriesList = () => {
       {FAKE_CATEGORY.map((category) => (
         <Link key={category.title} href={`${STORE}?category=${category.title}`}>
           <Stack className="bg-primary-light items-start rounded-2xl sm:overflow-hidden px-3 xs:px-6 py-2 sm:p-0 sm:pl-5 sm:justify-between sm:h-[190px]">
-            <Typography data-testid="category-title" variant="h6" className="mt-auto mb-12 hidden sm:block">
-              {category.title.toUpperCase()}
-            </Typography>
-            <Typography data-testid="category-title" variant="p" className=" sm:hidden block">
+            <Typography data-testid="category-title" variant="p" className="mt-auto sm:!text-xl sm:mb-12">
               {category.title.toUpperCase()}
             </Typography>
             <Image src={category.img} width={120} height={120} alt={category.title} className="flex-1 hidden sm:flex" />
