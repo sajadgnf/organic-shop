@@ -9,8 +9,9 @@ export interface RootState {
     id: string
     checkout: boolean
     totalPrice: number
+    totalDiscount: number
     itemsCounter: number
-    selectedItems: [{ id: string; title: string; quantity: number; img: string; type: { id: string; price: number } }]
+    selectedItems: [{ id: string; title: string; quantity: number; img: string; type: { id: string; price: string, discount:string } }]
   }
   productSlice: { filteredProducts: ProductType[]; searchedProducts: ProductType[]; clearFilters: boolean }
   loginSlice: { phoneNumber: string }

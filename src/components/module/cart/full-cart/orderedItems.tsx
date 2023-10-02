@@ -26,7 +26,7 @@ const OrderedItem = () => {
                 <Image src={item.img} alt="product image" width={80} height={80} />
                 <Stack className="flex-col">
                   <Typography variant="h6">{item.title}</Typography>
-                  <Typography>${item.type.price}</Typography>
+                  <Typography>${+item.type.discount ?? item.type.price}</Typography>
                 </Stack>
               </Stack>
             </Link>
@@ -36,7 +36,9 @@ const OrderedItem = () => {
                 <BuyButtons data={item} typeId={item.type.id} />
                 <Typography>Kilogram</Typography>
               </Stack>
-              <Typography className="text-danger-main">${item.type.price * item.quantity}</Typography>
+              <Typography className="text-danger-main">
+                ${(+item.type.discount ? +item.type.discount : +item.type.price) * item.quantity}
+              </Typography>
             </Stack>
 
             <Button className="hover:bg-transparent" onClick={() => dispatch(removeItem({ data: item, typeId: item.type.id }))}>
@@ -52,7 +54,7 @@ const OrderedItem = () => {
                   <Image src="/images/test-juice.svg" alt="" width={50} height={50} className="w-[50px] md:w-[80px]" />
                   <Stack className="flex-col">
                     <Typography variant="h6">{item.title}</Typography>
-                    <Typography>${item.type.price}</Typography>
+                    <Typography>${+item.type.discount ?? item.type.price}</Typography>
                   </Stack>
                 </Stack>
               </Link>
@@ -62,7 +64,10 @@ const OrderedItem = () => {
             </Stack>
 
             <Stack className="justify-between w-full">
-              <Typography variant="h6">${item.type.price * item.quantity}</Typography>
+              <Typography variant="h6">
+                {" "}
+                ${(+item.type.discount ? +item.type.discount : +item.type.price) * item.quantity}
+              </Typography>
 
               <Stack className="space-x-2">
                 <BuyButtons data={item} typeId={item.type.id} />

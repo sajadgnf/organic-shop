@@ -3,27 +3,36 @@ import { createSlice } from "@reduxjs/toolkit"
 interface ProductType {
   id: string
   quantity: number
-  type: { id: string; price: number }
+  type: { id: string; price: string; discount: string }
 }
 
 type PropsType = {
   checkout: boolean
   totalPrice: number
   itemsCounter: number
+  totalDiscount: number
   selectedItems: ProductType[]
 }
 
 const initialState: PropsType = {
   totalPrice: 0,
   itemsCounter: 0,
+  totalDiscount: 0,
   checkout: false,
   selectedItems: [],
 }
 
 const sumItems = (items: (typeof initialState)["selectedItems"]) => {
   const itemsCounter = items.reduce((totalPrice, product) => totalPrice + product.quantity, 0)
-  const totalPrice = items.reduce((totalPrice, product) => totalPrice + product.quantity * product.type.price, 0).toFixed(2)
-  return { itemsCounter, totalPrice }
+  const totalPrice = items.reduce((totalPrice, product) => totalPrice + product.quantity * +product.type.price, 0).toFixed(2)
+  const totalDiscount = items
+    .reduce(
+      (totalDiscount, product) =>
+        +product.type.discount ? totalDiscount + product.quantity * (+product.type.price - +product.type.discount) : 0,
+      0
+    )
+    .toFixed(2)
+  return { itemsCounter, totalPrice, totalDiscount }
 }
 
 const cartSlice = createSlice({
@@ -44,6 +53,7 @@ const cartSlice = createSlice({
 
         state.totalPrice = +sumItems(state.selectedItems).totalPrice
         state.itemsCounter = +sumItems(state.selectedItems).itemsCounter
+        state.totalDiscount = +sumItems(state.selectedItems).totalDiscount
       }
     },
     removeItem: (state, action) => {
@@ -57,6 +67,7 @@ const cartSlice = createSlice({
 
       state.totalPrice = +sumItems(state.selectedItems).totalPrice
       state.itemsCounter = +sumItems(state.selectedItems).itemsCounter
+      state.totalDiscount = +sumItems(state.selectedItems).totalDiscount
     },
     increaseItems: (state, action) => {
       const itemIdToIncrease = action.payload.typeId
@@ -67,6 +78,7 @@ const cartSlice = createSlice({
 
       state.totalPrice = +sumItems(state.selectedItems).totalPrice
       state.itemsCounter = +sumItems(state.selectedItems).itemsCounter
+      state.totalDiscount = +sumItems(state.selectedItems).totalDiscount
     },
     decreaseItem: (state, action) => {
       const itemIdToDecrease = action.payload.typeId
@@ -77,12 +89,14 @@ const cartSlice = createSlice({
 
       state.totalPrice = +sumItems(state.selectedItems).totalPrice
       state.itemsCounter = +sumItems(state.selectedItems).itemsCounter
+      state.totalDiscount = +sumItems(state.selectedItems).totalDiscount
     },
     checkout: () => {
       return {
         totalPrice: 0,
         checkout: true,
         itemsCounter: 0,
+        totalDiscount: 0,
         selectedItems: [],
       }
     },
@@ -91,6 +105,7 @@ const cartSlice = createSlice({
         totalPrice: 0,
         checkout: false,
         itemsCounter: 0,
+        totalDiscount: 0,
         selectedItems: [],
       }
     },
