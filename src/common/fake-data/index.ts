@@ -1403,7 +1403,7 @@ const FAKE_DATA: ProductType[] = [
         id: "1",
         name: "Luxury",
         price: 1.29,
-        discount: 0,
+        discount: 1.1,
       },
       {
         stockOut: false,

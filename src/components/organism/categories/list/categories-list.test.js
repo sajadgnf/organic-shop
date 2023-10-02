@@ -4,12 +4,12 @@ import userEvent from "@testing-library/user-event"
 import CategoriesList from "@organism/categories/list"
 import { render, screen } from "@testing-library/react"
 
-// Mock the next/link component
-jest.mock("next/link", () => {
-  return ({ children, href }) => {
-    return <a href={href}>{children}</a>
-  }
-})
+// // Mock the next/link component
+// jest.mock("next/link", () => {
+//   return ({ children, href }) => {
+//     return <a href={href}>{children}</a>
+//   }
+// })
 
 describe("CategoriesList", () => {
   test("renders category titles and images", () => {

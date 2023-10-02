@@ -8,7 +8,7 @@ const Head = () => {
   return (
     <>
       <Stack className="fixed top-0 left-0 right-0 justify-center border-b z-10 bg-white w-full md:shadow-lg">
-        <Stack className=" sm:pr-3 max-w-[1830px] w-full justify-between">
+        <Stack className=" sm:pr-3 max-w-[1830px] w-full justify-between md:pt-1">
           <LeftSide />
           <RightSide />
         </Stack>
