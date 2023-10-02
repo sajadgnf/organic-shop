@@ -8,11 +8,14 @@ import { FAKE_CATEGORY } from "@src/common/fake-data"
 
 const CategoriesList = () => {
   return (
-    <Stack className="sm:justify-between sm:flex-wrap lg:flex-nowrap w-full sm:gap-y-4 md:space-y-0">
+    <Stack className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 xmd:grid-cols-4 m-auto w-full gap-4">
       {FAKE_CATEGORY.map((category) => (
         <Link key={category.title} href={`${STORE}?category=${category.title}`}>
-          <Stack className="bg-primary-light rounded-2xl sm:overflow-hidden px-3 xs:px-6 py-2 sm:p-0 sm:pl-5 sm:justify-between sm:w-[215px] md:w-[205px] lg:w-[265px] sm:h-[190px]">
-            <Typography data-testid="category-title" variant="p" className="sm:mt-12">
+          <Stack className="bg-primary-light items-start rounded-2xl sm:overflow-hidden px-3 xs:px-6 py-2 sm:p-0 sm:pl-5 sm:justify-between sm:h-[190px]">
+            <Typography data-testid="category-title" variant="h6" className="mt-auto mb-12 hidden sm:block">
+              {category.title.toUpperCase()}
+            </Typography>
+            <Typography data-testid="category-title" variant="p" className=" sm:hidden block">
               {category.title.toUpperCase()}
             </Typography>
             <Image src={category.img} width={120} height={120} alt={category.title} className="flex-1 hidden sm:flex" />

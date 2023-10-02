@@ -14,7 +14,7 @@ const LeftSide = () => {
   return (
     <Stack className="justify-between sm:space-x-10 w-full md:w-auto">
       <Stack className="space-x-3 sm:space-x-0">
-        <ArrowLeftIcon onClick={() => router.back()} width={25} className="sm:hidden" />
+        <ArrowLeftIcon onClick={() => router.back()} width={20} className="sm:hidden ml-2 mt-1" />
         <Link href={HOME}>
           <Image
             src="/images/logo.svg"

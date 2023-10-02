@@ -35,16 +35,16 @@ const Card = ({ data, href = "" }: PropsType) => {
         {type.map(({ price, name, discount, id }) => (
           <Stack className="flex-col space-y-3" key={id}>
             <Stack className="flex-col items-end">
-              <Stack className={`items-center space-x-1 ${!!discount ? "opacity-100" : "opacity-0"}`}>
+              <Stack className={`items-center space-x-1 ${!!+discount ? "opacity-100" : "opacity-0"}`}>
                 <Typography variant="caption" className="bg-primary-dark rounded-full text-white px-[3.5px] py-[2.5px]">
-                  {discount && price && Math.floor((+discount * +price) / 100)}%
+                  {+discount && Math.floor((+discount * +price) / 100)}%
                 </Typography>
                 <Typography variant="caption" className="line-through text-gray-400">
                   ${price}
                 </Typography>
               </Stack>
 
-              <Typography variant="h6">${discount ? discount : price}</Typography>
+              <Typography variant="h6">${+discount ? discount : price}</Typography>
             </Stack>
             <BuyButtons typeId={id} buyButtonTitle={name} data={data} size="small" variant="contained" />
           </Stack>

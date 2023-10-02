@@ -27,6 +27,7 @@ const Search = () => {
         type="search"
         name="search"
         value={search}
+        autoFocus={true}
         autoComplete="off"
         placeholder="search..."
         className="fix top-0"
