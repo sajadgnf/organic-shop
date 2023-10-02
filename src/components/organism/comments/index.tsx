@@ -20,7 +20,7 @@ const Comments = ({ data }: { data: ProductType["comments"] }) => {
       </Stack>
 
       <Stack className="w-full flex-col bg-white items-start md:rounded-xl p-5">
-        <Stack className="flex-col w-full pb-5 space-y-4">
+        <Stack className="flex-col w-full space-y-4">
           {data.slice(0, num).map((item, i) => (
             <Fragment key={Math.random() * 1000}>
               <CommentCard data={item} />
