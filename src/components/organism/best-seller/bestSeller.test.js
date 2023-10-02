@@ -6,7 +6,7 @@ import { render, screen } from "@testing-library/react"
 
 // // Mock the next/link component
 // jest.mock("next/link", () => {
-//   return ({ children, href }) => {
+//   return ({ children, href }) => { 
 //     return <a href={href}>{children}</a>
 //   }
 // })
