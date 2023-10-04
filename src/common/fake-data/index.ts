@@ -44,7 +44,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: true,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "12.01",
         discount: " 10.41",
       },
@@ -112,7 +112,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "12.99",
         discount: " 0",
       },
@@ -179,7 +179,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.59",
         discount: " 0",
       },
@@ -216,7 +216,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.19",
         discount: " 1.16",
       },
@@ -301,7 +301,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.79",
         discount: " 0",
       },
@@ -397,7 +397,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "10.49",
         discount: " 0",
       },
@@ -494,7 +494,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.59",
         discount: " 0",
       },
@@ -553,7 +553,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "0.99",
         discount: " 0",
       },
@@ -590,7 +590,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: true,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "12.99",
         discount: " 0",
       },
@@ -652,7 +652,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: true,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "10.99",
         discount: " 15.0",
       },
@@ -689,7 +689,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.59",
         discount: " 0",
       },
@@ -746,7 +746,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "12.49",
         discount: "10.00",
       },
@@ -802,7 +802,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.29",
         discount: " 0",
       },
@@ -839,7 +839,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "12.99",
         discount: " 0",
       },
@@ -909,7 +909,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.39",
         discount: " 0",
       },
@@ -946,7 +946,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "11.99",
         discount: " 0",
       },
@@ -983,7 +983,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.39",
         discount: " 0",
       },
@@ -1052,7 +1052,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "2.99",
         discount: " 0",
       },
@@ -1089,7 +1089,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: true,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "13.49",
         discount: " 0",
       },
@@ -1158,7 +1158,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.49",
         discount: " 0",
       },
@@ -1227,7 +1227,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.09",
         discount: " 0",
       },
@@ -1264,7 +1264,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.29",
         discount: " 0",
       },
@@ -1301,7 +1301,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "2.49",
         discount: " 0",
       },
@@ -1363,7 +1363,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.99",
         discount: " 0",
       },
@@ -1408,7 +1408,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.79",
         discount: " 0",
       },
@@ -1499,7 +1499,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "11.99",
         discount: " 10.0",
       },
@@ -1588,7 +1588,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.69",
         discount: " 0",
       },
@@ -1691,7 +1691,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.29",
         discount: " 0",
       },
@@ -1784,7 +1784,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.49",
         discount: " 0",
       },
@@ -1877,7 +1877,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "4.49",
         discount: " 0",
       },
@@ -1915,7 +1915,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "1.79",
         discount: " 0",
       },
@@ -1952,7 +1952,7 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: false,
         id: "2",
-        name: "High grade",
+        name: "Superior ",
         price: "11.99",
         discount: " 0",
       },

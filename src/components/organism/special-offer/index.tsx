@@ -13,7 +13,7 @@ const SpecialOffer = () => {
         <Stack className="items-center justify-between">
           <Typography variant="h5">Special Offers</Typography>
 
-          <Stack className="items-end space-x-2">
+          <Stack className=" space-x-2">
             <Typography variant="h6" className="text-primary-dark">
               See all
             </Typography>

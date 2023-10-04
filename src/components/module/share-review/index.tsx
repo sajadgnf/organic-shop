@@ -40,7 +40,7 @@ const ShareReview = () => {
   return (
     <Stack>
       {open && createPortal(<ModalDialog setOpen={setOpen} />, document.getElementsByClassName("body")[0])}
-      <Button variant="outlined" size="large" onClick={() => setOpen(true)}>
+      <Button variant="contained" size="large" onClick={() => setOpen(true)}>
         Share your review
       </Button>
     </Stack>

@@ -47,18 +47,16 @@ const FAKE_DATA = [
 const HomeComments = () => {
   return (
     <Stack className="flex-col items-start md:space-y-10 w-full">
-      <Link href={COMMENTS} className="w-full">
-        <Stack className="items-center justify-between">
-          <Typography variant="h5">testimonials</Typography>
+      <Stack className="items-center justify-between">
+        <Typography variant="h5">Customer reviews</Typography>
 
-          <Stack className="items-end space-x-2">
-            <Typography variant="h6" className="text-primary-dark">
-              See all
-            </Typography>
-            <ArrowRightIcon data-testid="arrow-icon" className="text-primary-dark w-6" />
-          </Stack>
+        <Stack className="items-end space-x-2">
+          <Typography variant="h6" className="text-primary-dark">
+            See all
+          </Typography>
+          <ArrowRightIcon data-testid="arrow-icon" className="text-primary-dark w-6" />
         </Stack>
-      </Link>
+      </Stack>
 
       <Stack className="flex-row w-full space-x-4 py-4 justify-start overflow-auto">
         {FAKE_DATA.map((item) => (
