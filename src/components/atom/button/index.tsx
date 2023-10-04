@@ -20,11 +20,11 @@ const Button = ({
 }: PropsType & ButtonHTMLAttributes<HTMLButtonElement>) => {
   const small = size === "small" && "min-w-1 md:min-w-8 h-8 md:h-10 px-2 md:px-3"
   const medium = size === "medium" && "min-w-3 md:min-w-32 h-8 md:h-10 text-sm md:text-lg px-3 md:px-5"
-  const large = size === "large" && "min:w-10 md:min-w-42 h-10 md:h-14 text-lg md:text-xl px-5 md:px-8"
+  const large = size === "large" && "min-w-10 md:min-w-42 h-10 md:h-12 text-lg md:text-xl px-5"
 
   const circle = variant === "circle" && "!p-0 !w-4 !h-4 rounded-full bg-gray-300"
   const text = variant === "text" && `!p-0 ${hoverEffect && "hover:bg-primary-light"}`
-  const outlined = variant === "outlined" && `border hover:bg-primary-light`
+  const outlined = variant === "outlined" && `border ${props.disabled ? "text-gray-300" : " hover:bg-primary-light"}`
   const contained = variant === "contained" && `${props.disabled ? "bg-gray-300 " : "bg-primary-main hover:bg-primary-dark"}`
 
   return (

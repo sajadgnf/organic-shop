@@ -4,6 +4,7 @@ import Image from "next/image"
 import Stack from "@atom/stack"
 import Typography from "@atom/typography"
 import BuyButtons from "@module/buy-buttons"
+import ProductPrice from "@module/product-price"
 import { ProductType } from "@src/common/fake-data"
 
 type PropsType = {
@@ -15,7 +16,7 @@ const Card = ({ data, href = "" }: PropsType) => {
   const { img, title, description, type } = data
 
   return (
-    <Stack className="flex-col space-y-4 bg-[#f8f8f8] min-w-[250px] md:min-w-[355px] w-28 max-h-[450px] shadow-md rounded-2xl">
+    <Stack className="flex-col space-y-4 bg-[#f8f8f8] min-w-[250px] md:min-w-[355px] w-28 max-h-[450px] shadow-md rounded-2xl pb-6">
       <Link href={href}>
         <Stack className="flex-col space-y-4 px-6 pt-6">
           <Stack className="h-[110px] sm:h-[130px] md:h-[200px] w-[50%]">
@@ -31,22 +32,19 @@ const Card = ({ data, href = "" }: PropsType) => {
         </Stack>
       </Link>
 
-      <Stack className="justify-between items-end w-full px-6 pb-4">
-        {type.map(({ price, name, discount, id }) => (
-          <Stack className="flex-col space-y-3" key={id}>
-            <Stack className="flex-col items-end">
-              <Stack className={`items-center space-x-1 ${!!+discount ? "opacity-100" : "opacity-0"}`}>
-                <Typography variant="caption" className="bg-primary-dark rounded-full text-white px-[3.5px] py-[2.5px]">
-                  {+discount && Math.floor((+discount * +price) / 100)}%
-                </Typography>
-                <Typography variant="caption" className="line-through text-gray-400">
-                  ${price}
-                </Typography>
-              </Stack>
-
-              <Typography variant="h6">${+discount ? discount : price}</Typography>
-            </Stack>
-            <BuyButtons typeId={id} buyButtonTitle={name} data={data} size="small" variant="contained" />
+      <Stack className="justify-between items-stretch flex-col w-full px-6 space-y-4">
+        {type.map(({ price, name, discount, stockOut, id }) => (
+          <Stack className="justify-between" key={id}>
+            <BuyButtons
+              typeId={id}
+              buyButtonTitle={name}
+              data={data}
+              size="small"
+              disabled={stockOut}
+              variant="contained"
+              className="!min-w-[90px]"
+            />
+            <ProductPrice price={price} stockOut={stockOut} discount={discount} />
           </Stack>
         ))}
       </Stack>

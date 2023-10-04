@@ -10,22 +10,22 @@ import ProductInfo from "@module/product-info"
 import RelatedProduct from "@organism/related-product"
 import FAKE_DATA, { ProductType } from "@src/common/fake-data"
 import { ShoppingCartIcon, StarIcon } from "@heroicons/react/24/solid"
+import ProductPrice from "@module/product-price"
 
 const BottomSheet = ({ data }: { data: ProductType }) => {
   return (
-    <Stack className="xmd:hidden rounded-xl p-2 bg-white z-50 fixed bottom-0 left-0 right-0 w-full ">
+    <Stack className="xmd:hidden rounded-xl p-2 pb-4 bg-white z-50 fixed bottom-0 left-0 right-0 w-full ">
       {data.type.map((item, i) => (
         <Fragment key={item.id}>
-          <Stack className="flex-col w-full space-y-2">
-            <Typography variant="h6" className="sm:!text-base">
-              per kg:&nbsp;${item.price}
-            </Typography>
+          <Stack className={`flex-col w-full h-full space-y-3`}>
+            <ProductPrice price={item.price} discount={item.discount} stockOut={item.stockOut} absolutePercent={false} />
             <BuyButtons
               data={data}
               size="small"
               typeId={item.id}
               className="w-full sm:!w-[200px]"
               variant="contained"
+              disabled={item.stockOut}
               buyButtonTitle={
                 <Stack className="space-x-1">
                   <Typography>{item.name}</Typography>
@@ -73,29 +73,17 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
             </Stack>
           </Stack>
 
-          <Stack className="hidden xmd:flex">
+          <Stack className="hidden xmd:flex h-32">
             {data.type.map((item, i) => (
               <Fragment key={item.id}>
-                <Stack className="flex-col space-y-8">
-                  <Typography variant="h6">per kilogram</Typography>
-                  <Stack className="space-x-3">
-                    {!!+item.discount && (
-                      <Stack className="items-center space-x-1">
-                        <Typography variant="caption" className="line-through text-gray-400">
-                          ${item.price}
-                        </Typography>
-                        <Typography variant="caption" className="bg-primary-dark rounded-full text-white px-[3.5px] py-[2.5px]">
-                          {+item.discount && Math.floor((+item.discount * +item.price) / 100)}%
-                        </Typography>
-                      </Stack>
-                    )}
-                    <Typography variant="h6">${+item.discount ? item.discount : item.price}</Typography>
-                  </Stack>
+                <Stack className="flex-col justify-between py-5 h-full">
+                  <ProductPrice price={item.price} discount={item.discount} stockOut={item.stockOut} />
+
                   <BuyButtons
                     data={data}
                     variant="contained"
                     typeId={item.id}
-                    className="!w-[170px]"
+                    disabled={item.stockOut}
                     buyButtonTitle={
                       <Stack className="space-x-1">
                         <Typography>{item.name}</Typography>
@@ -104,13 +92,13 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
                     }
                   />
                 </Stack>
-                <Stack className={`border mx-10 border-gray-300 h-44 ${i === data.type.length - 1 && "hidden"}`} />
+                <Stack className={`border mx-10 border-gray-300 h-full ${i === data.type.length - 1 && "hidden"}`} />
               </Fragment>
             ))}
           </Stack>
         </Stack>
 
-        <RelatedProduct />
+        <RelatedProduct currentItem={data.id} />
 
         <ProductInfo data={data} />
 

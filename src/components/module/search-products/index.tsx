@@ -6,7 +6,7 @@ import Typography from "@atom/typography"
 import { useRouter } from "next/navigation"
 import SearchCard from "@module/search-card"
 import { PRODUCTDETAILS, SEARCH } from "routes"
-import React, { ChangeEvent, useState } from "react"
+import React, { ChangeEvent, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid"
 import { filterBySearch, searchProduct } from "@src/store/slice/productSlice"
@@ -20,8 +20,15 @@ const SearchProduct = () => {
 
   const changeHandler = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setSearch(event.target.value)
-    dispatch(searchProduct(event.target.value))
   }
+
+  useEffect(() => {
+    dispatch(searchProduct(search))
+
+    return () => {
+      dispatch(searchProduct(""))
+    }
+  }, [search])
 
   return (
     <Stack className="z-20 w-full">

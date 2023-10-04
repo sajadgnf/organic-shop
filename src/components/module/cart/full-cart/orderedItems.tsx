@@ -1,16 +1,17 @@
 "use client"
-import React, { Fragment } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import Stack from "@atom/stack"
 import Button from "@atom/button"
 import { RootState } from "@src/store"
-import { PRODUCTDETAILS } from "routes"
+import React, { Fragment } from "react"
+import { PRODUCTDETAILS, STORE } from "routes"
 import Typography from "@atom/typography"
 import BuyButtons from "@module/buy-buttons"
 import { XMarkIcon } from "@heroicons/react/24/solid"
 import { useDispatch, useSelector } from "react-redux"
 import { removeItem } from "@src/store/slice/cartSlice"
+import ProductPrice from "@module/product-price"
 
 const OrderedItem = () => {
   const dispatch = useDispatch()
@@ -24,9 +25,22 @@ const OrderedItem = () => {
             <Link href={PRODUCTDETAILS(item.id)}>
               <Stack className="space-x-4">
                 <Image src={item.img} alt="product image" width={80} height={80} />
-                <Stack className="flex-col">
-                  <Typography variant="h6">{item.title}</Typography>
-                  <Typography>${+item.type.discount ?? item.type.price}</Typography>
+                <Stack className="space-x-8">
+                  <Stack className="flex-col items-start">
+                    <Typography variant="h6">{item.title}</Typography>
+                    <Link href={`${STORE}?category=${item.category}`}>
+                      <Typography variant="caption" className="font-semibold text-blue-700">
+                        products/{item.category}
+                      </Typography>
+                    </Link>
+                    <Typography variant="caption">{item.type.name}</Typography>
+                  </Stack>
+                  <ProductPrice
+                    price={item.type.price}
+                    discount={item.type.discount}
+                    stockOut={item.type.stockOut}
+                    absolutePercent={false}
+                  />
                 </Stack>
               </Stack>
             </Link>
@@ -34,7 +48,7 @@ const OrderedItem = () => {
             <Stack className="space-x-6">
               <Stack className="space-x-2">
                 <BuyButtons data={item} typeId={item.type.id} />
-                <Typography>Kilogram</Typography>
+                <Typography>Kg</Typography>
               </Stack>
               <Typography className="text-danger-main">
                 ${(+item.type.discount ? +item.type.discount : +item.type.price) * item.quantity}
@@ -51,10 +65,16 @@ const OrderedItem = () => {
             <Stack className="justify-between w-full">
               <Link href={PRODUCTDETAILS(1)}>
                 <Stack className="space-x-4">
-                  <Image src="/images/test-juice.svg" alt="" width={50} height={50} className="w-[50px] md:w-[80px]" />
-                  <Stack className="flex-col">
+                  <Image src={item.img} alt={item.title} width={50} height={50} className="w-[50px] md:w-[80px]" />
+
+                  <Stack className="flex-col items-start">
                     <Typography variant="h6">{item.title}</Typography>
-                    <Typography>${+item.type.discount ?? item.type.price}</Typography>
+                    <Link href={`${STORE}?category=${item.category}`}>
+                      <Typography variant="caption" className="font-semibold text-blue-700">
+                        products/{item.category}
+                      </Typography>
+                    </Link>
+                    <Typography variant="caption">{item.type.name}</Typography>
                   </Stack>
                 </Stack>
               </Link>
@@ -64,15 +84,21 @@ const OrderedItem = () => {
             </Stack>
 
             <Stack className="justify-between w-full">
-              <Typography variant="h6">
-                {" "}
-                ${(+item.type.discount ? +item.type.discount : +item.type.price) * item.quantity}
-              </Typography>
+              <ProductPrice
+                price={item.type.price}
+                discount={item.type.discount}
+                stockOut={item.type.stockOut}
+                absolutePercent={false}
+              />
 
               <Stack className="space-x-2">
                 <BuyButtons data={item} typeId={item.type.id} />
-                <Typography>Kilogram</Typography>
+                <Typography>Kg</Typography>
               </Stack>
+
+              <Typography variant="h6">
+                ${(+item.type.discount ? +item.type.discount : +item.type.price) * item.quantity}
+              </Typography>
             </Stack>
           </Stack>
         </Fragment>

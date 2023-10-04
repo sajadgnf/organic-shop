@@ -24,6 +24,13 @@ export type CategoryType = {
   img: string
 }
 
+export type CommentType = {
+  name: string
+  rate: number
+  description: string
+  productId: string
+}
+
 const FAKE_DATA: ProductType[] = [
   {
     id: "1",
@@ -39,10 +46,10 @@ const FAKE_DATA: ProductType[] = [
         id: "1",
         name: "Luxury",
         price: "14.01",
-        discount: "0",
+        discount: "12.0",
       },
       {
-        stockOut: true,
+        stockOut: false,
         id: "2",
         name: "Superior ",
         price: "12.01",
@@ -555,7 +562,7 @@ const FAKE_DATA: ProductType[] = [
         id: "2",
         name: "Superior ",
         price: "0.99",
-        discount: " 0",
+        discount: "0",
       },
     ],
     comments: [
@@ -576,7 +583,7 @@ const FAKE_DATA: ProductType[] = [
     title: "Tropical Delight",
     description:
       "Experience a taste of the tropics with our Tropical Delight juice. This refreshing blend combines the exotic flavors of pineapple, mango, and passion fruit to transport your senses to a sun-soaked paradise. Each sip is a journey through lush rainforests and pristine beaches. Whether you're lounging by the pool or dreaming of your next vacation, Tropical Delight is the perfect companion. Don't miss out on this tropical escape in a glass!",
-    img: "/images/juice/tropical-juice.svg",
+    img: "/images/juice/pineapple.svg",
     rate: 4.5,
     category: "juice",
     type: [
@@ -590,9 +597,9 @@ const FAKE_DATA: ProductType[] = [
       {
         stockOut: true,
         id: "2",
-        name: "Superior ",
+        name: "Superior",
         price: "12.99",
-        discount: " 0",
+        discount: "10.00",
       },
     ],
     comments: [
@@ -932,7 +939,7 @@ const FAKE_DATA: ProductType[] = [
     title: "Berry Blast",
     description:
       "Get ready for a burst of berry goodness with our Berry Blast juice. This vibrant blend combines the sweetness of strawberries, the richness of blueberries, and the boldness of blackberries. It's like a party in your mouth with every sip! Whether you're starting your day with a burst of fruity flavor or indulging in a mid-day treat, Berry Blast is the perfect choice. Satisfy your berry cravings with this delightful juice.",
-    img: "/images/juice/tropical-juice.svg",
+    img: "/images/juice/berry.svg",
     rate: 4.4,
     category: "juice",
     type: [
@@ -1938,7 +1945,7 @@ const FAKE_DATA: ProductType[] = [
     title: "Berry Bliss",
     description:
       "Indulge in the lusciousness of our Berry Bliss juice, a delightful blend of ripe strawberries, succulent blueberries, and tangy raspberries. Each sip is a burst of fruity goodness, making it the perfect addition to your morning routine or a refreshing treat throughout the day. Packed with antioxidants and natural sweetness, Berry Bliss is the epitome of a guilt-free indulgence. Treat your taste buds to a symphony of berry flavors!",
-    img: "/images/juice/berry-bliss.svg",
+    img: "/images/juice/berry.svg",
     rate: 4.2,
     category: "juice",
     type: [
@@ -1969,6 +1976,53 @@ const FAKE_DATA: ProductType[] = [
         rate: 4,
       },
     ],
+  },
+]
+
+export const FAKE_COMMENT: CommentType[] = [
+  {
+    name: "Noah White",
+    description:
+      "Green Love has become my trusted companion, a quick pick-me-up that never fails to impress. Highly recommended!",
+    rate: 3,
+    productId: "1",
+  },
+  {
+    name: "Mia Garcia",
+    description: "The Cobb salad is a full meal in itself. So many flavors and textures!",
+    rate: 5,
+    productId: "2",
+  },
+  {
+    name: "Lily Brown",
+    description: "These potatoes make the creamiest mashed potatoes ever!",
+    rate: 4,
+    productId: "4",
+  },
+  {
+    name: "Mason Green",
+    description:
+      "I've been buying these bell peppers for weeks, and they've become a family favorite. Their vibrant colors brighten up our dinner table, and the kids love them as a healthy snack. They're the perfect addition to our weekly grocery list.",
+    rate: 2,
+    productId: "5",
+  },
+  {
+    name: "Noah Johnson",
+    description: "I love the combination of flavors in this Greek salad. Always a hit!",
+    rate: 4,
+    productId: "6",
+  },
+  {
+    name: "Sophie Rodriguez",
+    description: "Zucchini noodles are a game-changer for my low-carb diet. These make my pasta cravings disappear!",
+    rate: 5,
+    productId: "7",
+  },
+  {
+    name: "Ava Wilson",
+    description: "Kiwis have always been my favorite, but these golden ones take it to a whole new level. Absolutely delicious!",
+    rate: 5,
+    productId: "11",
   },
 ]
 

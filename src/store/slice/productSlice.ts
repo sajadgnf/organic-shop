@@ -11,9 +11,9 @@ interface PropsType {
 
 const initialState: PropsType = {
   clearFilters: false,
+  searchedProducts: [],
   selectedCategories: [],
   availableProducts: false,
-  searchedProducts: [],
   filteredProducts: FAKE_DATA,
 }
 
@@ -52,10 +52,12 @@ const productSlice = createSlice({
       state.clearFilters = false
       state.availableProducts = action.payload
       const products = action.payload
-        ? state.searchedProducts.filter((product) => product.type.some((item) => item.stockOut === false))
-        : state.searchedProducts
+        ? state.filteredProducts.filter((product) => product.type.some((item) => item.stockOut === false))
+        : state.selectedCategories.length
+        ? FAKE_DATA.filter((product) => state.selectedCategories.includes(product.category))
+        : FAKE_DATA
 
-      state.searchedProducts = products
+      state.filteredProducts = products
     },
 
     searchProduct: (state, action) => {
@@ -65,6 +67,7 @@ const productSlice = createSlice({
       const searchedProduct = FAKE_DATA.filter((product) =>
         searchWords.some((word: string) => product.title.toLowerCase().includes(word))
       )
+      
       state.searchedProducts = !!action.payload ? searchedProduct : []
     },
 
@@ -75,7 +78,6 @@ const productSlice = createSlice({
       const searchedProduct = FAKE_DATA.filter((product) =>
         searchWords.some((word: string) => product.title.toLowerCase().includes(word))
       )
-      console.log(searchWords)
 
       state.filteredProducts = searchedProduct
     },

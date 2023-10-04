@@ -18,7 +18,7 @@ const HomeCommentCard = ({ data }: { data: ProductType["comments"][number] }) =>
           <Rate value={value} onChange={setValue} readonly />
         </Stack>
       </Stack>
-      <Typography>{data.description}</Typography>
+      <Typography className="line-clamp-2">{data.description}</Typography>
     </Stack>
   )
 }

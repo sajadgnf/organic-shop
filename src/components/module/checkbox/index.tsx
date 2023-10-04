@@ -4,7 +4,7 @@ import Typography from "@atom/typography"
 
 type PropsType = { label: string }
 
-const Checkbox = ({ label }: PropsType & InputHTMLAttributes<HTMLInputElement>) => {
+const Checkbox = ({ label, ...props }: PropsType & InputHTMLAttributes<HTMLInputElement>) => {
   const num = Math.random() * 1000
   return (
     <Stack className="relative block w-full h-full overflow-hidden justify-start ">
@@ -13,6 +13,7 @@ const Checkbox = ({ label }: PropsType & InputHTMLAttributes<HTMLInputElement>) 
         name={label + num}
         type="checkbox"
         className="checkbox-input cursor-pointer w-[50px] h-[50px] absolute opacity-0"
+        {...props}
       />
       <Typography variant="label" className="flex items-center w-full cursor-pointer" htmlFor={label + num}>
         <svg viewBox="0 0 100 100" height="50" width="50">
@@ -23,7 +24,7 @@ const Checkbox = ({ label }: PropsType & InputHTMLAttributes<HTMLInputElement>) 
               d="m 55,978 c -73,19 46,71 15,2 C 60,959 13,966 30,1007 c 12,30 61,13 46,-23"
               fill="none"
               stroke="black"
-              stroke-width="3"
+              strokeWidth="3"
               className="checkbox-input-tick"
             />
           </g>

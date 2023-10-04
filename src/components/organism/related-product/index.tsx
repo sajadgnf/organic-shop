@@ -6,7 +6,7 @@ import Typography from "@atom/typography"
 import { ArrowRightIcon } from "@heroicons/react/24/solid"
 import RelatedProductList from "@organism/related-product/list"
 
-const RelatedProduct = () => {
+const RelatedProduct = ({ currentItem }: { currentItem: string }) => {
   return (
     <Stack className="container w-full flex-col space-y-10">
       <Link href={`${STORE}?filter=related-product`} className="w-full">
@@ -22,7 +22,7 @@ const RelatedProduct = () => {
         </Stack>
       </Link>
 
-      <RelatedProductList />
+      <RelatedProductList currentItem={currentItem} />
     </Stack>
   )
 }

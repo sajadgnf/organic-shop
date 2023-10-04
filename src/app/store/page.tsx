@@ -26,7 +26,7 @@ const Store = () => {
         {filteredProducts.length === 0 ? (
           <NoResult />
         ) : (
-          <Stack className="grid grid-cols-1 lg:grid-cols-4 xmd:grid-cols-3 w-full">
+          <Stack className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 w-full">
             {filteredProducts.map((item, i) => (
               <ProductCard href={PRODUCTDETAILS(item.id)} item={item} key={item.title + item.img + i} />
             ))}
