@@ -51,7 +51,7 @@ const Input = ({
   const paddingLeft = startIcon ? "pl-1" : "pl-2"
 
   return (
-    <Stack className={`flex-col space-y items-start w-full ${className}`}>
+    <Stack className={`flex-col space-y-1 items-start w-full ${className}`}>
       <Typography component="label" htmlFor={name}>
         {label}
       </Typography>

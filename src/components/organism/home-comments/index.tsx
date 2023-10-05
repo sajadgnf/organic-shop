@@ -13,7 +13,7 @@ const HomeComments = () => {
 
       <Stack className="flex-row w-full space-x-4 py-4 justify-start overflow-auto">
         {FAKE_COMMENT.map((item) => (
-          <Link href={PRODUCTDETAILS(item.productId)}>
+          <Link key={item.productId + item.name} href={PRODUCTDETAILS(item.productId)}>
             <HomeCommentCard data={item} key={item.name + item.rate} />
           </Link>
         ))}
