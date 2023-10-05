@@ -18,7 +18,7 @@ const Slider = ({ slides }: { slides: string[] }) => {
     const startInterval = () => {
       interval = setInterval(() => {
         setCurrentSlide((currentSlide) => (currentSlide !== slides.length - 1 ? ++currentSlide : (currentSlide = 0)))
-      }, 5000)
+      }, 6000)
     }
 
     startInterval()
