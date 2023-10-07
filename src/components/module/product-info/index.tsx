@@ -11,8 +11,10 @@ const ProductInfo = ({ data }: { data: ProductType }) => {
   console.log(data.description.split("").slice(0, 344).join(""))
 
   return (
-    <Stack className="flex-col md:items-start md:container w-full space-y-4">
-      <Typography variant="h5">Information</Typography>
+    <Stack className="flex-col items-start md:container w-full space-y-4 md:space-y-10">
+      <Typography variant="h5" className="pl-5 md:pl-0">
+        Information
+      </Typography>
       <Stack className=" flex-col bg-white p-5 md:rounded-xl items-start space-y-3 w-full">
         <Typography>{linesToShow}</Typography>
         <Typography

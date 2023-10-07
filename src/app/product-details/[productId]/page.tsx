@@ -97,10 +97,11 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
             ))}
           </Stack>
         </Stack>
+        
+        <ProductInfo data={data} />
 
         <RelatedProduct currentItem={data} />
 
-        <ProductInfo data={data} />
 
         <Comments data={data.comments} />
       </Stack>

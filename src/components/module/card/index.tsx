@@ -16,11 +16,11 @@ const Card = ({ data, href = "" }: PropsType) => {
   const { img, title, description, type } = data
 
   return (
-    <Stack className="flex-col space-y-4 bg-[#f8f8f8] min-w-[250px] md:min-w-[355px] w-28 max-h-[450px] shadow-md rounded-2xl pb-6">
+    <Stack className="flex-col space-y-4 bg-[#f8f8f8] min-w-[250px] md:min-w-[355px] w-28 max-h-[300px] md:max-h-[450px] shadow-md rounded-2xl pb-6">
       <Link href={href}>
         <Stack className="flex-col space-y-4 px-6 pt-6">
-          <Stack className="h-[110px] sm:h-[130px] md:h-[200px] w-[50%]">
-            <Image src={img} width={159} height={201} alt={description || title} className="h-fit w-fit" />
+          <Stack className="h-[110px] sm:h-[110px] md:h-[150px] w-[50%]">
+            <Image src={img} width={159} height={101} alt={description || title} className="h-fit w-fit" />
           </Stack>
 
           <Stack className="space-y-1 flex-col items-start">
