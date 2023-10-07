@@ -7,14 +7,14 @@ import Typography from "@atom/typography"
 import Comments from "@organism/comments"
 import BuyButtons from "@module/buy-buttons"
 import ProductInfo from "@module/product-info"
+import ProductPrice from "@module/product-price"
 import RelatedProduct from "@organism/related-product"
 import FAKE_DATA, { ProductType } from "@src/common/fake-data"
 import { ShoppingCartIcon, StarIcon } from "@heroicons/react/24/solid"
-import ProductPrice from "@module/product-price"
 
 const BottomSheet = ({ data }: { data: ProductType }) => {
   return (
-    <Stack className="xmd:hidden rounded-xl p-2 pb-4 bg-white z-50 fixed bottom-0 left-0 right-0 w-full ">
+    <Stack className="xmd:hidden rounded-xl p-2 pb-4 bg-white z-40 fixed bottom-0 left-0 right-0 w-full ">
       {data.type.map((item, i) => (
         <Fragment key={item.id}>
           <Stack className={`flex-col w-full h-full space-y-3`}>
@@ -47,7 +47,7 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
   return (
     <>
       <BottomSheet data={data} />
-      <Stack className="mt-16 md:mt-32 flex-col space-y-16 md:space-y-32">
+      <Stack className="mt-32 md:mt-32 flex-col space-y-16 md:space-y-32">
         <Stack className="container flex-row justify-between w-full">
           <Stack className="md:items-start space-x-3 xmd:space-x-10">
             <Image
@@ -61,9 +61,15 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
             <Stack className="flex-col md:mt-10 items-start space-y-5">
               <Stack className="flex-col items-start space-y-2">
                 <Typography variant="h3">{data.title}</Typography>
-                <Link href={`${STORE}?category=${data.category}`}>
-                  <Typography className="font-semibold text-blue-700">products/{data.category}</Typography>
-                </Link>
+                <Stack className="space-x-1 font-semibold text-blue-700">
+                  <Link href={STORE}>
+                    <Typography>products</Typography>
+                  </Link>
+                  <Typography>/</Typography>
+                  <Link href={`${STORE}?category=${data.category}`}>
+                    <Typography>{data.category}</Typography>
+                  </Link>
+                </Stack>
               </Stack>
 
               <Stack className="space-x-1 items-end">
@@ -97,11 +103,10 @@ const ProductDetails = ({ params }: { params: { productId: string } }) => {
             ))}
           </Stack>
         </Stack>
-        
+
         <ProductInfo data={data} />
 
         <RelatedProduct currentItem={data} />
-
 
         <Comments data={data.comments} />
       </Stack>

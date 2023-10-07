@@ -2,8 +2,15 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { ReactElement, ReactNode } from "react"
-import { BLOG, CONTACT, HOME, STORE } from "routes"
-import { BookOpenIcon, BuildingStorefrontIcon, ChatBubbleOvalLeftEllipsisIcon, HomeIcon } from "@heroicons/react/24/solid"
+import { BLOG, CART, CONTACT, HOME, PROFILE, STORE } from "routes"
+import {
+  ArrowLeftOnRectangleIcon,
+  BuildingStorefrontIcon,
+  ChatBubbleOvalLeftEllipsisIcon,
+  HomeIcon,
+  ShoppingBagIcon,
+  UserCircleIcon,
+} from "@heroicons/react/24/solid"
 
 interface ContainerType {
   href: string
@@ -33,11 +40,11 @@ const Links = () => {
       <Container href={STORE}>
         <BuildingStorefrontIcon className="block md:hidden w-6" /> Shop
       </Container>
-      <Container href={CONTACT}>
-        <ChatBubbleOvalLeftEllipsisIcon className="block md:hidden w-6" /> Contact
+      <Container href={PROFILE}>
+        <UserCircleIcon className="block md:hidden w-6" /> Profile
       </Container>
-      <Container href={BLOG}>
-        <BookOpenIcon className="block md:hidden w-6" /> Blog
+      <Container href={CART}>
+        <ShoppingBagIcon className="block md:hidden w-6" /> Cart
       </Container>
     </>
   )

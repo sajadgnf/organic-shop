@@ -9,7 +9,7 @@ import RelatedProductList from "@organism/related-product/list"
 
 const RelatedProduct = ({ currentItem }: { currentItem: ProductType }) => {
   return (
-    <Stack className="container w-full flex-col space-y-4 md:space-y-10">
+    <Stack className="container w-full flex-col space-y-4">
       <Link href={`${STORE}?category=${currentItem.category}`} className="w-full">
         <Stack className="items-center justify-between">
           <Typography variant="h5">Related Product</Typography>

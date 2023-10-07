@@ -11,7 +11,7 @@ const ProductInfo = ({ data }: { data: ProductType }) => {
   console.log(data.description.split("").slice(0, 344).join(""))
 
   return (
-    <Stack className="flex-col items-start md:container w-full space-y-4 md:space-y-10">
+    <Stack className="flex-col items-start md:container w-full space-y-4">
       <Typography variant="h5" className="pl-5 md:pl-0">
         Information
       </Typography>
@@ -19,7 +19,7 @@ const ProductInfo = ({ data }: { data: ProductType }) => {
         <Typography>{linesToShow}</Typography>
         <Typography
           onClick={() => setOpen(!open)}
-          className={`${data.description.length <= 600 ? "hidden" : "inline-block"} text-blue-400`}
+          className={`${data.description.length <= 600 ? "hidden" : "inline-block"} text-blue-400 hover:bg-inherit`}
         >
           {open ? "show less" : "show more"}
 

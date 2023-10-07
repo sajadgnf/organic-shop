@@ -1,19 +1,19 @@
+"use client"
 import Input from "@atom/input"
 import Stack from "@atom/stack"
 import Dialog from "@module/dialog"
 import { RootState } from "@src/store"
+import { PRODUCTDETAILS } from "routes"
 import Typography from "@atom/typography"
-import { useRouter } from "next/navigation"
 import SearchCard from "@module/search-card"
-import { PRODUCTDETAILS, SEARCH } from "routes"
-import React, { ChangeEvent, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { MagnifyingGlassIcon } from "@heroicons/react/24/solid"
+import React, { ChangeEvent, useEffect, useState } from "react"
 import { filterBySearch, searchProduct } from "@src/store/slice/productSlice"
+import { ArrowLeftIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
+import Image from "next/image"
 
-const SearchProduct = () => {
+const SearchProduct = ({ id }: { id: string }) => {
   const dispatch = useDispatch()
-  const router = useRouter()
   const [open, setOpen] = useState(false)
   const [search, setSearch] = useState("")
   const { searchedProducts } = useSelector((state: RootState) => state.productSlice)
@@ -31,42 +31,59 @@ const SearchProduct = () => {
   }, [search])
 
   return (
-    <Stack className="z-20 w-full">
-      <Dialog id="search-container" setOpen={setOpen}>
+    <Dialog id={id} setOpen={setOpen}>
+      <Input
+        type="search"
+        name="search"
+        value={search}
+        autoComplete="off"
+        placeholder="search..."
+        className="hidden md:flex"
+        containerClassName="xmd:!w-1/2"
+        onFocus={() => setOpen(true)}
+        onChange={(e) => changeHandler(e)}
+        startIcon={<MagnifyingGlassIcon width={20} className="ml-2" />}
+      />
+
+      <Stack
+        onClick={() => setOpen(true)}
+        className="bg-white md:hidden rounded-lg px-1 min-h-[47px] w-full space-x-2 border border-secondary-dark text-gray-600 justify-start pl-3 m-3"
+      >
+        search in <Image src="/images/logo.svg" alt="logo" className="mt-1" width={100} height={50} />
+      </Stack>
+
+      <Stack
+        className={`absolute md:top-10 top-0 bottom-0 left-0 right-0 w-full xmd:w-[50%] h-screen md:h-fit xmd:max-h-84 transition-all md:transition-none duration-[.3s] p-3 space-y-2 items-start justify-start overflow-auto flex-col border border-secondary-dark border-t-0 rounded-lg rounded-t-none bg-white ${
+          open ? "md:flex translate-y-0" : "md:hidden translate-y-[1000px]"
+        }`}
+      >
         <Input
           type="search"
           name="search"
           value={search}
           autoComplete="off"
           placeholder="search..."
-          className="xmd:!w-[50%]"
-          onFocus={() => (window.innerWidth <= 600 ? router.push(SEARCH) : setOpen(true))}
+          className="md:hidden"
+          onFocus={() => setOpen(true)}
           onChange={(e) => changeHandler(e)}
-          startIcon={<MagnifyingGlassIcon width={20} className="ml-2 hidden md:block" />}
+          startIcon={<ArrowLeftIcon width={20} onClick={() => setOpen(false)} className="ml-2" />}
         />
-
-        <Stack
-          className={`absolute top-10 bottom-0 left-0 right-0 w-full xmd:w-[50%] h-screen md:h-fit max-h-screen xmd:max-h-84 p-3 space-y-2 items-start justify-start overflow-auto flex-col border border-secondary-dark border-t-0 rounded-lg rounded-t-none bg-white ${
-            open ? "flex" : "hidden"
-          }`}
+        <Typography
+          onClick={() => {
+            dispatch(filterBySearch(search))
+            setOpen(false)
+          }}
+          className={`${!!search ? "cursor-pointer" : "pointer-events-none"} w-full`}
+          variant="h6"
         >
-          <Typography
-            onClick={() => {
-              dispatch(filterBySearch(search))
-              setOpen(false)
-            }}
-            className={`${!!search ? "cursor-pointer" : "pointer-events-none"} w-full`}
-            variant="h6"
-          >
-            Search for: {search}
-          </Typography>
-          <hr className="w-full" />
-          {searchedProducts.map((item, i) => (
-            <SearchCard href={PRODUCTDETAILS(item.id)} item={item} key={item.title + item.img + i} />
-          ))}
-        </Stack>
-      </Dialog>
-    </Stack>
+          Search for: {search}
+        </Typography>
+        <hr className="w-full" />
+        {searchedProducts.map((item, i) => (
+          <SearchCard href={PRODUCTDETAILS(item.id)} item={item} key={item.title + item.img + i} />
+        ))}
+      </Stack>
+    </Dialog>
   )
 }
 

@@ -12,7 +12,7 @@ const Comments = ({ data }: { data: ProductType["comments"] }) => {
   const [num, setNum] = useState(4)
 
   return (
-    <Stack className=" review-container flex-col md:container md:items-start space-y-10 w-full">
+    <Stack className=" review-container flex-col md:container md:items-start space-y-4 w-full">
       <Stack className="flex-col sm:flex-row space-y-2 sm:space-y-0 justify-between px-2 md:px-0 w-full">
         <Typography variant="h5">Customer reviews</Typography>
 
@@ -34,11 +34,14 @@ const Comments = ({ data }: { data: ProductType["comments"] }) => {
         </Stack>
         {data.length > 3 &&
           (num === 4 ? (
-            <Button onClick={() => setNum(data.length)} className="flex justify-between items-center text-blue-400 ">
+            <Button
+              onClick={() => setNum(data.length)}
+              className="flex justify-between items-end text-blue-400 hover:bg-inherit "
+            >
               show more <ChevronDownIcon width={22} />
             </Button>
           ) : (
-            <Button onClick={() => setNum(4)} className="flex justify-between items-center text-blue-400 ">
+            <Button onClick={() => setNum(4)} className="flex justify-between items-end text-blue-400 hover:bg-inherit ">
               show less <ChevronUpIcon width={22} />
             </Button>
           ))}

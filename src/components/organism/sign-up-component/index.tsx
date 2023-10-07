@@ -16,9 +16,8 @@ const SignUpComponent = () => {
   const phoneParam = searchParams.get("phone")
   const [phone, setPhone] = useState(phoneParam || "")
 
-  const title = pathName === SIGNIN ? "Sing in" : "Sign up"
-  const buttonText = pathName === SIGNIN ? "Create you Organic Shop account" : "Sign in"
-  const subTitle = pathName === SIGNIN ? "New to Organic Shop?" : "Already have an account"
+  const title = pathName === SIGNIN ? "Sign in" : "Sign up"
+  const buttonText = pathName === SIGNIN ? "Create your account" : "Sign in"
 
   const navigationHandler = () => {
     router.push(pathName === SIGNIN ? SIGNUP : SIGNIN)
@@ -36,7 +35,7 @@ const SignUpComponent = () => {
       <Stack
         variant="form"
         onSubmit={singinHandler}
-        className="flex-col bg-white rounded-lg border px-10 py-8 items-start space-y-5"
+        className="flex-col sm:bg-white rounded-lg border px-10 py-8 items-start space-y-5"
       >
         <Typography variant="h5">{title}</Typography>
         <Input
@@ -53,13 +52,15 @@ const SignUpComponent = () => {
 
         <Typography variant="caption" className="text-gray-900">
           By continuing, you agree to Organic Shop i`s Conditions of <br className="hidden xs:block" /> Use and&nbsp;
-          <Link href={PRIVACY} className="underline text-blue-500">Privacy Notice</Link>.
+          <Link href={PRIVACY} className="underline text-blue-500">
+            Privacy Notice
+          </Link>
+          .
         </Typography>
       </Stack>
 
       <Stack className="flex-col space-y-2">
-        <Typography variant="caption">{subTitle}</Typography>
-        <Button variant="outlined" size="small" className="w-full" onClick={navigationHandler}>
+        <Button variant="outlined" size="small" className="w-80" onClick={navigationHandler}>
           {buttonText}
         </Button>
       </Stack>

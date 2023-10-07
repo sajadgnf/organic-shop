@@ -22,28 +22,32 @@ const OrderedItem = () => {
       {selectedItems.map((item) => (
         <Fragment key={item.id}>
           <Stack className="hidden lg:flex border rounded-lg p-3 justify-between w-full">
-            <Link href={PRODUCTDETAILS(item.id)}>
-              <Stack className="space-x-4">
+            <Stack className="space-x-4">
+              <Link href={PRODUCTDETAILS(item.id)}>
                 <Image src={item.img} alt="product image" width={80} height={80} />
-                <Stack className="space-x-8">
-                  <Stack className="flex-col items-start">
-                    <Typography variant="h6">{item.title}</Typography>
-                    <Link href={`${STORE}?category=${item.category}`}>
-                      <Typography variant="caption" className="font-semibold text-blue-700">
-                        products/{item.category}
-                      </Typography>
+              </Link>
+              <Stack className="space-x-8">
+                <Stack className="flex-col items-start">
+                  <Typography variant="h6">{item.title}</Typography>
+                  <Stack className="space-x-1 font-semibold text-blue-700">
+                    <Link href={STORE}>
+                      <Typography variant="caption">products</Typography>
                     </Link>
-                    <Typography variant="caption">{item.type.name}</Typography>
+                    <Typography variant="caption">/</Typography>
+                    <Link href={`${STORE}?category=${item.category}`}>
+                      <Typography variant="caption">{item.category}</Typography>
+                    </Link>
                   </Stack>
-                  <ProductPrice
-                    price={item.type.price}
-                    discount={item.type.discount}
-                    stockOut={item.type.stockOut}
-                    absolutePercent={false}
-                  />
+                  <Typography variant="caption">{item.type.name}</Typography>
                 </Stack>
+                <ProductPrice
+                  price={item.type.price}
+                  discount={item.type.discount}
+                  stockOut={item.type.stockOut}
+                  absolutePercent={false}
+                />
               </Stack>
-            </Link>
+            </Stack>
 
             <Stack className="space-x-6">
               <Stack className="space-x-2">
@@ -51,7 +55,7 @@ const OrderedItem = () => {
                 <Typography>Kg</Typography>
               </Stack>
               <Typography className="text-danger-main">
-                ${(+item.type.discount ? +item.type.discount : +item.type.price) * item.quantity}
+                ${((+item.type.discount ? +item.type.discount : +item.type.price) * item.quantity).toFixed(2)}
               </Typography>
             </Stack>
 
@@ -63,21 +67,23 @@ const OrderedItem = () => {
           {/* mobile size */}
           <Stack className="lg:hidden flex-col border rounded-lg space-y-5 p-3 justify-between w-full">
             <Stack className="justify-between w-full">
-              <Link href={PRODUCTDETAILS(1)}>
-                <Stack className="space-x-4">
-                  <Image src={item.img} alt={item.title} width={50} height={50} className="w-[50px] md:w-[80px]" />
-
-                  <Stack className="flex-col items-start">
-                    <Typography variant="h6">{item.title}</Typography>
-                    <Link href={`${STORE}?category=${item.category}`}>
-                      <Typography variant="caption" className="font-semibold text-blue-700">
-                        products/{item.category}
-                      </Typography>
-                    </Link>
-                    <Typography variant="caption">{item.type.name}</Typography>
-                  </Stack>
-                </Stack>
+              <Link href={PRODUCTDETAILS(item.id)}>
+                <Image src={item.img} alt={item.title} width={50} height={50} className="w-[50px] md:w-[80px]" />
               </Link>
+
+              <Stack className="flex-col items-start">
+                <Typography variant="h6">{item.title}</Typography>
+                <Stack className="space-x-1 font-semibold text-blue-700">
+                  <Link href={STORE}>
+                    <Typography>products</Typography>
+                  </Link>
+                  <Typography>/</Typography>
+                  <Link href={`${STORE}?category=${item.category}`}>
+                    <Typography>{item.category}</Typography>
+                  </Link>
+                </Stack>
+                <Typography variant="caption">{item.type.name}</Typography>
+              </Stack>
               <Button className="hover:bg-transparent" onClick={() => dispatch(removeItem({ data: item, typeId: item.type.id }))}>
                 <XMarkIcon width={25} />
               </Button>
@@ -97,7 +103,7 @@ const OrderedItem = () => {
               </Stack>
 
               <Typography variant="h6">
-                ${(+item.type.discount ? +item.type.discount : +item.type.price) * item.quantity}
+                ${((+item.type.discount ? +item.type.discount : +item.type.price) * item.quantity).toFixed(2)}
               </Typography>
             </Stack>
           </Stack>

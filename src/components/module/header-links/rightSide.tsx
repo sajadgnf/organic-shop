@@ -29,8 +29,14 @@ const RightSide = () => {
           <ArrowLeftOnRectangleIcon width={20} />
         </Button>
       )}
-      <Stack className="border border-gray-300 h-6" />
-      <Button size="small" hoverEffect={false} className="relative" data-testid="shopping-button" onClick={() => router.push(CART)}>
+      <Stack className="border border-gray-300 h-6 " />
+      <Button
+        size="small"
+        hoverEffect={false}
+        className="relative "
+        data-testid="shopping-button"
+        onClick={() => router.push(CART)}
+      >
         {!!itemsCounter && (
           <Typography
             variant="caption"

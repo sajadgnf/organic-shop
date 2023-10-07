@@ -15,7 +15,10 @@ const Store = () => {
 
   return (
     <Stack className="flex-col xmd:px-4 max-w-[1600px] w-full mx-auto mt-20 sm:mt-28 md:mt-72 space-y-4">
-      <SearchProduct />
+      <Stack className="hidden md:flex w-full z-50">
+        <SearchProduct id="header-search" />
+      </Stack>
+
       <HamburMenu />
 
       <Stack className="items-start w-full">
