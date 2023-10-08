@@ -54,7 +54,7 @@ const OrderedItem = () => {
                 <BuyButtons data={item} typeId={item.type.id} />
                 <Typography>Kg</Typography>
               </Stack>
-              <Typography className="text-danger-main">
+              <Typography>
                 ${((+item.type.discount ? +item.type.discount : +item.type.price) * item.quantity).toFixed(2)}
               </Typography>
             </Stack>

@@ -19,11 +19,11 @@ const ProductInfo = ({ data }: { data: ProductType }) => {
         <Typography>{linesToShow}</Typography>
         <Typography
           onClick={() => setOpen(!open)}
-          className={`${data.description.length <= 600 ? "hidden" : "inline-block"} text-blue-400 hover:bg-inherit`}
+          className={`${data.description.length <= 600 ? "hidden" : "inline-block"} flex items-center space-x-1 text-blue-400 hover:bg-inherit`}
         >
-          {open ? "show less" : "show more"}
+          <Typography> {open ? "show less" : "Show more"}</Typography>
 
-          {open ? <ChevronUpIcon width={16} className="inline-block" /> : <ChevronDownIcon width={16} className="inline-block" />}
+          {open ? <ChevronUpIcon width={20} className="w-4 md:w-5 inline-block" /> : <ChevronDownIcon width={20} className="w-4 md:w-5 inline-block" />}
         </Typography>
       </Stack>
     </Stack>

@@ -46,7 +46,7 @@ const Bill = () => {
         <Typography>${totalPrice}</Typography>
       </Stack>
 
-      <Stack className="justify-between w-full text-danger-main">
+      <Stack className="justify-between w-full">
         <Typography>discount</Typography>
         <Typography>${totalDiscount}</Typography>
       </Stack>

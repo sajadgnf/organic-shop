@@ -36,13 +36,14 @@ const Comments = ({ data }: { data: ProductType["comments"] }) => {
           (num === 4 ? (
             <Button
               onClick={() => setNum(data.length)}
-              className="flex justify-between items-end text-blue-400 hover:bg-inherit "
+              className="flex space-x-1 justify-between items-end text-blue-400 hover:bg-inherit "
             >
-              show more <ChevronDownIcon width={22} />
+              <Typography>Show more</Typography>
+              <ChevronDownIcon width={22} className="w-4 md:w-5" />
             </Button>
           ) : (
             <Button onClick={() => setNum(4)} className="flex justify-between items-end text-blue-400 hover:bg-inherit ">
-              show less <ChevronUpIcon width={22} />
+              show less <ChevronUpIcon width={22} className="w-4 md:w-5" />
             </Button>
           ))}
       </Stack>

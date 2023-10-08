@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux"
 import React, { ReactElement, ReactNode } from "react"
 import { addItem, decreaseItem, increaseItems, removeItem } from "@src/store/slice/cartSlice"
 import { AnyAction } from "redux"
+import { MinusIcon, PlusIcon } from "@heroicons/react/24/solid"
 
 type PropsType = {
   typeId: string
@@ -25,7 +26,7 @@ const ButtonContainer = ({ children, handler }: { children: ReactNode; handler: 
     <Button
       onClick={() => dispatch(handler)}
       variant="outlined"
-      className="!rounded-full !p-0 flex justify-center w-8 lg:w-10 !h-8 lg:!h-10 items-center"
+      className="!rounded-full !p-0 flex justify-center items-center w-8 lg:w-10 !h-8 lg:!h-10 "
     >
       {children}
     </Button>
@@ -35,11 +36,11 @@ const ButtonContainer = ({ children, handler }: { children: ReactNode; handler: 
 const BuyButtons = ({
   data,
   typeId,
+  disabled,
+  className,
   size = "large",
   variant = "outlined",
   buyButtonTitle = "Add to Cart",
-  disabled,
-  className,
 }: PropsType) => {
   const dispatch = useDispatch()
   const { selectedItems } = useSelector((state: RootState) => state.cartSlice)
@@ -63,10 +64,10 @@ const BuyButtons = ({
       <ButtonContainer
         handler={quantity === 1 ? removeItem({ data: currentItem[0], typeId }) : decreaseItem({ data: currentItem, typeId })}
       >
-        -
+        <MinusIcon width={14}/>
       </ButtonContainer>
       <Typography>{quantity}</Typography>
-      <ButtonContainer handler={increaseItems({ data: currentItem, typeId })}>+</ButtonContainer>
+      <ButtonContainer handler={increaseItems({ data: currentItem, typeId })}><PlusIcon width={16}/></ButtonContainer>
     </Stack>
   )
 }
