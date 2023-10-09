@@ -1,6 +1,6 @@
 import Stack from "@atom/stack"
 import Typography from "@atom/typography"
-import React, { InputHTMLAttributes, ReactElement, ReactNode } from "react"
+import React, { ForwardedRef, InputHTMLAttributes, ReactElement, ReactNode, forwardRef } from "react"
 
 type PropsType = {
   name?: string
@@ -36,18 +36,22 @@ type PropsType = {
     | "datetime-local"
 }
 
-const Input = ({
-  type = "text",
-  rows,
-  label,
-  endIcon,
-  multiLine,
-  startIcon,
-  className,
-  name = "name",
-  containerClassName,
-  ...props
-}: PropsType & InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>) => {
+const Input = forwardRef<
+  HTMLInputElement | HTMLTextAreaElement,
+  PropsType & InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>
+>((props, ref?: ForwardedRef<HTMLInputElement | HTMLTextAreaElement>) => {
+  const {
+    type = "text",
+    rows,
+    label,
+    endIcon,
+    multiLine,
+    startIcon,
+    className,
+    name = "name",
+    containerClassName,
+    ...rest
+  } = props
   const paddingLeft = startIcon ? "pl-1" : "pl-2"
 
   return (
@@ -65,7 +69,8 @@ const Input = ({
             rows={rows}
             name={name}
             className={`outline-none py-2 w-full resize-none ${paddingLeft}`}
-            {...props}
+            ref={ref as React.RefObject<HTMLTextAreaElement>}
+            {...rest}
           />
         ) : (
           <>
@@ -75,7 +80,8 @@ const Input = ({
               name={name}
               type={type}
               id={name}
-              {...props}
+                ref={ref as React.RefObject<HTMLInputElement>}
+              {...rest}
             />
             {endIcon && <Stack>{endIcon}</Stack>}
           </>
@@ -83,6 +89,5 @@ const Input = ({
       </Stack>
     </Stack>
   )
-}
-
+})
 export default Input

@@ -7,12 +7,13 @@ import { PRODUCTDETAILS } from "routes"
 import Typography from "@atom/typography"
 import SearchCard from "@module/search-card"
 import { useDispatch, useSelector } from "react-redux"
-import React, { ChangeEvent, useEffect, useState } from "react"
+import React, { ChangeEvent, useEffect, useRef, useState } from "react"
 import { filterBySearch, searchProduct } from "@src/store/slice/productSlice"
 import { ArrowLeftIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
 import Image from "next/image"
 
 const SearchProduct = ({ id }: { id: string }) => {
+  const searchRef = useRef<HTMLInputElement | null>(null)
   const dispatch = useDispatch()
   const [open, setOpen] = useState(false)
   const [search, setSearch] = useState("")
@@ -29,6 +30,10 @@ const SearchProduct = ({ id }: { id: string }) => {
       dispatch(searchProduct(""))
     }
   }, [search])
+
+  useEffect(() => {
+    open && searchRef.current && searchRef.current.focus()
+  }, [open])
 
   return (
     <Dialog id={id} setOpen={setOpen}>
@@ -60,6 +65,7 @@ const SearchProduct = ({ id }: { id: string }) => {
         <Input
           type="search"
           name="search"
+          ref={searchRef}
           value={search}
           autoComplete="off"
           placeholder="search..."
