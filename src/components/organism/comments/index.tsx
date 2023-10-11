@@ -35,6 +35,7 @@ const Comments = ({ data }: { data: ProductType["comments"] }) => {
         {data.length > 3 &&
           (num === 4 ? (
             <Button
+              hoverEffect={false}
               onClick={() => setNum(data.length)}
               className="flex space-x-1 justify-between items-end text-blue-400 hover:bg-inherit "
             >

@@ -59,7 +59,7 @@ const SearchProduct = ({ id }: { id: string }) => {
 
       <Stack
         className={`absolute md:top-10 top-0 bottom-0 left-0 right-0 w-full xmd:w-[50%] h-screen md:h-fit xmd:max-h-84 transition-all md:transition-none duration-[.3s] p-3 space-y-2 items-start justify-start overflow-auto flex-col border border-secondary-dark border-t-0 rounded-lg rounded-t-none bg-white ${
-          open ? "md:flex translate-y-0" : "md:hidden translate-y-[1000px]"
+          open ? "flex " : `hidden  `
         }`}
       >
         <Input

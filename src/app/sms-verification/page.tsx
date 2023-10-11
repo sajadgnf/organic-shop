@@ -49,7 +49,7 @@ const SMSVerification = () => {
     return () => {
       clearInterval(countdownInterval)
     }
-  }, [countdownRef.current])
+  }, [isButtonEnabled])
 
   const startCountdown = () => {
     countdownRef.current = 120
@@ -87,9 +87,9 @@ const SMSVerification = () => {
           <OTPInput
             value={otp}
             numInputs={4}
-            onChange={(otp: string) => setOtp(convertPersianToEnglishNumber(otp))}
             shouldAutoFocus={true}
             containerStyle={{ gap: 15 }}
+            onChange={(otp: string) => setOtp(convertPersianToEnglishNumber(otp))}
             inputStyle={{
               height: 47,
               borderRadius: 8,
@@ -97,6 +97,7 @@ const SMSVerification = () => {
               pointerEvents: `${!isButtonEnabled ? "all" : "none"}`,
               width: 47,
             }}
+            inputType="number"
             renderInput={(props) => <input {...props} />}
           />
           <Typography>code is: 1111</Typography>

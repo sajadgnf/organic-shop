@@ -1,9 +1,9 @@
 import "./globals.css"
 import Footer from "@module/footer"
 import Head from "@module/header-links"
+import ReduxProvider from "./reduxProvider"
 import { Inika, Roboto } from "next/font/google"
 import ToastContainer from "../components/atom/toast"
-import ReduxProvider from "./reduxProvider"
 
 const inika = Inika({
   subsets: ["latin"],

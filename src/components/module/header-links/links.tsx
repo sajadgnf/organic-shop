@@ -2,15 +2,8 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { ReactElement, ReactNode } from "react"
-import { BLOG, CART, CONTACT, HOME, PROFILE, STORE } from "routes"
-import {
-  ArrowLeftOnRectangleIcon,
-  BuildingStorefrontIcon,
-  ChatBubbleOvalLeftEllipsisIcon,
-  HomeIcon,
-  ShoppingBagIcon,
-  UserCircleIcon,
-} from "@heroicons/react/24/solid"
+import { CART, HOME, PROFILE, STORE } from "routes"
+import { BuildingStorefrontIcon, HomeIcon, ShoppingBagIcon, UserCircleIcon } from "@heroicons/react/24/solid"
 
 interface ContainerType {
   href: string

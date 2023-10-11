@@ -1,8 +1,9 @@
+"use client"
 import Link from "next/link"
 import { STORE } from "routes"
 import Image from "next/image"
 import Stack from "@atom/stack"
-import React, { Fragment } from "react"
+import React, { Fragment, useEffect } from "react"
 import Typography from "@atom/typography"
 import Comments from "@organism/comments"
 import BuyButtons from "@module/buy-buttons"
@@ -43,6 +44,8 @@ const BottomSheet = ({ data }: { data: ProductType }) => {
 
 const ProductDetails = ({ params }: { params: { productId: string } }) => {
   const data = FAKE_DATA.find((item) => item.id == params.productId) as ProductType
+
+  useEffect(() => window.document.scrollingElement?.scrollTo(0, 0), [])
 
   return (
     <>

@@ -52,6 +52,7 @@ const Input = forwardRef<
     containerClassName,
     ...rest
   } = props
+  Input.displayName = "Input"
   const paddingLeft = startIcon ? "pl-1" : "pl-2"
 
   return (
@@ -80,7 +81,7 @@ const Input = forwardRef<
               name={name}
               type={type}
               id={name}
-                ref={ref as React.RefObject<HTMLInputElement>}
+              ref={ref as React.RefObject<HTMLInputElement>}
               {...rest}
             />
             {endIcon && <Stack>{endIcon}</Stack>}

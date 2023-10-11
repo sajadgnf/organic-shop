@@ -3,8 +3,6 @@ import Link from "next/link"
 import Image from "next/image"
 import Stack from "@atom/stack"
 import Typography from "@atom/typography"
-import BuyButtons from "@module/buy-buttons"
-import ProductPrice from "@module/product-price"
 import { ProductType } from "@src/common/fake-data"
 
 type PropsType = {
@@ -26,23 +24,6 @@ const RelatedProductCard = ({ data, href = "" }: PropsType) => {
             {description}
           </Typography>
         </Stack>
-
-        {/* <Stack className="justify-between items-stretch flex-col w-full px-6 space-y-4">
-        {type.map(({ price, name, discount, stockOut, id }) => (
-          <Stack className="justify-between" key={id}>
-          <BuyButtons
-          typeId={id}
-          buyButtonTitle={name}
-          data={data}
-          size="small"
-          disabled={stockOut}
-          variant="contained"
-          className="!min-w-[90px]"
-          />
-          <ProductPrice price={price} stockOut={stockOut} discount={discount} />
-          </Stack>
-          ))}
-        </Stack> */}
       </Stack>
     </Link>
   )

@@ -1,3 +1,11 @@
+export type CommentType = {
+  img: string
+  name: string
+  rate: number
+  productId: string
+  description: string
+}
+
 export type ProductType = {
   id: string
   img: string
@@ -12,23 +20,12 @@ export type ProductType = {
     discount: string
     stockOut: boolean
   }[]
-  comments: {
-    name: string
-    rate: number
-    description: string
-  }[]
+  comments: CommentType[]
 }
 
 export type CategoryType = {
   title: string
   img: string
-}
-
-export type CommentType = {
-  name: string
-  rate: number
-  description: string
-  productId: string
 }
 
 const FAKE_DATA: ProductType[] = [
@@ -58,41 +55,55 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "1",
         name: "Sophia Smith",
         description: "Green Love has woven itself into the fabric of my daily life. It's a symphony of freshness and vitality!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "1",
         name: "Ethan Johnson",
         description:
           "Green Love transcends the boundaries of a mere juice; it's a captivating burst of natural energy in every sip. Love it!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "1",
         name: "Olivia Davis",
         description:
           "The masterful combination of flavors in Green Love is nothing short of genius. It's a must-try for anyone seeking perfection!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "1",
         name: "Noah White",
         description:
           "Green Love has become my trusted companion, a quick pick-me-up that never fails to impress. Highly recommended!",
         rate: 3,
       },
       {
+        img: "",
+        productId: "1",
         name: "Ava Brown",
         description:
           "I am enchanted by the unwavering quality of Green Love. It's a delightful treat for the senses, a true masterpiece.",
         rate: 2,
       },
       {
+        img: "",
+        productId: "1",
         name: "Liam Wilson",
         description:
           "Each day begins with a delightful sip of Green Love, setting a positive tone for the hours ahead. Cheers to this elixir of vitality!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "1",
         name: "Mia Taylor",
         description:
           "The freshness encapsulated within Green Love is a league of its own. It's like sipping pure vitality, a botanical miracle!",
@@ -126,40 +137,54 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "2",
         name: "Mia Garcia",
         description: "The Cobb salad is a full meal in itself. So many flavors and textures!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "2",
         name: "Ethan Clark",
         description: "I order the Cobb salad every time. The avocado makes it so creamy!",
         rate: 2,
       },
       {
+        img: "",
+        productId: "2",
         name: "Sophie Turner",
         description:
           "I'm a Cobb salad enthusiast, and this one truly hits the mark. The mix of ingredients is spot-on, and that blue cheese dressing is divine. Solid 5 stars!",
         rate: 3,
       },
       {
+        img: "",
+        productId: "2",
         name: "Jordan Smith",
         description:
           "The Cobb salad is my go-to choice for a satisfying lunch. The grilled chicken is always perfectly cooked, and the combination of flavors is simply mouthwatering. Highly recommended!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "2",
         name: "Olivia Martinez",
         description:
           "I'm all about that creamy avocado in the Cobb salad! It adds a unique twist to a classic dish. Definitely a 5-star salad for me.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "2",
         name: "Liam Johnson",
         description:
           "The Cobb salad is a winner, but I wish there was an option for a lighter dressing. The blue cheese can be a bit overpowering. Still, a solid 4 stars for the taste.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "2",
         name: "Ava Anderson",
         description:
           "Cobb salads are my guilty pleasure, and this one doesn't disappoint. The bacon and eggs add that perfect crunch and richness. It's a satisfying and indulgent choice, definitely a 5-star salad!",
@@ -193,11 +218,43 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "3",
         name: "Liam Mitchell",
         description: "I make the best coleslaw with these cabbages. Crisp and delicious!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "3",
+        name: "Sophia Carter",
+        description: "These cabbages are so fresh, they elevate my salads to the next level.",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "3",
+        name: "Liam Mitchell",
+        description: "I make the best coleslaw with these cabbages. Crisp and delicious!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "3",
+        name: "Sophia Carter",
+        description: "These cabbages are so fresh, they elevate my salads to the next level.",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "3",
+        name: "Liam Mitchell",
+        description: "I make the best coleslaw with these cabbages. Crisp and delicious!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "3",
         name: "Sophia Carter",
         description: "These cabbages are so fresh, they elevate my salads to the next level.",
         rate: 4,
@@ -230,58 +287,78 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "4",
         name: "Mason King",
         description: "Potatoes are a staple in my kitchen, and these are perfect for making fries!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "4",
         name: "Lily Brown",
         description: "These potatoes make the creamiest mashed potatoes ever!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "4",
         name: "Sophia Carter",
         description:
           "I can't get enough of these potatoes! They're versatile and great for roasting, frying, or boiling. A must-have in every kitchen.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "4",
         name: "Ethan Johnson",
         description:
           "The quality of these potatoes is outstanding. They have a wonderful texture and taste, making them my go-to choice for all potato dishes.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "4",
         name: "Olivia Davis",
         description:
           "These potatoes are a game-changer in my cooking. Whether it's for hash browns, scalloped potatoes, or potato salad, they never disappoint.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "4",
         name: "Noah Wilson",
         description:
           "As a potato enthusiast, I'm impressed by the consistent quality of these potatoes. They're the foundation of countless delicious meals in my home.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "4",
         name: "Ava White",
         description:
           "I love experimenting with different potato dishes, and these never let me down. From gnocchi to potato wedges, they're a kitchen essential.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "4",
         name: "Liam Martinez",
         description:
           "These potatoes have revolutionized my Sunday brunches. They yield the crispiest hash browns, making weekend mornings even better.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "4",
         name: "Charlotte Harris",
         description:
           "The creamy texture of these potatoes elevates my mashed potato game. They're so good that even my pickiest eater requests them regularly.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "4",
         name: "William Clark",
         description:
           "I'm a self-proclaimed potato connoisseur, and these potatoes rank among the best I've ever tasted. They're a versatile superstar in the kitchen!",
@@ -315,6 +392,8 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "5",
         name: "Sophia Rodriguez",
         description:
           "These bell peppers are a burst of freshness in every bite. Whether I'm slicing them for a sandwich or dicing them for a salsa, they never disappoint. Their vibrant colors and crisp texture elevate every dish. I can't get enough of them!",
@@ -322,6 +401,8 @@ const FAKE_DATA: ProductType[] = [
       },
 
       {
+        img: "",
+        productId: "5",
         name: "Ethan Baker",
         description:
           "I'm a huge fan of these bell peppers. They're not only delicious but also incredibly versatile. From fajitas to omelets, they add a delightful crunch and flavor that I adore. Plus, they're rich in vitamins, making them a nutritious choice for any meal.",
@@ -329,6 +410,8 @@ const FAKE_DATA: ProductType[] = [
       },
 
       {
+        img: "",
+        productId: "5",
         name: "Ava Mitchell",
         description:
           "Bell peppers have become a staple in my kitchen, and these are exceptional. Their sweetness and juiciness take my salads to a whole new level. I often roast them with a drizzle of olive oil and some herbs for a mouthwatering side dish. Highly recommended!",
@@ -336,6 +419,8 @@ const FAKE_DATA: ProductType[] = [
       },
 
       {
+        img: "",
+        productId: "5",
         name: "Noah Wright",
         description:
           "These bell peppers are a game-changer for my homemade pizzas. Their vibrant colors not only add visual appeal but also a burst of flavor. Whether I'm making a classic Margherita or a veggie-loaded pie, these peppers are a must-have topping.",
@@ -343,6 +428,8 @@ const FAKE_DATA: ProductType[] = [
       },
 
       {
+        img: "",
+        productId: "5",
         name: "Olivia Scott",
         description:
           "As a vegetarian, bell peppers are a crucial part of my diet, and these do not disappoint. They are consistently fresh and crunchy, perfect for stuffing with a mix of rice, veggies, and cheese. These peppers make my stuffed peppers recipe a hit every time.",
@@ -350,6 +437,8 @@ const FAKE_DATA: ProductType[] = [
       },
 
       {
+        img: "",
+        productId: "5",
         name: "Mason Green",
         description:
           "I've been buying these bell peppers for weeks, and they've become a family favorite. Their vibrant colors brighten up our dinner table, and the kids love them as a healthy snack. They're the perfect addition to our weekly grocery list.",
@@ -357,6 +446,8 @@ const FAKE_DATA: ProductType[] = [
       },
 
       {
+        img: "",
+        productId: "5",
         name: "Emily Parker",
         description:
           "Bell peppers are a staple in my Mediterranean-inspired dishes, and these are top-notch. Their crisp texture and sweet flavor complement everything from Greek salads to shish kebabs. I can't imagine my kitchen without them.",
@@ -364,6 +455,8 @@ const FAKE_DATA: ProductType[] = [
       },
 
       {
+        img: "",
+        productId: "5",
         name: "Jackson Adams",
         description:
           "These bell peppers are a hit in our household. They're not just tasty; they're also easy to slice and dice for quick meal prep. We use them in stir-fries, fajitas, and sandwiches regularly. They add a delightful crunch to our meals.",
@@ -371,6 +464,8 @@ const FAKE_DATA: ProductType[] = [
       },
 
       {
+        img: "",
+        productId: "5",
         name: "Chloe Wilson",
         description:
           "I'm impressed with the quality of these bell peppers. They stay fresh for an extended period, which is a big plus for me. Their versatility in recipes is unmatched, and I love how they add a pop of color to my cooking.",
@@ -378,6 +473,8 @@ const FAKE_DATA: ProductType[] = [
       },
 
       {
+        img: "",
+        productId: "5",
         name: "William Turner",
         description:
           "These bell peppers are a staple in my daily salads. The variety of colors not only makes them visually appealing but also indicates a range of nutrients. They're the perfect way to add a healthy and tasty twist to my meals.",
@@ -411,70 +508,94 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "6",
         name: "Olivia Davis",
         description: "The Greek salad is so refreshing. Perfect for a light meal!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "6",
         name: "Noah Johnson",
         description: "I love the combination of flavors in this Greek salad. Always a hit!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "6",
         name: "Sophia Smith",
         description:
           "The Greek salad is a delightful medley of fresh vegetables and tangy feta cheese. It's my go-to choice for a healthy and satisfying lunch option. Highly recommended!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "6",
         name: "Ethan White",
         description:
           "As a salad enthusiast, I can confidently say that this Greek salad is a masterpiece. The crisp cucumbers, juicy tomatoes, and creamy dressing create a symphony of flavors that never fails to please my taste buds.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "6",
         name: "Ava Martinez",
         description:
           "I often find myself craving this Greek salad. It's the perfect blend of freshness and flavor, and the olives add a delightful briny kick. I could eat it every day!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "6",
         name: "Liam Brown",
         description:
           "This Greek salad is like a party in my mouth. The ingredients are always so crisp, and the dressing is both zesty and creamy. A true palate pleaser for any occasion.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "6",
         name: "Mia Wilson",
         description:
           "The Greek salad at this place is my guilty pleasure. It's guilt-free in terms of calories, but the taste is so indulgent. The fresh herbs and generous portion of feta make it irresistible.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "6",
         name: "Jackson Harris",
         description:
           "I've had many Greek salads in my life, but this one stands out. The balance of ingredients is spot-on, and the crispy lettuce is the perfect canvas for the vibrant flavors. A solid choice every time!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "6",
         name: "Scarlett Clark",
         description:
           "The Greek salad is a true winner! It's a nutritional powerhouse and a burst of flavor. The red onions give it a nice kick, and the cucumbers provide a refreshing crunch.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "6",
         name: "William Lee",
         description:
           "This Greek salad is like sunshine in a bowl. It's my top pick for a quick and healthy meal. The combination of textures and the zesty dressing make it a delightful experience.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "6",
         name: "Emma Taylor",
         description:
           "I'm a huge fan of Greek cuisine, and this salad never disappoints. The ingredients are always fresh, and the quality is consistent. It's a delicious escape to the Mediterranean!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "6",
         name: "Liam Davis",
         description:
           "This Greek salad is a taste sensation! The olives and feta cheese add a delightful salty contrast to the crisp veggies. I can't get enough of it, and neither can my taste buds.",
@@ -508,18 +629,24 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "7",
         name: "Sophie Rodriguez",
         description: "Zucchini noodles are a game-changer for my low-carb diet. These make my pasta cravings disappear!",
         rate: 5,
       },
 
       {
+        img: "",
+        productId: "7",
         name: "Liam Smith",
         description: "I use these zucchinis to make a mouthwatering ratatouille. The freshness is unbeatable!",
         rate: 5,
       },
 
       {
+        img: "",
+        productId: "7",
         name: "Olivia Johnson",
         description:
           "These zucchinis are my secret ingredient for adding a healthy twist to my chocolate muffins. Surprisingly tasty!",
@@ -527,6 +654,8 @@ const FAKE_DATA: ProductType[] = [
       },
 
       {
+        img: "",
+        productId: "7",
         name: "Ethan Wilson",
         description:
           "I grill these zucchinis with some olive oil and spices, and they become the star of my BBQ parties. So satisfying!",
@@ -534,6 +663,8 @@ const FAKE_DATA: ProductType[] = [
       },
 
       {
+        img: "",
+        productId: "7",
         name: "Ava Martinez",
         description:
           "Zucchini fritters made with these are a hit at my family gatherings. Crispy on the outside, tender on the inside!",
@@ -567,11 +698,43 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "8",
         name: "Liam Wilson",
         description: "These lemons are so fresh and full of flavor. Perfect for making lemonade!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "8",
+        name: "Liam Wilson",
+        description: "These lemons are so fresh and full of flavor. Perfect for making lemonade!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "8",
+        name: "Emma Parker",
+        description: "Meyer lemons are my favorite for baking. They have a delightful aroma!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "8",
+        name: "Liam Wilson",
+        description: "These lemons are so fresh and full of flavor. Perfect for making lemonade!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "8",
+        name: "Liam Wilson",
+        description: "These lemons are so fresh and full of flavor. Perfect for making lemonade!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "8",
         name: "Emma Parker",
         description: "Meyer lemons are my favorite for baking. They have a delightful aroma!",
         rate: 4,
@@ -604,36 +767,50 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "9",
         name: "John Smith",
         description: "This juice is amazing! It's the perfect mix of sweet and tangy.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "9",
         name: "Jane Doe",
         description: "I love the tropical flavor. It's like a vacation in a glass!",
         rate: 3,
       },
       {
+        img: "",
+        productId: "9",
         name: "Emily Johnson",
         description: "Refreshing and revitalizing, this juice is my daily dose of energy!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "9",
         name: "Michael Brown",
         description: "The quality of this juice is outstanding. Pure bliss in every sip!",
         rate: 1,
       },
       {
+        img: "",
+        productId: "9",
         name: "Samantha Lee",
         description: "A burst of fruity goodness that brightens up my mornings. Highly recommended!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "9",
         name: "Daniel Clark",
         description: "This juice is a delightful concoction of flavors. I can't get enough of it!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "9",
         name: "Olivia Taylor",
         description: "Perfectly balanced sweetness and a hint of zest make this juice a real treat.",
         rate: 3,
@@ -666,11 +843,57 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "10",
         name: "Olivia White",
         description: "I love the tangy kick of this juice. It wakes me up in the morning!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "10",
+        name: "David Wilson",
+        description: "The perfect balance of sweet and sour. Highly recommended!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "10",
+        name: "Olivia White",
+        description: "I love the tangy kick of this juice. It wakes me up in the morning!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "10",
+        name: "David Wilson",
+        description: "The perfect balance of sweet and sour. Highly recommended!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "10",
+        name: "Olivia White",
+        description: "I love the tangy kick of this juice. It wakes me up in the morning!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "10",
+        name: "David Wilson",
+        description: "The perfect balance of sweet and sour. Highly recommended!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "10",
+        name: "Olivia White",
+        description: "I love the tangy kick of this juice. It wakes me up in the morning!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "10",
         name: "David Wilson",
         description: "The perfect balance of sweet and sour. Highly recommended!",
         rate: 4,
@@ -703,18 +926,24 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "11",
         name: "Olivia Smith",
         description: "These golden kiwis are a burst of sunshine in every bite. The sweetness is just perfect!",
         rate: 5,
       },
 
       {
+        img: "",
+        productId: "11",
         name: "Liam Johnson",
         description: "I'm addicted to these gold kiwis! They're like candy from nature, a healthy addiction!",
         rate: 5,
       },
 
       {
+        img: "",
+        productId: "11",
         name: "Ava Wilson",
         description:
           "Kiwis have always been my favorite, but these golden ones take it to a whole new level. Absolutely delicious!",
@@ -722,12 +951,16 @@ const FAKE_DATA: ProductType[] = [
       },
 
       {
+        img: "",
+        productId: "11",
         name: "Mason Brown",
         description: "The vibrant color and exotic flavor of gold kiwis make them a delightful surprise in every fruit bowl.",
         rate: 4,
       },
 
       {
+        img: "",
+        productId: "11",
         name: "Harper Martinez",
         description: "I'm trying to eat healthier, and these golden kiwis are my guilt-free pleasure. So juicy and refreshing!",
         rate: 5,
@@ -760,29 +993,39 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "12",
         name: "Sophia Smith",
         description: "I can't get enough of Watermelon Wave! It's like a burst of sunshine in a glass. Highly recommend!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "12",
         name: "James Johnson",
         description:
           "Refreshing and revitalizing, Watermelon Wave is my go-to choice after a workout. Keeps me energized and satisfied!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "12",
         name: "Olivia Davis",
         description:
           "Watermelon Wave has the perfect balance of sweetness and freshness. It's like a vacation for your taste buds!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "12",
         name: "Michael White",
         description:
           "I tried Watermelon Wave at a friend's BBQ, and now I can't stop ordering it. It's the ultimate summer indulgence!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "12",
         name: "Emily Brown",
         description:
           "Watermelon Wave is my secret weapon to beat the heat. It's an absolute must-try for anyone craving a fruity escape!",
@@ -816,11 +1059,57 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "13",
         name: "Sophia Adams",
         description: "These apples are so sweet and crunchy. Perfect for snacking!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "13",
+        name: "Ethan Turner",
+        description: "I love the variety of apples available. They're all delicious!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "13",
+        name: "Sophia Adams",
+        description: "These apples are so sweet and crunchy. Perfect for snacking!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "13",
+        name: "Ethan Turner",
+        description: "I love the variety of apples available. They're all delicious!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "13",
+        name: "Sophia Adams",
+        description: "These apples are so sweet and crunchy. Perfect for snacking!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "13",
+        name: "Ethan Turner",
+        description: "I love the variety of apples available. They're all delicious!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "13",
+        name: "Sophia Adams",
+        description: "These apples are so sweet and crunchy. Perfect for snacking!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "13",
         name: "Ethan Turner",
         description: "I love the variety of apples available. They're all delicious!",
         rate: 4,
@@ -853,44 +1142,60 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "14",
         name: "Liam Taylor",
         description: "Pineapple Paradise takes me on a mini-vacation with every sip. So good!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "14",
         name: "Ava Moore",
         description: "The pineapple flavor is so authentic. It's like drinking sunshine!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "14",
         name: "Oliver Anderson",
         description: "I can't get enough of Pineapple Paradise! It's a tropical escape in a bottle. Absolutely refreshing!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "14",
         name: "Sophia Clark",
         description: "Pineapple Paradise is a burst of tropical bliss! The taste is pure paradise, and I crave it daily!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "14",
         name: "Noah Lewis",
         description:
           "This drink is a vacation in a can! The pineapple flavor is like a tropical paradise in every sip. Five stars!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "14",
         name: "Emma Baker",
         description:
           "Pineapple Paradise is my go-to drink for relaxation. It transports me to a beachfront paradise with every gulp!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "14",
         name: "Mason Garcia",
         description:
           "I've tried many pineapple drinks, but Pineapple Paradise stands out. It's like a tropical holiday in a bottle!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "14",
         name: "Olivia Martinez",
         description: "Pineapple Paradise is pure liquid sunshine. It's a taste of the tropics that brightens my day every time!",
         rate: 4,
@@ -923,11 +1228,57 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "15",
         name: "Oliver Wilson",
         description: "These oranges are incredibly juicy and refreshing. I can't get enough!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "15",
+        name: "Lily Parker",
+        description: "The blood oranges have such a unique and vibrant flavor. Highly recommended!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "15",
+        name: "Oliver Wilson",
+        description: "These oranges are incredibly juicy and refreshing. I can't get enough!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "15",
+        name: "Lily Parker",
+        description: "The blood oranges have such a unique and vibrant flavor. Highly recommended!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "15",
+        name: "Oliver Wilson",
+        description: "These oranges are incredibly juicy and refreshing. I can't get enough!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "15",
+        name: "Lily Parker",
+        description: "The blood oranges have such a unique and vibrant flavor. Highly recommended!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "15",
+        name: "Oliver Wilson",
+        description: "These oranges are incredibly juicy and refreshing. I can't get enough!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "15",
         name: "Lily Parker",
         description: "The blood oranges have such a unique and vibrant flavor. Highly recommended!",
         rate: 4,
@@ -960,11 +1311,43 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "16",
         name: "Mia Harris",
         description: "Berry Blast is a burst of fruity goodness. It's like a party in my mouth!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "16",
+        name: "Mia Harris",
+        description: "Berry Blast is a burst of fruity goodness. It's like a party in my mouth!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "16",
+        name: "Noah Martinez",
+        description: "I'm a berry lover, and this juice satisfies my cravings perfectly.",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "16",
+        name: "Mia Harris",
+        description: "Berry Blast is a burst of fruity goodness. It's like a party in my mouth!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "16",
+        name: "Mia Harris",
+        description: "Berry Blast is a burst of fruity goodness. It's like a party in my mouth!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "16",
         name: "Noah Martinez",
         description: "I'm a berry lover, and this juice satisfies my cravings perfectly.",
         rate: 4,
@@ -997,42 +1380,56 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "17",
         name: "Sophia Carter",
         description:
           "I can't get enough of these cucumbers! They're the perfect balance of crunchy and juicy. Whether I'm snacking on them solo or adding them to my salads, they never disappoint. A definite 5-star treat!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "17",
         name: "Liam Anderson",
         description:
           "These cucumbers are a lifesaver during summer. Their cool, crisp texture is like a burst of freshness in every bite. I often use them in sandwiches and as a side dish for BBQs. Solid 5 stars!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "17",
         name: "Olivia Davis",
         description:
           "Cucumbers are my guilt-free pleasure, and these ones hit the spot. Their consistent crunchiness and mild flavor make them a versatile addition to my meals. Definitely a 5-star favorite in my kitchen!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "17",
         name: "Noah White",
         description:
           "I'm a cucumber enthusiast, and these have earned a permanent spot in my fridge. Whether I'm snacking, pickling, or making cucumber-infused water, these cucumbers are consistently top-notch. A solid 5 out of 5!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "17",
         name: "Emma Harris",
         description:
           "These cucumbers are the definition of crisp and delicious. Their quality and taste are unmatched, making them my go-to choice for healthy snacking. I'm giving them a well-deserved 5-star rating!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "17",
         name: "Mason Wilson",
         description:
           "I enjoy these cucumbers as a hydrating and healthy snack. Their crunchiness is unbeatable, and they're perfect for slicing into salads or adding to sandwiches. I rate them a solid 4 stars!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "17",
         name: "Ava Turner",
         description:
           "Cucumbers are a staple in my fridge, and these ones are pretty good. They're refreshing and versatile, but I've had slightly crisper cucumbers before. Overall, I'd rate them a decent 3 stars.",
@@ -1066,11 +1463,64 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "18",
         name: "Olivia Adams",
         description: "These strawberries are like little bursts of happiness. So sweet and delicious!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "18",
+        name: "Olivia Adams",
+        description: "These strawberries are like little bursts of happiness. So sweet and delicious!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "18",
+        name: "William Turner",
+        description: "I can't resist the organic strawberries. They're so flavorful!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "18",
+        name: "Olivia Adams",
+        description: "These strawberries are like little bursts of happiness. So sweet and delicious!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "18",
+        name: "Olivia Adams",
+        description: "These strawberries are like little bursts of happiness. So sweet and delicious!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "18",
+        name: "William Turner",
+        description: "I can't resist the organic strawberries. They're so flavorful!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "18",
+        name: "Olivia Adams",
+        description: "These strawberries are like little bursts of happiness. So sweet and delicious!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "18",
+        name: "Olivia Adams",
+        description: "These strawberries are like little bursts of happiness. So sweet and delicious!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "18",
         name: "William Turner",
         description: "I can't resist the organic strawberries. They're so flavorful!",
         rate: 4,
@@ -1103,42 +1553,56 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "19",
         name: "Olivia Smith",
         description:
           "Mango Tango takes me on a journey to a sun-kissed beach with its vibrant mango flavor. Sipping it feels like a tropical escape, making my taste buds dance with joy. It's the ultimate summer delight, and I can't get enough!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "19",
         name: "Liam Johnson",
         description:
           "As someone who loves mangoes, Mango Tango is an absolute treat. It's like a burst of sunshine in a glass, radiating pure fruity goodness. The perfect balance of sweetness and tanginess makes it a refreshing choice for a hot day.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "19",
         name: "Ava Martinez",
         description:
           "Mango Tango is a delightful fusion of tropical paradise and thirst-quenching delight. With every sip, you can taste the lusciousness of ripe mangoes, and it's incredibly refreshing. It's my secret weapon for beating the summer heat!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "19",
         name: "Noah Brown",
         description:
           "The moment Mango Tango touches my lips, it's like a burst of fruity fireworks. The natural sweetness of mangoes is perfectly captured in this drink, making it an irresistible choice for anyone craving a taste of summer.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "19",
         name: "Isabella White",
         description:
           "Mango Tango is a tropical symphony in a glass. Its exquisite blend of mango flavors is like a mini vacation for my palate. This drink is pure happiness, and I find myself reaching for it whenever I need a little taste of paradise.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "19",
         name: "Jackson Wilson",
         description:
           "Mango Tango is my go-to summer refresher. Its tangy, sweet mango goodness is so invigorating. With every sip, I can almost feel the ocean breeze and hear the rustling palm trees. It's a vacation in a bottle!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "19",
         name: "Sophie Anderson",
         description:
           "Mango Tango is like a fruity symphony that plays on my taste buds. It's a tantalizing blend of mango perfection, and I can't help but smile with every sip. This drink embodies the essence of summer in the most delightful way.",
@@ -1172,42 +1636,56 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "20",
         name: "Ethan Smith",
         description:
           "I can't get enough of these pineapples! They're a burst of sunshine in every bite. Whether I'm enjoying them as a refreshing snack or blending them into a tropical smoothie, they never disappoint. Their natural sweetness and juiciness are simply irresistible. I highly recommend these pineapples to everyone!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "20",
         name: "Sophia Wilson",
         description:
           "These pineapples are a tropical delight. Their vibrant flavor instantly transports me to a sandy beach with clear blue waters. They're the perfect addition to fruit salads and fruit platters for a burst of freshness. I find myself reaching for these mini pineapples as a guilt-free treat during hot summer days. Definitely a must-try!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "20",
         name: "Lucas Brown",
         description:
           "These mini pineapples are a snack lover's dream come true. Their small size and portability make them ideal for on-the-go munching. The balance of sweet and tangy is spot on, and they're so juicy! Whether you're packing them for a picnic or enjoying them at home, these little pineapples won't disappoint.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "20",
         name: "Ava Miller",
         description:
           "I adore these mini pineapples! They're like nature's candy. The convenience of their petite size makes them a fantastic option for kids' lunchboxes or as a sweet addition to charcuterie boards. Their flavor bursts with tropical goodness, and I often find myself snacking on them straight from the fridge. Yum!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "20",
         name: "Noah Davis",
         description:
           "These pineapples are a delightful treat. Their miniature size and sweet, juicy flesh make them perfect for satisfying cravings without the guilt. I love incorporating them into my morning yogurt or pairing them with cheese for a unique flavor combination. If you haven't tried these mini pineapples yet, you're missing out!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "20",
         name: "Isabella Martinez",
         description:
           "These pineapples are a taste of the tropics in every bite. They're not only delicious but also incredibly versatile. I use them to create exotic fruit salsa for tacos or as a garnish for tropical desserts. Their vibrant yellow color and sweet aroma are a testament to their quality. A delightful addition to any meal!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "20",
         name: "William Turner",
         description:
           "These mini pineapples are a family favorite in our household. They're the perfect size for kids and adults alike. Their flavor is a harmonious blend of sweetness and tartness, making them an excellent addition to both sweet and savory dishes. Whether you're making cocktails or snacking during movie night, these pineapples will steal the show!",
@@ -1241,11 +1719,64 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "21",
         name: "Ava Turner",
         description: "These bananas are perfectly ripe and great for making smoothies!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "21",
+        name: "Ava Turner",
+        description: "These bananas are perfectly ripe and great for making smoothies!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "21",
+        name: "Noah Adams",
+        description: "I love the baby bananas. They're so cute and sweet!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "21",
+        name: "Ava Turner",
+        description: "These bananas are perfectly ripe and great for making smoothies!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "21",
+        name: "Ava Turner",
+        description: "These bananas are perfectly ripe and great for making smoothies!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "21",
+        name: "Noah Adams",
+        description: "I love the baby bananas. They're so cute and sweet!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "21",
+        name: "Ava Turner",
+        description: "These bananas are perfectly ripe and great for making smoothies!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "21",
+        name: "Ava Turner",
+        description: "These bananas are perfectly ripe and great for making smoothies!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "21",
         name: "Noah Adams",
         description: "I love the baby bananas. They're so cute and sweet!",
         rate: 4,
@@ -1278,11 +1809,70 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "22",
         name: "Ava Baker",
         description: "These tomatoes are so flavorful, I use them in all my recipes!",
         rate: 5,
       },
+
       {
+        img: "",
+        productId: "22",
+        name: "Ava Baker",
+        description: "These tomatoes are so flavorful, I use them in all my recipes!",
+        rate: 5,
+      },
+
+      {
+        img: "",
+        productId: "22",
+        name: "James White",
+        description: "Fresh tomatoes are a must for my sandwiches, and these fit the bill.",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "22",
+        name: "Ava Baker",
+        description: "These tomatoes are so flavorful, I use them in all my recipes!",
+        rate: 5,
+      },
+
+      {
+        img: "",
+        productId: "22",
+        name: "Ava Baker",
+        description: "These tomatoes are so flavorful, I use them in all my recipes!",
+        rate: 5,
+      },
+
+      {
+        img: "",
+        productId: "22",
+        name: "James White",
+        description: "Fresh tomatoes are a must for my sandwiches, and these fit the bill.",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "22",
+        name: "Ava Baker",
+        description: "These tomatoes are so flavorful, I use them in all my recipes!",
+        rate: 5,
+      },
+
+      {
+        img: "",
+        productId: "22",
+        name: "Ava Baker",
+        description: "These tomatoes are so flavorful, I use them in all my recipes!",
+        rate: 5,
+      },
+
+      {
+        img: "",
+        productId: "22",
         name: "James White",
         description: "Fresh tomatoes are a must for my sandwiches, and these fit the bill.",
         rate: 4,
@@ -1315,36 +1905,50 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "23",
         name: "Ella Johnson",
         description: "Mangoes are my favorite fruit, and these are the juiciest I've ever tasted!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "23",
         name: "Aiden Smith",
         description: "The freshness of these mangoes is unmatched. A perfect snack!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "23",
         name: "Sophia Davis",
         description: "These mangoes are like a burst of sunshine in every bite. I can't get enough of them!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "23",
         name: "Liam Wilson",
         description: "I've tried mangoes from all over, but these are the cream of the crop. Simply delicious!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "23",
         name: "Olivia Brown",
         description: "The texture of these mangoes is just perfect – soft and succulent. A tropical delight!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "23",
         name: "Noah Martinez",
         description: "These mangoes take me back to my childhood summers. They're a taste of nostalgia!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "23",
         name: "Ava Garcia",
         description: "The aroma of these mangoes alone is enough to make your mouth water. Truly exceptional!",
         rate: 5,
@@ -1377,18 +1981,72 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "24",
         name: "Oliver Smith",
         description:
           "These peaches are simply heavenly. Their aroma alone can transport you to a sunny orchard on a warm summer day. Their juiciness is unparalleled, and their sweetness is just the right balance, making them ideal for snacking or incorporating into your favorite desserts. Whether you're enjoying them on a lazy afternoon or using them to whip up a peach pie, these peaches are a true treat.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "24",
         name: "Ava Johnson",
         description:
           "I've never tasted peaches this good before! They're like nature's candy. Their flesh is incredibly soft and succulent, and the flavor is an explosion of sweet and tangy goodness. I can't get enough of them, and they make the most scrumptious peach smoothies. These peaches are a delightful addition to my summer routine, and I highly recommend them to anyone seeking a taste of pure bliss.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "24",
+        name: "Noah Davis",
+        description:
+          "White peaches are a revelation! They're like a breath of fresh air in the world of fruit. The mild, delicate sweetness is perfect for those who prefer a subtler fruit flavor. These peaches are incredibly refreshing, especially when chilled. Savoring a slice on a hot day feels like a mini vacation. They're also fantastic for making unique cocktails, adding a touch of sophistication to your evening. I'm thoroughly impressed!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "24",
+        name: "Oliver Smith",
+        description:
+          "These peaches are simply heavenly. Their aroma alone can transport you to a sunny orchard on a warm summer day. Their juiciness is unparalleled, and their sweetness is just the right balance, making them ideal for snacking or incorporating into your favorite desserts. Whether you're enjoying them on a lazy afternoon or using them to whip up a peach pie, these peaches are a true treat.",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "24",
+        name: "Ava Johnson",
+        description:
+          "I've never tasted peaches this good before! They're like nature's candy. Their flesh is incredibly soft and succulent, and the flavor is an explosion of sweet and tangy goodness. I can't get enough of them, and they make the most scrumptious peach smoothies. These peaches are a delightful addition to my summer routine, and I highly recommend them to anyone seeking a taste of pure bliss.",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "24",
+        name: "Noah Davis",
+        description:
+          "White peaches are a revelation! They're like a breath of fresh air in the world of fruit. The mild, delicate sweetness is perfect for those who prefer a subtler fruit flavor. These peaches are incredibly refreshing, especially when chilled. Savoring a slice on a hot day feels like a mini vacation. They're also fantastic for making unique cocktails, adding a touch of sophistication to your evening. I'm thoroughly impressed!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "24",
+        name: "Oliver Smith",
+        description:
+          "These peaches are simply heavenly. Their aroma alone can transport you to a sunny orchard on a warm summer day. Their juiciness is unparalleled, and their sweetness is just the right balance, making them ideal for snacking or incorporating into your favorite desserts. Whether you're enjoying them on a lazy afternoon or using them to whip up a peach pie, these peaches are a true treat.",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "24",
+        name: "Ava Johnson",
+        description:
+          "I've never tasted peaches this good before! They're like nature's candy. Their flesh is incredibly soft and succulent, and the flavor is an explosion of sweet and tangy goodness. I can't get enough of them, and they make the most scrumptious peach smoothies. These peaches are a delightful addition to my summer routine, and I highly recommend them to anyone seeking a taste of pure bliss.",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "24",
         name: "Noah Davis",
         description:
           "White peaches are a revelation! They're like a breath of fresh air in the world of fruit. The mild, delicate sweetness is perfect for those who prefer a subtler fruit flavor. These peaches are incredibly refreshing, especially when chilled. Savoring a slice on a hot day feels like a mini vacation. They're also fantastic for making unique cocktails, adding a touch of sophistication to your evening. I'm thoroughly impressed!",
@@ -1422,64 +2080,86 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "25",
         name: "Olivia Davis",
         description: "Broccoli is a must-have in my salads, and these are always fresh!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "25",
         name: "Noah Johnson",
         description: "I enjoy the taste of these broccoli. They make my meals healthier.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "25",
         name: "Emma Smith",
         description:
           "Broccoli is a staple in my diet, and these broccoli florets are top-notch. They add a delightful crunch to my stir-fries!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "25",
         name: "Liam Wilson",
         description:
           "These broccoli florets are a game-changer for me. They're packed with nutrients and make my veggie platters irresistible.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "25",
         name: "Ava Brown",
         description:
           "I'm not a huge fan of vegetables, but these broccoli florets are surprisingly delicious. They're a guilt-free snack option for me.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "25",
         name: "William Lee",
         description:
           "I've tried many broccoli brands, but these are consistently fresh and flavorful. They're a must for my weekly meal prep.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "25",
         name: "Sophia White",
         description:
           "Broccoli is an essential part of my family's diet, and these florets never disappoint. They're a hit with both kids and adults.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "25",
         name: "James Taylor",
         description:
           "These broccoli florets are my go-to choice for adding a healthy twist to pasta dishes. They're a versatile and tasty addition to any meal.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "25",
         name: "Oliver Anderson",
         description:
           "I've been trying to eat healthier, and these broccoli florets make it easy. They're convenient and delicious, perfect for snacking.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "25",
         name: "Evelyn Martinez",
         description:
           "These broccoli florets are a lifesaver when it comes to getting my kids to eat their veggies. They love the taste and texture!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "25",
         name: "Benjamin Lewis",
         description:
           "I'm not a fan of bland veggies, but these broccoli florets are anything but bland. They add a burst of flavor to my meals.",
@@ -1513,62 +2193,84 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "26",
         name: "Liam Wilson",
         description: "The Caprese salad is a burst of flavor in every bite. Love the mozzarella!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "26",
         name: "Ava Baker",
         description: "I'm a fan of the simple yet delicious Caprese salad. Perfect for a starter!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "26",
         name: "Ella Smith",
         description:
           "The Caprese salad is a delightful combination of fresh tomatoes, creamy mozzarella, and fragrant basil. A taste of summer!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "26",
         name: "Noah Davis",
         description: "Absolutely mouthwatering! The Caprese salad at this place is a culinary masterpiece. Highly recommend!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "26",
         name: "Olivia Johnson",
         description: "Freshness overload! This Caprese salad is like a garden on a plate. A must-try for salad enthusiasts!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "26",
         name: "William Brown",
         description:
           "I've had Caprese salads all over, but this one stands out. The ingredients are top-notch, and it's beautifully presented.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "26",
         name: "Sophia Lee",
         description:
           "Simple yet sublime. The Caprese salad here is a classic that never disappoints. Great for a light and tasty appetizer!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "26",
         name: "James Johnson",
         description:
           "The Caprese salad is like a symphony of flavors. The tomatoes are so ripe, and the balsamic glaze adds the perfect touch.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "26",
         name: "Charlotte White",
         description:
           "As a vegetarian, I appreciate a good Caprese salad, and this one hits the mark. It's a heavenly medley of textures and tastes.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "26",
         name: "Mason Harris",
         description:
           "Fresh, flavorful, and fabulous! The Caprese salad here is a culinary delight. The quality of ingredients shines through.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "26",
         name: "Amelia Clark",
         description:
           "I'm not a big salad person, but the Caprese salad converted me. It's so good that I keep coming back for more!",
@@ -1602,76 +2304,102 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "27",
         name: "Mia Garcia",
         description: "Spinach is a must for my green smoothies, and these are perfect!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "27",
         name: "Ethan Clark",
         description: "I love the freshness of these spinach leaves. They're great for salads.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "27",
         name: "Olivia Smith",
         description:
           "These spinach leaves are a staple in my refrigerator. I use them for omelets, sandwiches, and even as a pizza topping. Versatile and always fresh!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "27",
         name: "Daniel Johnson",
         description:
           "I'm on a health kick, and these spinach leaves make my daily salads exciting. Crisp and full of flavor, they add that extra zing to my meals.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "27",
         name: "Sophia Brown",
         description:
           "Spinach is my go-to when I'm aiming for a nutrient-packed smoothie. These leaves blend effortlessly, making my mornings deliciously healthy.",
         rate: 3,
       },
       {
+        img: "",
+        productId: "27",
         name: "Aiden Wilson",
         description:
           "I'm not a huge fan of salads, but these spinach leaves have changed my mind. Their freshness and crunchiness make eating greens enjoyable.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "27",
         name: "Lily Davis",
         description:
           "As a fitness enthusiast, I demand top-quality ingredients for my meals. These spinach leaves never disappoint, adding a burst of green goodness to my dishes.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "27",
         name: "Jackson Lee",
         description:
           "I'm relatively new to incorporating spinach into my diet, and these leaves have made it easy. Freshness and taste combine to make them a winner.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "27",
         name: "Ava Turner",
         description:
           "My kids are usually picky eaters, but they don't even notice when I sneak these spinach leaves into their smoothies. A parent's secret weapon for nutrition!",
         rate: 1,
       },
       {
+        img: "",
+        productId: "27",
         name: "Noah White",
         description:
           "Spinach leaves are a crucial ingredient in my homemade lasagna. These leaves maintain their texture and flavor, elevating my Italian cooking game.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "27",
         name: "Emily Harris",
         description:
           "I'm a vegetarian, and these spinach leaves are my saviors. They're a vital component of my daily salads, adding the necessary crunch and nutrients.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "27",
         name: "Lucas Martin",
         description:
           "I've tried various brands of spinach leaves, but these are hands down the freshest and most flavorful. They've become a kitchen staple for me.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "27",
         name: "Zoe Rodriguez",
         description:
           "These spinach leaves are like a green miracle in a bag. They stay fresh for so long, and I use them for everything from wraps to stir-fries.",
@@ -1705,66 +2433,88 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "28",
         name: "Sarah Smith",
         description:
           "These onions are a staple in my kitchen. They bring a burst of flavor to my salads and stir-fries. Always crisp and delicious!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "28",
         name: "Michael Johnson",
         description:
           "I'm a professional chef, and I trust these onions for their consistent quality. They elevate my culinary creations to the next level.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "28",
         name: "Olivia Davis",
         description:
           "As a health-conscious cook, I appreciate the nutritional value of these onions. They're low in calories and high in flavor, making them perfect for my dishes.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "28",
         name: "Liam White",
         description:
           "Onions from this supplier are a game-changer. They're so versatile, whether I'm caramelizing them for French onion soup or using them raw in salads.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "28",
         name: "Emma Brown",
         description:
           "These onions have a lovely, sweet undertone that enhances the taste of my homemade salsas. They're a must-have in my kitchen pantry.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "28",
         name: "Noah Garcia",
         description:
           "I'm a BBQ enthusiast, and these onions are the perfect addition to my grilled dishes. They bring out that smoky, savory goodness.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "28",
         name: "Ava Martinez",
         description:
           "I'm impressed with the quality and freshness of these onions. They're easy to chop, and their aroma fills my kitchen with a wonderful scent.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "28",
         name: "William Anderson",
         description:
           "These onions are a lifesaver for busy weeknight dinners. They save me precious prep time without compromising on flavor. Highly recommend!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "28",
         name: "Sophia Wilson",
         description:
           "The consistency of these onions is remarkable. I can count on them to add a burst of flavor and a satisfying crunch to my salads.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "28",
         name: "Mason Taylor",
         description:
           "I love experimenting with different cuisines, and these onions are my go-to ingredient. They work beautifully in everything from Thai curries to Mexican tacos.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "28",
         name: "Grace Hall",
         description:
           "I'm a novice cook, but these onions make me feel like a pro. They're easy to work with and instantly upgrade the taste of my dishes.",
@@ -1798,66 +2548,88 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "29",
         name: "Olivia Smith",
         description:
           "These onions are the secret ingredient in my grandma's famous spaghetti sauce recipe. Their crisp texture and intense flavor elevate the dish to a whole new level. I wouldn't dream of using any other onions!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "29",
         name: "Liam Johnson",
         description:
           "I'm a chef, and I've used onions from all over the world. These onions are simply outstanding. Their consistent quality and natural sweetness add depth to my culinary creations that my customers adore.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "29",
         name: "Sophia Martinez",
         description:
           "As a vegetarian, onions are a staple in my kitchen. These onions are so fresh and crisp; they bring a burst of flavor to my salads and stir-fries. I'm always impressed by their quality.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "29",
         name: "Mason Davis",
         description:
           "I'm a home cook, and these onions make me feel like a pro. Whether caramelized for French onion soup or finely diced for a salsa, they never disappoint. I'm addicted to their aroma and taste!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "29",
         name: "Ava Wilson",
         description:
           "These onions are a game-changer for my Indian curry recipes. Their pungent aroma and bold flavor infuse the dishes with authenticity. I'm grateful for the consistent freshness they offer.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "29",
         name: "Noah Brown",
         description:
           "I'm a fan of grilling, and these onions are my go-to for kebabs and burgers. Their natural sweetness caramelizes beautifully, creating a mouthwatering char that's impossible to resist. A barbecue essential!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "29",
         name: "Emma Lee",
         description:
           "I use onions in my daily omelets, and these are a breakfast delight. They sauté to perfection, adding a burst of flavor to my morning routine. They've become an indispensable part of my kitchen.",
         rate: 4,
       },
       {
+        img: "",
+        productId: "29",
         name: "William Clark",
         description:
           "I've been a loyal customer for years. These onions are consistently top-notch. Their crispness and flavor are unmatched, making them a must-have in my weekly grocery list.",
         rate: 5,
       },
       {
+        img: "",
+        productId: "29",
         name: "Charlotte White",
         description:
           "These onions are my go-to for homemade pickles. Their crunch and mild flavor are perfect for preserving that classic, tangy taste. My pickles have become a family favorite thanks to these onions!",
         rate: 4,
       },
       {
+        img: "",
+        productId: "29",
         name: "Henry Turner",
         description:
           "I'm a soup enthusiast, and these onions are my go-to for French onion soup. Their rich flavor and caramelization bring depth to the broth that's simply heavenly. A culinary gem!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "29",
         name: "Avery Garcia",
         description:
           "I love experimenting with international cuisine, and these onions are a versatile addition to my kitchen. From Mexican salsas to Thai curries, they never fail to enhance the authenticity and taste of my dishes.",
@@ -1891,18 +2663,70 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "30",
         name: "Lily Wilson",
         description: "These mixed berries are a burst of fruity goodness. Great for making smoothie bowls!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "30",
+        name: "Lily Wilson",
+        description: "These mixed berries are a burst of fruity goodness. Great for making smoothie bowls!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "30",
+        name: "Oliver Parker",
+        description: "I prefer the organic berries. They taste so fresh and wholesome!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "30",
+        name: "Lily Wilson",
+        description: "These mixed berries are a burst of fruity goodness. Great for making smoothie bowls!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "30",
+        name: "Lily Wilson",
+        description: "These mixed berries are a burst of fruity goodness. Great for making smoothie bowls!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "30",
+        name: "Oliver Parker",
+        description: "I prefer the organic berries. They taste so fresh and wholesome!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "30",
+        name: "Lily Wilson",
+        description: "These mixed berries are a burst of fruity goodness. Great for making smoothie bowls!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "30",
+        name: "Lily Wilson",
+        description: "These mixed berries are a burst of fruity goodness. Great for making smoothie bowls!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "30",
         name: "Oliver Parker",
         description: "I prefer the organic berries. They taste so fresh and wholesome!",
         rate: 4,
       },
     ],
   },
-
   {
     id: "31",
     title: "Sweet Grapes",
@@ -1929,11 +2753,64 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "31",
         name: "Ava Wilson",
         description: "These grapes are incredibly sweet and make for a healthy snack!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "31",
+        name: "Ava Wilson",
+        description: "These grapes are incredibly sweet and make for a healthy snack!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "31",
+        name: "Noah Parker",
+        description: "I love the variety of grapes available. They're all so delicious!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "31",
+        name: "Ava Wilson",
+        description: "These grapes are incredibly sweet and make for a healthy snack!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "31",
+        name: "Ava Wilson",
+        description: "These grapes are incredibly sweet and make for a healthy snack!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "31",
+        name: "Noah Parker",
+        description: "I love the variety of grapes available. They're all so delicious!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "31",
+        name: "Ava Wilson",
+        description: "These grapes are incredibly sweet and make for a healthy snack!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "31",
+        name: "Ava Wilson",
+        description: "These grapes are incredibly sweet and make for a healthy snack!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "31",
         name: "Noah Parker",
         description: "I love the variety of grapes available. They're all so delicious!",
         rate: 4,
@@ -1966,11 +2843,85 @@ const FAKE_DATA: ProductType[] = [
     ],
     comments: [
       {
+        img: "",
+        productId: "32",
         name: "Sarah Johnson",
         description: "The berry flavor is so intense and delicious. I can't get enough of it!",
         rate: 5,
       },
       {
+        img: "",
+        productId: "32",
+        name: "Sarah Johnson",
+        description: "The berry flavor is so intense and delicious. I can't get enough of it!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "32",
+        name: "Michael Brown",
+        description: "This juice is a great way to start my day. It's packed with antioxidants!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "32",
+        name: "Sarah Johnson",
+        description: "The berry flavor is so intense and delicious. I can't get enough of it!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "32",
+        name: "Sarah Johnson",
+        description: "The berry flavor is so intense and delicious. I can't get enough of it!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "32",
+        name: "Michael Brown",
+        description: "This juice is a great way to start my day. It's packed with antioxidants!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "32",
+        name: "Sarah Johnson",
+        description: "The berry flavor is so intense and delicious. I can't get enough of it!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "32",
+        name: "Sarah Johnson",
+        description: "The berry flavor is so intense and delicious. I can't get enough of it!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "32",
+        name: "Michael Brown",
+        description: "This juice is a great way to start my day. It's packed with antioxidants!",
+        rate: 4,
+      },
+      {
+        img: "",
+        productId: "32",
+        name: "Sarah Johnson",
+        description: "The berry flavor is so intense and delicious. I can't get enough of it!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "32",
+        name: "Sarah Johnson",
+        description: "The berry flavor is so intense and delicious. I can't get enough of it!",
+        rate: 5,
+      },
+      {
+        img: "",
+        productId: "32",
         name: "Michael Brown",
         description: "This juice is a great way to start my day. It's packed with antioxidants!",
         rate: 4,
@@ -1982,6 +2933,7 @@ const FAKE_DATA: ProductType[] = [
 export const FAKE_COMMENT: CommentType[] = [
   {
     name: "Noah White",
+    img: "https://fakeperson-face.oss-us-west-1.aliyuncs.com/Face/male/male20151086216864654.jpg",
     description:
       "Green Love has become my trusted companion, a quick pick-me-up that never fails to impress. Highly recommended!",
     rate: 3,
@@ -1991,11 +2943,13 @@ export const FAKE_COMMENT: CommentType[] = [
     name: "Mia Garcia",
     description: "The Cobb salad is a full meal in itself. So many flavors and textures!",
     rate: 5,
+    img: "https://fakeperson-face.oss-us-west-1.aliyuncs.com/Face/female/female20161024840638031.jpg",
     productId: "2",
   },
   {
     name: "Lily Brown",
     description: "These potatoes make the creamiest mashed potatoes ever!",
+    img: "https://fakeperson-face.oss-us-west-1.aliyuncs.com/Face/female/female20151024320884369.jpg",
     rate: 4,
     productId: "4",
   },
@@ -2004,24 +2958,28 @@ export const FAKE_COMMENT: CommentType[] = [
     description:
       "I've been buying these bell peppers for weeks, and they've become a family favorite. Their vibrant colors brighten up our dinner table, and the kids love them as a healthy snack. They're the perfect addition to our weekly grocery list.",
     rate: 2,
+    img: "https://fakeperson-face.oss-us-west-1.aliyuncs.com/Face/male/male1084388444824.jpg",
     productId: "5",
   },
   {
     name: "Noah Johnson",
     description: "I love the combination of flavors in this Greek salad. Always a hit!",
     rate: 4,
+    img: "https://fakeperson-face.oss-us-west-1.aliyuncs.com/Face/male/male1085461240021.jpg",
     productId: "6",
   },
   {
     name: "Sophie Rodriguez",
     description: "Zucchini noodles are a game-changer for my low-carb diet. These make my pasta cravings disappear!",
     rate: 5,
+    img: "https://fakeperson-face.oss-us-west-1.aliyuncs.com/Face/female/female1022914520416.jpg",
     productId: "7",
   },
   {
     name: "Ava Wilson",
     description: "Kiwis have always been my favorite, but these golden ones take it to a whole new level. Absolutely delicious!",
     rate: 5,
+    img: "https://fakeperson-face.oss-us-west-1.aliyuncs.com/Face/female/female20161025670819488.jpg",
     productId: "11",
   },
 ]

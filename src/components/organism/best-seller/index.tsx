@@ -1,9 +1,10 @@
+"use client"
 import React from "react"
 import Link from "next/link"
 import Stack from "@atom/stack"
 import { STORE } from "routes"
 import Typography from "@atom/typography"
-import { ArrowRightIcon } from "@heroicons/react/24/solid"
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid"
 import BestSellerProductList from "@organism/best-seller/list"
 
 const BestSellerProduct = () => {
