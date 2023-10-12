@@ -9,7 +9,7 @@ const Head = () => {
   return (
     <>
       <Stack className="fixed top-0 left-0 right-0 justify-center border-b z-10 bg-white w-full md:shadow-lg">
-        <Stack className="md:hidden w-full ">
+        <Stack className="md:hidden w-full">
           <SearchProduct id='stor-search'/>
         </Stack>
 
