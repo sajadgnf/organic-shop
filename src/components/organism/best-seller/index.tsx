@@ -13,7 +13,7 @@ const BestSellerProduct = () => {
     <HorizontalList ref={bestSellerListRef} title="Our Best Seller Product" href={STORE}>
       <Stack
         ref={bestSellerListRef}
-        className="w-full overflow-auto space-x-5 justify-start px-1 pb-1 hide-scrollbar"
+        className="w-full overflow-auto space-x-5 justify-start pb-1 hide-scrollbar"
         key="specialList"
       >
         {FAKE_DATA.slice(16, 26).map((data, i) => (
