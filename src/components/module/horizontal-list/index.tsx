@@ -13,6 +13,7 @@ interface HorizontalListProps {
 }
 
 const HorizontalList = forwardRef<HTMLDivElement, HorizontalListProps>(({ children, title, href }, ref: any) => {
+  HorizontalList.displayName ='HorizontalList'
   const scrollStep = 5
   let animationId: number | null = null
 

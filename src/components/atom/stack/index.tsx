@@ -20,6 +20,7 @@ const tagMap = {
 
 const Stack = forwardRef<HTMLAttributes<HTMLDivElement>, PropsType & HTMLAttributes<HTMLDivElement>>(
   (props, ref?: ForwardedRef<HTMLAttributes<HTMLDivElement>>) => {
+    Stack.displayName = "stack"
     const { id, style, children, className = "", variant = "div", ...rest } = props
 
     const Tag: any = tagMap[variant] || "div"
