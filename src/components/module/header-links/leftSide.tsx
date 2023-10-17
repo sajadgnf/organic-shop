@@ -6,7 +6,6 @@ import Image from "next/image"
 import Stack from "@atom/stack"
 
 const LeftSide = () => {
-
   return (
     <Stack className="justify-between sm:space-x-10 w-full md:w-auto">
       <Stack className="space-x-3 sm:space-x-0">
@@ -15,7 +14,7 @@ const LeftSide = () => {
             src="/images/logo.svg"
             alt="organic shop logo"
             width={100}
-            height={150}
+            height={43}
             className="sm:w-[120px] md:w-[180px] lg:w-[220px] mt-2 lg:mt-0"
           />
         </Link>
