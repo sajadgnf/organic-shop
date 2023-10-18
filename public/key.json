@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "organic-shop-402408",
+  "private_key_id": "5a7e9ed8efea825333af060e69d8a8c7a9104927",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDpbn28WbeJ8Qzr\nWgEsvC4mgd/zN+cIGITgAm+VDuTjlQ/ugBnNnFp1ZEQcGhUP/J4SSvr0ES7Jhki0\n2CphM7uJW64XxHOeXfHv2Ib8mm6S7pFOJhsigHnuNDwD71c8MNGFMUsxBCBYId/0\nB1GkELNOGG3TruU/zpCLIcjy546f1EzaP5fwl1Uvyv/zciXFf9V8dJ98KPFW/lXa\nDkVE7g7bb7beVceJhjiuQPDXC6v3iKg8R5UQCfM6Q9uuTImkMm7K9SQg2LVYhp3l\njUptnivRgy8vhGJiBVJgKiS0qE7ABeeKX44fNQGQMQNcY+QeWYFydMX4Et1murWS\nqU2jNfXPAgMBAAECggEAY/QufdzS1Qu1Mv/Wue+YOV/qY8x/rn1FRGB2pBZ9FyBI\ncqFCq0K0j0jQS1I1y6Mpkn6tx52l8aAA+QMI3pdWycHKoZ26vkjO5JtMbdS43Uyv\nRo3Vl6f4zfFq82pkab8jsEtDvajdKq/SpD0QDdci2CFowbhFrNVIGnNshup1LWVa\n5R+zo+m/ax2lRHtuYIbRnFjy1BCyPebT4Vpp/mSI+U06bwC5jbvcWse9VnJjm1SX\niXB0NgVcfw6er7CZErdjuDwm7e4bM8oJ6JDR7jnsYHkbhzoBgTy4JyP87OIwJM5V\npoapK8d6LT1TNxmcKLa7nYRvK78HBxAhQpmnZATcDQKBgQD4JiLtpTPfyrhqvMc0\n+Y759cBKSRbwQ/CHXENAiK7c4I3VEsSXb+09pOFJP+qnnpz+beENyDrflmc/l3HY\n+M0PNOnVWMx9/z20N0yM2oy/wYMTo3/qcMvDU37wXQhF/Q3uk+qBk+KYT/L2noDE\niqD2e09ZmcEFCbO/UOATzNNSCwKBgQDw0ScNpq2nQnYVPfWYiEcLrFa3VtNidMcs\nUbOLDC61IYvTzuw62L8dy+2ggB62i01ieiiuXbYajkEKpq1KJLwQpeVK9VcwLxrR\n0eDzJoVU40OLrqHoMBOn5C1i7EQaHyt+AHwMeMdy1jKrfM3qblVUATG0fT4/X69Z\n4t4FTvypzQKBgQCg3mhKU4zbidogKB2kdByCYxSzk8pxHDo0JlXa4kEqI9EOzsnv\nurm7+sWp7Ou8mpEASE9b1fCEvkZU7WL62+Bj+VOV4alADVX9HNRdg9k2/sZw1s+4\nNkOCbwCd5lHUvYZooi+mrS56u2mxA3RK9ev/nlUEqy58i5uhbVa2v1RHnQKBgQDk\nal4SkrBP37hFObnD7i8FIXg2+kISNxXcMbqM/wcmgyUvyCtFPeU5C/7ep+d52fOS\nnrALg5OA6MFEqwffNay0VcaBLOiAKY3UyrAFsdnxxIaC7SdhJojeTI3IMLX/2OTV\n5PvEkKMNh6IUCpL98503ytIskkcCsW2PYqKYgm0hWQKBgFV23Ra+OMrhgzYj/MIf\nrXS7PE4J25QBSxa9BHJvukN2IrSiEfo7y7B6gIUwe6qV/LGAtneNC5hMef16t9y9\nDKLczGztu6gYFoHdzIil8zxiP2zK1GaynlEOkEwJfTU/iQHfzac9PuY2CqSpOFlu\nktY+2LGNdg5pKQyG9ud7YYsi\n-----END PRIVATE KEY-----\n",
+  "client_email": "speech-to-text@organic-shop-402408.iam.gserviceaccount.com",
+  "client_id": "112361445357639672655",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/speech-to-text%40organic-shop-402408.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

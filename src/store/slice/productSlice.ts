@@ -63,18 +63,20 @@ const productSlice = createSlice({
     searchProduct: (state, action) => {
       state.clearFilters = false
 
-      const searchWords = action.payload?.toLowerCase().split(" ")
+      const searchWords = action.payload?.toLowerCase().replace(/\s+/g, "").split("")
+      
       const searchedProduct = FAKE_DATA.filter((product) =>
         searchWords.some((word: string) => product.title.toLowerCase().includes(word))
       )
-      
+
       state.searchedProducts = !!action.payload ? searchedProduct : []
     },
 
     filterBySearch: (state, action) => {
       state.clearFilters = true
 
-      const searchWords = action.payload?.toLowerCase().split("")
+      const searchWords = action.payload?.toLowerCase().replace(/\s+/g, "").split("")
+
       const searchedProduct = FAKE_DATA.filter((product) =>
         searchWords.some((word: string) => product.title.toLowerCase().includes(word))
       )

@@ -15,7 +15,7 @@ const SpecialOffer = () => {
         className="w-full overflow-auto space-x-5 justify-start pb-1 hide-scrollbar"
         key="specialList"
       >
-        {FAKE_DATA.slice(6, 16).map((data, i) => (
+        {FAKE_DATA.slice(10, 20).map((data, i) => (
           <Card key={data.id} data={data} href={PRODUCTDETAILS(data.id)} />
         ))}
       </Stack>

@@ -1,0 +1,33 @@
+{
+  "name": "Organic Shop",
+  "short_name": "OrganicShop",
+  "description": "A Shop for fresh fruits, juices, salads and vegetables",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FDBD43",
+  "icons": [
+    {
+      "src": "/images/pwa-logo.svg",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/pwa-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/pwa-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/pwa-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

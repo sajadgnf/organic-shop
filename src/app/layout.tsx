@@ -1,6 +1,4 @@
 import "./globals.css"
-import Footer from "@module/footer"
-import Head from "@module/header-links"
 import ReduxProvider from "./reduxProvider"
 import { Inika, Roboto } from "next/font/google"
 import ToastContainer from "../components/atom/toast"
@@ -19,6 +17,8 @@ const roboto = Roboto({
 
 export const metadata = {
   title: "Organic shop",
+  themeColor: "#FDBD43",
+  manifest: "/manifest.json",
   description: "organic shop for anyone how is looking for fresh fruits and juices ",
 }
 
@@ -28,9 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`body relative min-h-screen ${inika.variable} ${roboto.variable}`}>
         <ReduxProvider>
           <ToastContainer />
-          <Head />
           {children}
-          <Footer />
         </ReduxProvider>
       </body>
     </html>
