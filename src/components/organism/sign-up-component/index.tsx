@@ -6,7 +6,7 @@ import Stack from "@atom/stack"
 import Button from "@atom/button"
 import Typography from "@atom/typography"
 import React, { ChangeEvent, FormEvent, useState } from "react"
-import { PRIVACY, SIGNIN, SIGNUP, SMSVERIFICATION } from "routes"
+import { HOME, PRIVACY, SIGNIN, SIGNUP, SMSVERIFICATION } from "routes"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
 const SignUpComponent = () => {
@@ -30,7 +30,9 @@ const SignUpComponent = () => {
 
   return (
     <Stack className="mt-20 sm:mt-32 flex-col space-y-4">
-      <Image src="images/logo.svg" alt="organic shop logo" width={200} height={100} />
+      <Link href={HOME} className="m-auto">
+        <Image src="images/logo.svg" alt="organic shop logo" width={200} height={100} />
+      </Link>
 
       <Stack
         variant="form"

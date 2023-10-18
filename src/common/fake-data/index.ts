@@ -3002,4 +3002,5 @@ export const FAKE_CATEGORY: CategoryType[] = [
     img: "/images/category/salad.svg",
   },
 ]
+
 export default FAKE_DATA

@@ -1,11 +1,13 @@
 import Stack from "@atom/stack"
 import Typography from "@atom/typography"
+import { MicrophoneIcon } from "@heroicons/react/24/solid"
 import React, { ForwardedRef, InputHTMLAttributes, ReactElement, ReactNode, forwardRef } from "react"
 
 type PropsType = {
   name?: string
   rows?: number
   label?: string
+  voice?: boolean
   className?: string
   multiLine?: boolean
   containerClassName?: string
@@ -44,6 +46,7 @@ const Input = forwardRef<
     type = "text",
     rows,
     label,
+    voice,
     endIcon,
     multiLine,
     startIcon,
@@ -84,6 +87,7 @@ const Input = forwardRef<
               ref={ref as React.RefObject<HTMLInputElement>}
               {...rest}
             />
+            {voice && <MicrophoneIcon />}
             {endIcon && <Stack>{endIcon}</Stack>}
           </>
         )}
