@@ -5,7 +5,7 @@ const withPWA = require("next-pwa")({
 /** @type {import('next').NextConfig} */
 
 const nextConfig = withPWA({
-  images: { domains: ["fakeperson-face.oss-us-west-1.aliyuncs.com"] },
+  images: { domains: ["img-bucket.s3.ir-thr-at1.arvanstorage.ir", "fakeperson-face.oss-us-west-1.aliyuncs.com"] },
   experimental: {
     appDir: true,
   },

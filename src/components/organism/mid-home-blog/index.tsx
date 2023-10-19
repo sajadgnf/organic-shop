@@ -5,14 +5,16 @@ import OrderButton from "./order-button"
 import Typography from "@atom/typography"
 
 const MidHomeBlog = () => {
+  const base_url = process.env.BASE_URL
+
   return (
     <Stack className=" w-full">
       <Stack className="container bg-white xmd:bg-inherit justify-between p-10 space-x-3 xmd:p-18">
         <Image
-          src="/images/juices.svg"
+          src={`${base_url}/juices.svg`}
           width={555}
-          height={810}
-          className="hidden xmd:inline max-h-[560px] w-[400px] lg:w-[555px] rounded-3xl"
+          height={710}
+          className="hidden xmd:inline max-h-[810px] w-[400px] lg:w-[555px] rounded-3xl"
           alt="fruit-salad"
         />
 
@@ -26,10 +28,10 @@ const MidHomeBlog = () => {
             sourcing
           </Typography>
           <Image
-            src="/images/juices.svg"
-            width={763}
-            height={810}
-            className="xmd:hidden inline max-h-[260px] rounded-3xl"
+            src={`${base_url}/juices.svg`}
+            width={263}
+            height={210}
+            className="xmd:hidden inline max-h-[460px] rounded-3xl"
             alt="fruit-salad"
           />
           <OrderButton />

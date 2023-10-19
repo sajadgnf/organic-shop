@@ -5,6 +5,8 @@ import OrderButton from "./order-button"
 import Typography from "@atom/typography"
 
 const BottomHomeBlog = () => {
+  const base_url = process.env.BASE_URL
+  
   return (
     <Stack className=" bg-primary-light w-full">
       <Stack className="container justify-between p-10 xmd:p-18">
@@ -21,7 +23,7 @@ const BottomHomeBlog = () => {
               dedicated to promoting environmentally responsible practices throughout our supply chain.
             </Typography>
             <Image
-              src="/images/farmer.svg"
+              src={`${base_url}/farmer.svg`}
               width={1093}
               height={810}
               className="xmd:hidden inline max-h-[760px] rounded-3xl"
@@ -32,8 +34,8 @@ const BottomHomeBlog = () => {
         </Stack>
 
         <Image
-          src="/images/farmer.svg"
-          width={555}
+          src={`${base_url}/farmer.svg`}
+          width={500}
           height={510}
           className="hidden xmd:inline max-h-[500px] rounded-3xl"
           alt="fruit-salad"
