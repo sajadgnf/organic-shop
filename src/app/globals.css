@@ -49,13 +49,13 @@ body {
   opacity: 1;
 }
 
-.number-input {
+input {
   -webkit-appearance: none;
   -moz-appearance: textfield;
 }
 
-.number-input::-webkit-inner-spin-button,
-.number-input::-webkit-outer-spin-button {
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -84,8 +84,8 @@ body {
 
 @media (max-width: 980px) {
   .slider-arrow {
-  opacity: 1;
-}
+    opacity: 1;
+  }
 }
 
 ::-webkit-scrollbar {

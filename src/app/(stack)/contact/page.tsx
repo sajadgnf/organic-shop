@@ -7,6 +7,7 @@ import Typography from "@atom/typography"
 import React, { ChangeEvent, useState } from "react"
 
 const Contact = () => {
+  const base_url = process.env.BASE_URL
   const [info, setInfo] = useState({
     name: "",
     email: "",
@@ -39,17 +40,17 @@ const Contact = () => {
         </Button>
       </Stack>
 
-      <hr className="w-full lg:hidden"/>
+      <hr className="w-full lg:hidden" />
 
       <Stack className="flex-col items-start space-y-8">
         <Typography variant="h5">Phone: 09120000000</Typography>
         <Typography variant="h5">Email: organic@example.com</Typography>
 
         <Stack className="space-x-4 [&>img]:cursor-pointer">
-          <Image src="/images/telegram.svg" alt="telegram icon" width={40} height={40} />
-          <Image src="/images/twitter.svg" alt="telegram icon" width={40} height={40} />
-          <Image src="/images/instagram.svg" alt="telegram icon" width={40} height={40} />
-          <Image src="/images/email.svg" alt="telegram icon" width={40} height={40} />
+          <Image src={`${base_url}/telegram.svg`} alt="telegram icon" width={40} height={40} />
+          <Image src={`${base_url}/twitter.svg`} alt="telegram icon" width={40} height={40} />
+          <Image src={`${base_url}/instagram.svg`} alt="telegram icon" width={40} height={40} />
+          <Image src={`${base_url}/email.svg`} alt="telegram icon" width={40} height={40} />
         </Stack>
       </Stack>
     </Stack>

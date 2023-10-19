@@ -8,7 +8,8 @@ import HomeComments from "@organism/home-comments"
 import BestSellerProduct from "@organism/best-seller"
 import BottomHomeBlog from "@organism/bottom-home-blog"
 
-const slides = ["/images/slider/slide1.svg", "/images/slider/slide2.svg", "/images/slider/slide3.svg"]
+const base_url = process.env.BASE_URL
+const slides = [`${base_url}/slide1.svg`, `${base_url}/slide2.svg`, `${base_url}/slide3.svg`]
 
 function Home() {
   return (
