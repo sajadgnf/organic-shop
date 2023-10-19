@@ -19,7 +19,7 @@ const Profile = () => {
   if (!phoneNumber) return router.push(SIGNIN)
 
   return (
-    <Stack className="container mt-24 items-end md:mt-16 flex-col">
+    <Stack className="container mt-24 mx-auto items-end md:mt-16 flex-col">
       <Button
         onClick={() => dispatch(logout())}
         variant="outlined"

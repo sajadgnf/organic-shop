@@ -28,7 +28,7 @@ export type CategoryType = {
   img: string
 }
 
-const base_url = "https://img-bucket.s3.ir-thr-at1.arvanstorage.ir"
+const base_url = process.env.BASE_URL
 
 const FAKE_DATA: ProductType[] = [
   {
