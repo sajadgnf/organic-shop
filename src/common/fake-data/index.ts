@@ -2935,7 +2935,7 @@ const FAKE_DATA: ProductType[] = [
 export const FAKE_COMMENT: CommentType[] = [
   {
     name: "Noah White",
-    img: `${base_url}/noah-white.jpg`,
+    img: "https://fakeperson-face.oss-us-west-1.aliyuncs.com/Face/male/male20151086216864654.jpg",
     description:
       "Green Love has become my trusted companion, a quick pick-me-up that never fails to impress. Highly recommended!",
     rate: 3,
@@ -2945,13 +2945,13 @@ export const FAKE_COMMENT: CommentType[] = [
     name: "Mia Garcia",
     description: "The Cobb salad is a full meal in itself. So many flavors and textures!",
     rate: 5,
-    img: `${base_url}/mia-garcia.jpg`,
+    img: "https://fakeperson-face.oss-us-west-1.aliyuncs.com/Face/female/female20161024840638031.jpg",
     productId: "2",
   },
   {
     name: "Lily Brown",
     description: "These potatoes make the creamiest mashed potatoes ever!",
-    img: `${base_url}/lily-brown.jpg`,
+    img: "https://fakeperson-face.oss-us-west-1.aliyuncs.com/Face/female/female20151024320884369.jpg",
     rate: 4,
     productId: "4",
   },
@@ -2960,28 +2960,28 @@ export const FAKE_COMMENT: CommentType[] = [
     description:
       "I've been buying these bell peppers for weeks, and they've become a family favorite. Their vibrant colors brighten up our dinner table, and the kids love them as a healthy snack. They're the perfect addition to our weekly grocery list.",
     rate: 2,
-    img: `${base_url}/mason-green.jpg`,
+    img: "https://fakeperson-face.oss-us-west-1.aliyuncs.com/Face/male/male1084388444824.jpg",
     productId: "5",
   },
   {
     name: "Noah Johnson",
     description: "I love the combination of flavors in this Greek salad. Always a hit!",
     rate: 4,
-    img: `${base_url}/noah-johnson.jpg`,
+    img: "https://fakeperson-face.oss-us-west-1.aliyuncs.com/Face/male/male1085461240021.jpg",
     productId: "6",
   },
   {
     name: "Sophie Rodriguez",
     description: "Zucchini noodles are a game-changer for my low-carb diet. These make my pasta cravings disappear!",
     rate: 5,
-    img: `${base_url}/sophie-rodriguez.jpg`,
+    img: "https://fakeperson-face.oss-us-west-1.aliyuncs.com/Face/female/female1022914520416.jpg",
     productId: "7",
   },
   {
     name: "Ava Wilson",
     description: "Kiwis have always been my favorite, but these golden ones take it to a whole new level. Absolutely delicious!",
     rate: 5,
-    img: `${base_url}/ava-wilson.jpg`,
+    img: "https://fakeperson-face.oss-us-west-1.aliyuncs.com/Face/female/female20161025670819488.jpg",
     productId: "11",
   },
 ]
