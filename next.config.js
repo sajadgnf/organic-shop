@@ -7,9 +7,11 @@ const withPWA = require("next-pwa")({
 const nextConfig = withPWA({
   output: "standalone",
   env: {
-    BASE_URL: "https://img-bucket.s3.ir-thr-at1.arvanstorage.ir",
+    BASE_URL: "https://magical-dubinsky--tnfznmjs.storage.iran.liara.space",
   },
-  images: { domains: ["img-bucket.s3.ir-thr-at1.arvanstorage.ir", "fakeperson-face.oss-us-west-1.aliyuncs.com"] },
+  images: {
+    domains: ["magical-dubinsky--tnfznmjs.storage.iran.liara.space", "fakeperson-face.oss-us-west-1.aliyuncs.com"],
+  },
   experimental: {
     appDir: true,
   },

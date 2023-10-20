@@ -13,8 +13,8 @@ const MidHomeBlog = () => {
         <Image
           src={`${base_url}/juices.svg`}
           width={555}
-          height={710}
-          className="hidden xmd:inline max-h-[810px] w-[400px] lg:w-[555px] rounded-3xl"
+          height={410}
+          className="hidden xmd:inline max-h-[610px] w-[400px] lg:w-[555px] rounded-3xl"
           alt="fruit-salad"
         />
 
