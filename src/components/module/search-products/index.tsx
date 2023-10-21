@@ -3,14 +3,14 @@ import Input from "@atom/input"
 import Stack from "@atom/stack"
 import Dialog from "@module/dialog"
 import { RootState } from "@src/store"
-import { PRODUCTDETAILS, STORE } from "routes"
 import Typography from "@atom/typography"
+import { useRouter } from "next/navigation"
 import SearchCard from "@module/search-card"
+import { PRODUCTDETAILS, STORE } from "routes"
 import { useDispatch, useSelector } from "react-redux"
 import React, { ChangeEvent, useEffect, useRef, useState } from "react"
 import { filterBySearch, searchProduct } from "@src/store/slice/productSlice"
 import { ArrowLeftIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
-import { useRouter } from "next/navigation"
 
 const SearchProduct = ({ id }: { id: string }) => {
   const searchRef = useRef<HTMLInputElement | null>(null)
@@ -91,7 +91,7 @@ const SearchProduct = ({ id }: { id: string }) => {
         </Typography>
         <hr className="w-full" />
         {searchedProducts.map((item, i) => (
-          <SearchCard href={PRODUCTDETAILS(item.id)} item={item} key={item.title + item.img + i} />
+          <SearchCard href={PRODUCTDETAILS(item.id)} setOpen={setOpen} item={item} key={item.title + item.img + i} />
         ))}
       </Stack>
     </Dialog>

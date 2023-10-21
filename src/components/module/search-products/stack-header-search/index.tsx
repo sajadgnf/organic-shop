@@ -2,9 +2,10 @@
 import Input from "@atom/input"
 import Stack from "@atom/stack"
 import { RootState } from "@src/store"
-import { PRODUCTDETAILS } from "routes"
+import { useRouter } from "next/navigation"
 import Typography from "@atom/typography"
 import SearchCard from "@module/search-card"
+import { PRODUCTDETAILS, STORE } from "routes"
 import { useDispatch, useSelector } from "react-redux"
 import React, { ChangeEvent, useEffect, useRef, useState } from "react"
 import { filterBySearch, searchProduct } from "@src/store/slice/productSlice"
@@ -12,6 +13,7 @@ import { ArrowLeftIcon, MagnifyingGlassIcon } from "@heroicons/react/24/solid"
 
 const StackHeaderSearch = () => {
   const searchRef = useRef<HTMLInputElement | null>(null)
+  const router = useRouter()
   const dispatch = useDispatch()
   const [open, setOpen] = useState(false)
   const [search, setSearch] = useState("")
@@ -57,6 +59,7 @@ const StackHeaderSearch = () => {
           onClick={() => {
             dispatch(filterBySearch(search))
             setOpen(false)
+            router.push(STORE)
           }}
           className={`${!!search ? "cursor-pointer" : "pointer-events-none"} w-full`}
           variant="h6"
@@ -65,7 +68,7 @@ const StackHeaderSearch = () => {
         </Typography>
         <hr className="w-full" />
         {searchedProducts.map((item, i) => (
-          <SearchCard href={PRODUCTDETAILS(item.id)} item={item} key={item.title + item.img + i} />
+          <SearchCard href={PRODUCTDETAILS(item.id)} setOpen={setOpen} item={item} key={item.title + item.img + i} />
         ))}
       </Stack>
     </>
