@@ -49,25 +49,15 @@ body {
   opacity: 1;
 }
 
-input {
+input[type="number"] {
   -webkit-appearance: none;
   -moz-appearance: textfield;
 }
 
-input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.checkbox-input-tick {
-  stroke-dasharray: 400;
-  stroke-dashoffset: 400;
-  transition: 0.5s all;
-}
-
-.checkbox-input:checked + label svg g path {
-  stroke-dashoffset: 0;
 }
 
 .no-tap-highlight {

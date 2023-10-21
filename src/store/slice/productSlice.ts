@@ -34,13 +34,10 @@ const productSlice = createSlice({
         }
       }
 
-      let filteredItems = []
-      filteredItems = !state.filteredProducts ? FAKE_DATA : state.filteredProducts
-
       let products = []
       products = !state.availableProducts
-        ? filteredItems
-        : filteredItems.filter((product) => product.type.some((item) => item.stockOut === false))
+        ? FAKE_DATA
+        : FAKE_DATA.filter((product) => product.type.some((item) => item.stockOut === false))
 
       const filteredProducts =
         state.selectedCategories.length === 0

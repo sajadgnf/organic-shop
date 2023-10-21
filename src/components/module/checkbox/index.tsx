@@ -12,7 +12,7 @@ const Checkbox = ({ label, ...props }: PropsType & InputHTMLAttributes<HTMLInput
         id={label + num}
         name={label + num}
         type="checkbox"
-        className="checkbox-input cursor-pointer w-[30px] h-[30px]"
+        className=" cursor-pointer w-[30px] h-[30px]"
         {...props}
       />
       <Typography variant="label" className="w-full cursor-pointer" htmlFor={label + num}>
