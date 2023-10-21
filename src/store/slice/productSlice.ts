@@ -34,10 +34,13 @@ const productSlice = createSlice({
         }
       }
 
+      let filteredItems = []
+      filteredItems = !state.filteredProducts ? FAKE_DATA : state.filteredProducts
+
       let products = []
       products = !state.availableProducts
-        ? FAKE_DATA
-        : FAKE_DATA.filter((product) => product.type.some((item) => item.stockOut === false))
+        ? filteredItems
+        : filteredItems.filter((product) => product.type.some((item) => item.stockOut === false))
 
       const filteredProducts =
         state.selectedCategories.length === 0
@@ -64,7 +67,7 @@ const productSlice = createSlice({
       state.clearFilters = false
 
       const searchWords = action.payload?.toLowerCase().replace(/\s+/g, "").split("")
-      
+
       const searchedProduct = FAKE_DATA.filter((product) =>
         searchWords.some((word: string) => product.title.toLowerCase().includes(word))
       )
