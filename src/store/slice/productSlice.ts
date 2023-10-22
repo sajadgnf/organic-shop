@@ -64,7 +64,7 @@ const productSlice = createSlice({
       state.clearFilters = false
 
       const searchWords = action.payload?.toLowerCase().replace(/\s+/g, "").split("")
-      
+
       const searchedProduct = FAKE_DATA.filter((product) =>
         searchWords.some((word: string) => product.title.toLowerCase().includes(word))
       )

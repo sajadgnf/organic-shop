@@ -8,13 +8,14 @@ import { ProductType } from "@src/common/fake-data"
 type PropsType = {
   href: string
   item: ProductType
+  setOpen: (t: boolean) => void
 }
 
-const SearchCard = ({ item, href }: PropsType) => {
+const SearchCard = ({ item, href, setOpen }: PropsType) => {
   const { img, title, description } = item
 
   return (
-    <Link href={href}>
+    <Link href={href} onClick={() => setOpen(false)}>
       <Stack className="space-x-3 px-2 sm:px-6 py-2 sm:py-0 sm:pt-6">
         <Image src={img} width={50} height={201} alt={description || title} />
 

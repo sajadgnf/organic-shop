@@ -1,4 +1,5 @@
 import "./globals.css"
+import A2hsPopover from "@module/a2hs"
 import ReduxProvider from "./reduxProvider"
 import { Inika, Roboto } from "next/font/google"
 import ToastContainer from "../components/atom/toast"
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ReduxProvider>
           <ToastContainer />
           {children}
+          <A2hsPopover />
         </ReduxProvider>
       </body>
     </html>

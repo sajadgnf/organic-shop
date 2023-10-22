@@ -28,6 +28,7 @@ const TopHomeBlog = () => {
             height={810}
             className="xmd:hidden inline max-h-[780px] rounded-3xl"
             alt="fruit-salad"
+            unoptimized
           />
           <OrderButton />
         </Stack>
@@ -37,6 +38,7 @@ const TopHomeBlog = () => {
           height={810}
           className="hidden xmd:inline w-[400px] lg:w-[555px] max-h-[760px] rounded-3xl"
           alt="fruit-salad"
+          unoptimized
         />
       </Stack>
     </Stack>
