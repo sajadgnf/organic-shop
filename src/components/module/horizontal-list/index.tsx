@@ -9,11 +9,11 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid"
 interface HorizontalListProps {
   children: ReactElement | ReactNode
   title: string
-  href: string
+  href?: string
 }
 
 const HorizontalList = forwardRef<HTMLDivElement, HorizontalListProps>(({ children, title, href }, ref: any) => {
-  HorizontalList.displayName ='HorizontalList'
+  HorizontalList.displayName = "HorizontalList"
   const scrollStep = 5
   let animationId: number | null = null
 
@@ -45,18 +45,24 @@ const HorizontalList = forwardRef<HTMLDivElement, HorizontalListProps>(({ childr
 
   return (
     <Stack className="w-full flex-col space-y-4 md:space-y-10">
-      <Link href={`${href}?filter=special-offer`} className="w-full">
-        <Stack className="items-center justify-between">
-          <Typography variant="h5">{title}</Typography>
+      {href ? (
+        <Link href={href} className="w-full">
+          <Stack className="items-center justify-between">
+            <Typography variant="h5">{title}</Typography>
 
-          <Stack className="space-x-2">
-            <Typography variant="h6" className="text-primary-dark">
-              See all
-            </Typography>
-            <ArrowRightIcon data-testid="arrow-icon" className="text-primary-dark w-3 sm:w-6" />
+            <Stack className="space-x-2">
+              <Typography variant="h6" className="text-primary-dark">
+                See all
+              </Typography>
+              <ArrowRightIcon data-testid="arrow-icon" className="text-primary-dark w-3 sm:w-6" />
+            </Stack>
           </Stack>
+        </Link>
+      ) : (
+        <Stack className="justify-start w-full">
+          <Typography variant="h5">{title}</Typography>
         </Stack>
-      </Link>
+      )}
 
       <Stack className="w-full">
         <Button

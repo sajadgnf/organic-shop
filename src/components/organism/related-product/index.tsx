@@ -1,29 +1,24 @@
-import React from "react"
-import Link from "next/link"
 import Stack from "@atom/stack"
-import { STORE } from "routes"
-import Typography from "@atom/typography"
-import { ProductType } from "@src/common/fake-data"
-import { ArrowRightIcon } from "@heroicons/react/24/solid"
-import RelatedProductList from "@organism/related-product/list"
+import React, { useRef } from "react"
+import { PRODUCTDETAILS, STORE } from "routes"
+import HorizontalList from "@module/horizontal-list"
+import RelatedProductCard from "@module/related-product-card"
+import FAKE_DATA, { ProductType } from "@src/common/fake-data"
 
 const RelatedProduct = ({ currentItem }: { currentItem: ProductType }) => {
+  const relatedProductRef = useRef(null)
+
   return (
-    <Stack className="container w-full flex-col space-y-4">
-      <Link href={`${STORE}?category=${currentItem.category}`} className="w-full">
-        <Stack className="items-center justify-between">
-          <Typography variant="h5">Related Product</Typography>
-
-          <Stack className="xs:space-x-1 sm:space-x-2">
-            <Typography variant="h6" className="text-primary-dark">
-              See all
-            </Typography>
-            <ArrowRightIcon data-testid="arrow-icon" className="text-primary-dark w-3 sm:w-6" />
-          </Stack>
+    <Stack className="container">
+      <HorizontalList ref={relatedProductRef} title="Related Product" href={STORE}>
+        <Stack ref={relatedProductRef} className="w-full overflow-auto space-x-5 justify-start px-1 pb-2 hide-scrollbar">
+          {FAKE_DATA.filter((item) => item.id !== currentItem.id && item.category === currentItem.category)
+            .slice(0, 8)
+            .map((data) => (
+              <RelatedProductCard key={data.id} data={data} href={PRODUCTDETAILS(data.id)} />
+            ))}
         </Stack>
-      </Link>
-
-      <RelatedProductList currentItem={currentItem} />
+      </HorizontalList>
     </Stack>
   )
 }
