@@ -22,11 +22,11 @@ const NewsInput = () => {
   })
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form className="w-full xmd:w-auto" onSubmit={formik.handleSubmit}>
       <Input
         name="email"
         formik={formik}
-        className=" xmd:!w-[450px]"
+        className=" xmd:!w-[450px] mr-2"
         label=" Do not miss the news"
         placeholder="Your e-mail address"
         endIcon={
