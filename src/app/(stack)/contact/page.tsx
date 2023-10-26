@@ -1,44 +1,53 @@
 "use client"
+import React from "react"
+import * as Yup from "yup"
 import Image from "next/image"
 import Input from "@atom/input"
 import Stack from "@atom/stack"
 import Button from "@atom/button"
+import toast from "react-hot-toast"
 import Typography from "@atom/typography"
-import React, { ChangeEvent, useState } from "react"
+import { FormikHelpers, useFormik } from "formik"
+
+const validation = Yup.object().shape({
+  name: Yup.string().trim().min(2, "Name should have at least two words").required("Name is required"),
+  email: Yup.string().email("Invalid email address").required("Email is required"),
+  message: Yup.string().trim().min(10, "Message content should have at least ten words").required("Message content is required"),
+})
+
+const initialValues = {
+  name: "",
+  email: "",
+  message: "",
+}
 
 const Contact = () => {
   const base_url = process.env.BASE_URL
-  const [info, setInfo] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
 
-  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setInfo({ ...info, [e.target.name]: e.target.value })
+  const onSubmit = (values: typeof initialValues, { resetForm }: FormikHelpers<typeof initialValues>) => {
+    toast.success("Thank You for your message")
+    resetForm()
   }
+
+  const formik = useFormik({
+    onSubmit,
+    initialValues,
+    validationSchema: validation,
+  })
 
   return (
     <Stack className="container flex-col space-y-10 lg:flex-row mt-24 sm:mt-32 md:mt-36 w-full justify-between">
-      <Stack className="flex-col items-start space-y-8 md:!w-[50%]">
+      <form onSubmit={formik.handleSubmit} className="flex-col items-start space-y-8 md:!w-[50%]">
         <Typography variant="h4">
           Love to hear from you, <br /> Get in touch
         </Typography>
-        <Input label="Your name" name="name" className="w-full" value={info.name} onChange={onChangeHandler} />
-        <Input label="Your email" name="email" type="email" className="w-full" value={info.email} onChange={onChangeHandler} />
-        <Input
-          label="Message"
-          name="message"
-          multiLine={true}
-          rows={3}
-          className="w-full"
-          value={info.message}
-          onChange={onChangeHandler}
-        />
+        <Input label="Your name" name="name" className="w-full" formik={formik} />
+        <Input label="Your email" name="email" type="email" className="w-full" formik={formik} />
+        <Input label="Message" name="message" multiLine={true} rows={3} className="w-full" formik={formik} />
         <Button variant="contained" className="w-full">
           Send
         </Button>
-      </Stack>
+      </form>
 
       <hr className="w-full lg:hidden" />
 
