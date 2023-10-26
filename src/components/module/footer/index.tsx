@@ -6,13 +6,20 @@ import Button from "@atom/button"
 import Typography from "@atom/typography"
 import Link from "next/link"
 import { ABOUT, BLOG, CONTACT, COOKIES, FAQS, HOME, PRIVACY, STORE, TERMS } from "routes"
+import NewsInput from "./newsInput"
 
 const Footer = () => {
   return (
     <Stack className="bg-secondary-main w-full mt-24 mb-16 md:mb-0 flex-col">
       <Stack className="flex-col xmd:flex-row space-y-8 md:space-y-10 max-w-[1830px] w-full items-start my-2 md:mt-24 md:mb-16 justify-between lg:px-32 px-2 md:px-0">
         <Stack className="w-full justify-between lg:space-x-14 md:items-start">
-          <Image src="/images/logo.svg" alt="main logo image" width={258} height={80} className="w-[120px] sm:w-[180px] md:w-[258px]" />
+          <Image
+            src="/images/logo.svg"
+            alt="main logo image"
+            width={258}
+            height={80}
+            className="w-[120px] sm:w-[180px] md:w-[258px]"
+          />
 
           <table className="w-1/2">
             <tbody className="w-full">
@@ -53,17 +60,7 @@ const Footer = () => {
           </table>
         </Stack>
 
-        <Input
-          name="email"
-          className=" xmd:!w-[450px]"
-          label=" Do not miss the news"
-          placeholder="Your e-mail address"
-          endIcon={
-            <Button variant="contained" size="small">
-              Submit
-            </Button>
-          }
-        />
+        <NewsInput />
       </Stack>
 
       <Stack className="w-full border-t border-t-secondary-dark py-5">

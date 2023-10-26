@@ -1,20 +1,35 @@
 "use client"
+import React from "react"
+import * as Yup from "yup"
 import Link from "next/link"
 import Image from "next/image"
 import Input from "@atom/input"
 import Stack from "@atom/stack"
 import Button from "@atom/button"
+import { useFormik } from "formik"
 import Typography from "@atom/typography"
-import React, { ChangeEvent, FormEvent, useState } from "react"
 import { HOME, PRIVACY, SIGNIN, SIGNUP, SMSVERIFICATION } from "routes"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
+
+const validation = Yup.object().shape({
+  login: Yup.number().required("Phone number is required"),
+})
 
 const SignUpComponent = () => {
   const router = useRouter()
   const pathName = usePathname()
   const searchParams = useSearchParams()
   const phoneParam = searchParams.get("phone")
-  const [phone, setPhone] = useState(phoneParam || "")
+
+  const onSubmit = (values: { login: "" }) => {
+    router.push(`${SMSVERIFICATION}?pathName=${pathName}&phone=${values.login}`)
+  }
+
+  const formik = useFormik({
+    onSubmit,
+    validationSchema: validation,
+    initialValues: { login: (phoneParam as "") || "" },
+  })
 
   const title = pathName === SIGNIN ? "Sign in" : "Sign up"
   const buttonText = pathName === SIGNIN ? "Create your account" : "Sign in"
@@ -23,31 +38,15 @@ const SignUpComponent = () => {
     router.push(pathName === SIGNIN ? SIGNUP : SIGNIN)
   }
 
-  const singinHandler = (e: FormEvent) => {
-    e.preventDefault()
-    router.push(`${SMSVERIFICATION}?pathName=${pathName}&phone=${phone}`)
-  }
-
   return (
     <Stack className="mt-20 sm:mt-32 flex-col space-y-4">
       <Link href={HOME} className="m-auto">
         <Image src="images/logo.svg" alt="organic shop logo" width={200} height={100} />
       </Link>
 
-      <Stack
-        variant="form"
-        onSubmit={singinHandler}
-        className="flex-col sm:bg-white rounded-lg border px-10 py-8 items-start space-y-5"
-      >
+      <form onSubmit={formik.handleSubmit} className="flex-col sm:bg-white rounded-lg border px-10 py-8 items-start space-y-5">
         <Typography variant="h5">{title}</Typography>
-        <Input
-          type="number"
-          name="login"
-          label="Mobile phone number"
-          required
-          value={phone}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)}
-        />
+        <Input type="number" name="login" label="Mobile phone number" formik={formik} />
         <Button variant="contained" type="submit" className="w-full">
           Continue
         </Button>
@@ -59,7 +58,7 @@ const SignUpComponent = () => {
           </Link>
           .
         </Typography>
-      </Stack>
+      </form>
 
       <Stack className="flex-col space-y-2">
         <Button variant="outlined" size="small" className="w-80" onClick={navigationHandler}>

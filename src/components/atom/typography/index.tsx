@@ -1,4 +1,4 @@
-import React, { AllHTMLAttributes, HTMLAttributes } from "react"
+import React, { AllHTMLAttributes } from "react"
 
 type PropsType = {
   children: any
