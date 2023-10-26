@@ -1,41 +1,18 @@
 import Stack from "@atom/stack"
 import Typography from "@atom/typography"
-import { MicrophoneIcon } from "@heroicons/react/24/solid"
+import { FormikProps } from "formik"
 import React, { ForwardedRef, InputHTMLAttributes, ReactElement, ReactNode, forwardRef } from "react"
 
 type PropsType = {
   name?: string
   rows?: number
   label?: string
-  voice?: boolean
+  formik?: FormikProps<any>
   className?: string
   multiLine?: boolean
   containerClassName?: string
   endIcon?: string | ReactElement | ReactNode
   startIcon?: string | ReactElement | ReactNode
-  type?:
-    | "button"
-    | "checkbox"
-    | "color"
-    | "date"
-    | "email"
-    | "file"
-    | "hidden"
-    | "image"
-    | "month"
-    | "number"
-    | "password"
-    | "radio"
-    | "range"
-    | "reset"
-    | "search"
-    | "submit"
-    | "tel"
-    | "text"
-    | "time"
-    | "url"
-    | "week"
-    | "datetime-local"
 }
 
 const Input = forwardRef<
@@ -46,11 +23,11 @@ const Input = forwardRef<
     type = "text",
     rows,
     label,
-    voice,
     endIcon,
     multiLine,
     startIcon,
     className,
+    formik,
     name = "name",
     containerClassName,
     ...rest
@@ -69,11 +46,12 @@ const Input = forwardRef<
       >
         {multiLine ? (
           <textarea
-            id={name}
-            rows={rows}
-            name={name}
             className={`outline-none py-2 w-full resize-none ${paddingLeft}`}
             ref={ref as React.RefObject<HTMLTextAreaElement>}
+            {...formik?.getFieldProps(name)}
+            rows={rows}
+            name={name}
+            id={name}
             {...rest}
           />
         ) : (
@@ -81,17 +59,22 @@ const Input = forwardRef<
             {startIcon && <Stack>{startIcon}</Stack>}
             <input
               className={`outline-none w-full number-input min-h-[47px] ${paddingLeft}`}
+              ref={ref as React.RefObject<HTMLInputElement>}
+              {...formik?.getFieldProps(name)}
               name={name}
               type={type}
               id={name}
-              ref={ref as React.RefObject<HTMLInputElement>}
               {...rest}
             />
-            {voice && <MicrophoneIcon />}
             {endIcon && <Stack>{endIcon}</Stack>}
           </>
         )}
       </Stack>
+      {formik?.errors[name] && formik.touched[name] && formik.errors[name] && (
+        <Typography variant="caption" className="text-danger-main">
+          {formik.errors[name] as string}
+        </Typography>
+      )}
     </Stack>
   )
 })
