@@ -11,7 +11,7 @@ const Avatar = ({ src }: PropsType) => {
   return (
     <Stack className="bg-secondary-main w-[60px] h-[60px] rounded-full overflow-hidden">
       {src ? (
-        <Image src={src} width={80} height={80} alt="avatar" key="image" unoptimized />
+        <Image src={src} width={80} height={80} alt="avatar" key="image" />
       ) : (
         <UserIcon className="text-secondary-dark w-[80%]" key="icon" />
       )}
