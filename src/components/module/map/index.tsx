@@ -1,5 +1,5 @@
 "use client"
-import L from "leaflet"
+import L from "leaflet" 
 import React, { useEffect } from "react"
 import ReactDOMServer from "react-dom/server"
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid"
